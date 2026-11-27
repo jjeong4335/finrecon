@@ -20,6 +20,11 @@ jobs:
       - run: python -m pytest -v
       - name: Demo must match the ground truth exactly
         run: python -m finrecon.pipeline demo --strict
+      - name: Captured sandbox snapshot must match the ground truth exactly
+        run: python -m finrecon.pipeline demo --strict
+        env:
+          FIXTURE_DIR: fixtures/live_snapshot
+          DATABASE_URL: sqlite:///data/snapshot.db
       - run: python -m finrecon.pipeline report
 
   tests-postgres:

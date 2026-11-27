@@ -1,0 +1,4951 @@
+[
+ {
+  "CustomerRef": {
+   "value": "70",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2657.43",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "246",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:39-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:39-08:00"
+  },
+  "TxnDate": "2026-11-21",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Card payment entered manually. seed_key=S19:qp:sunbeam:newark:2026-11-21",
+  "Line": [
+   {
+    "Amount": "2657.43",
+    "LinkedTxn": [
+     {
+      "TxnId": "183",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "183"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2657.43"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-NEWA-2610"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "60",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "750.00",
+  "UnappliedAmt": "750.00",
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "245",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:38-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:38-08:00"
+  },
+  "TxnDate": "2026-11-04",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Card payment entered manually. seed_key=S18:qp:harbor:jcheights:2026-11-04",
+  "Line": []
+ },
+ {
+  "CustomerRef": {
+   "value": "72",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2340.25",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "244",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:37-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:37-08:00"
+  },
+  "TxnDate": "2026-10-15",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcpDIXzmwTQX11fnezdjX; seed_key=S17:qp:sunbeam:edison:2026-10-15",
+  "Line": [
+   {
+    "Amount": "2340.25",
+    "LinkedTxn": [
+     {
+      "TxnId": "190",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "190"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2340.25"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-EDIS-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "72",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2240.25",
+  "UnappliedAmt": "2240.25",
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "243",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:37-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:37-08:00"
+  },
+  "TxnDate": "2026-10-14",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcpDIXzmwTQX11fnezdjX; seed_key=S17:qp-wrong:sunbeam:edison:2026-10-14",
+  "Line": []
+ },
+ {
+  "CustomerRef": {
+   "value": "62",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2526.63",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "242",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:36-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:36-08:00"
+  },
+  "TxnDate": "2026-11-10",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3Qx9GhostNotInStripe0000; seed_key=S12:qp:harbor:parkslope:2026-11-10",
+  "Line": [
+   {
+    "Amount": "2526.63",
+    "LinkedTxn": [
+     {
+      "TxnId": "160",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "160"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2526.63"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-PARK-2610"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "69",
+   "name": "Sunbeam Pizza Franchise"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "500.00",
+  "UnappliedAmt": "500.00",
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "241",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:35-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:35-08:00"
+  },
+  "TxnDate": "2026-10-22",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Card payment entered manually. seed_key=S11:qp:sunbeam:client:2026-10-22",
+  "Line": []
+ },
+ {
+  "CustomerRef": {
+   "value": "71",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2685.49",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "240",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:34-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:34-08:00"
+  },
+  "TxnDate": "2026-10-17",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Card payment entered manually. seed_key=S10:qp:sunbeam:paterson:2026-10-17",
+  "Line": [
+   {
+    "Amount": "2685.49",
+    "LinkedTxn": [
+     {
+      "TxnId": "186",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "186"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2685.49"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-PATE-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "70",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2490.69",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "239",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:33-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:33-08:00"
+  },
+  "TxnDate": "2026-10-10",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEclDIXzmwTQX10O94R2XU; seed_key=S09:qp:sunbeam:newark:2026-10-10",
+  "Line": [
+   {
+    "Amount": "2490.69",
+    "LinkedTxn": [
+     {
+      "TxnId": "182",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "182"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2490.69"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-NEWA-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "68",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2360.98",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "238",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:33-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:33-08:00"
+  },
+  "TxnDate": "2026-10-11",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEclDIXzmwTQX108CQVSgF; seed_key=S08:qp:maple:newrochelle:2026-10-11",
+  "Line": [
+   {
+    "Amount": "2360.98",
+    "LinkedTxn": [
+     {
+      "TxnId": "179",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "179"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2360.98"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-NEWR-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "67",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2726.56",
+  "UnappliedAmt": "2726.56",
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "237",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:32-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:32-08:00"
+  },
+  "TxnDate": "2026-10-15",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEckDIXzmwTQX10XvOOL6c; seed_key=S07:qp-dup:maple:yonkers:2026-10-15",
+  "Line": []
+ },
+ {
+  "CustomerRef": {
+   "value": "67",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2726.56",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "236",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:32-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:32-08:00"
+  },
+  "TxnDate": "2026-10-15",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEckDIXzmwTQX10XvOOL6c; seed_key=S07:qp:maple:yonkers:2026-10-15",
+  "Line": [
+   {
+    "Amount": "2726.56",
+    "LinkedTxn": [
+     {
+      "TxnId": "175",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "175"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2726.56"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-YONK-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "66",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "10482",
+  "TotalAmt": "2439.02",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "235",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:31-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:31-08:00"
+  },
+  "TxnDate": "2026-10-18",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Check deposited at branch. seed_key=S06:qp:maple:whiteplains:2026-10-18",
+  "Line": [
+   {
+    "Amount": "2439.02",
+    "LinkedTxn": [
+     {
+      "TxnId": "171",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "171"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2439.02"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-WHIT-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "63",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2265.08",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "234",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:30-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:30-08:00"
+  },
+  "TxnDate": "2026-10-19",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEciDIXzmwTQX11QCeyJRI; seed_key=S04:qp:harbor:williamsburg:2026-10-19",
+  "Line": [
+   {
+    "Amount": "2265.08",
+    "LinkedTxn": [
+     {
+      "TxnId": "163",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "163"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2310.08"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-WILL-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "61",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "5009.20",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "233",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:29-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:29-08:00"
+  },
+  "TxnDate": "2026-11-13",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEchDIXzmwTQX10q5ennjV; seed_key=S03:qp:harbor:astoria:2026-11-13",
+  "Line": [
+   {
+    "Amount": "2360.93",
+    "LinkedTxn": [
+     {
+      "TxnId": "155",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "155"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2360.93"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-ASTO-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   },
+   {
+    "Amount": "2648.27",
+    "LinkedTxn": [
+     {
+      "TxnId": "156",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "156"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2648.27"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-ASTO-2610"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "60",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "1206.57",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "232",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:29-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:29-08:00"
+  },
+  "TxnDate": "2026-10-27",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcgDIXzmwTQX11K3HYnsu; seed_key=S02:qp:harbor:jcheights:2026-10-27",
+  "Line": [
+   {
+    "Amount": "1206.57",
+    "LinkedTxn": [
+     {
+      "TxnId": "151",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "151"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "1206.57"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-JCHE-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "60",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "1206.56",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "231",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:28-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:28-08:00"
+  },
+  "TxnDate": "2026-10-13",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcgDIXzmwTQX106D6o0MQ; seed_key=S02:qp:harbor:jcheights:2026-10-13",
+  "Line": [
+   {
+    "Amount": "1206.56",
+    "LinkedTxn": [
+     {
+      "TxnId": "151",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "151"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "1206.56"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-JCHE-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "59",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "1030.67",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "230",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:27-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:27-08:00"
+  },
+  "TxnDate": "2026-10-16",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcfDIXzmwTQX11KA5n7OE; seed_key=S01:qp:harbor:hoboken:2026-10-16",
+  "Line": [
+   {
+    "Amount": "1030.67",
+    "LinkedTxn": [
+     {
+      "TxnId": "147",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "147"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2576.68"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-HOBO-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "74",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2656.79",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "229",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:26-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:26-08:00"
+  },
+  "TxnDate": "2026-09-17",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEceDIXzmwTQX11rhxdkvv; seed_key=S00:qp:sunbeam:montclair:2026-09-17",
+  "Line": [
+   {
+    "Amount": "2656.79",
+    "LinkedTxn": [
+     {
+      "TxnId": "197",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "197"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2656.79"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-MONT-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "74",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2818.41",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "228",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:26-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:26-08:00"
+  },
+  "TxnDate": "2026-08-16",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcdDIXzmwTQX11tS5zMB6; seed_key=S00:qp:sunbeam:montclair:2026-08-16",
+  "Line": [
+   {
+    "Amount": "2818.41",
+    "LinkedTxn": [
+     {
+      "TxnId": "196",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "196"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2818.41"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-MONT-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "73",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2886.19",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "227",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:25-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:25-08:00"
+  },
+  "TxnDate": "2026-10-16",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEccDIXzmwTQX10ocr1HbB; seed_key=S00:qp:sunbeam:hackensack:2026-10-16",
+  "Line": [
+   {
+    "Amount": "2886.19",
+    "LinkedTxn": [
+     {
+      "TxnId": "194",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "194"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2886.19"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-HACK-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "73",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2766.05",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "226",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:24-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:24-08:00"
+  },
+  "TxnDate": "2026-09-08",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEccDIXzmwTQX10zlTE9iX; seed_key=S00:qp:sunbeam:hackensack:2026-09-08",
+  "Line": [
+   {
+    "Amount": "2766.05",
+    "LinkedTxn": [
+     {
+      "TxnId": "193",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "193"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2766.05"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-HACK-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "73",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2633.41",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "225",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:24-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:24-08:00"
+  },
+  "TxnDate": "2026-08-28",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcbDIXzmwTQX10YmtRdOx; seed_key=S00:qp:sunbeam:hackensack:2026-08-28",
+  "Line": [
+   {
+    "Amount": "2633.41",
+    "LinkedTxn": [
+     {
+      "TxnId": "192",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "192"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2633.41"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-HACK-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "72",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2876.48",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "224",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:23-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:23-08:00"
+  },
+  "TxnDate": "2026-09-10",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcaDIXzmwTQX10Sf1UuWM; seed_key=S00:qp:sunbeam:edison:2026-09-10",
+  "Line": [
+   {
+    "Amount": "2876.48",
+    "LinkedTxn": [
+     {
+      "TxnId": "189",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "189"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2876.48"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-EDIS-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "72",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2871.77",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "223",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:22-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:22-08:00"
+  },
+  "TxnDate": "2026-08-18",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcZDIXzmwTQX10uMt1y4T; seed_key=S00:qp:sunbeam:edison:2026-08-18",
+  "Line": [
+   {
+    "Amount": "2871.77",
+    "LinkedTxn": [
+     {
+      "TxnId": "188",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "188"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2871.77"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-EDIS-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "71",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2598.94",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "222",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:21-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:21-08:00"
+  },
+  "TxnDate": "2026-09-27",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcZDIXzmwTQX11WMi1dab; seed_key=S00:qp:sunbeam:paterson:2026-09-27",
+  "Line": [
+   {
+    "Amount": "2598.94",
+    "LinkedTxn": [
+     {
+      "TxnId": "185",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "185"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2598.94"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-PATE-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "71",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2500.23",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "221",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:21-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:21-08:00"
+  },
+  "TxnDate": "2026-08-28",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcYDIXzmwTQX10u5YPhe5; seed_key=S00:qp:sunbeam:paterson:2026-08-28",
+  "Line": [
+   {
+    "Amount": "2500.23",
+    "LinkedTxn": [
+     {
+      "TxnId": "184",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "184"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2500.23"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-PATE-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "70",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2518.17",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "220",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:20-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:20-08:00"
+  },
+  "TxnDate": "2026-09-17",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcXDIXzmwTQX11fEP5Phc; seed_key=S00:qp:sunbeam:newark:2026-09-17",
+  "Line": [
+   {
+    "Amount": "2518.17",
+    "LinkedTxn": [
+     {
+      "TxnId": "181",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "181"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2518.17"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-NEWA-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "70",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2666.68",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "219",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:19-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:19-08:00"
+  },
+  "TxnDate": "2026-08-26",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcWDIXzmwTQX10POLJlth; seed_key=S00:qp:sunbeam:newark:2026-08-26",
+  "Line": [
+   {
+    "Amount": "2666.68",
+    "LinkedTxn": [
+     {
+      "TxnId": "180",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "180"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2666.68"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "SP-NEWA-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "68",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2439.65",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "218",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:18-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:18-08:00"
+  },
+  "TxnDate": "2026-09-19",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcVDIXzmwTQX11csnDObs; seed_key=S00:qp:maple:newrochelle:2026-09-19",
+  "Line": [
+   {
+    "Amount": "2439.65",
+    "LinkedTxn": [
+     {
+      "TxnId": "178",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "178"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2439.65"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-NEWR-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "68",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2823.45",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "217",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:18-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:18-08:00"
+  },
+  "TxnDate": "2026-08-11",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcUDIXzmwTQX10t9lSgq0; seed_key=S00:qp:maple:newrochelle:2026-08-11",
+  "Line": [
+   {
+    "Amount": "2823.45",
+    "LinkedTxn": [
+     {
+      "TxnId": "177",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "177"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2823.45"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-NEWR-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "67",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2536.11",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "216",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:17-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:17-08:00"
+  },
+  "TxnDate": "2026-09-20",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcTDIXzmwTQX10Rc2FahD; seed_key=S00:qp:maple:yonkers:2026-09-20",
+  "Line": [
+   {
+    "Amount": "2536.11",
+    "LinkedTxn": [
+     {
+      "TxnId": "174",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "174"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2536.11"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-YONK-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "67",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2482.10",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "215",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:16-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:16-08:00"
+  },
+  "TxnDate": "2026-08-09",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcTDIXzmwTQX10LrvEfZe; seed_key=S00:qp:maple:yonkers:2026-08-09",
+  "Line": [
+   {
+    "Amount": "2482.10",
+    "LinkedTxn": [
+     {
+      "TxnId": "173",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "173"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2482.10"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-YONK-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "66",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2617.49",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "214",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:15-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:15-08:00"
+  },
+  "TxnDate": "2026-09-12",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcSDIXzmwTQX10Jb9KxxM; seed_key=S00:qp:maple:whiteplains:2026-09-12",
+  "Line": [
+   {
+    "Amount": "2617.49",
+    "LinkedTxn": [
+     {
+      "TxnId": "170",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "170"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2617.49"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-WHIT-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "66",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2498.04",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "213",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:15-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:15-08:00"
+  },
+  "TxnDate": "2026-08-18",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcRDIXzmwTQX11ce61Lcn; seed_key=S00:qp:maple:whiteplains:2026-08-18",
+  "Line": [
+   {
+    "Amount": "2498.04",
+    "LinkedTxn": [
+     {
+      "TxnId": "169",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "169"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2498.04"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-WHIT-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "65",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2461.68",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "212",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:14-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:14-08:00"
+  },
+  "TxnDate": "2026-09-24",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcQDIXzmwTQX10fSlcrEQ; seed_key=S00:qp:maple:stamford:2026-09-24",
+  "Line": [
+   {
+    "Amount": "2461.68",
+    "LinkedTxn": [
+     {
+      "TxnId": "166",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "166"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2461.68"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-STAM-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "65",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2354.21",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "211",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:13-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:13-08:00"
+  },
+  "TxnDate": "2026-08-10",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcPDIXzmwTQX10cJAVGee; seed_key=S00:qp:maple:stamford:2026-08-10",
+  "Line": [
+   {
+    "Amount": "2354.21",
+    "LinkedTxn": [
+     {
+      "TxnId": "165",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "165"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2354.21"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "ML-STAM-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "63",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2627.05",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "210",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:12-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:12-08:00"
+  },
+  "TxnDate": "2026-09-14",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcPDIXzmwTQX11TH9x2sP; seed_key=S00:qp:harbor:williamsburg:2026-09-14",
+  "Line": [
+   {
+    "Amount": "2627.05",
+    "LinkedTxn": [
+     {
+      "TxnId": "162",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "162"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2627.05"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-WILL-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "63",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2698.07",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "209",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:12-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:12-08:00"
+  },
+  "TxnDate": "2026-08-14",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcODIXzmwTQX11fm73Y1H; seed_key=S00:qp:harbor:williamsburg:2026-08-14",
+  "Line": [
+   {
+    "Amount": "2698.07",
+    "LinkedTxn": [
+     {
+      "TxnId": "161",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "161"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2698.07"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-WILL-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "62",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2438.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "208",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:11-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:11-08:00"
+  },
+  "TxnDate": "2026-10-13",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcNDIXzmwTQX11cIT4iYr; seed_key=S00:qp:harbor:parkslope:2026-10-13",
+  "Line": [
+   {
+    "Amount": "2438.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "159",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "159"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2438.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-PARK-2609"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "62",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2561.48",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "207",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:10-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:10-08:00"
+  },
+  "TxnDate": "2026-09-23",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcMDIXzmwTQX113Rm82RW; seed_key=S00:qp:harbor:parkslope:2026-09-23",
+  "Line": [
+   {
+    "Amount": "2561.48",
+    "LinkedTxn": [
+     {
+      "TxnId": "158",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "158"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2561.48"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-PARK-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "62",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2572.73",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "206",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:10-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:10-08:00"
+  },
+  "TxnDate": "2026-08-12",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcLDIXzmwTQX10M2Ksfij; seed_key=S00:qp:harbor:parkslope:2026-08-12",
+  "Line": [
+   {
+    "Amount": "2572.73",
+    "LinkedTxn": [
+     {
+      "TxnId": "157",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "157"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2572.73"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-PARK-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "61",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2661.29",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "205",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:09-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:09-08:00"
+  },
+  "TxnDate": "2026-09-21",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcKDIXzmwTQX11zlbTgrY; seed_key=S00:qp:harbor:astoria:2026-09-21",
+  "Line": [
+   {
+    "Amount": "2661.29",
+    "LinkedTxn": [
+     {
+      "TxnId": "154",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "154"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2661.29"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-ASTO-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "61",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2731.15",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "204",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:08-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:08-08:00"
+  },
+  "TxnDate": "2026-08-28",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcJDIXzmwTQX11GnPSy16; seed_key=S00:qp:harbor:astoria:2026-08-28",
+  "Line": [
+   {
+    "Amount": "2731.15",
+    "LinkedTxn": [
+     {
+      "TxnId": "153",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "153"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2731.15"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-ASTO-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "60",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2589.75",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "203",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:08-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:08-08:00"
+  },
+  "TxnDate": "2026-09-28",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcIDIXzmwTQX11cTCHUwQ; seed_key=S00:qp:harbor:jcheights:2026-09-28",
+  "Line": [
+   {
+    "Amount": "2589.75",
+    "LinkedTxn": [
+     {
+      "TxnId": "150",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "150"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2589.75"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-JCHE-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "60",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2663.60",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "202",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:07-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:07-08:00"
+  },
+  "TxnDate": "2026-08-21",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcIDIXzmwTQX10aWnjCn4; seed_key=S00:qp:harbor:jcheights:2026-08-21",
+  "Line": [
+   {
+    "Amount": "2663.60",
+    "LinkedTxn": [
+     {
+      "TxnId": "149",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "149"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2663.60"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-JCHE-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "59",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2606.35",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "201",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:06-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:06-08:00"
+  },
+  "TxnDate": "2026-09-13",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcHDIXzmwTQX11W2cvX59; seed_key=S00:qp:harbor:hoboken:2026-09-13",
+  "Line": [
+   {
+    "Amount": "2606.35",
+    "LinkedTxn": [
+     {
+      "TxnId": "146",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "146"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2606.35"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-HOBO-2608"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "59",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "1000000001"
+  },
+  "TotalAmt": "2579.40",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "200",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-11-26T18:11:05-08:00",
+   "LastUpdatedTime": "2026-11-26T18:11:05-08:00"
+  },
+  "TxnDate": "2026-08-19",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3UgEcGDIXzmwTQX10q1xbmox; seed_key=S00:qp:harbor:hoboken:2026-08-19",
+  "Line": [
+   {
+    "Amount": "2579.40",
+    "LinkedTxn": [
+     {
+      "TxnId": "145",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "145"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "2579.40"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "HF-HOBO-2607"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "8",
+   "name": "0969 Ocean View Road"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "387.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "128",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-31T13:13:33-07:00",
+   "LastUpdatedTime": "2026-10-31T13:13:33-07:00"
+  },
+  "TxnDate": "2026-10-31",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "387.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "96",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "96"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "387.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1031"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "3",
+   "name": "Cool Cars"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "1675.52",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "120",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-31T12:59:21-07:00",
+   "LastUpdatedTime": "2026-10-31T12:59:21-07:00"
+  },
+  "TxnDate": "2026-10-31",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "1675.52",
+    "LinkedTxn": [
+     {
+      "TxnId": "12",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "12"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "1675.52"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1004"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "25",
+   "name": "Sushi by Katsuyuki"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "80.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "116",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-31T12:52:44-07:00",
+   "LastUpdatedTime": "2026-10-31T12:52:44-07:00"
+  },
+  "TxnDate": "2026-10-27",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "121",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "80.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "63",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "63"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "80.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1017"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "1",
+   "name": "Amy's Bird Sanctuary"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "TotalAmt": "220.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "101",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T13:39:32-07:00",
+   "LastUpdatedTime": "2026-10-30T13:39:32-07:00"
+  },
+  "TxnDate": "2026-10-30",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "121",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "220.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "67",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "67"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "459.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1021"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "26",
+   "name": "Travis Waldron"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "81.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "98",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T13:35:42-07:00",
+   "LastUpdatedTime": "2026-10-30T13:35:42-07:00"
+  },
+  "TxnDate": "2026-10-30",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "121",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "81.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "42",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "42"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "81.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1013"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "8",
+   "name": "0969 Ocean View Road"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "226.75",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "97",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T13:31:45-07:00",
+   "LastUpdatedTime": "2026-10-30T13:31:45-07:00"
+  },
+  "TxnDate": "2026-08-06",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "121",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "226.75",
+    "LinkedTxn": [
+     {
+      "TxnId": "95",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "95"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "226.75"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1030"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "5",
+   "name": "Dukes Basketball Camp"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "TotalAmt": "460.40",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "94",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T13:28:29-07:00",
+   "LastUpdatedTime": "2026-10-30T13:28:29-07:00"
+  },
+  "TxnDate": "2026-10-04",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "121",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "460.40",
+    "LinkedTxn": [
+     {
+      "TxnId": "93",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "93"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "460.40"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1029"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "1",
+   "name": "Amy's Bird Sanctuary"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "6552",
+  "TotalAmt": "108.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "31",
+  "SyncToken": "1",
+  "MetaData": {
+   "CreateTime": "2026-10-29T11:06:09-07:00",
+   "LastUpdatedTime": "2026-10-30T13:25:20-07:00"
+  },
+  "TxnDate": "2026-10-29",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "102",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "108.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "9",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "9"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "108.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1001"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "9",
+   "name": "55 Twin Lane"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "TotalAmt": "50.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "33",
+  "SyncToken": "1",
+  "MetaData": {
+   "CreateTime": "2026-10-29T11:07:19-07:00",
+   "LastUpdatedTime": "2026-10-30T13:24:04-07:00"
+  },
+  "TxnDate": "2026-10-29",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "50.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "13",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "13"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "54.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1005"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "9",
+   "name": "55 Twin Lane"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "5664",
+  "TotalAmt": "86.40",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "15",
+  "SyncToken": "1",
+  "MetaData": {
+   "CreateTime": "2026-10-28T15:08:16-07:00",
+   "LastUpdatedTime": "2026-10-30T13:23:11-07:00"
+  },
+  "TxnDate": "2026-10-06",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "86.40",
+    "LinkedTxn": [
+     {
+      "TxnId": "14",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "14"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "86.40"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1006"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "2",
+   "name": "Bill's Windsurf Shop"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "1053",
+  "TotalAmt": "175.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "76",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T12:56:01-07:00",
+   "LastUpdatedTime": "2026-10-30T12:56:01-07:00"
+  },
+  "TxnDate": "2026-08-06",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "175.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "10",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "10"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "175.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1002"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "1",
+   "name": "Amy's Bird Sanctuary"
+  },
+  "TotalAmt": 0,
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "74",
+  "SyncToken": "1",
+  "MetaData": {
+   "CreateTime": "2026-10-30T12:51:28-07:00",
+   "LastUpdatedTime": "2026-10-30T12:52:08-07:00"
+  },
+  "TxnDate": "2026-10-14",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Created by QB Online to link credits to charges.",
+  "Line": [
+   {
+    "Amount": "100.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "71",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "71"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "100.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1025"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   },
+   {
+    "Amount": "100.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "73",
+      "TxnType": "CreditMemo"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "73"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "100.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1026"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "1",
+   "name": "Amy's Bird Sanctuary"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "TotalAmt": "105.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "72",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-30T12:50:23-07:00",
+   "LastUpdatedTime": "2026-10-30T12:50:23-07:00"
+  },
+  "TxnDate": "2026-10-08",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "PrivateNote": "Amy claims the pest control did not occur",
+  "Line": [
+   {
+    "Amount": "105.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "71",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "71"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "105.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1025"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "3",
+   "name": "Cool Cars"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "1886",
+  "TotalAmt": "694.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "61",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-29T15:21:23-07:00",
+   "LastUpdatedTime": "2026-10-29T15:21:23-07:00"
+  },
+  "TxnDate": "2026-10-24",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "694.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "12",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "12"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "694.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1004"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "26",
+   "name": "Travis Waldron"
+  },
+  "DepositToAccountRef": {
+   "value": "35"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "2064",
+  "TotalAmt": "103.55",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "40",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-29T11:17:33-07:00",
+   "LastUpdatedTime": "2026-10-29T11:17:33-07:00"
+  },
+  "TxnDate": "2026-10-29",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "Line": [
+   {
+    "Amount": "103.55",
+    "LinkedTxn": [
+     {
+      "TxnId": "27",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "27"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "103.55"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1009"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "CustomerRef": {
+   "value": "13",
+   "name": "John Melton"
+  },
+  "DepositToAccountRef": {
+   "value": "4"
+  },
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "5421",
+  "TotalAmt": "300.00",
+  "UnappliedAmt": 0,
+  "ProcessPayment": false,
+  "domain": "QBO",
+  "sparse": false,
+  "Id": "32",
+  "SyncToken": "0",
+  "MetaData": {
+   "CreateTime": "2026-10-29T11:06:49-07:00",
+   "LastUpdatedTime": "2026-10-29T11:06:49-07:00"
+  },
+  "TxnDate": "2026-10-29",
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "LinkedTxn": [
+   {
+    "TxnId": "102",
+    "TxnType": "Deposit"
+   }
+  ],
+  "Line": [
+   {
+    "Amount": "300.00",
+    "LinkedTxn": [
+     {
+      "TxnId": "16",
+      "TxnType": "Invoice"
+     }
+    ],
+    "LineEx": {
+     "any": [
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnId",
+        "Value": "16"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnOpenBalance",
+        "Value": "750.00"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      },
+      {
+       "name": "{http://schema.intuit.com/finance/v3}NameValue",
+       "declaredType": "com.intuit.schema.finance.v3.NameValue",
+       "scope": "javax.xml.bind.JAXBElement$GlobalScope",
+       "value": {
+        "Name": "txnReferenceNumber",
+        "Value": "1007"
+       },
+       "nil": false,
+       "globalScope": true,
+       "typeSubstituted": false
+      }
+     ]
+    }
+   }
+  ]
+ }
+]

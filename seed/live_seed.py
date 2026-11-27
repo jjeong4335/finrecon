@@ -196,6 +196,20 @@ def seed() -> None:
     print(f"Seeded. Registry written to {REGISTRY}.")
 
 
+# Fields that have no place in a published snapshot: a PaymentIntent's
+# client_secret can confirm that payment client-side; receipt_url links to a
+# hosted receipt. Neither is used by the pipeline.
+_DROP_FIELDS = {"client_secret", "receipt_url"}
+
+
+def _sanitize(obj):
+    if isinstance(obj, dict):
+        return {k: _sanitize(v) for k, v in obj.items() if k not in _DROP_FIELDS}
+    if isinstance(obj, list):
+        return [_sanitize(v) for v in obj]
+    return obj
+
+
 def capture(out_dir: str = "fixtures/live_snapshot") -> None:
     """Record live sandbox objects in the offline fixture layout.
 
@@ -244,7 +258,7 @@ def capture(out_dir: str = "fixtures/live_snapshot") -> None:
             if b["id"] in members:
                 b["_fixture_payout"] = po["id"]
     for res, data in lists.items():
-        dump(f"stripe/{res}.json", data)
+        dump(f"stripe/{res}.json", _sanitize(data))
     shutil.copytree(settings.fixture_dir / "ad_platform", out / "ad_platform", dirs_exist_ok=True)
     shutil.copy(REGISTRY, out / "registry.json")
     (out / "CAPTURED_AT.txt").write_text(datetime.now(timezone.utc).isoformat() + "\n")

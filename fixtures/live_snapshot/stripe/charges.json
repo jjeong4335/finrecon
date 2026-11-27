@@ -1,0 +1,5519 @@
+[
+ {
+  "id": "ch_3UgEcrDIXzmwTQX10M5Ze5Qk",
+  "object": "charge",
+  "amount": 265743,
+  "amount_captured": 265743,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcrDIXzmwTQX109uCI3s7",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745461,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-NEWA-2609 (stale checkout link)",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-11-20",
+   "location_key": "sunbeam/newark",
+   "qbo_invoice_no": "SP-NEWA-2609",
+   "scenario_id": "S19",
+   "seed_key": "S19:sp:sunbeam:newark:2026-11-20"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 60,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcrDIXzmwTQX109zgHRRk",
+  "payment_method": "pm_1UgEcrDIXzmwTQX1tSU2kxn9",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 265743,
+    "authorization_code": "688369",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 265743,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1795186800
+ },
+ {
+  "id": "ch_3UgEcqDIXzmwTQX10IbxqbYp",
+  "object": "charge",
+  "amount": 75000,
+  "amount_captured": 75000,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcqDIXzmwTQX10pcFzVCm",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745460,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Event sponsorship deposit",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-11-03",
+   "location_key": "harbor/williamsburg",
+   "scenario_id": "S18",
+   "seed_key": "S18:sp:harbor:williamsburg:2026-11-03"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 57,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcqDIXzmwTQX10hA8wiku",
+  "payment_method": "pm_1UgEcqDIXzmwTQX1JzpqbYGx",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 75000,
+    "authorization_code": "268073",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 75000,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1793718000
+ },
+ {
+  "id": "ch_3UgEcpDIXzmwTQX111ADDii7",
+  "object": "charge",
+  "amount": 234025,
+  "amount_captured": 234025,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcpDIXzmwTQX11AQfcbOd",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745459,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-EDIS-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-13",
+   "location_key": "sunbeam/edison",
+   "qbo_invoice_no": "SP-EDIS-2609",
+   "scenario_id": "S17",
+   "seed_key": "S17:sp:sunbeam:edison:2026-10-13"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 27,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcpDIXzmwTQX11fnezdjX",
+  "payment_method": "pm_1UgEcpDIXzmwTQX1RnlPP6iF",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 234025,
+    "authorization_code": "343182",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 234025,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791903600
+ },
+ {
+  "id": "ch_3UgEcoDIXzmwTQX10Qe4xYwc",
+  "object": "charge",
+  "amount": 273793,
+  "amount_captured": 273793,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcoDIXzmwTQX10uGZIlui",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745459,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-MONT-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-11-29",
+   "location_key": "sunbeam/montclair",
+   "qbo_invoice_no": "SP-MONT-2609",
+   "scenario_id": "S14",
+   "seed_key": "S14:sp:sunbeam:montclair:2026-11-29"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 53,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcoDIXzmwTQX10V43lTTU",
+  "payment_method": "pm_1UgEcoDIXzmwTQX1ASbQREKa",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 273793,
+    "authorization_code": "555072",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 273793,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1795964400
+ },
+ {
+  "id": "ch_3UgEcoDIXzmwTQX10RXYYo5a",
+  "object": "charge",
+  "amount": 50000,
+  "amount_captured": 50000,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcoDIXzmwTQX10TErN8dH",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745458,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Creative production deposit",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-22",
+   "location_key": "sunbeam/hackensack",
+   "scenario_id": "S11",
+   "seed_key": "S11:sp:sunbeam:hackensack:2026-10-22"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 48,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcoDIXzmwTQX107qSjijT",
+  "payment_method": "pm_1UgEcnDIXzmwTQX10c3U4SNv",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 50000,
+    "authorization_code": "738046",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 50000,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792681200
+ },
+ {
+  "id": "ch_3UgEcnDIXzmwTQX10XZSXt6h",
+  "object": "charge",
+  "amount": 50000,
+  "amount_captured": 50000,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcnDIXzmwTQX105Y5oR7C",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745457,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Creative production deposit",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-21",
+   "location_key": "sunbeam/edison",
+   "scenario_id": "S11",
+   "seed_key": "S11:sp:sunbeam:edison:2026-10-21"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 43,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcnDIXzmwTQX102maYKlQ",
+  "payment_method": "pm_1UgEcnDIXzmwTQX17spXDlDs",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 50000,
+    "authorization_code": "108446",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 50000,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792594800
+ },
+ {
+  "id": "ch_3UgEcmDIXzmwTQX10oD9b2yQ",
+  "object": "charge",
+  "amount": 268549,
+  "amount_captured": 268549,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcmDIXzmwTQX10PR772Wd",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745456,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-PATE-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-16",
+   "location_key": "sunbeam/paterson",
+   "qbo_invoice_no": "SP-PATE-2609",
+   "scenario_id": "S10",
+   "seed_key": "S10:sp:sunbeam:paterson:2026-10-16"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 10,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcmDIXzmwTQX10sTxN9Ox",
+  "payment_method": "pm_1UgEcmDIXzmwTQX1QkBnL1FX",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 268549,
+    "authorization_code": "255934",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 268549,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792162800
+ },
+ {
+  "id": "ch_3UgEclDIXzmwTQX10SS0i3rH",
+  "object": "charge",
+  "amount": 249069,
+  "amount_captured": 249069,
+  "amount_refunded": 15000,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEclDIXzmwTQX10yw5zYeE",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745455,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-NEWA-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-09",
+   "location_key": "sunbeam/newark",
+   "qbo_invoice_no": "SP-NEWA-2609",
+   "scenario_id": "S09",
+   "seed_key": "S09:sp:sunbeam:newark:2026-10-09"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 51,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEclDIXzmwTQX10O94R2XU",
+  "payment_method": "pm_1UgEclDIXzmwTQX1ayenr4OY",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 249069,
+    "authorization_code": "647912",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 249069,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791558000
+ },
+ {
+  "id": "ch_3UgEclDIXzmwTQX10VGrw0O9",
+  "object": "charge",
+  "amount": 236098,
+  "amount_captured": 236098,
+  "amount_refunded": 20000,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEclDIXzmwTQX10077IeCI",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745455,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-NEWR-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-10",
+   "location_key": "maple/newrochelle",
+   "qbo_invoice_no": "ML-NEWR-2609",
+   "scenario_id": "S08",
+   "seed_key": "S08:sp:maple:newrochelle:2026-10-10"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 21,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEclDIXzmwTQX108CQVSgF",
+  "payment_method": "pm_1UgEckDIXzmwTQX1F564g7F7",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 236098,
+    "authorization_code": "253784",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 236098,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791644400
+ },
+ {
+  "id": "ch_3UgEckDIXzmwTQX10LDNtgJb",
+  "object": "charge",
+  "amount": 272656,
+  "amount_captured": 272656,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEckDIXzmwTQX10AK35BMu",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745454,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-YONK-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-14",
+   "location_key": "maple/yonkers",
+   "qbo_invoice_no": "ML-YONK-2609",
+   "scenario_id": "S07",
+   "seed_key": "S07:sp:maple:yonkers:2026-10-14"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 40,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEckDIXzmwTQX10XvOOL6c",
+  "payment_method": "pm_1UgEckDIXzmwTQX1MqWZe4nl",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 272656,
+    "authorization_code": "266223",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 272656,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791990000
+ },
+ {
+  "id": "ch_3UgEcjDIXzmwTQX10EIAWAxZ",
+  "object": "charge",
+  "amount": 234833,
+  "amount_captured": 234833,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcjDIXzmwTQX107aRmzH5",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745453,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-STAM-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-20",
+   "location_key": "maple/stamford",
+   "qbo_invoice_no": "ML-STAM-2609",
+   "scenario_id": "S05",
+   "seed_key": "S05:sp:maple:stamford:2026-10-20"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 44,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcjDIXzmwTQX10y7oXGel",
+  "payment_method": "pm_1UgEcjDIXzmwTQX1BwkFyQp0",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 234833,
+    "authorization_code": "277251",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 234833,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792508400
+ },
+ {
+  "id": "ch_3UgEciDIXzmwTQX11Budf3z8",
+  "object": "charge",
+  "amount": 231008,
+  "amount_captured": 231008,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEciDIXzmwTQX11HiVAWfV",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745452,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-WILL-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-18",
+   "location_key": "harbor/williamsburg",
+   "qbo_invoice_no": "HF-WILL-2609",
+   "scenario_id": "S04",
+   "seed_key": "S04:sp:harbor:williamsburg:2026-10-18"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 2,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEciDIXzmwTQX11QCeyJRI",
+  "payment_method": "pm_1UgEciDIXzmwTQX1runcoN58",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 231008,
+    "authorization_code": "590855",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 231008,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792335600
+ },
+ {
+  "id": "ch_3UgEchDIXzmwTQX10KgjODh2",
+  "object": "charge",
+  "amount": 500920,
+  "amount_captured": 500920,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEchDIXzmwTQX10keTPGaA",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745451,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-ASTO-2609, HF-ASTO-2610",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-11-12",
+   "location_key": "harbor/astoria",
+   "qbo_invoice_no": "HF-ASTO-2609,HF-ASTO-2610",
+   "scenario_id": "S03",
+   "seed_key": "S03:sp:harbor:astoria:2026-11-12"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 44,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEchDIXzmwTQX10q5ennjV",
+  "payment_method": "pm_1UgEchDIXzmwTQX1IlxJntrL",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 500920,
+    "authorization_code": "695637",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 500920,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1794495600
+ },
+ {
+  "id": "ch_3UgEcgDIXzmwTQX11RNWiuz7",
+  "object": "charge",
+  "amount": 120657,
+  "amount_captured": 120657,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcgDIXzmwTQX11eEtIiTi",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745451,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-JCHE-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-26",
+   "location_key": "harbor/jcheights",
+   "qbo_invoice_no": "HF-JCHE-2609",
+   "scenario_id": "S02",
+   "seed_key": "S02:sp:harbor:jcheights:2026-10-26"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 10,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcgDIXzmwTQX11K3HYnsu",
+  "payment_method": "pm_1UgEcgDIXzmwTQX1U1AAuJAe",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 120657,
+    "authorization_code": "402507",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 120657,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1793026800
+ },
+ {
+  "id": "ch_3UgEcgDIXzmwTQX10rIzYRXZ",
+  "object": "charge",
+  "amount": 120656,
+  "amount_captured": 120656,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcgDIXzmwTQX10hsffWRr",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745450,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-JCHE-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-12",
+   "location_key": "harbor/jcheights",
+   "qbo_invoice_no": "HF-JCHE-2609",
+   "scenario_id": "S02",
+   "seed_key": "S02:sp:harbor:jcheights:2026-10-12"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 60,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcgDIXzmwTQX106D6o0MQ",
+  "payment_method": "pm_1UgEcgDIXzmwTQX1g3kKIPbH",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 120656,
+    "authorization_code": "059701",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 120656,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791817200
+ },
+ {
+  "id": "ch_3UgEcfDIXzmwTQX11nDCiTA1",
+  "object": "charge",
+  "amount": 103067,
+  "amount_captured": 103067,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcfDIXzmwTQX112ZPu18N",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745449,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-HOBO-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-15",
+   "location_key": "harbor/hoboken",
+   "qbo_invoice_no": "HF-HOBO-2609",
+   "scenario_id": "S01",
+   "seed_key": "S01:sp:harbor:hoboken:2026-10-15"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 9,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcfDIXzmwTQX11KA5n7OE",
+  "payment_method": "pm_1UgEcfDIXzmwTQX1lFg0BeDu",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 103067,
+    "authorization_code": "822800",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 103067,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792076400
+ },
+ {
+  "id": "ch_3UgEceDIXzmwTQX11YuC1M5x",
+  "object": "charge",
+  "amount": 265679,
+  "amount_captured": 265679,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEceDIXzmwTQX11GKwwgbi",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745448,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-MONT-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-16",
+   "location_key": "sunbeam/montclair",
+   "qbo_invoice_no": "SP-MONT-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-09-16"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 15,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEceDIXzmwTQX11rhxdkvv",
+  "payment_method": "pm_1UgEceDIXzmwTQX1mQZETGsZ",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 265679,
+    "authorization_code": "684866",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 265679,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789570800
+ },
+ {
+  "id": "ch_3UgEcdDIXzmwTQX11o32z145",
+  "object": "charge",
+  "amount": 281841,
+  "amount_captured": 281841,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcdDIXzmwTQX119TEX086",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745447,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-MONT-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-15",
+   "location_key": "sunbeam/montclair",
+   "qbo_invoice_no": "SP-MONT-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-08-15"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 1,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcdDIXzmwTQX11tS5zMB6",
+  "payment_method": "pm_1UgEcdDIXzmwTQX16X9LRiMC",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 281841,
+    "authorization_code": "699813",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 281841,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786806000
+ },
+ {
+  "id": "ch_3UgEccDIXzmwTQX106ItvmVF",
+  "object": "charge",
+  "amount": 288619,
+  "amount_captured": 288619,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEccDIXzmwTQX10TqYp8SA",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745447,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-HACK-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-15",
+   "location_key": "sunbeam/hackensack",
+   "qbo_invoice_no": "SP-HACK-2609",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-10-15"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 11,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEccDIXzmwTQX10ocr1HbB",
+  "payment_method": "pm_1UgEccDIXzmwTQX1siNsXPtQ",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 288619,
+    "authorization_code": "843691",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 288619,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1792076400
+ },
+ {
+  "id": "ch_3UgEccDIXzmwTQX10JJNS3nZ",
+  "object": "charge",
+  "amount": 276605,
+  "amount_captured": 276605,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEccDIXzmwTQX10aHPAgns",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745446,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-HACK-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-07",
+   "location_key": "sunbeam/hackensack",
+   "qbo_invoice_no": "SP-HACK-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-07"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 31,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEccDIXzmwTQX10zlTE9iX",
+  "payment_method": "pm_1UgEcbDIXzmwTQX1xbUpGBDx",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 276605,
+    "authorization_code": "209268",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 276605,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1788793200
+ },
+ {
+  "id": "ch_3UgEcbDIXzmwTQX10xc8qCzz",
+  "object": "charge",
+  "amount": 263341,
+  "amount_captured": 263341,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcbDIXzmwTQX10PaTxN5Y",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745445,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-HACK-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-27",
+   "location_key": "sunbeam/hackensack",
+   "qbo_invoice_no": "SP-HACK-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-27"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 55,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcbDIXzmwTQX10YmtRdOx",
+  "payment_method": "pm_1UgEcbDIXzmwTQX1hAhOJNyV",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 263341,
+    "authorization_code": "553899",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 263341,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "ch_3UgEcaDIXzmwTQX10n08e6nE",
+  "object": "charge",
+  "amount": 287648,
+  "amount_captured": 287648,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcaDIXzmwTQX10xHgMpx8",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745444,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-EDIS-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-09",
+   "location_key": "sunbeam/edison",
+   "qbo_invoice_no": "SP-EDIS-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:edison:2026-09-09"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 4,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcaDIXzmwTQX10Sf1UuWM",
+  "payment_method": "pm_1UgEcaDIXzmwTQX1gNFGt9PH",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 287648,
+    "authorization_code": "330245",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 287648,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1788966000
+ },
+ {
+  "id": "ch_3UgEcZDIXzmwTQX101fRz4Ur",
+  "object": "charge",
+  "amount": 287177,
+  "amount_captured": 287177,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcZDIXzmwTQX10VF9U993",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745443,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-EDIS-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-17",
+   "location_key": "sunbeam/edison",
+   "qbo_invoice_no": "SP-EDIS-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:edison:2026-08-17"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 4,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcZDIXzmwTQX10uMt1y4T",
+  "payment_method": "pm_1UgEcZDIXzmwTQX1BAbgtm1Z",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 287177,
+    "authorization_code": "172279",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 287177,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786978800
+ },
+ {
+  "id": "ch_3UgEcZDIXzmwTQX11ozEjSdl",
+  "object": "charge",
+  "amount": 259894,
+  "amount_captured": 259894,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcZDIXzmwTQX11NzhmXfo",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745443,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-PATE-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-26",
+   "location_key": "sunbeam/paterson",
+   "qbo_invoice_no": "SP-PATE-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:paterson:2026-09-26"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 37,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcZDIXzmwTQX11WMi1dab",
+  "payment_method": "pm_1UgEcYDIXzmwTQX1bN5vc1eV",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 259894,
+    "authorization_code": "443318",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 259894,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1790434800
+ },
+ {
+  "id": "ch_3UgEcYDIXzmwTQX10wky7TKn",
+  "object": "charge",
+  "amount": 250023,
+  "amount_captured": 250023,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcYDIXzmwTQX10njn5arF",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745442,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-PATE-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-27",
+   "location_key": "sunbeam/paterson",
+   "qbo_invoice_no": "SP-PATE-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:paterson:2026-08-27"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 59,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcYDIXzmwTQX10u5YPhe5",
+  "payment_method": "pm_1UgEcXDIXzmwTQX1KbYn73uu",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 250023,
+    "authorization_code": "262691",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 250023,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "ch_3UgEcXDIXzmwTQX11h5QWQw8",
+  "object": "charge",
+  "amount": 251817,
+  "amount_captured": 251817,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcXDIXzmwTQX11oKJQB1t",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745441,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-NEWA-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-16",
+   "location_key": "sunbeam/newark",
+   "qbo_invoice_no": "SP-NEWA-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:newark:2026-09-16"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 13,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcXDIXzmwTQX11fEP5Phc",
+  "payment_method": "pm_1UgEcWDIXzmwTQX17zfsRvJP",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 251817,
+    "authorization_code": "947858",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 251817,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789570800
+ },
+ {
+  "id": "ch_3UgEcWDIXzmwTQX10VNkCmvy",
+  "object": "charge",
+  "amount": 266668,
+  "amount_captured": 266668,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcWDIXzmwTQX10gWm6WDl",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745440,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "description": "Invoice payment SP-NEWA-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-25",
+   "location_key": "sunbeam/newark",
+   "qbo_invoice_no": "SP-NEWA-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:sunbeam:newark:2026-08-25"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 45,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcWDIXzmwTQX10POLJlth",
+  "payment_method": "pm_1UgEcWDIXzmwTQX1No9mlyct",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 266668,
+    "authorization_code": "344396",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 266668,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787670000
+ },
+ {
+  "id": "ch_3UgEcVDIXzmwTQX11WEVAPXL",
+  "object": "charge",
+  "amount": 243965,
+  "amount_captured": 243965,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcVDIXzmwTQX11U47f9CS",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745439,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-NEWR-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-18",
+   "location_key": "maple/newrochelle",
+   "qbo_invoice_no": "ML-NEWR-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:newrochelle:2026-09-18"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 15,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcVDIXzmwTQX11csnDObs",
+  "payment_method": "pm_1UgEcVDIXzmwTQX1YsKZwRMU",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 243965,
+    "authorization_code": "408643",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 243965,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789743600
+ },
+ {
+  "id": "ch_3UgEcUDIXzmwTQX10nKZ9VJH",
+  "object": "charge",
+  "amount": 282345,
+  "amount_captured": 282345,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcUDIXzmwTQX10nR3Q45x",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745438,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-NEWR-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-10",
+   "location_key": "maple/newrochelle",
+   "qbo_invoice_no": "ML-NEWR-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:newrochelle:2026-08-10"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 5,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcUDIXzmwTQX10t9lSgq0",
+  "payment_method": "pm_1UgEcUDIXzmwTQX1TH22YtjM",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 282345,
+    "authorization_code": "173273",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 282345,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786374000
+ },
+ {
+  "id": "ch_3UgEcTDIXzmwTQX10r1RuUKy",
+  "object": "charge",
+  "amount": 253611,
+  "amount_captured": 253611,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcTDIXzmwTQX10FkF8lee",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745437,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-YONK-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-19",
+   "location_key": "maple/yonkers",
+   "qbo_invoice_no": "ML-YONK-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:yonkers:2026-09-19"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 56,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcTDIXzmwTQX10Rc2FahD",
+  "payment_method": "pm_1UgEcTDIXzmwTQX1LmooGWyp",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 253611,
+    "authorization_code": "573144",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 253611,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789830000
+ },
+ {
+  "id": "ch_3UgEcTDIXzmwTQX104PiAkgc",
+  "object": "charge",
+  "amount": 248210,
+  "amount_captured": 248210,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcTDIXzmwTQX10Eg3m0RR",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745437,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-YONK-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-08",
+   "location_key": "maple/yonkers",
+   "qbo_invoice_no": "ML-YONK-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:yonkers:2026-08-08"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 27,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcTDIXzmwTQX10LrvEfZe",
+  "payment_method": "pm_1UgEcSDIXzmwTQX1Sb9IN2iL",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 248210,
+    "authorization_code": "044519",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 248210,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786201200
+ },
+ {
+  "id": "ch_3UgEcSDIXzmwTQX102BIC4OC",
+  "object": "charge",
+  "amount": 261749,
+  "amount_captured": 261749,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcSDIXzmwTQX10fmkKHWz",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745436,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-WHIT-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-11",
+   "location_key": "maple/whiteplains",
+   "qbo_invoice_no": "ML-WHIT-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:whiteplains:2026-09-11"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 37,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcSDIXzmwTQX10Jb9KxxM",
+  "payment_method": "pm_1UgEcSDIXzmwTQX1E8KKAPog",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 261749,
+    "authorization_code": "052608",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 261749,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789138800
+ },
+ {
+  "id": "ch_3UgEcRDIXzmwTQX11zuth5Mf",
+  "object": "charge",
+  "amount": 249804,
+  "amount_captured": 249804,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcRDIXzmwTQX11fOLEwlS",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745435,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-WHIT-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-17",
+   "location_key": "maple/whiteplains",
+   "qbo_invoice_no": "ML-WHIT-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:whiteplains:2026-08-17"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 49,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcRDIXzmwTQX11ce61Lcn",
+  "payment_method": "pm_1UgEcRDIXzmwTQX1GEhGwXN7",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 249804,
+    "authorization_code": "822276",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 249804,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786978800
+ },
+ {
+  "id": "ch_3UgEcQDIXzmwTQX10B3BsQqi",
+  "object": "charge",
+  "amount": 246168,
+  "amount_captured": 246168,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcQDIXzmwTQX10Aikzm8S",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745434,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-STAM-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-23",
+   "location_key": "maple/stamford",
+   "qbo_invoice_no": "ML-STAM-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:stamford:2026-09-23"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 51,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcQDIXzmwTQX10fSlcrEQ",
+  "payment_method": "pm_1UgEcQDIXzmwTQX1SVHZl1j8",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 246168,
+    "authorization_code": "381826",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 246168,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1790175600
+ },
+ {
+  "id": "ch_3UgEcPDIXzmwTQX10WrQY282",
+  "object": "charge",
+  "amount": 235421,
+  "amount_captured": 235421,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcPDIXzmwTQX10E24W4Dn",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745434,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "description": "Invoice payment ML-STAM-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-09",
+   "location_key": "maple/stamford",
+   "qbo_invoice_no": "ML-STAM-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:maple:stamford:2026-08-09"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 53,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcPDIXzmwTQX10cJAVGee",
+  "payment_method": "pm_1UgEcPDIXzmwTQX1EVCy9Ki7",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 235421,
+    "authorization_code": "296479",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 235421,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786287600
+ },
+ {
+  "id": "ch_3UgEcPDIXzmwTQX11n3iUdeg",
+  "object": "charge",
+  "amount": 262705,
+  "amount_captured": 262705,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcPDIXzmwTQX11YHLI6Ub",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745433,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-WILL-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-13",
+   "location_key": "harbor/williamsburg",
+   "qbo_invoice_no": "HF-WILL-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:williamsburg:2026-09-13"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 42,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcPDIXzmwTQX11TH9x2sP",
+  "payment_method": "pm_1UgEcPDIXzmwTQX1oKsz1Wsc",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 262705,
+    "authorization_code": "409893",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 262705,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789311600
+ },
+ {
+  "id": "ch_3UgEcODIXzmwTQX11o1liQCA",
+  "object": "charge",
+  "amount": 269807,
+  "amount_captured": 269807,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcODIXzmwTQX11jXxVUGG",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745432,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-WILL-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-13",
+   "location_key": "harbor/williamsburg",
+   "qbo_invoice_no": "HF-WILL-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:williamsburg:2026-08-13"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 35,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcODIXzmwTQX11fm73Y1H",
+  "payment_method": "pm_1UgEcODIXzmwTQX1mjguSuje",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 269807,
+    "authorization_code": "577577",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 269807,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786633200
+ },
+ {
+  "id": "ch_3UgEcNDIXzmwTQX11inMFs6C",
+  "object": "charge",
+  "amount": 243800,
+  "amount_captured": 243800,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcNDIXzmwTQX11nyYDoC3",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745431,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-PARK-2609",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-10-12",
+   "location_key": "harbor/parkslope",
+   "qbo_invoice_no": "HF-PARK-2609",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:parkslope:2026-10-12"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 35,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcNDIXzmwTQX11cIT4iYr",
+  "payment_method": "pm_1UgEcNDIXzmwTQX1qWWvgC1N",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 243800,
+    "authorization_code": "248592",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 243800,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1791817200
+ },
+ {
+  "id": "ch_3UgEcMDIXzmwTQX11IgjwwDr",
+  "object": "charge",
+  "amount": 256148,
+  "amount_captured": 256148,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcMDIXzmwTQX11AFrn8so",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745430,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-PARK-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-22",
+   "location_key": "harbor/parkslope",
+   "qbo_invoice_no": "HF-PARK-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:parkslope:2026-09-22"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 5,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcMDIXzmwTQX113Rm82RW",
+  "payment_method": "pm_1UgEcMDIXzmwTQX1blLwZO2a",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 256148,
+    "authorization_code": "297807",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 256148,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1790089200
+ },
+ {
+  "id": "ch_3UgEcLDIXzmwTQX10AZajQAp",
+  "object": "charge",
+  "amount": 257273,
+  "amount_captured": 257273,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcLDIXzmwTQX10pXMzmwG",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745429,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-PARK-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-11",
+   "location_key": "harbor/parkslope",
+   "qbo_invoice_no": "HF-PARK-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:parkslope:2026-08-11"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 58,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcLDIXzmwTQX10M2Ksfij",
+  "payment_method": "pm_1UgEcLDIXzmwTQX1CYcRZS4A",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 257273,
+    "authorization_code": "905353",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 257273,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1786460400
+ },
+ {
+  "id": "ch_3UgEcKDIXzmwTQX11ernht0O",
+  "object": "charge",
+  "amount": 266129,
+  "amount_captured": 266129,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcKDIXzmwTQX11sgmKlWU",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745429,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-ASTO-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-20",
+   "location_key": "harbor/astoria",
+   "qbo_invoice_no": "HF-ASTO-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:astoria:2026-09-20"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 59,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcKDIXzmwTQX11zlbTgrY",
+  "payment_method": "pm_1UgEcKDIXzmwTQX1na3kO97N",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 266129,
+    "authorization_code": "722348",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 266129,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789916400
+ },
+ {
+  "id": "ch_3UgEcJDIXzmwTQX11JMhElzW",
+  "object": "charge",
+  "amount": 273115,
+  "amount_captured": 273115,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcJDIXzmwTQX116hkFgoq",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745428,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-ASTO-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-27",
+   "location_key": "harbor/astoria",
+   "qbo_invoice_no": "HF-ASTO-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:astoria:2026-08-27"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 32,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcJDIXzmwTQX11GnPSy16",
+  "payment_method": "pm_1UgEcJDIXzmwTQX1OLM3vCZl",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 273115,
+    "authorization_code": "836001",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 273115,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "ch_3UgEcIDIXzmwTQX11m0DgU67",
+  "object": "charge",
+  "amount": 258975,
+  "amount_captured": 258975,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcIDIXzmwTQX1133HkSn8",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745427,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-JCHE-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-27",
+   "location_key": "harbor/jcheights",
+   "qbo_invoice_no": "HF-JCHE-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:jcheights:2026-09-27"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 28,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcIDIXzmwTQX11cTCHUwQ",
+  "payment_method": "pm_1UgEcIDIXzmwTQX1nuIprGcq",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 258975,
+    "authorization_code": "994377",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 258975,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1790521200
+ },
+ {
+  "id": "ch_3UgEcIDIXzmwTQX102L5urBK",
+  "object": "charge",
+  "amount": 266360,
+  "amount_captured": 266360,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcIDIXzmwTQX10Z6BbAIu",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745426,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-JCHE-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-20",
+   "location_key": "harbor/jcheights",
+   "qbo_invoice_no": "HF-JCHE-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:jcheights:2026-08-20"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 22,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcIDIXzmwTQX10aWnjCn4",
+  "payment_method": "pm_1UgEcIDIXzmwTQX1GeN6k0pW",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 266360,
+    "authorization_code": "912526",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 266360,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787238000
+ },
+ {
+  "id": "ch_3UgEcHDIXzmwTQX11lUZgnOF",
+  "object": "charge",
+  "amount": 260635,
+  "amount_captured": 260635,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcHDIXzmwTQX11CEOyib4",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745425,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-HOBO-2608",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-09-12",
+   "location_key": "harbor/hoboken",
+   "qbo_invoice_no": "HF-HOBO-2608",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:hoboken:2026-09-12"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 32,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcHDIXzmwTQX11W2cvX59",
+  "payment_method": "pm_1UgEcHDIXzmwTQX1gJZr5jwX",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 260635,
+    "authorization_code": "199440",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 260635,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1789225200
+ },
+ {
+  "id": "ch_3UgEcGDIXzmwTQX10rZNvOnl",
+  "object": "charge",
+  "amount": 257940,
+  "amount_captured": 257940,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_3UgEcGDIXzmwTQX10aMHdE6q",
+  "billing_details": {
+   "address": {
+    "city": null,
+    "country": null,
+    "line1": null,
+    "line2": null,
+    "postal_code": null,
+    "state": null
+   },
+   "email": null,
+   "name": null,
+   "phone": null,
+   "tax_id": null
+  },
+  "calculated_statement_descriptor": "Stripe",
+  "captured": true,
+  "created": 1795745424,
+  "currency": "usd",
+  "customer": "cus_VhdrgJBt4Ft3jG",
+  "description": "Invoice payment HF-HOBO-2607",
+  "destination": null,
+  "dispute": null,
+  "disputed": false,
+  "failure_balance_transaction": null,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "livemode": false,
+  "metadata": {
+   "event_date": "2026-08-18",
+   "location_key": "harbor/hoboken",
+   "qbo_invoice_no": "HF-HOBO-2607",
+   "scenario_id": "S00",
+   "seed_key": "S00:sp:harbor:hoboken:2026-08-18"
+  },
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": {
+   "advice_code": null,
+   "network_advice_code": null,
+   "network_decline_code": null,
+   "network_status": "approved_by_network",
+   "reason": null,
+   "risk_level": "normal",
+   "risk_score": 64,
+   "seller_message": "Payment complete.",
+   "type": "authorized"
+  },
+  "paid": true,
+  "payment_intent": "pi_3UgEcGDIXzmwTQX10q1xbmox",
+  "payment_method": "pm_1UgEcGDIXzmwTQX1rw7r6HNF",
+  "payment_method_details": {
+   "card": {
+    "amount_authorized": 257940,
+    "authorization_code": "110529",
+    "brand": "visa",
+    "checks": {
+     "address_line1_check": null,
+     "address_postal_code_check": null,
+     "cvc_check": "pass"
+    },
+    "country": "US",
+    "electronic_commerce_indicator": "07",
+    "exp_month": 11,
+    "exp_year": 2027,
+    "extended_authorization": {
+     "status": "disabled"
+    },
+    "fingerprint": "ikSifNfluWfWJ9Ip",
+    "funding": "credit",
+    "incremental_authorization": {
+     "status": "unavailable"
+    },
+    "installments": null,
+    "last4": "4242",
+    "mandate": null,
+    "multicapture": {
+     "status": "unavailable"
+    },
+    "network": "visa",
+    "network_token": {
+     "used": false
+    },
+    "network_transaction_id": "105107831051027",
+    "overcapture": {
+     "maximum_amount_capturable": 257940,
+     "status": "unavailable"
+    },
+    "regulated_status": "unregulated",
+    "three_d_secure": null,
+    "transaction_link_id": null,
+    "wallet": null
+   },
+   "type": "card"
+  },
+  "radar_options": {},
+  "receipt_email": null,
+  "receipt_number": null,
+  "refunded": false,
+  "review": null,
+  "shipping": null,
+  "source": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null,
+  "_fixture_created": 1787065200
+ }
+]

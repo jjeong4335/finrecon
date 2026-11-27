@@ -1,0 +1,1282 @@
+[
+ {
+  "id": "txn_3UgEclDIXzmwTQX10crgWAaI",
+  "object": "balance_transaction",
+  "amount": -15000,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745463,
+  "currency": "usd",
+  "description": "REFUND FOR CHARGE (Invoice payment SP-NEWA-2609)",
+  "exchange_rate": null,
+  "fee": 0,
+  "fee_details": [],
+  "net": -15000,
+  "reporting_category": "refund",
+  "source": "re_3UgEclDIXzmwTQX10clE6yEW",
+  "status": "pending",
+  "type": "refund",
+  "_fixture_created": 1792681200
+ },
+ {
+  "id": "txn_3UgEclDIXzmwTQX10M2kkAF5",
+  "object": "balance_transaction",
+  "amount": -20000,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745462,
+  "currency": "usd",
+  "description": "REFUND FOR CHARGE (Invoice payment ML-NEWR-2609)",
+  "exchange_rate": null,
+  "fee": 0,
+  "fee_details": [],
+  "net": -20000,
+  "reporting_category": "refund",
+  "source": "re_3UgEclDIXzmwTQX10uDXlfAg",
+  "status": "pending",
+  "type": "refund",
+  "_fixture_created": 1792940400
+ },
+ {
+  "id": "txn_3UgEcrDIXzmwTQX109uCI3s7",
+  "object": "balance_transaction",
+  "amount": 265743,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745461,
+  "currency": "usd",
+  "description": "Invoice payment SP-NEWA-2609 (stale checkout link)",
+  "exchange_rate": null,
+  "fee": 7737,
+  "fee_details": [
+   {
+    "amount": 7737,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 258006,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcrDIXzmwTQX10M5Ze5Qk",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1795186800
+ },
+ {
+  "id": "txn_3UgEcqDIXzmwTQX10pcFzVCm",
+  "object": "balance_transaction",
+  "amount": 75000,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745460,
+  "currency": "usd",
+  "description": "Event sponsorship deposit",
+  "exchange_rate": null,
+  "fee": 2205,
+  "fee_details": [
+   {
+    "amount": 2205,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 72795,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcqDIXzmwTQX10IbxqbYp",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1793718000
+ },
+ {
+  "id": "txn_3UgEcpDIXzmwTQX11AQfcbOd",
+  "object": "balance_transaction",
+  "amount": 234025,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745459,
+  "currency": "usd",
+  "description": "Invoice payment SP-EDIS-2609",
+  "exchange_rate": null,
+  "fee": 6817,
+  "fee_details": [
+   {
+    "amount": 6817,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 227208,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcpDIXzmwTQX111ADDii7",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791903600
+ },
+ {
+  "id": "txn_3UgEcoDIXzmwTQX10uGZIlui",
+  "object": "balance_transaction",
+  "amount": 273793,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745459,
+  "currency": "usd",
+  "description": "Invoice payment SP-MONT-2609",
+  "exchange_rate": null,
+  "fee": 7970,
+  "fee_details": [
+   {
+    "amount": 7970,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 265823,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcoDIXzmwTQX10Qe4xYwc",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1795964400
+ },
+ {
+  "id": "txn_3UgEcoDIXzmwTQX10TErN8dH",
+  "object": "balance_transaction",
+  "amount": 50000,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745458,
+  "currency": "usd",
+  "description": "Creative production deposit",
+  "exchange_rate": null,
+  "fee": 1480,
+  "fee_details": [
+   {
+    "amount": 1480,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 48520,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcoDIXzmwTQX10RXYYo5a",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792681200
+ },
+ {
+  "id": "txn_3UgEcnDIXzmwTQX105Y5oR7C",
+  "object": "balance_transaction",
+  "amount": 50000,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745457,
+  "currency": "usd",
+  "description": "Creative production deposit",
+  "exchange_rate": null,
+  "fee": 1480,
+  "fee_details": [
+   {
+    "amount": 1480,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 48520,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcnDIXzmwTQX10XZSXt6h",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792594800
+ },
+ {
+  "id": "txn_3UgEcmDIXzmwTQX10PR772Wd",
+  "object": "balance_transaction",
+  "amount": 268549,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745456,
+  "currency": "usd",
+  "description": "Invoice payment SP-PATE-2609",
+  "exchange_rate": null,
+  "fee": 7818,
+  "fee_details": [
+   {
+    "amount": 7818,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 260731,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcmDIXzmwTQX10oD9b2yQ",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792162800
+ },
+ {
+  "id": "txn_3UgEclDIXzmwTQX10yw5zYeE",
+  "object": "balance_transaction",
+  "amount": 249069,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745455,
+  "currency": "usd",
+  "description": "Invoice payment SP-NEWA-2609",
+  "exchange_rate": null,
+  "fee": 7253,
+  "fee_details": [
+   {
+    "amount": 7253,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 241816,
+  "reporting_category": "charge",
+  "source": "ch_3UgEclDIXzmwTQX10SS0i3rH",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791558000
+ },
+ {
+  "id": "txn_3UgEclDIXzmwTQX10077IeCI",
+  "object": "balance_transaction",
+  "amount": 236098,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745455,
+  "currency": "usd",
+  "description": "Invoice payment ML-NEWR-2609",
+  "exchange_rate": null,
+  "fee": 6877,
+  "fee_details": [
+   {
+    "amount": 6877,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 229221,
+  "reporting_category": "charge",
+  "source": "ch_3UgEclDIXzmwTQX10VGrw0O9",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791644400
+ },
+ {
+  "id": "txn_3UgEckDIXzmwTQX10AK35BMu",
+  "object": "balance_transaction",
+  "amount": 272656,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745454,
+  "currency": "usd",
+  "description": "Invoice payment ML-YONK-2609",
+  "exchange_rate": null,
+  "fee": 7937,
+  "fee_details": [
+   {
+    "amount": 7937,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 264719,
+  "reporting_category": "charge",
+  "source": "ch_3UgEckDIXzmwTQX10LDNtgJb",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791990000
+ },
+ {
+  "id": "txn_3UgEcjDIXzmwTQX107aRmzH5",
+  "object": "balance_transaction",
+  "amount": 234833,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745453,
+  "currency": "usd",
+  "description": "Invoice payment ML-STAM-2609",
+  "exchange_rate": null,
+  "fee": 6840,
+  "fee_details": [
+   {
+    "amount": 6840,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 227993,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcjDIXzmwTQX10EIAWAxZ",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792508400
+ },
+ {
+  "id": "txn_3UgEciDIXzmwTQX11HiVAWfV",
+  "object": "balance_transaction",
+  "amount": 231008,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745452,
+  "currency": "usd",
+  "description": "Invoice payment HF-WILL-2609",
+  "exchange_rate": null,
+  "fee": 6729,
+  "fee_details": [
+   {
+    "amount": 6729,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 224279,
+  "reporting_category": "charge",
+  "source": "ch_3UgEciDIXzmwTQX11Budf3z8",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792335600
+ },
+ {
+  "id": "txn_3UgEchDIXzmwTQX10keTPGaA",
+  "object": "balance_transaction",
+  "amount": 500920,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745451,
+  "currency": "usd",
+  "description": "Invoice payment HF-ASTO-2609, HF-ASTO-2610",
+  "exchange_rate": null,
+  "fee": 14557,
+  "fee_details": [
+   {
+    "amount": 14557,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 486363,
+  "reporting_category": "charge",
+  "source": "ch_3UgEchDIXzmwTQX10KgjODh2",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1794495600
+ },
+ {
+  "id": "txn_3UgEcgDIXzmwTQX11eEtIiTi",
+  "object": "balance_transaction",
+  "amount": 120657,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745451,
+  "currency": "usd",
+  "description": "Invoice payment HF-JCHE-2609",
+  "exchange_rate": null,
+  "fee": 3529,
+  "fee_details": [
+   {
+    "amount": 3529,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 117128,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcgDIXzmwTQX11RNWiuz7",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1793026800
+ },
+ {
+  "id": "txn_3UgEcgDIXzmwTQX10hsffWRr",
+  "object": "balance_transaction",
+  "amount": 120656,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745450,
+  "currency": "usd",
+  "description": "Invoice payment HF-JCHE-2609",
+  "exchange_rate": null,
+  "fee": 3529,
+  "fee_details": [
+   {
+    "amount": 3529,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 117127,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcgDIXzmwTQX10rIzYRXZ",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791817200
+ },
+ {
+  "id": "txn_3UgEcfDIXzmwTQX112ZPu18N",
+  "object": "balance_transaction",
+  "amount": 103067,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745449,
+  "currency": "usd",
+  "description": "Invoice payment HF-HOBO-2609",
+  "exchange_rate": null,
+  "fee": 3019,
+  "fee_details": [
+   {
+    "amount": 3019,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 100048,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcfDIXzmwTQX11nDCiTA1",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792076400
+ },
+ {
+  "id": "txn_3UgEceDIXzmwTQX11GKwwgbi",
+  "object": "balance_transaction",
+  "amount": 265679,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745448,
+  "currency": "usd",
+  "description": "Invoice payment SP-MONT-2608",
+  "exchange_rate": null,
+  "fee": 7735,
+  "fee_details": [
+   {
+    "amount": 7735,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 257944,
+  "reporting_category": "charge",
+  "source": "ch_3UgEceDIXzmwTQX11YuC1M5x",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789570800
+ },
+ {
+  "id": "txn_3UgEcdDIXzmwTQX119TEX086",
+  "object": "balance_transaction",
+  "amount": 281841,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745447,
+  "currency": "usd",
+  "description": "Invoice payment SP-MONT-2607",
+  "exchange_rate": null,
+  "fee": 8203,
+  "fee_details": [
+   {
+    "amount": 8203,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 273638,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcdDIXzmwTQX11o32z145",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786806000
+ },
+ {
+  "id": "txn_3UgEccDIXzmwTQX10TqYp8SA",
+  "object": "balance_transaction",
+  "amount": 288619,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745447,
+  "currency": "usd",
+  "description": "Invoice payment SP-HACK-2609",
+  "exchange_rate": null,
+  "fee": 8400,
+  "fee_details": [
+   {
+    "amount": 8400,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 280219,
+  "reporting_category": "charge",
+  "source": "ch_3UgEccDIXzmwTQX106ItvmVF",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1792076400
+ },
+ {
+  "id": "txn_3UgEccDIXzmwTQX10aHPAgns",
+  "object": "balance_transaction",
+  "amount": 276605,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745446,
+  "currency": "usd",
+  "description": "Invoice payment SP-HACK-2608",
+  "exchange_rate": null,
+  "fee": 8052,
+  "fee_details": [
+   {
+    "amount": 8052,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 268553,
+  "reporting_category": "charge",
+  "source": "ch_3UgEccDIXzmwTQX10JJNS3nZ",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1788793200
+ },
+ {
+  "id": "txn_3UgEcbDIXzmwTQX10PaTxN5Y",
+  "object": "balance_transaction",
+  "amount": 263341,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745445,
+  "currency": "usd",
+  "description": "Invoice payment SP-HACK-2607",
+  "exchange_rate": null,
+  "fee": 7667,
+  "fee_details": [
+   {
+    "amount": 7667,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 255674,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcbDIXzmwTQX10xc8qCzz",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "txn_3UgEcaDIXzmwTQX10xHgMpx8",
+  "object": "balance_transaction",
+  "amount": 287648,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745444,
+  "currency": "usd",
+  "description": "Invoice payment SP-EDIS-2608",
+  "exchange_rate": null,
+  "fee": 8372,
+  "fee_details": [
+   {
+    "amount": 8372,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 279276,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcaDIXzmwTQX10n08e6nE",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1788966000
+ },
+ {
+  "id": "txn_3UgEcZDIXzmwTQX10VF9U993",
+  "object": "balance_transaction",
+  "amount": 287177,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745443,
+  "currency": "usd",
+  "description": "Invoice payment SP-EDIS-2607",
+  "exchange_rate": null,
+  "fee": 8358,
+  "fee_details": [
+   {
+    "amount": 8358,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 278819,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcZDIXzmwTQX101fRz4Ur",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786978800
+ },
+ {
+  "id": "txn_3UgEcZDIXzmwTQX11NzhmXfo",
+  "object": "balance_transaction",
+  "amount": 259894,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745443,
+  "currency": "usd",
+  "description": "Invoice payment SP-PATE-2608",
+  "exchange_rate": null,
+  "fee": 7567,
+  "fee_details": [
+   {
+    "amount": 7567,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 252327,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcZDIXzmwTQX11ozEjSdl",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1790434800
+ },
+ {
+  "id": "txn_3UgEcYDIXzmwTQX10njn5arF",
+  "object": "balance_transaction",
+  "amount": 250023,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745442,
+  "currency": "usd",
+  "description": "Invoice payment SP-PATE-2607",
+  "exchange_rate": null,
+  "fee": 7281,
+  "fee_details": [
+   {
+    "amount": 7281,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 242742,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcYDIXzmwTQX10wky7TKn",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "txn_3UgEcXDIXzmwTQX11oKJQB1t",
+  "object": "balance_transaction",
+  "amount": 251817,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745441,
+  "currency": "usd",
+  "description": "Invoice payment SP-NEWA-2608",
+  "exchange_rate": null,
+  "fee": 7333,
+  "fee_details": [
+   {
+    "amount": 7333,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 244484,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcXDIXzmwTQX11h5QWQw8",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789570800
+ },
+ {
+  "id": "txn_3UgEcWDIXzmwTQX10gWm6WDl",
+  "object": "balance_transaction",
+  "amount": 266668,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745440,
+  "currency": "usd",
+  "description": "Invoice payment SP-NEWA-2607",
+  "exchange_rate": null,
+  "fee": 7763,
+  "fee_details": [
+   {
+    "amount": 7763,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 258905,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcWDIXzmwTQX10VNkCmvy",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787670000
+ },
+ {
+  "id": "txn_3UgEcVDIXzmwTQX11U47f9CS",
+  "object": "balance_transaction",
+  "amount": 243965,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745439,
+  "currency": "usd",
+  "description": "Invoice payment ML-NEWR-2608",
+  "exchange_rate": null,
+  "fee": 7105,
+  "fee_details": [
+   {
+    "amount": 7105,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 236860,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcVDIXzmwTQX11WEVAPXL",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789743600
+ },
+ {
+  "id": "txn_3UgEcUDIXzmwTQX10nR3Q45x",
+  "object": "balance_transaction",
+  "amount": 282345,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745438,
+  "currency": "usd",
+  "description": "Invoice payment ML-NEWR-2607",
+  "exchange_rate": null,
+  "fee": 8218,
+  "fee_details": [
+   {
+    "amount": 8218,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 274127,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcUDIXzmwTQX10nKZ9VJH",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786374000
+ },
+ {
+  "id": "txn_3UgEcTDIXzmwTQX10FkF8lee",
+  "object": "balance_transaction",
+  "amount": 253611,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745437,
+  "currency": "usd",
+  "description": "Invoice payment ML-YONK-2608",
+  "exchange_rate": null,
+  "fee": 7385,
+  "fee_details": [
+   {
+    "amount": 7385,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 246226,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcTDIXzmwTQX10r1RuUKy",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789830000
+ },
+ {
+  "id": "txn_3UgEcTDIXzmwTQX10Eg3m0RR",
+  "object": "balance_transaction",
+  "amount": 248210,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745437,
+  "currency": "usd",
+  "description": "Invoice payment ML-YONK-2607",
+  "exchange_rate": null,
+  "fee": 7228,
+  "fee_details": [
+   {
+    "amount": 7228,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 240982,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcTDIXzmwTQX104PiAkgc",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786201200
+ },
+ {
+  "id": "txn_3UgEcSDIXzmwTQX10fmkKHWz",
+  "object": "balance_transaction",
+  "amount": 261749,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745436,
+  "currency": "usd",
+  "description": "Invoice payment ML-WHIT-2608",
+  "exchange_rate": null,
+  "fee": 7621,
+  "fee_details": [
+   {
+    "amount": 7621,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 254128,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcSDIXzmwTQX102BIC4OC",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789138800
+ },
+ {
+  "id": "txn_3UgEcRDIXzmwTQX11fOLEwlS",
+  "object": "balance_transaction",
+  "amount": 249804,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745435,
+  "currency": "usd",
+  "description": "Invoice payment ML-WHIT-2607",
+  "exchange_rate": null,
+  "fee": 7274,
+  "fee_details": [
+   {
+    "amount": 7274,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 242530,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcRDIXzmwTQX11zuth5Mf",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786978800
+ },
+ {
+  "id": "txn_3UgEcQDIXzmwTQX10Aikzm8S",
+  "object": "balance_transaction",
+  "amount": 246168,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745434,
+  "currency": "usd",
+  "description": "Invoice payment ML-STAM-2608",
+  "exchange_rate": null,
+  "fee": 7169,
+  "fee_details": [
+   {
+    "amount": 7169,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 238999,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcQDIXzmwTQX10B3BsQqi",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1790175600
+ },
+ {
+  "id": "txn_3UgEcPDIXzmwTQX10E24W4Dn",
+  "object": "balance_transaction",
+  "amount": 235421,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745434,
+  "currency": "usd",
+  "description": "Invoice payment ML-STAM-2607",
+  "exchange_rate": null,
+  "fee": 6857,
+  "fee_details": [
+   {
+    "amount": 6857,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 228564,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcPDIXzmwTQX10WrQY282",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786287600
+ },
+ {
+  "id": "txn_3UgEcPDIXzmwTQX11YHLI6Ub",
+  "object": "balance_transaction",
+  "amount": 262705,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745433,
+  "currency": "usd",
+  "description": "Invoice payment HF-WILL-2608",
+  "exchange_rate": null,
+  "fee": 7648,
+  "fee_details": [
+   {
+    "amount": 7648,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 255057,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcPDIXzmwTQX11n3iUdeg",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789311600
+ },
+ {
+  "id": "txn_3UgEcODIXzmwTQX11jXxVUGG",
+  "object": "balance_transaction",
+  "amount": 269807,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745432,
+  "currency": "usd",
+  "description": "Invoice payment HF-WILL-2607",
+  "exchange_rate": null,
+  "fee": 7854,
+  "fee_details": [
+   {
+    "amount": 7854,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 261953,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcODIXzmwTQX11o1liQCA",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786633200
+ },
+ {
+  "id": "txn_3UgEcNDIXzmwTQX11nyYDoC3",
+  "object": "balance_transaction",
+  "amount": 243800,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745431,
+  "currency": "usd",
+  "description": "Invoice payment HF-PARK-2609",
+  "exchange_rate": null,
+  "fee": 7100,
+  "fee_details": [
+   {
+    "amount": 7100,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 236700,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcNDIXzmwTQX11inMFs6C",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1791817200
+ },
+ {
+  "id": "txn_3UgEcMDIXzmwTQX11AFrn8so",
+  "object": "balance_transaction",
+  "amount": 256148,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745430,
+  "currency": "usd",
+  "description": "Invoice payment HF-PARK-2608",
+  "exchange_rate": null,
+  "fee": 7458,
+  "fee_details": [
+   {
+    "amount": 7458,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 248690,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcMDIXzmwTQX11IgjwwDr",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1790089200
+ },
+ {
+  "id": "txn_3UgEcLDIXzmwTQX10pXMzmwG",
+  "object": "balance_transaction",
+  "amount": 257273,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745429,
+  "currency": "usd",
+  "description": "Invoice payment HF-PARK-2607",
+  "exchange_rate": null,
+  "fee": 7491,
+  "fee_details": [
+   {
+    "amount": 7491,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 249782,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcLDIXzmwTQX10AZajQAp",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1786460400
+ },
+ {
+  "id": "txn_3UgEcKDIXzmwTQX11sgmKlWU",
+  "object": "balance_transaction",
+  "amount": 266129,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745429,
+  "currency": "usd",
+  "description": "Invoice payment HF-ASTO-2608",
+  "exchange_rate": null,
+  "fee": 7748,
+  "fee_details": [
+   {
+    "amount": 7748,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 258381,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcKDIXzmwTQX11ernht0O",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789916400
+ },
+ {
+  "id": "txn_3UgEcJDIXzmwTQX116hkFgoq",
+  "object": "balance_transaction",
+  "amount": 273115,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745428,
+  "currency": "usd",
+  "description": "Invoice payment HF-ASTO-2607",
+  "exchange_rate": null,
+  "fee": 7950,
+  "fee_details": [
+   {
+    "amount": 7950,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 265165,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcJDIXzmwTQX11JMhElzW",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787842800
+ },
+ {
+  "id": "txn_3UgEcIDIXzmwTQX1133HkSn8",
+  "object": "balance_transaction",
+  "amount": 258975,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745427,
+  "currency": "usd",
+  "description": "Invoice payment HF-JCHE-2608",
+  "exchange_rate": null,
+  "fee": 7540,
+  "fee_details": [
+   {
+    "amount": 7540,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 251435,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcIDIXzmwTQX11m0DgU67",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1790521200
+ },
+ {
+  "id": "txn_3UgEcIDIXzmwTQX10Z6BbAIu",
+  "object": "balance_transaction",
+  "amount": 266360,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745426,
+  "currency": "usd",
+  "description": "Invoice payment HF-JCHE-2607",
+  "exchange_rate": null,
+  "fee": 7754,
+  "fee_details": [
+   {
+    "amount": 7754,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 258606,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcIDIXzmwTQX102L5urBK",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787238000
+ },
+ {
+  "id": "txn_3UgEcHDIXzmwTQX11CEOyib4",
+  "object": "balance_transaction",
+  "amount": 260635,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745425,
+  "currency": "usd",
+  "description": "Invoice payment HF-HOBO-2608",
+  "exchange_rate": null,
+  "fee": 7588,
+  "fee_details": [
+   {
+    "amount": 7588,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 253047,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcHDIXzmwTQX11lUZgnOF",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1789225200
+ },
+ {
+  "id": "txn_3UgEcGDIXzmwTQX10aMHdE6q",
+  "object": "balance_transaction",
+  "amount": 257940,
+  "available_on": 1796342400,
+  "balance_type": "payments",
+  "created": 1795745424,
+  "currency": "usd",
+  "description": "Invoice payment HF-HOBO-2607",
+  "exchange_rate": null,
+  "fee": 7510,
+  "fee_details": [
+   {
+    "amount": 7510,
+    "application": null,
+    "currency": "usd",
+    "description": "Stripe processing fees",
+    "type": "stripe_fee"
+   }
+  ],
+  "net": 250430,
+  "reporting_category": "charge",
+  "source": "ch_3UgEcGDIXzmwTQX10rZNvOnl",
+  "status": "pending",
+  "type": "charge",
+  "_fixture_created": 1787065200
+ }
+]

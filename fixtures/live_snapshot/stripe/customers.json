@@ -1,0 +1,98 @@
+[
+ {
+  "id": "cus_VhdrkpAhXHgJNz",
+  "object": "customer",
+  "address": null,
+  "balance": 0,
+  "created": 1795745287,
+  "currency": null,
+  "customer_account": null,
+  "default_source": null,
+  "delinquent": false,
+  "description": null,
+  "discount": null,
+  "email": null,
+  "invoice_prefix": "C6KPAVGZ",
+  "invoice_settings": {
+   "custom_fields": null,
+   "default_payment_method": null,
+   "footer": null,
+   "rendering_options": null
+  },
+  "livemode": false,
+  "metadata": {
+   "client_key": "sunbeam"
+  },
+  "name": "Sunbeam Pizza Franchise",
+  "next_invoice_sequence": 1,
+  "phone": null,
+  "preferred_locales": [],
+  "shipping": null,
+  "tax_exempt": "none",
+  "test_clock": null
+ },
+ {
+  "id": "cus_Vhdr4VR1Gh1kNw",
+  "object": "customer",
+  "address": null,
+  "balance": 0,
+  "created": 1795745287,
+  "currency": null,
+  "customer_account": null,
+  "default_source": null,
+  "delinquent": false,
+  "description": null,
+  "discount": null,
+  "email": null,
+  "invoice_prefix": "FUNQ0HRO",
+  "invoice_settings": {
+   "custom_fields": null,
+   "default_payment_method": null,
+   "footer": null,
+   "rendering_options": null
+  },
+  "livemode": false,
+  "metadata": {
+   "client_key": "maple"
+  },
+  "name": "Maple Leaf Dental Group",
+  "next_invoice_sequence": 1,
+  "phone": null,
+  "preferred_locales": [],
+  "shipping": null,
+  "tax_exempt": "none",
+  "test_clock": null
+ },
+ {
+  "id": "cus_VhdrgJBt4Ft3jG",
+  "object": "customer",
+  "address": null,
+  "balance": 0,
+  "created": 1795745287,
+  "currency": null,
+  "customer_account": null,
+  "default_source": null,
+  "delinquent": false,
+  "description": null,
+  "discount": null,
+  "email": null,
+  "invoice_prefix": "85BS6V07",
+  "invoice_settings": {
+   "custom_fields": null,
+   "default_payment_method": null,
+   "footer": null,
+   "rendering_options": null
+  },
+  "livemode": false,
+  "metadata": {
+   "client_key": "harbor"
+  },
+  "name": "Harbor Fitness Co.",
+  "next_invoice_sequence": 1,
+  "phone": null,
+  "preferred_locales": [],
+  "shipping": null,
+  "tax_exempt": "none",
+  "test_clock": null
+ }
+]

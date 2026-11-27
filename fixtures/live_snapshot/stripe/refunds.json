@@ -1,0 +1,70 @@
+[
+ {
+  "id": "re_3UgEclDIXzmwTQX10clE6yEW",
+  "object": "refund",
+  "amount": 15000,
+  "application": null,
+  "balance_transaction": "txn_3UgEclDIXzmwTQX10crgWAaI",
+  "charge": "ch_3UgEclDIXzmwTQX10SS0i3rH",
+  "created": 1795745463,
+  "currency": "usd",
+  "customer": "cus_VhdrkpAhXHgJNz",
+  "customer_account": null,
+  "destination_details": {
+   "card": {
+    "reference": "2950839406658145",
+    "reference_status": "available",
+    "reference_type": "acquirer_reference_number",
+    "type": "refund"
+   },
+   "type": "card"
+  },
+  "metadata": {
+   "event_date": "2026-10-22",
+   "scenario_id": "S09",
+   "seed_key": "S09:re:sunbeam:newark"
+  },
+  "payment_intent": "pi_3UgEclDIXzmwTQX10O94R2XU",
+  "payment_method": "pm_1UgEclDIXzmwTQX1ayenr4OY",
+  "reason": null,
+  "receipt_number": null,
+  "source_transfer_reversal": null,
+  "status": "succeeded",
+  "transfer_reversal": null,
+  "_fixture_created": 1792681200
+ },
+ {
+  "id": "re_3UgEclDIXzmwTQX10uDXlfAg",
+  "object": "refund",
+  "amount": 20000,
+  "application": null,
+  "balance_transaction": "txn_3UgEclDIXzmwTQX10M2kkAF5",
+  "charge": "ch_3UgEclDIXzmwTQX10VGrw0O9",
+  "created": 1795745462,
+  "currency": "usd",
+  "customer": "cus_Vhdr4VR1Gh1kNw",
+  "customer_account": null,
+  "destination_details": {
+   "card": {
+    "reference": "7715735464287819",
+    "reference_status": "available",
+    "reference_type": "acquirer_reference_number",
+    "type": "refund"
+   },
+   "type": "card"
+  },
+  "metadata": {
+   "event_date": "2026-10-25",
+   "scenario_id": "S08",
+   "seed_key": "S08:re:maple:newrochelle"
+  },
+  "payment_intent": "pi_3UgEclDIXzmwTQX108CQVSgF",
+  "payment_method": "pm_1UgEckDIXzmwTQX1F564g7F7",
+  "reason": null,
+  "receipt_number": null,
+  "source_transfer_reversal": null,
+  "status": "succeeded",
+  "transfer_reversal": null,
+  "_fixture_created": 1792940400
+ }
+]

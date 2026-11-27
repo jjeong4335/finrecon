@@ -1,0 +1,196 @@
+{
+ "clients": [
+  {
+   "client_key": "harbor",
+   "name": "Harbor Fitness Co.",
+   "billing_rule": {
+    "mgmt_fee_bps": 1200,
+    "min_fee_cents": 15000,
+    "discount_bps": 0,
+    "tax_bps": 0,
+    "currency": "USD",
+    "description": "Ad spend + 12% management fee (minimum $150.00 per location-month)"
+   },
+   "external": {
+    "qbo_customer_id": "58",
+    "stripe_customer_id": "cus_VhdrgJBt4Ft3jG",
+    "ad_client_id": "adv-101"
+   },
+   "locations": [
+    {
+     "location_key": "hoboken",
+     "name": "Hoboken",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "59",
+      "ad_location_id": "adv-101-01"
+     }
+    },
+    {
+     "location_key": "jcheights",
+     "name": "Jersey City Heights",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "60",
+      "ad_location_id": "adv-101-02"
+     }
+    },
+    {
+     "location_key": "astoria",
+     "name": "Astoria",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "61",
+      "ad_location_id": "adv-101-03"
+     }
+    },
+    {
+     "location_key": "parkslope",
+     "name": "Park Slope",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "62",
+      "ad_location_id": "adv-101-04"
+     }
+    },
+    {
+     "location_key": "williamsburg",
+     "name": "Williamsburg",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "63",
+      "ad_location_id": "adv-101-05"
+     }
+    }
+   ]
+  },
+  {
+   "client_key": "maple",
+   "name": "Maple Leaf Dental Group",
+   "billing_rule": {
+    "mgmt_fee_bps": 1000,
+    "min_fee_cents": 20000,
+    "discount_bps": 500,
+    "tax_bps": 400,
+    "currency": "USD",
+    "description": "Ad spend + 10% management fee (minimum $200.00), 5% loyalty discount on the fee, illustrative 4% tax on the net fee"
+   },
+   "external": {
+    "qbo_customer_id": "64",
+    "stripe_customer_id": "cus_Vhdr4VR1Gh1kNw",
+    "ad_client_id": "adv-102"
+   },
+   "locations": [
+    {
+     "location_key": "stamford",
+     "name": "Stamford",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "65",
+      "ad_location_id": "adv-102-01"
+     }
+    },
+    {
+     "location_key": "whiteplains",
+     "name": "White Plains",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "66",
+      "ad_location_id": "adv-102-02"
+     }
+    },
+    {
+     "location_key": "yonkers",
+     "name": "Yonkers",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "67",
+      "ad_location_id": "adv-102-03"
+     }
+    },
+    {
+     "location_key": "newrochelle",
+     "name": "New Rochelle",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "68",
+      "ad_location_id": "adv-102-04"
+     }
+    }
+   ]
+  },
+  {
+   "client_key": "sunbeam",
+   "name": "Sunbeam Pizza Franchise",
+   "billing_rule": {
+    "mgmt_fee_bps": 1500,
+    "min_fee_cents": 10000,
+    "discount_bps": 0,
+    "tax_bps": 0,
+    "currency": "USD",
+    "description": "Ad spend + 15% management fee (minimum $100.00 per location-month)"
+   },
+   "external": {
+    "qbo_customer_id": "69",
+    "stripe_customer_id": "cus_VhdrkpAhXHgJNz",
+    "ad_client_id": "adv-103"
+   },
+   "locations": [
+    {
+     "location_key": "newark",
+     "name": "Newark",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "70",
+      "ad_location_id": "adv-103-01"
+     }
+    },
+    {
+     "location_key": "paterson",
+     "name": "Paterson",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "71",
+      "ad_location_id": "adv-103-02"
+     }
+    },
+    {
+     "location_key": "edison",
+     "name": "Edison",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "72",
+      "ad_location_id": "adv-103-03"
+     }
+    },
+    {
+     "location_key": "hackensack",
+     "name": "Hackensack",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "73",
+      "ad_location_id": "adv-103-04"
+     }
+    },
+    {
+     "location_key": "montclair",
+     "name": "Montclair",
+     "opened_on": "2026-07-01",
+     "external": {
+      "qbo_customer_id": "74",
+      "ad_location_id": "adv-103-05"
+     }
+    },
+    {
+     "location_key": "morristown",
+     "name": "Morristown",
+     "opened_on": "2026-12-01",
+     "external": {
+      "qbo_customer_id": "75",
+      "ad_location_id": "adv-103-06"
+     }
+    }
+   ]
+  }
+ ]
+}

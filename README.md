@@ -256,6 +256,11 @@ on PaymentIntents (now `automatic_payment_methods`), Stripe remembers an idempot
 (keys now include a hash of the parameters), and token-refresh errors now report Intuit's own reason. The sandbox
 had no payouts yet, so payout checks ran only offline.
 
+**Public demo data.** `fixtures/live_snapshot/` holds the real API responses captured from that sandbox run
+(`python -m seed.live_seed capture`, with Stripe `client_secret` and receipt URLs removed). The deployed dashboard
+serves it offline, so it shows real sandbox data without holding any tokens, and CI checks on every push that it
+still reproduces 27 / 27.
+
 **Matching edge cases.** S17–S19 were added after a code review asked how the engine handles a wrong first
 record and coincidental same-amount candidates. Run against the new ground truth, the previous engine failed all
 three (it matched the wrong record and auto-matched contradicting candidates); the engine was then fixed. A

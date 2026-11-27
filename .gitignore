@@ -5,4 +5,3 @@ reports/
 __pycache__/
 *.pyc
 .pytest_cache/
-fixtures/live_snapshot/

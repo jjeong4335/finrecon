@@ -25,6 +25,6 @@ locations. The module shows data-engineering on real, messy data; the reconcilia
 - *Money.* Unit prices are kept as exact decimal text; line amounts are pence, rounded half-up, with a sub-penny flag.
 - *Chunked loading* (50,000 rows per transaction) with timings per stage in `retail_load_runs`.
 
-**Measured here.** A 1.07M-row load test in the same layout ran in about 57 s on SQLite (25 s parse, 29 s write,
-2 s validation); reading the real .xlsx adds about 1.5 min. The full load sequence was replayed on PostgreSQL 16
-with identical results.
+**Measured.** The real file (1,067,371 rows) loads in 73 s on a MacBook with SQLite: read + parse 40 s, write 26 s,
+validate 7 s. 22,523 rows (2.1%) are identical copies of invoices present in both sheets and are excluded once; no
+invoice differs between sheets. The full load sequence was also replayed on PostgreSQL 16 with identical results.

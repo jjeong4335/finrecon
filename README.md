@@ -191,6 +191,28 @@ python -m finrecon.ingestion.uci_retail all      # download (~44 MB) and load; a
 | 1M+ rows | Chunked loads (50k rows per transaction) with timings per stage |
 
 Control checks prove nothing is lost: raw rows = parsed rows, and line totals = sum of classes = invoice totals.
+
+### Results on the real file
+
+Full load on a MacBook: **1,067,371 rows in 73 s** (read + parse 40 s, write 26 s, validate 7 s).
+
+| Check | Rows | Share | What it means |
+|---|---:|---:|---|
+| Rows read = rows kept | 1,067,371 | 100% | Nothing dropped; matches the row count UCI publishes |
+| Sheet overlap excluded | 22,523 | 2.1% of all rows | Invoices present identically in both sheets. Summing the sheets naively would count them twice |
+| Sheet overlap conflicts | 0 | | No invoice differs between the two sheets, so excluding the copy is safe |
+| Canonical lines | 1,044,848 | | Basis for every figure below |
+| Control totals | | | Lines = sum of classes = invoices = £18,909,762.10 (net of cancellations and adjustments) |
+| Missing customer ID | 235,287 | 22.5% | Kept in revenue, excluded from customer-level analysis |
+| Repeated identical lines | 22,813 | 2.2% | Flagged, not deleted: the data cannot tell a duplicate from two units keyed separately |
+| Cancellation lines | 19,165 | 1.8% | 15,913 (83%) traced to an earlier sale; 2,533 (13%) have none in the data; 719 (4%) have no customer ID |
+| Zero unit price | 6,024 | 0.6% | Flagged |
+| Non-product lines | 4,794 | 0.5% | Postage, fees, manual lines |
+| Missing description | 4,275 | 0.4% | Flagged |
+| Stock adjustments | 3,362 | 0.3% | Negative quantity on a sale invoice |
+| Sub-penny amounts | 18 | | Rounded half-up to the penny |
+| Bad-debt adjustments | 6 | | `A…` invoices, kept apart from sales |
+| Invalid rows | 0 | | Every row parsed |
 The retail data has no Stripe or QuickBooks IDs, so it is never matched against the reconciliation, and `Country`
 is the customer's country, not a store location.
 
@@ -213,8 +235,7 @@ coverage, 429 retried · cents ↔ decimal conversion · every dashboard page ex
 UCI module: classification, duplicate vs. overlap handling, cancellation tracing, control totals, idempotent reload,
 both header variants (tested on hand-written rows in the UCI layout, `tests/fixtures/uci_format/`).
 
-**Scale:** a 1.07M-row load test in the UCI layout ran in about 57 s on SQLite (25 s parse, 29 s write, 2 s
-validation). Reading the real `.xlsx` adds about 1.5 minutes.
+**Scale:** the real 1,067,371-row file loads in 73 s on a MacBook (SQLite).
 
 **PostgreSQL compatibility:** the schema loads on PostgreSQL 16; all 124 application SELECTs were replayed on
 PostgreSQL with 66 final-state queries compared value by value against SQLite (identical), and all 85 write
@@ -230,7 +251,7 @@ PostgreSQL with identical resulting tables.
 | Streamlit pages | Executed against a recording stub; first real render happens in Docker |
 | Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
 | QBO / Stripe live adapters, `seed/live_seed.py` | Written from the public API docs, **not yet run against the sandboxes** |
-| UCI module on the real file | Loader tested on UCI-format rows and at 1.07M-row scale; **the real file has not been loaded yet** (this build environment had no internet). Run it where internet is available. |
+| UCI module on the real file | Loaded end to end on a MacBook: 1,067,371 rows in 73 s, control totals passed (results below) |
 | Docker Compose / EC2 / HTTPS | Configuration provided, not yet deployed |
 
 ## Local setup

@@ -1,0 +1,1383 @@
+{
+ "as_of": "2026-11-30",
+ "note": "Written from scenario intent in seed/scenarios.py, not from engine output.",
+ "scenarios": {
+  "S00": {
+   "title": "Baseline",
+   "description": "Invoice paid in Stripe and synced to QBO with the Stripe ID in the memo.",
+   "interview_question": "Q4 matching"
+  },
+  "S01": {
+   "title": "Partial payment",
+   "description": "Customer paid 40% of the invoice; balance remains open.",
+   "interview_question": "Q3 data model"
+  },
+  "S02": {
+   "title": "Split payment",
+   "description": "Two Stripe payments together settle one invoice.",
+   "interview_question": "Q3 data model"
+  },
+  "S03": {
+   "title": "One payment, two invoices",
+   "description": "A single payment is allocated across two invoices (LinkedTxn).",
+   "interview_question": "Q3 data model"
+  },
+  "S04": {
+   "title": "Amount mismatch",
+   "description": "Sync recorded $45 less in QBO than Stripe actually collected.",
+   "interview_question": "Q4 missing/mismatched"
+  },
+  "S05": {
+   "title": "Missing in QBO",
+   "description": "Stripe collected the money; the sync never created the QBO payment.",
+   "interview_question": "Q4 missing/mismatched"
+  },
+  "S06": {
+   "title": "Non-Stripe payment",
+   "description": "Customer paid by check. No Stripe record is expected.",
+   "interview_question": "Q4 missing/mismatched"
+  },
+  "S07": {
+   "title": "Duplicate import",
+   "description": "The sync imported the same Stripe payment twice; the copy sits unapplied.",
+   "interview_question": "Q2 accuracy"
+  },
+  "S08": {
+   "title": "Unrecorded refund",
+   "description": "Stripe refund was never reflected in QBO.",
+   "interview_question": "Q4 missing/mismatched"
+  },
+  "S09": {
+   "title": "Recorded refund",
+   "description": "Stripe refund recorded in QBO as a refund receipt.",
+   "interview_question": "Q4 matching"
+  },
+  "S10": {
+   "title": "Candidate match",
+   "description": "QBO card payment entered by hand without the Stripe ID; one unique candidate.",
+   "interview_question": "Q4 matching"
+  },
+  "S11": {
+   "title": "Ambiguous match",
+   "description": "Two identical Stripe deposits, one QBO entry. Needs a human.",
+   "interview_question": "Q4 matching"
+  },
+  "S12": {
+   "title": "Missing in Stripe",
+   "description": "QBO card payment references a Stripe payment that does not exist.",
+   "interview_question": "Q4 missing/mismatched"
+  },
+  "S13": {
+   "title": "Billing mismatch",
+   "description": "Invoice charged the management fee twice.",
+   "interview_question": "Q5 ad platform -> billing"
+  },
+  "S14": {
+   "title": "Pending sync",
+   "description": "Paid in Stripe yesterday; still inside the 2-day sync window.",
+   "interview_question": "Q2 accuracy"
+  },
+  "S15": {
+   "title": "Not invoiced",
+   "description": "Ad spend ran in October but no invoice was issued.",
+   "interview_question": "Q5 ad platform -> billing"
+  },
+  "S16": {
+   "title": "Open AR",
+   "description": "October invoices not yet due. Normal, not an exception.",
+   "interview_question": "Q3 data model"
+  },
+  "D01": {
+   "title": "Genuine zero",
+   "description": "New location, not live yet: zero spend is a real, complete answer.",
+   "interview_question": "Q2 completeness"
+  },
+  "D02": {
+   "title": "No data",
+   "description": "Ad API returns 503 for this location every time.",
+   "interview_question": "Q2 completeness"
+  },
+  "D03": {
+   "title": "Stale data",
+   "description": "Latest pull failed; last validated data is kept and flagged stale.",
+   "interview_question": "Q2 completeness"
+  },
+  "D04": {
+   "title": "Missing page",
+   "description": "Latest pull silently dropped a page.",
+   "interview_question": "Q1 automated pulls"
+  },
+  "D05": {
+   "title": "Totals disagree",
+   "description": "Latest pull's detail rows don't add up to the source summary.",
+   "interview_question": "Q2 accuracy"
+  },
+  "D06": {
+   "title": "Rate limited",
+   "description": "First request gets HTTP 429; retry succeeds.",
+   "interview_question": "Q1 automated pulls"
+  },
+  "D07": {
+   "title": "Duplicate rows",
+   "description": "Ad API repeats rows across pages; de-duplicated by source ID.",
+   "interview_question": "Q2 accuracy"
+  }
+ },
+ "transactions": [
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:astoria:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:astoria:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:hoboken:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:hoboken:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:jcheights:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:jcheights:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:parkslope:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:parkslope:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:parkslope:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:williamsburg:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:harbor:williamsburg:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:newrochelle:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:newrochelle:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:stamford:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:stamford:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:whiteplains:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:whiteplains:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:yonkers:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:maple:yonkers:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:edison:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:edison:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:edison:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:hackensack:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:hackensack:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:montclair:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:montclair:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:newark:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:newark:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:paterson:2026-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S00:inv:sunbeam:paterson:2026-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S01:inv:harbor:hoboken:2026-09",
+   "expected": "PARTIAL",
+   "scenario": "S01"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S02:inv:harbor:jcheights:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S02"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S03:inv:harbor:astoria:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S03"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S03:inv:harbor:astoria:2026-10",
+   "expected": "MATCHED",
+   "scenario": "S03"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S04:inv:harbor:williamsburg:2026-09",
+   "expected": "PARTIAL",
+   "scenario": "S04"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S05:inv:maple:stamford:2026-09",
+   "expected": "OPEN_AR",
+   "scenario": "S05"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S06:inv:maple:whiteplains:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S06"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S07:inv:maple:yonkers:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S07"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S08:inv:maple:newrochelle:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S08"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S09:inv:sunbeam:newark:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S09"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S10:inv:sunbeam:paterson:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S10"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S12:inv:harbor:parkslope:2026-10",
+   "expected": "MATCHED",
+   "scenario": "S12"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S13:inv:sunbeam:hackensack:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S13"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S14:inv:sunbeam:montclair:2026-09",
+   "expected": "OPEN_AR",
+   "scenario": "S14"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:harbor:hoboken:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:harbor:jcheights:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:harbor:williamsburg:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:maple:stamford:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:maple:whiteplains:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:maple:yonkers:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:sunbeam:edison:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:sunbeam:hackensack:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:sunbeam:montclair:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:sunbeam:newark:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S16:inv:sunbeam:paterson:2026-10",
+   "expected": "OPEN_AR",
+   "scenario": "S16"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:astoria:2026-08-28",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:astoria:2026-09-21",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:hoboken:2026-08-19",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:hoboken:2026-09-13",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:jcheights:2026-08-21",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:jcheights:2026-09-28",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:parkslope:2026-08-12",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:parkslope:2026-09-23",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:parkslope:2026-10-13",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:williamsburg:2026-08-14",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:harbor:williamsburg:2026-09-14",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:newrochelle:2026-08-11",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:newrochelle:2026-09-19",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:stamford:2026-08-10",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:stamford:2026-09-24",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:whiteplains:2026-08-18",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:whiteplains:2026-09-12",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:yonkers:2026-08-09",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:maple:yonkers:2026-09-20",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:edison:2026-08-18",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:edison:2026-09-10",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:edison:2026-10-28",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:hackensack:2026-08-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:hackensack:2026-09-16",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:hackensack:2026-10-16",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:montclair:2026-08-17",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:montclair:2026-09-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:newark:2026-08-26",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:newark:2026-09-17",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:paterson:2026-08-28",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S00:qp:sunbeam:paterson:2026-09-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S01:qp:harbor:hoboken:2026-10-16",
+   "expected": "MATCHED",
+   "scenario": "S01"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S02:qp:harbor:jcheights:2026-10-13",
+   "expected": "MATCHED",
+   "scenario": "S02"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S02:qp:harbor:jcheights:2026-10-27",
+   "expected": "MATCHED",
+   "scenario": "S02"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S03:qp:harbor:astoria:2026-11-13",
+   "expected": "MATCHED",
+   "scenario": "S03"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S04:qp:harbor:williamsburg:2026-10-19",
+   "expected": "AMOUNT_MISMATCH",
+   "scenario": "S04"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S06:qp:maple:whiteplains:2026-10-18",
+   "expected": "NON_STRIPE_PAYMENT",
+   "scenario": "S06"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S07:qp-dup:maple:yonkers:2026-10-15",
+   "expected": "DUPLICATE",
+   "scenario": "S07"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S07:qp:maple:yonkers:2026-10-15",
+   "expected": "MATCHED",
+   "scenario": "S07"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S08:qp:maple:newrochelle:2026-10-11",
+   "expected": "MATCHED",
+   "scenario": "S08"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S09:qp:sunbeam:newark:2026-10-10",
+   "expected": "MATCHED",
+   "scenario": "S09"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S10:qp:sunbeam:paterson:2026-10-17",
+   "expected": "MATCHED",
+   "scenario": "S10"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S11:qp:sunbeam:client:2026-10-22",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S11"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S12:qp:harbor:parkslope:2026-11-10",
+   "expected": "MISSING_IN_STRIPE",
+   "scenario": "S12"
+  },
+  {
+   "record_type": "qbo_refund",
+   "seed_key": "S09:qre:sunbeam:newark",
+   "expected": "MATCHED",
+   "scenario": "S09"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:astoria:2026-08-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:astoria:2026-09-20",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:hoboken:2026-08-18",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:hoboken:2026-09-12",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:jcheights:2026-08-20",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:jcheights:2026-09-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:parkslope:2026-08-11",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:parkslope:2026-09-22",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:parkslope:2026-10-12",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:williamsburg:2026-08-13",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:harbor:williamsburg:2026-09-13",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:newrochelle:2026-08-10",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:newrochelle:2026-09-18",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:stamford:2026-08-09",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:stamford:2026-09-23",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:whiteplains:2026-08-17",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:whiteplains:2026-09-11",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:yonkers:2026-08-08",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:maple:yonkers:2026-09-19",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:edison:2026-08-17",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:edison:2026-09-09",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:edison:2026-10-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-07",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-15",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-10-15",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-08-16",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-09-26",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:newark:2026-08-25",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:newark:2026-09-16",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:paterson:2026-08-27",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S00:sp:sunbeam:paterson:2026-09-26",
+   "expected": "MATCHED",
+   "scenario": "S00"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S01:sp:harbor:hoboken:2026-10-15",
+   "expected": "MATCHED",
+   "scenario": "S01"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S02:sp:harbor:jcheights:2026-10-12",
+   "expected": "MATCHED",
+   "scenario": "S02"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S02:sp:harbor:jcheights:2026-10-26",
+   "expected": "MATCHED",
+   "scenario": "S02"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S03:sp:harbor:astoria:2026-11-12",
+   "expected": "MATCHED",
+   "scenario": "S03"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S04:sp:harbor:williamsburg:2026-10-18",
+   "expected": "AMOUNT_MISMATCH",
+   "scenario": "S04"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S05:sp:maple:stamford:2026-10-20",
+   "expected": "MISSING_IN_QBO",
+   "scenario": "S05"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S07:sp:maple:yonkers:2026-10-14",
+   "expected": "MATCHED",
+   "scenario": "S07"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S08:sp:maple:newrochelle:2026-10-10",
+   "expected": "MATCHED",
+   "scenario": "S08"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S09:sp:sunbeam:newark:2026-10-09",
+   "expected": "MATCHED",
+   "scenario": "S09"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S10:sp:sunbeam:paterson:2026-10-16",
+   "expected": "MATCHED",
+   "scenario": "S10"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S11:sp:sunbeam:edison:2026-10-21",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S11"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S11:sp:sunbeam:hackensack:2026-10-22",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S11"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S14:sp:sunbeam:montclair:2026-11-29",
+   "expected": "PENDING_SYNC",
+   "scenario": "S14"
+  },
+  {
+   "record_type": "stripe_refund",
+   "seed_key": "S08:re:maple:newrochelle",
+   "expected": "UNRECORDED_REFUND",
+   "scenario": "S08"
+  },
+  {
+   "record_type": "stripe_refund",
+   "seed_key": "S09:re:sunbeam:newark",
+   "expected": "MATCHED",
+   "scenario": "S09"
+  }
+ ],
+ "data_status": [
+  {
+   "scope": "harbor/astoria",
+   "scenario": "D03",
+   "expected": "STALE"
+  },
+  {
+   "scope": "harbor/hoboken",
+   "scenario": "D06",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "harbor/jcheights",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "harbor/parkslope",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "harbor/williamsburg",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "maple/newrochelle",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "maple/stamford",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "maple/whiteplains",
+   "scenario": "D05",
+   "expected": "INCOMPLETE"
+  },
+  {
+   "scope": "maple/yonkers",
+   "scenario": "D04",
+   "expected": "INCOMPLETE"
+  },
+  {
+   "scope": "sunbeam/edison",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "sunbeam/hackensack",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "sunbeam/montclair",
+   "scenario": "S00",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "sunbeam/morristown",
+   "scenario": "D01",
+   "expected": "ZERO_TRANSACTIONS"
+  },
+  {
+   "scope": "sunbeam/newark",
+   "scenario": "D07",
+   "expected": "VALIDATED"
+  },
+  {
+   "scope": "sunbeam/paterson",
+   "scenario": "D02",
+   "expected": "NO_DATA"
+  }
+ ],
+ "billing": [
+  {
+   "check_key": "harbor/astoria/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/astoria/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/astoria/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/astoria/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/hoboken/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/hoboken/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/hoboken/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/hoboken/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/jcheights/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/jcheights/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/jcheights/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/jcheights/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/parkslope/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/parkslope/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/parkslope/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/parkslope/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/williamsburg/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/williamsburg/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/williamsburg/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "harbor/williamsburg/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/newrochelle/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/newrochelle/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/newrochelle/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/newrochelle/2026-10",
+   "scenario": "S15",
+   "expected": "NOT_INVOICED"
+  },
+  {
+   "check_key": "maple/stamford/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/stamford/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/stamford/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/stamford/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/whiteplains/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/whiteplains/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/whiteplains/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/whiteplains/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/yonkers/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/yonkers/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/yonkers/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "maple/yonkers/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/edison/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/edison/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/edison/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/edison/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/hackensack/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/hackensack/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/hackensack/2026-09",
+   "scenario": "S13",
+   "expected": "BILLING_MISMATCH"
+  },
+  {
+   "check_key": "sunbeam/hackensack/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/montclair/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/montclair/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/montclair/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/montclair/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/morristown/2026-07",
+   "scenario": "D01",
+   "expected": "NO_INVOICE_EXPECTED"
+  },
+  {
+   "check_key": "sunbeam/morristown/2026-08",
+   "scenario": "D01",
+   "expected": "NO_INVOICE_EXPECTED"
+  },
+  {
+   "check_key": "sunbeam/morristown/2026-09",
+   "scenario": "D01",
+   "expected": "NO_INVOICE_EXPECTED"
+  },
+  {
+   "check_key": "sunbeam/morristown/2026-10",
+   "scenario": "D01",
+   "expected": "NO_INVOICE_EXPECTED"
+  },
+  {
+   "check_key": "sunbeam/newark/2026-07",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/newark/2026-08",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/newark/2026-09",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/newark/2026-10",
+   "scenario": "S00",
+   "expected": "BILLING_MATCHED"
+  },
+  {
+   "check_key": "sunbeam/paterson/2026-07",
+   "scenario": "D02",
+   "expected": "BILLING_DATA_UNAVAILABLE"
+  },
+  {
+   "check_key": "sunbeam/paterson/2026-08",
+   "scenario": "D02",
+   "expected": "BILLING_DATA_UNAVAILABLE"
+  },
+  {
+   "check_key": "sunbeam/paterson/2026-09",
+   "scenario": "D02",
+   "expected": "BILLING_DATA_UNAVAILABLE"
+  },
+  {
+   "check_key": "sunbeam/paterson/2026-10",
+   "scenario": "D02",
+   "expected": "BILLING_DATA_UNAVAILABLE"
+  }
+ ]
+}

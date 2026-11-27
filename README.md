@@ -1,0 +1,225 @@
+# Multi-Location Finance Reconciliation Pipeline
+
+> **Independent portfolio demonstration.** All financial data is synthetic, generated with sandbox APIs or simulated
+> systems. Not affiliated with any company named in this project, Intuit, or Stripe.
+
+A small, correct data system that pulls accounting records (QuickBooks Online), payment-processing records (Stripe)
+and advertising spend (a mock ad platform) for **3 clients × 15 locations**, maps every external ID to stable internal
+IDs, validates completeness, reconciles the systems against each other, and explains every exception in a dashboard.
+
+**Live demo:** _coming soon_ · **Static snapshot:** run `python -m finrecon.pipeline report`
+
+```bash
+git clone https://github.com/jjeong4335/finrecon && cd finrecon
+pip install -r requirements-dev.txt
+python -m finrecon.pipeline demo && streamlit run dashboard/Home.py
+```
+
+It was built to answer, with working code, six questions from a Finance Data Analyst interview:
+
+| Interview question | Where it is answered |
+|---|---|
+| How would you pull reports through APIs for many clients and locations? | `finrecon/ingestion/runner.py`, `finrecon/adapters/` |
+| How do you know the data is complete and accurate? | expected-vs-received, pagination, source totals, duplicates, data status |
+| How would you relate client, location, invoice, transaction and payment IDs? | `db/schema.sql` (`source_id_map`, `payment_allocations`) |
+| How do you find transactions in one system but missing from another? | `finrecon/recon/sql/*.sql`, `finrecon/recon/engine.py` |
+| Explain your pipeline architecture. | this README, dashboard page 4 |
+| How would you connect QuickBooks, Stripe and the internal platform? | spend → invoice → payment → payout |
+
+## 30-second tour (for a reviewer)
+
+1. **Overview**: scenario validation badge (computed from the evaluator's table), KPIs, top exceptions.
+2. **Reconciliation** → filter `MISSING_IN_QBO` → select the row: reason, Stripe ID, the invoice it claims to pay,
+   archived raw API pages. Then `NEEDS_REVIEW`: two identical $500 deposits and one QBO entry. The engine refuses to guess.
+3. **Data Quality**: Paterson's ad API is down → `NO_DATA`, never $0. Astoria's latest pull failed → `STALE`,
+   last validated data kept.
+4. **Billing & Payouts**: one invoice charged the fee twice; one month of spend was never invoiced; every payout =
+   gross − fees − refunds.
+
+## Why reconciliation matters
+
+Stripe says money arrived; QuickBooks says what the books believe. When a sync drops, duplicates or mis-keys a payment,
+AR is wrong, revenue is wrong and month-end close stalls. The expensive mistakes are the quiet ones: an API outage
+that shows up as "$0 spend", a refund that never reached the ledger, a hand-entered payment that matches the wrong
+charge. This project treats each of those as a first-class, explainable state.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph Sources
+    QBO[QuickBooks Online sandbox<br/>Customers · Invoices · Payments · RefundReceipts]
+    STR[Stripe sandbox<br/>PaymentIntents · Charges · Refunds · Balance txns · Payouts]
+    AD[Mock ad platform API<br/>locations · daily spend · summary]
+  end
+  QBO --> ING[Ingestion runner<br/>OAuth · pagination · retry/backoff<br/>expected-vs-received]
+  STR --> ING
+  AD --> ING
+  ING -->|every page, sha256| RAW[(Raw archive)]
+  ING -->|validated only, idempotent upserts| CORE[(PostgreSQL<br/>internal IDs + source_id_map)]
+  ING --> DS[Data status<br/>VALIDATED · ZERO · NO_DATA · INCOMPLETE · STALE]
+  CORE --> REC[Reconciliation<br/>L1 exact → L2 candidate → L3 typed exceptions<br/>billing · gross→net · payouts]
+  DS --> REC
+  REC --> EV[Ground-truth evaluator]
+  REC --> UI[Streamlit dashboard<br/>read-only DB role]
+  EV --> UI
+```
+
+**Stack:** Python 3.12, PostgreSQL 16 (SQLite for the offline test suite), FastAPI (mock API), Streamlit, pytest,
+Docker Compose, Caddy (automatic HTTPS), AWS EC2. No ORM: SQL is explicit and lives in `db/` and `finrecon/recon/sql/`.
+
+## Data model
+
+```mermaid
+erDiagram
+  clients ||--o{ locations : has
+  clients ||--|| billing_rules : "billed by"
+  clients ||--o{ source_id_map : "known externally as"
+  locations ||--o{ source_id_map : "known externally as"
+  locations ||--o{ invoices : billed
+  locations ||--o{ ad_spend : spends
+  invoices ||--o{ payment_allocations : "paid by"
+  qbo_payments ||--o{ payment_allocations : "applied to"
+  stripe_payments ||--o{ payment_matches : ""
+  qbo_payments ||--o{ payment_matches : ""
+  stripe_payments ||--o{ stripe_refunds : refunded
+  stripe_balance_transactions }o--|| stripe_payouts : "paid out in"
+```
+
+Six accounting entities are kept distinct: **invoice** (amount billed), **Stripe payment** (processing record),
+**QBO payment** (accounting record of cash received), **allocation** (`Line.LinkedTxn`: which invoice a payment paid),
+**balance transaction** (gross, fee, net) and **payout** (cash to the bank). QBO and Stripe payments are two records of
+the same money: they are matched, never added together.
+
+- Internal UUIDs derive from business keys; `(source, external_id)` is unique on every table, so loads are idempotent.
+- Locations map to QBO **sub-customers** and to Stripe `metadata.location_key`. `DepartmentRef` is not used as a key.
+- Money is `BIGINT` cents plus currency. QBO decimals are parsed with `Decimal` and converted in one tested function.
+
+## Reconciliation method
+
+| Level | Rule |
+|---|---|
+| 1 · exact | The payment sync writes the Stripe PaymentIntent id into the QBO payment memo. Earliest QBO record = match; later ones = `DUPLICATE`. |
+| 2 · candidate | No id in the memo, card method: same client, currency, amount, dates within ±3 days. Accepted only if the pair is **mutually unique**, else `NEEDS_REVIEW`. |
+| 3 · typed exceptions | Everything left gets a status and a plain-English reason. |
+
+| Status | Meaning | Exception? |
+|---|---|---|
+| MATCHED | Both records agree (invoices: fully paid) | no |
+| PARTIAL | Allocations cover part of an invoice | no |
+| OPEN_AR | Unpaid invoice (aging shown) | no |
+| PENDING_SYNC | In Stripe, not yet in QBO, inside the 2-day sync window | no |
+| NON_STRIPE_PAYMENT | Check/ACH: no Stripe record expected | no |
+| MISSING_IN_QBO | Stripe collected cash QBO never recorded | yes |
+| MISSING_IN_STRIPE | QBO records a card payment Stripe does not have | yes |
+| AMOUNT_MISMATCH | Matched records whose amounts differ | yes |
+| DUPLICATE | One Stripe payment recorded twice in QBO | yes |
+| UNRECORDED_REFUND | Stripe refund not reflected in QBO | yes |
+| NEEDS_REVIEW | Ambiguous; a person must decide | yes |
+
+Data status is a separate dimension per source × location: `VALIDATED`, `ZERO_TRANSACTIONS` (a complete answer of
+zero), `NO_DATA`, `INCOMPLETE`, `STALE`. A failed or partial pull is recorded and retried with bounded backoff, is never
+loaded over the last validated data, and is never shown as $0.
+
+Billing is reconciled separately: *expected invoice = spend + max(fee %, minimum) − discount + tax* per location-month
+(synthetic rules in `billing_rules`). Then gross − fee = net for every balance transaction, and each payout equals the
+net of the transactions attached to it. Journal-entry previews (Stripe Clearing account) are educational only.
+
+All time rules use `RECON_AS_OF` (2026-11-30), never the clock, so the deployed demo never changes its answers.
+
+## Synthetic data and ground truth
+
+`seed/scenarios.py` is one deterministic plan (fixed random seed) describing 4 months of activity: 4,284 ad-spend rows,
+55 invoices, 44 Stripe payments, 44 QBO payments, refunds and payouts, plus **24 named scenarios**:
+
+| Code | Scenario | Code | Scenario |
+|---|---|---|---|
+| S00 | Baseline paid + synced | S13 | Fee billed twice |
+| S01 | Partial payment | S14 | Paid yesterday: pending sync |
+| S02 | Two payments settle one invoice | S15 | Spend never invoiced |
+| S03 | One payment, two invoices | S16 | Invoices not yet due (open AR) |
+| S04 | QBO recorded $45 less | D01 | New location: genuine zero |
+| S05 | Never synced to QBO | D02 | Ad API always 503 → NO_DATA |
+| S06 | Paid by check | D03 | Latest pull failed → STALE |
+| S07 | Duplicate import | D04 | Silently missing page → INCOMPLETE |
+| S08 | Refund not in QBO | D05 | Detail ≠ source summary → INCOMPLETE |
+| S09 | Refund recorded | D06 | HTTP 429, retried |
+| S10 | Hand-entered, unique candidate | D07 | Duplicate rows across pages |
+| S11 | Two identical deposits → review | | |
+| S12 | QBO cites a Stripe ID that does not exist | | |
+
+The plan renders three ways: API-shaped offline fixtures, real sandbox objects (`seed/live_seed.py`), and
+`tests/fixtures/expected_reconciliation.json`. Expected statuses come from **scenario intent**, not from running the
+engine, and are keyed by a `seed_key` carried in Stripe metadata and the QBO memo (API-generated IDs differ per run).
+The evaluator writes correct / wrong / missed / unexpected per item; tests prove it fails when the engine is wrong.
+
+The offline demo runs ingestion twice (as of Nov 25 and Nov 30) to show incremental loads, a failure that leaves
+stale data, and partial extracts that are rejected.
+
+## Test results
+
+```
+$ python -m pytest
+69 tests: 68 passed, 1 skipped (FastAPI route test; runs where FastAPI is installed, e.g. the Docker image)
+
+$ python -m finrecon.pipeline demo
+Scenario validation: 24 / 24 scenarios passed, 221 / 221 items correct,
+0 false-positive exceptions, 0 missed exceptions
+```
+
+Required checks covered: idempotent re-runs · Stripe-only (pending vs missing) · QBO-only by payment method · amount
+mismatch · open AR not an exception · partial and multi-invoice allocations, no double counting · failure → NO_DATA,
+never zero · ground truth with zero misses and zero false positives · gross − fee = net and payout totals ·
+traceability to source ID, run and raw bytes (sha256) · ambiguous candidates → review · location and pagination
+coverage, 429 retried · cents ↔ decimal conversion · every dashboard page executed against a Streamlit stub.
+
+**PostgreSQL compatibility:** the schema loads on PostgreSQL 16; all 124 application SELECTs were replayed on
+PostgreSQL with 66 final-state queries compared value by value against SQLite (identical), and all 85 write
+statements (DDL, `ON CONFLICT` upserts, deletes) executed successfully.
+
+## What is verified and what is not
+
+| Component | Status |
+|---|---|
+| Offline pipeline, reconciliation, evaluator, report | Run and tested |
+| SQL on PostgreSQL 16 | Verified by replay (see above); the psycopg driver path itself runs in Docker |
+| Streamlit pages | Executed against a recording stub; first real render happens in Docker |
+| Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
+| QBO / Stripe live adapters, `seed/live_seed.py` | Written from the public API docs, **not yet run against the sandboxes** |
+| Docker Compose / EC2 / HTTPS | Configuration provided, not yet deployed |
+
+## Local setup
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m finrecon.pipeline demo        # builds data/finrecon.db (SQLite) and prints the evaluation
+python -m pytest
+streamlit run dashboard/Home.py         # http://localhost:8501
+python -m finrecon.pipeline report      # reports/snapshot.html, a static fallback
+```
+
+Docker (PostgreSQL + dashboard + Caddy): `cp .env.example .env`, set passwords, `docker compose up -d --build`.
+AWS deployment: [docs/DEPLOY_AWS.md](docs/DEPLOY_AWS.md). Live sandboxes: [docs/LIVE_SANDBOX.md](docs/LIVE_SANDBOX.md).
+
+## Repository layout
+
+```
+finrecon/adapters/     QBO (OAuth2, STARTPOSITION paging), Stripe (cursor paging), mock ad API, offline transports
+finrecon/ingestion/    runner (retry, checkpoints, data status), normalize, raw archive
+finrecon/recon/        engine.py, sql/*.sql, billing.py, accounting.py, evaluator.py
+finrecon/              config, db (PostgreSQL/SQLite), money, ids, dashboard_data, report, pipeline CLI
+mock_ad_api/           framework-free service + FastAPI app + stdlib server
+seed/                  scenario plan, offline fixture generator, live sandbox seeder + snapshot capture
+db/schema.sql          the data model
+dashboard/             Streamlit app (4 pages)
+docs/                  deployment, live sandbox guide, design notes per module
+```
+
+## Limitations and next steps
+
+- Synthetic data: the billing formula, card fees and the Stripe→QBO sync are simulated to create known cases.
+- Sandbox objects cannot be back-dated; live seeding stores the business date in `metadata.event_date`.
+- USD only; multi-currency needs an explicit FX policy first.
+- QBO and Stripe are re-read in full each run (small volumes). Next: change-data-capture (QBO CDC, Stripe events).
+- Next: payout ↔ bank-deposit matching in QBO, scheduled runs (EventBridge), S3 raw retention, Parameter Store secrets,
+  Alembic migrations, a human review workflow for `NEEDS_REVIEW` items.

@@ -1,0 +1,20 @@
+[
+ {
+  "Id": "1",
+  "Name": "Credit Card (Stripe)",
+  "Type": "CREDIT_CARD",
+  "Active": true
+ },
+ {
+  "Id": "2",
+  "Name": "Check",
+  "Type": "NON_CREDIT_CARD",
+  "Active": true
+ },
+ {
+  "Id": "3",
+  "Name": "ACH",
+  "Type": "NON_CREDIT_CARD",
+  "Active": true
+ }
+]

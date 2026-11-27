@@ -1,0 +1,7 @@
+.env
+.secrets
+data
+reports
+.git
+__pycache__
+.pytest_cache

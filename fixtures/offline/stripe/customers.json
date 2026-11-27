@@ -1,0 +1,32 @@
+[
+ {
+  "id": "cus_2c213a5ad3abd8",
+  "object": "customer",
+  "name": "Harbor Fitness Co.",
+  "created": 1780326000,
+  "livemode": false,
+  "metadata": {
+   "client_key": "harbor"
+  }
+ },
+ {
+  "id": "cus_14a980ccc8fd68",
+  "object": "customer",
+  "name": "Maple Leaf Dental Group",
+  "created": 1780326000,
+  "livemode": false,
+  "metadata": {
+   "client_key": "maple"
+  }
+ },
+ {
+  "id": "cus_81199a5bd8b553",
+  "object": "customer",
+  "name": "Sunbeam Pizza Franchise",
+  "created": 1780326000,
+  "livemode": false,
+  "metadata": {
+   "client_key": "sunbeam"
+  }
+ }
+]

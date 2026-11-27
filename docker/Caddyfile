@@ -1,0 +1,12 @@
+# Automatic HTTPS (Let's Encrypt) when DOMAIN is a real DNS name pointing here.
+# DOMAIN=":80" serves plain HTTP for a first smoke test.
+{$DOMAIN} {
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		-Server
+	}
+	reverse_proxy dashboard:8501
+}

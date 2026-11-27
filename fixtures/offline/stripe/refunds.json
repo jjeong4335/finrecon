@@ -1,0 +1,32 @@
+[
+ {
+  "id": "re_337c63a84d009e1a029828a2",
+  "object": "refund",
+  "amount": 20000,
+  "charge": "ch_5c077880451d5368d65c2e46",
+  "payment_intent": "pi_f44092d8094e1ed88fd5c487",
+  "currency": "usd",
+  "created": 1792940400,
+  "status": "succeeded",
+  "balance_transaction": "txn_a44709c06879941b14176df0",
+  "metadata": {
+   "seed_key": "S08:re:maple:newrochelle",
+   "scenario_id": "S08"
+  }
+ },
+ {
+  "id": "re_a24ddf0fc54f9f218f854543",
+  "object": "refund",
+  "amount": 15000,
+  "charge": "ch_55af1acbce27469f5e23b495",
+  "payment_intent": "pi_b64a950080dcc2c746f3d173",
+  "currency": "usd",
+  "created": 1792681200,
+  "status": "succeeded",
+  "balance_transaction": "txn_632490a673c44a90d12a7b1e",
+  "metadata": {
+   "seed_key": "S09:re:sunbeam:newark",
+   "scenario_id": "S09"
+  }
+ }
+]

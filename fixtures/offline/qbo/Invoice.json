@@ -1,0 +1,2312 @@
+[
+ {
+  "Id": "1001",
+  "SyncToken": "0",
+  "DocNumber": "HF-HOBO-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "11",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2579.4,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:harbor:hoboken:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2579.4,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2579.4,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1002",
+  "SyncToken": "0",
+  "DocNumber": "HF-HOBO-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "11",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2606.35,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:harbor:hoboken:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2606.35,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2606.35,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1003",
+  "SyncToken": "0",
+  "DocNumber": "HF-HOBO-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "11",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2576.68,
+  "Balance": 1546.01,
+  "PrivateNote": "period=2026-09; seed_key=S01:inv:harbor:hoboken:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2576.68,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2576.68,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1004",
+  "SyncToken": "0",
+  "DocNumber": "HF-HOBO-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "11",
+   "name": "Harbor Fitness Co. - Hoboken"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2596.06,
+  "Balance": 2596.06,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:harbor:hoboken:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2596.06,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2596.06,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1005",
+  "SyncToken": "0",
+  "DocNumber": "HF-JCHE-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "12",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2663.6,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:harbor:jcheights:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2663.6,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2663.6,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1006",
+  "SyncToken": "0",
+  "DocNumber": "HF-JCHE-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "12",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2589.75,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:harbor:jcheights:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2589.75,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2589.75,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1007",
+  "SyncToken": "0",
+  "DocNumber": "HF-JCHE-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "12",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2413.13,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S02:inv:harbor:jcheights:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2413.13,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2413.13,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1008",
+  "SyncToken": "0",
+  "DocNumber": "HF-JCHE-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "12",
+   "name": "Harbor Fitness Co. - Jersey City Heights"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2601.58,
+  "Balance": 2601.58,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:harbor:jcheights:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2601.58,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2601.58,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1009",
+  "SyncToken": "0",
+  "DocNumber": "HF-ASTO-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "13",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2731.15,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:harbor:astoria:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2731.15,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2731.15,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1010",
+  "SyncToken": "0",
+  "DocNumber": "HF-ASTO-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "13",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2661.29,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:harbor:astoria:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2661.29,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2661.29,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1011",
+  "SyncToken": "0",
+  "DocNumber": "HF-ASTO-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "13",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2360.93,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S03:inv:harbor:astoria:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2360.93,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2360.93,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1012",
+  "SyncToken": "0",
+  "DocNumber": "HF-ASTO-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "13",
+   "name": "Harbor Fitness Co. - Astoria"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2648.27,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-10; seed_key=S03:inv:harbor:astoria:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2648.27,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2648.27,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1013",
+  "SyncToken": "0",
+  "DocNumber": "HF-PARK-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "14",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2572.73,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:harbor:parkslope:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2572.73,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2572.73,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1014",
+  "SyncToken": "0",
+  "DocNumber": "HF-PARK-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "14",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2561.48,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:harbor:parkslope:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2561.48,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2561.48,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1015",
+  "SyncToken": "0",
+  "DocNumber": "HF-PARK-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "14",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2438.0,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S00:inv:harbor:parkslope:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2438.0,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2438.0,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1016",
+  "SyncToken": "0",
+  "DocNumber": "HF-PARK-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "14",
+   "name": "Harbor Fitness Co. - Park Slope"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2526.63,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-10; seed_key=S12:inv:harbor:parkslope:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2526.63,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2526.63,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1017",
+  "SyncToken": "0",
+  "DocNumber": "HF-WILL-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "15",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2698.07,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:harbor:williamsburg:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2698.07,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2698.07,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1018",
+  "SyncToken": "0",
+  "DocNumber": "HF-WILL-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "15",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2627.05,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:harbor:williamsburg:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2627.05,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2627.05,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1019",
+  "SyncToken": "0",
+  "DocNumber": "HF-WILL-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "15",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2310.08,
+  "Balance": 45.0,
+  "PrivateNote": "period=2026-09; seed_key=S04:inv:harbor:williamsburg:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2310.08,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2310.08,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1020",
+  "SyncToken": "0",
+  "DocNumber": "HF-WILL-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "15",
+   "name": "Harbor Fitness Co. - Williamsburg"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2550.74,
+  "Balance": 2550.74,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:harbor:williamsburg:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2550.74,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2550.74,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1021",
+  "SyncToken": "0",
+  "DocNumber": "ML-STAM-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "16",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2354.21,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:maple:stamford:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2354.21,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2354.21,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1022",
+  "SyncToken": "0",
+  "DocNumber": "ML-STAM-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "16",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2461.68,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:maple:stamford:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2461.68,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2461.68,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1023",
+  "SyncToken": "0",
+  "DocNumber": "ML-STAM-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "16",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2348.33,
+  "Balance": 2348.33,
+  "PrivateNote": "period=2026-09; seed_key=S05:inv:maple:stamford:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2348.33,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2348.33,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1024",
+  "SyncToken": "0",
+  "DocNumber": "ML-STAM-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "16",
+   "name": "Maple Leaf Dental Group - Stamford"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2631.83,
+  "Balance": 2631.83,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:maple:stamford:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2631.83,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2631.83,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1025",
+  "SyncToken": "0",
+  "DocNumber": "ML-WHIT-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "17",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2498.04,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:maple:whiteplains:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2498.04,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2498.04,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1026",
+  "SyncToken": "0",
+  "DocNumber": "ML-WHIT-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "17",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2617.49,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:maple:whiteplains:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2617.49,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2617.49,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1027",
+  "SyncToken": "0",
+  "DocNumber": "ML-WHIT-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "17",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2439.02,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S06:inv:maple:whiteplains:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2439.02,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2439.02,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1028",
+  "SyncToken": "0",
+  "DocNumber": "ML-WHIT-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "17",
+   "name": "Maple Leaf Dental Group - White Plains"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2455.24,
+  "Balance": 2455.24,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:maple:whiteplains:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2455.24,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2455.24,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1029",
+  "SyncToken": "0",
+  "DocNumber": "ML-YONK-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "18",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2482.1,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:maple:yonkers:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2482.1,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2482.1,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1030",
+  "SyncToken": "0",
+  "DocNumber": "ML-YONK-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "18",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2536.11,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:maple:yonkers:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2536.11,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2536.11,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1031",
+  "SyncToken": "0",
+  "DocNumber": "ML-YONK-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "18",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2726.56,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S07:inv:maple:yonkers:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2726.56,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2726.56,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1032",
+  "SyncToken": "0",
+  "DocNumber": "ML-YONK-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "18",
+   "name": "Maple Leaf Dental Group - Yonkers"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2544.19,
+  "Balance": 2544.19,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:maple:yonkers:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2544.19,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2544.19,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1033",
+  "SyncToken": "0",
+  "DocNumber": "ML-NEWR-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "19",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2823.45,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:maple:newrochelle:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2823.45,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2823.45,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1034",
+  "SyncToken": "0",
+  "DocNumber": "ML-NEWR-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "19",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2439.65,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:maple:newrochelle:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2439.65,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2439.65,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1035",
+  "SyncToken": "0",
+  "DocNumber": "ML-NEWR-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "19",
+   "name": "Maple Leaf Dental Group - New Rochelle"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2360.98,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S08:inv:maple:newrochelle:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2360.98,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2360.98,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1036",
+  "SyncToken": "0",
+  "DocNumber": "SP-NEWA-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "20",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2666.68,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:sunbeam:newark:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2666.68,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2666.68,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1037",
+  "SyncToken": "0",
+  "DocNumber": "SP-NEWA-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "20",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2518.17,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:sunbeam:newark:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2518.17,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2518.17,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1038",
+  "SyncToken": "0",
+  "DocNumber": "SP-NEWA-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "20",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2490.69,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S09:inv:sunbeam:newark:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2490.69,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2490.69,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1039",
+  "SyncToken": "0",
+  "DocNumber": "SP-NEWA-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "20",
+   "name": "Sunbeam Pizza Franchise - Newark"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2657.43,
+  "Balance": 2657.43,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:sunbeam:newark:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2657.43,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2657.43,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1040",
+  "SyncToken": "0",
+  "DocNumber": "SP-PATE-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "21",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2500.23,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:sunbeam:paterson:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2500.23,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2500.23,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1041",
+  "SyncToken": "0",
+  "DocNumber": "SP-PATE-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "21",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2598.94,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:sunbeam:paterson:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2598.94,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2598.94,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1042",
+  "SyncToken": "0",
+  "DocNumber": "SP-PATE-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "21",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2685.49,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S10:inv:sunbeam:paterson:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2685.49,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2685.49,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1043",
+  "SyncToken": "0",
+  "DocNumber": "SP-PATE-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "21",
+   "name": "Sunbeam Pizza Franchise - Paterson"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2657.09,
+  "Balance": 2657.09,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:sunbeam:paterson:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2657.09,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2657.09,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1044",
+  "SyncToken": "0",
+  "DocNumber": "SP-EDIS-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "22",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2871.77,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:sunbeam:edison:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2871.77,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2871.77,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1045",
+  "SyncToken": "0",
+  "DocNumber": "SP-EDIS-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "22",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2876.48,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:sunbeam:edison:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2876.48,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2876.48,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1046",
+  "SyncToken": "0",
+  "DocNumber": "SP-EDIS-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "22",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2340.25,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S00:inv:sunbeam:edison:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2340.25,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2340.25,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1047",
+  "SyncToken": "0",
+  "DocNumber": "SP-EDIS-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "22",
+   "name": "Sunbeam Pizza Franchise - Edison"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2635.03,
+  "Balance": 2635.03,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:sunbeam:edison:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2635.03,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2635.03,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1048",
+  "SyncToken": "0",
+  "DocNumber": "SP-HACK-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "23",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2633.41,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:sunbeam:hackensack:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2633.41,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2633.41,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1049",
+  "SyncToken": "0",
+  "DocNumber": "SP-HACK-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "23",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2766.05,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:sunbeam:hackensack:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2766.05,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2766.05,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1050",
+  "SyncToken": "0",
+  "DocNumber": "SP-HACK-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "23",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2886.19,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-09; seed_key=S13:inv:sunbeam:hackensack:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2886.19,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2886.19,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1051",
+  "SyncToken": "0",
+  "DocNumber": "SP-HACK-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "23",
+   "name": "Sunbeam Pizza Franchise - Hackensack"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2793.1,
+  "Balance": 2793.1,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:sunbeam:hackensack:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2793.1,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2793.1,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1052",
+  "SyncToken": "0",
+  "DocNumber": "SP-MONT-2607",
+  "TxnDate": "2026-08-01",
+  "DueDate": "2026-08-31",
+  "CustomerRef": {
+   "value": "24",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2818.41,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-07; seed_key=S00:inv:sunbeam:montclair:2026-07",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2818.41,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-07 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2818.41,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1053",
+  "SyncToken": "0",
+  "DocNumber": "SP-MONT-2608",
+  "TxnDate": "2026-09-01",
+  "DueDate": "2026-10-01",
+  "CustomerRef": {
+   "value": "24",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2656.79,
+  "Balance": 0.0,
+  "PrivateNote": "period=2026-08; seed_key=S00:inv:sunbeam:montclair:2026-08",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2656.79,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-08 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2656.79,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1054",
+  "SyncToken": "0",
+  "DocNumber": "SP-MONT-2609",
+  "TxnDate": "2026-10-01",
+  "DueDate": "2026-10-31",
+  "CustomerRef": {
+   "value": "24",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2737.93,
+  "Balance": 2737.93,
+  "PrivateNote": "period=2026-09; seed_key=S14:inv:sunbeam:montclair:2026-09",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2737.93,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-09 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2737.93,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-01T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "1055",
+  "SyncToken": "0",
+  "DocNumber": "SP-MONT-2610",
+  "TxnDate": "2026-11-01",
+  "DueDate": "2026-12-01",
+  "CustomerRef": {
+   "value": "24",
+   "name": "Sunbeam Pizza Franchise - Montclair"
+  },
+  "CurrencyRef": {
+   "value": "USD",
+   "name": "United States Dollar"
+  },
+  "TotalAmt": 2641.98,
+  "Balance": 2641.98,
+  "PrivateNote": "period=2026-10; seed_key=S16:inv:sunbeam:montclair:2026-10",
+  "Line": [
+   {
+    "Id": "1",
+    "LineNum": 1,
+    "Amount": 2641.98,
+    "DetailType": "SalesItemLineDetail",
+    "Description": "Advertising services 2026-10 (ad spend + management fee)",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   },
+   {
+    "Amount": 2641.98,
+    "DetailType": "SubTotalLineDetail",
+    "SubTotalLineDetail": {}
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-01T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-01T09:00:00-08:00"
+  }
+ }
+]

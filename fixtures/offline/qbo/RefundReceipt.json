@@ -1,0 +1,38 @@
+[
+ {
+  "Id": "7001",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-23",
+  "CustomerRef": {
+   "value": "20"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 150.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "DepositToAccountRef": {
+   "value": "35",
+   "name": "Checking"
+  },
+  "PrivateNote": "Synced from Stripe. stripe_refund=re_a24ddf0fc54f9f218f854543; seed_key=S09:qre:sunbeam:newark",
+  "Line": [
+   {
+    "Amount": 150.0,
+    "DetailType": "SalesItemLineDetail",
+    "SalesItemLineDetail": {
+     "ItemRef": {
+      "value": "1",
+      "name": "Advertising Services"
+     }
+    }
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-23T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-23T09:00:00-08:00"
+  }
+ }
+]

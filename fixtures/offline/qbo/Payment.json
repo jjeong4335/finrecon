@@ -1,0 +1,1443 @@
+[
+ {
+  "Id": "5001",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-19",
+  "CustomerRef": {
+   "value": "11"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2579.4,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_20bb93bce9cb5cc8b1ae9d0d; seed_key=S00:qp:harbor:hoboken:2026-08-19",
+  "Line": [
+   {
+    "Amount": 2579.4,
+    "LinkedTxn": [
+     {
+      "TxnId": "1001",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-19T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-19T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5002",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-13",
+  "CustomerRef": {
+   "value": "11"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2606.35,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_85a327919f8199e2111b4a52; seed_key=S00:qp:harbor:hoboken:2026-09-13",
+  "Line": [
+   {
+    "Amount": 2606.35,
+    "LinkedTxn": [
+     {
+      "TxnId": "1002",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-13T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-13T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5003",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-21",
+  "CustomerRef": {
+   "value": "12"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2663.6,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_1fa527e2341c396e747d3132; seed_key=S00:qp:harbor:jcheights:2026-08-21",
+  "Line": [
+   {
+    "Amount": 2663.6,
+    "LinkedTxn": [
+     {
+      "TxnId": "1005",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-21T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-21T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5004",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-28",
+  "CustomerRef": {
+   "value": "12"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2589.75,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_435301882e1008b3cbb053a9; seed_key=S00:qp:harbor:jcheights:2026-09-28",
+  "Line": [
+   {
+    "Amount": 2589.75,
+    "LinkedTxn": [
+     {
+      "TxnId": "1006",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-28T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-28T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5005",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-28",
+  "CustomerRef": {
+   "value": "13"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2731.15,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_5dbe89afda710040e6477e4e; seed_key=S00:qp:harbor:astoria:2026-08-28",
+  "Line": [
+   {
+    "Amount": 2731.15,
+    "LinkedTxn": [
+     {
+      "TxnId": "1009",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-28T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-28T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5006",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-21",
+  "CustomerRef": {
+   "value": "13"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2661.29,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_52e3686a098a2f7a12056e57; seed_key=S00:qp:harbor:astoria:2026-09-21",
+  "Line": [
+   {
+    "Amount": 2661.29,
+    "LinkedTxn": [
+     {
+      "TxnId": "1010",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-21T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-21T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5007",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-12",
+  "CustomerRef": {
+   "value": "14"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2572.73,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_43ce42ddde1d88584e53043f; seed_key=S00:qp:harbor:parkslope:2026-08-12",
+  "Line": [
+   {
+    "Amount": 2572.73,
+    "LinkedTxn": [
+     {
+      "TxnId": "1013",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-12T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-12T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5008",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-23",
+  "CustomerRef": {
+   "value": "14"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2561.48,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_588fa44412145064508003f7; seed_key=S00:qp:harbor:parkslope:2026-09-23",
+  "Line": [
+   {
+    "Amount": 2561.48,
+    "LinkedTxn": [
+     {
+      "TxnId": "1014",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-23T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-23T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5009",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-13",
+  "CustomerRef": {
+   "value": "14"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2438.0,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_a4f53fa7ba19c11d11d4f282; seed_key=S00:qp:harbor:parkslope:2026-10-13",
+  "Line": [
+   {
+    "Amount": 2438.0,
+    "LinkedTxn": [
+     {
+      "TxnId": "1015",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-13T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-13T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5010",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-14",
+  "CustomerRef": {
+   "value": "15"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2698.07,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_4bca798976f8eda1e5f80e38; seed_key=S00:qp:harbor:williamsburg:2026-08-14",
+  "Line": [
+   {
+    "Amount": 2698.07,
+    "LinkedTxn": [
+     {
+      "TxnId": "1017",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-14T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-14T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5011",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-14",
+  "CustomerRef": {
+   "value": "15"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2627.05,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_df8eecb9d8709dac7416046f; seed_key=S00:qp:harbor:williamsburg:2026-09-14",
+  "Line": [
+   {
+    "Amount": 2627.05,
+    "LinkedTxn": [
+     {
+      "TxnId": "1018",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-14T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-14T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5012",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-10",
+  "CustomerRef": {
+   "value": "16"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2354.21,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_6641f2d03323c99237031ce9; seed_key=S00:qp:maple:stamford:2026-08-10",
+  "Line": [
+   {
+    "Amount": 2354.21,
+    "LinkedTxn": [
+     {
+      "TxnId": "1021",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-10T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-10T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5013",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-24",
+  "CustomerRef": {
+   "value": "16"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2461.68,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_12ec99a4bc30f0b8bc732573; seed_key=S00:qp:maple:stamford:2026-09-24",
+  "Line": [
+   {
+    "Amount": 2461.68,
+    "LinkedTxn": [
+     {
+      "TxnId": "1022",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-24T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-24T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5014",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-18",
+  "CustomerRef": {
+   "value": "17"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2498.04,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_1528b85b26cbbe2ea7c295ab; seed_key=S00:qp:maple:whiteplains:2026-08-18",
+  "Line": [
+   {
+    "Amount": 2498.04,
+    "LinkedTxn": [
+     {
+      "TxnId": "1025",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-18T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-18T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5015",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-12",
+  "CustomerRef": {
+   "value": "17"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2617.49,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_ce6cb3768b2d131fb0ee5618; seed_key=S00:qp:maple:whiteplains:2026-09-12",
+  "Line": [
+   {
+    "Amount": 2617.49,
+    "LinkedTxn": [
+     {
+      "TxnId": "1026",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-12T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-12T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5016",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-09",
+  "CustomerRef": {
+   "value": "18"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2482.1,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_99e65c653bd722b9330fd209; seed_key=S00:qp:maple:yonkers:2026-08-09",
+  "Line": [
+   {
+    "Amount": 2482.1,
+    "LinkedTxn": [
+     {
+      "TxnId": "1029",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-09T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-09T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5017",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-20",
+  "CustomerRef": {
+   "value": "18"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2536.11,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_4b55989663938face0173f4c; seed_key=S00:qp:maple:yonkers:2026-09-20",
+  "Line": [
+   {
+    "Amount": 2536.11,
+    "LinkedTxn": [
+     {
+      "TxnId": "1030",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-20T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-20T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5018",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-11",
+  "CustomerRef": {
+   "value": "19"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2823.45,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_d3f95e95725f60a5d7db6e12; seed_key=S00:qp:maple:newrochelle:2026-08-11",
+  "Line": [
+   {
+    "Amount": 2823.45,
+    "LinkedTxn": [
+     {
+      "TxnId": "1033",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-11T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-11T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5019",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-19",
+  "CustomerRef": {
+   "value": "19"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2439.65,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_88016340d4acefc540f69f48; seed_key=S00:qp:maple:newrochelle:2026-09-19",
+  "Line": [
+   {
+    "Amount": 2439.65,
+    "LinkedTxn": [
+     {
+      "TxnId": "1034",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-19T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-19T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5020",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-26",
+  "CustomerRef": {
+   "value": "20"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2666.68,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_276a25093ccc301402c0b156; seed_key=S00:qp:sunbeam:newark:2026-08-26",
+  "Line": [
+   {
+    "Amount": 2666.68,
+    "LinkedTxn": [
+     {
+      "TxnId": "1036",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-26T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-26T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5021",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-17",
+  "CustomerRef": {
+   "value": "20"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2518.17,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_f5e09f38fd50d9a2a36e9361; seed_key=S00:qp:sunbeam:newark:2026-09-17",
+  "Line": [
+   {
+    "Amount": 2518.17,
+    "LinkedTxn": [
+     {
+      "TxnId": "1037",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-17T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-17T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5022",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-28",
+  "CustomerRef": {
+   "value": "21"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2500.23,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_842e925fefdf3c91435b08ed; seed_key=S00:qp:sunbeam:paterson:2026-08-28",
+  "Line": [
+   {
+    "Amount": 2500.23,
+    "LinkedTxn": [
+     {
+      "TxnId": "1040",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-28T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-28T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5023",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-27",
+  "CustomerRef": {
+   "value": "21"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2598.94,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_12483394dcb6b4224185eddf; seed_key=S00:qp:sunbeam:paterson:2026-09-27",
+  "Line": [
+   {
+    "Amount": 2598.94,
+    "LinkedTxn": [
+     {
+      "TxnId": "1041",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-27T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-27T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5024",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-18",
+  "CustomerRef": {
+   "value": "22"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2871.77,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_f0b11833992aec3afb1939c6; seed_key=S00:qp:sunbeam:edison:2026-08-18",
+  "Line": [
+   {
+    "Amount": 2871.77,
+    "LinkedTxn": [
+     {
+      "TxnId": "1044",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-18T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-18T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5025",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-10",
+  "CustomerRef": {
+   "value": "22"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2876.48,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_bba09657b0991c4bdfd33a75; seed_key=S00:qp:sunbeam:edison:2026-09-10",
+  "Line": [
+   {
+    "Amount": 2876.48,
+    "LinkedTxn": [
+     {
+      "TxnId": "1045",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-10T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-10T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5026",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-28",
+  "CustomerRef": {
+   "value": "22"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2340.25,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_8d0cf88447da201a59358e5f; seed_key=S00:qp:sunbeam:edison:2026-10-28",
+  "Line": [
+   {
+    "Amount": 2340.25,
+    "LinkedTxn": [
+     {
+      "TxnId": "1046",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-28T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-28T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5027",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-08",
+  "CustomerRef": {
+   "value": "23"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2633.41,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_e8e5f18b7d348d4f950e21e0; seed_key=S00:qp:sunbeam:hackensack:2026-08-08",
+  "Line": [
+   {
+    "Amount": 2633.41,
+    "LinkedTxn": [
+     {
+      "TxnId": "1048",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-08T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-08T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5028",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-16",
+  "CustomerRef": {
+   "value": "23"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2766.05,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_0600f87ef4113cb33fd0e066; seed_key=S00:qp:sunbeam:hackensack:2026-09-16",
+  "Line": [
+   {
+    "Amount": 2766.05,
+    "LinkedTxn": [
+     {
+      "TxnId": "1049",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-16T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-16T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5029",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-16",
+  "CustomerRef": {
+   "value": "23"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2886.19,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_c5668eee705a4af00422a160; seed_key=S00:qp:sunbeam:hackensack:2026-10-16",
+  "Line": [
+   {
+    "Amount": 2886.19,
+    "LinkedTxn": [
+     {
+      "TxnId": "1050",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-16T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-16T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5030",
+  "SyncToken": "0",
+  "TxnDate": "2026-08-17",
+  "CustomerRef": {
+   "value": "24"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2818.41,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_515520366245054bed40b410; seed_key=S00:qp:sunbeam:montclair:2026-08-17",
+  "Line": [
+   {
+    "Amount": 2818.41,
+    "LinkedTxn": [
+     {
+      "TxnId": "1052",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-08-17T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-17T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5031",
+  "SyncToken": "0",
+  "TxnDate": "2026-09-27",
+  "CustomerRef": {
+   "value": "24"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2656.79,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_e75c6c05f53d288f19850f5a; seed_key=S00:qp:sunbeam:montclair:2026-09-27",
+  "Line": [
+   {
+    "Amount": 2656.79,
+    "LinkedTxn": [
+     {
+      "TxnId": "1053",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-09-27T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-27T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5032",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-16",
+  "CustomerRef": {
+   "value": "11"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 1030.67,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_81bc20d5c8b065e51f62afbe; seed_key=S01:qp:harbor:hoboken:2026-10-16",
+  "Line": [
+   {
+    "Amount": 1030.67,
+    "LinkedTxn": [
+     {
+      "TxnId": "1003",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-16T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-16T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5033",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-13",
+  "CustomerRef": {
+   "value": "12"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 1206.56,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_ce7e07802cf512b06b44621a; seed_key=S02:qp:harbor:jcheights:2026-10-13",
+  "Line": [
+   {
+    "Amount": 1206.56,
+    "LinkedTxn": [
+     {
+      "TxnId": "1007",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-13T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-13T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5034",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-27",
+  "CustomerRef": {
+   "value": "12"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 1206.57,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_60b1bf78abd3a32b18993563; seed_key=S02:qp:harbor:jcheights:2026-10-27",
+  "Line": [
+   {
+    "Amount": 1206.57,
+    "LinkedTxn": [
+     {
+      "TxnId": "1007",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-27T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-27T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5035",
+  "SyncToken": "0",
+  "TxnDate": "2026-11-13",
+  "CustomerRef": {
+   "value": "13"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 5009.2,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_03c12b1efd3369f245e2757a; seed_key=S03:qp:harbor:astoria:2026-11-13",
+  "Line": [
+   {
+    "Amount": 2360.93,
+    "LinkedTxn": [
+     {
+      "TxnId": "1011",
+      "TxnType": "Invoice"
+     }
+    ]
+   },
+   {
+    "Amount": 2648.27,
+    "LinkedTxn": [
+     {
+      "TxnId": "1012",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-13T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-13T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5036",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-19",
+  "CustomerRef": {
+   "value": "15"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2265.08,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3c11b3c609c4d692f0d4db46; seed_key=S04:qp:harbor:williamsburg:2026-10-19",
+  "Line": [
+   {
+    "Amount": 2265.08,
+    "LinkedTxn": [
+     {
+      "TxnId": "1019",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-19T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-19T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5037",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-18",
+  "CustomerRef": {
+   "value": "17"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2439.02,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "2"
+  },
+  "PaymentRefNum": "10482",
+  "PrivateNote": "Check deposited at branch. seed_key=S06:qp:maple:whiteplains:2026-10-18",
+  "Line": [
+   {
+    "Amount": 2439.02,
+    "LinkedTxn": [
+     {
+      "TxnId": "1027",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-18T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-18T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5038",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-15",
+  "CustomerRef": {
+   "value": "18"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2726.56,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_b7089e463636084bac9d91ad; seed_key=S07:qp:maple:yonkers:2026-10-15",
+  "Line": [
+   {
+    "Amount": 2726.56,
+    "LinkedTxn": [
+     {
+      "TxnId": "1031",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-15T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-15T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5039",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-15",
+  "CustomerRef": {
+   "value": "18"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2726.56,
+  "UnappliedAmt": 2726.56,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_b7089e463636084bac9d91ad; seed_key=S07:qp-dup:maple:yonkers:2026-10-15",
+  "Line": [],
+  "MetaData": {
+   "CreateTime": "2026-10-15T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-15T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5040",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-11",
+  "CustomerRef": {
+   "value": "19"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2360.98,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_f44092d8094e1ed88fd5c487; seed_key=S08:qp:maple:newrochelle:2026-10-11",
+  "Line": [
+   {
+    "Amount": 2360.98,
+    "LinkedTxn": [
+     {
+      "TxnId": "1035",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-11T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-11T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5041",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-10",
+  "CustomerRef": {
+   "value": "20"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2490.69,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_b64a950080dcc2c746f3d173; seed_key=S09:qp:sunbeam:newark:2026-10-10",
+  "Line": [
+   {
+    "Amount": 2490.69,
+    "LinkedTxn": [
+     {
+      "TxnId": "1038",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-10T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-10T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5042",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-17",
+  "CustomerRef": {
+   "value": "21"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2685.49,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Card payment entered manually. seed_key=S10:qp:sunbeam:paterson:2026-10-17",
+  "Line": [
+   {
+    "Amount": 2685.49,
+    "LinkedTxn": [
+     {
+      "TxnId": "1042",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-17T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-17T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5043",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-22",
+  "CustomerRef": {
+   "value": "3"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 500.0,
+  "UnappliedAmt": 500.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Card payment entered manually. seed_key=S11:qp:sunbeam:client:2026-10-22",
+  "Line": [],
+  "MetaData": {
+   "CreateTime": "2026-10-22T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-22T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5044",
+  "SyncToken": "0",
+  "TxnDate": "2026-11-10",
+  "CustomerRef": {
+   "value": "14"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2526.63,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_3Qx9GhostNotInStripe0000; seed_key=S12:qp:harbor:parkslope:2026-11-10",
+  "Line": [
+   {
+    "Amount": 2526.63,
+    "LinkedTxn": [
+     {
+      "TxnId": "1016",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-10T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-10T09:00:00-08:00"
+  }
+ }
+]

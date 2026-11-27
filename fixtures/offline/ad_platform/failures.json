@@ -1,0 +1,56 @@
+{
+ "adv-101-01": {
+  "rate_limit_first_request": true,
+  "always_fail": false,
+  "fail_on_runs": [],
+  "missing_page_on_runs": [],
+  "summary_mismatch_on_runs": [],
+  "duplicate_rows": false
+ },
+ "adv-103-02": {
+  "rate_limit_first_request": false,
+  "always_fail": true,
+  "fail_on_runs": [],
+  "missing_page_on_runs": [],
+  "summary_mismatch_on_runs": [],
+  "duplicate_rows": false
+ },
+ "adv-101-03": {
+  "rate_limit_first_request": false,
+  "always_fail": false,
+  "fail_on_runs": [
+   2
+  ],
+  "missing_page_on_runs": [],
+  "summary_mismatch_on_runs": [],
+  "duplicate_rows": false
+ },
+ "adv-102-03": {
+  "rate_limit_first_request": false,
+  "always_fail": false,
+  "fail_on_runs": [],
+  "missing_page_on_runs": [
+   2
+  ],
+  "summary_mismatch_on_runs": [],
+  "duplicate_rows": false
+ },
+ "adv-102-02": {
+  "rate_limit_first_request": false,
+  "always_fail": false,
+  "fail_on_runs": [],
+  "missing_page_on_runs": [],
+  "summary_mismatch_on_runs": [
+   2
+  ],
+  "duplicate_rows": false
+ },
+ "adv-103-01": {
+  "rate_limit_first_request": false,
+  "always_fail": false,
+  "fail_on_runs": [],
+  "missing_page_on_runs": [],
+  "summary_mismatch_on_runs": [],
+  "duplicate_rows": true
+ }
+}

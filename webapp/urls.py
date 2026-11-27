@@ -1,4 +1,7 @@
-from django.urls import path
+from pathlib import Path
+
+from django.urls import path, re_path
+from django.views.static import serve
 
 from . import views
 
@@ -13,4 +16,6 @@ urlpatterns = [
     path("architecture/", views.architecture, name="architecture"),
     path("healthz", views.healthz, name="healthz"),
     path("readyz", views.readyz, name="readyz"),
+    # the design kit (CSS, JS, icons) used by /guide/: read-only files, served by Django behind Caddy
+    re_path(r"^static/(?P<path>.+)$", serve, {"document_root": Path(__file__).resolve().parent / "static"}),
 ]

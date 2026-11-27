@@ -1,0 +1,27 @@
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}Reconciliation{% endblock %}
+{% block content %}
+<h1>Reconciliation</h1>
+<form class="filters" method="get">
+ <label>Show<select name="exceptions"><option value="1"{% if f.exceptions == "1" %} selected{% endif %}>Exceptions only</option><option value="0"{% if f.exceptions != "1" %} selected{% endif %}>All records</option></select></label>
+ <label>Client<select name="client"><option value="">All</option>{% for c in clients %}<option{% if f.client == c %} selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
+ <label>Location<select name="location"><option value="">All</option>{% for c in locations %}<option{% if f.location == c %} selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
+ <label>Status<select name="status"><option value="">All</option>{% for c in statuses %}<option{% if f.status == c %} selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
+ <label>Record type<select name="record_type"><option value="">All</option>{% for c in record_types %}<option{% if f.record_type == c %} selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
+ <label>From<input type="date" name="date_from" value="{{ f.date_from }}"></label>
+ <label>To<input type="date" name="date_to" value="{{ f.date_to }}"></label>
+ <button type="submit">Apply</button> <a href="{% url 'reconciliation' %}">Reset</a>
+</form>
+{% if f.status %}<p class="sub">{{ f.status }}: {% for k, v in status_help.items %}{% if k == f.status %}{{ v }}{% endif %}{% endfor %}</p>{% endif %}
+<p class="sub">{{ rows|length }} of {{ total }} records. Open a source ID to see why it was classified that way.</p>
+<div class="wrap"><table><tr><th>Status</th><th>Record</th><th>Client</th><th>Location</th><th>Source ID</th><th>Match</th><th class="n">Amount</th><th class="n">Counterpart</th><th class="n">Diff</th><th>Date</th><th>Why</th></tr>
+{% for r in rows %}<tr><td><span class="pill {{ r.status|pill }}">{{ r.status }}</span></td><td class="nw">{{ r.record_type }}</td><td>{{ r.client|default:"—" }}</td><td>{{ r.location|default:"client-level" }}</td>
+<td class="nw"><a href="{% url 'record' r.record_type r.record_id %}">{{ r.source_record_id }}</a></td><td>{{ r.match_method|default:"" }}</td>
+<td class="n">{{ r.amount_cents|money }}</td><td class="n">{{ r.counterpart_amount_cents|money }}</td><td class="n">{% if r.diff_cents %}{{ r.diff_cents|money }}{% endif %}</td><td class="nw">{{ r.record_date|default:"" }}</td><td>{{ r.reason }}</td></tr>
+{% empty %}<tr><td colspan="11">No records match these filters.</td></tr>{% endfor %}</table></div>
+
+<details><summary>Cross-system view (SQL FULL OUTER JOIN on the verified reference)</summary>
+<p class="sub">Rows with one side empty are the starting point for "exists in one system but not the other". Sync windows, payment methods and candidate matching then refine them into the statuses above.</p>
+<div class="wrap"><table><tr><th>Presence</th><th>Stripe payment</th><th class="n">Stripe</th><th>Stripe date</th><th>QBO payment</th><th class="n">QBO</th><th>QBO date</th><th>QBO method</th></tr>
+{% for c in cross %}<tr><td><span class="pill {{ c.presence|pill }}">{{ c.presence }}</span></td><td class="nw">{{ c.stripe_payment_id|default:"—" }}</td><td class="n">{{ c.stripe_amount_cents|money }}</td><td class="nw">{{ c.stripe_date|default:"" }}</td><td>{{ c.qbo_payment_id|default:"—" }}</td><td class="n">{{ c.qbo_amount_cents|money }}</td><td class="nw">{{ c.qbo_date|default:"" }}</td><td>{{ c.qbo_method|default:"" }}</td></tr>{% endfor %}</table></div></details>
+{% endblock %}

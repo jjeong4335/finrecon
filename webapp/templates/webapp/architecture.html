@@ -1,0 +1,50 @@
+{% extends "webapp/base.html" %}
+{% block title %}Architecture{% endblock %}
+{% block head %}<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"; mermaid.initialize({startOnLoad: true, theme: "neutral"});</script>{% endblock %}
+{% block content %}
+<h1>Architecture & Methodology</h1>
+<div style="background:#fff;border:1px solid #e3e7ee;border-radius:8px;padding:12px"><pre class="mermaid" style="background:#fff;color:#1d2430">
+flowchart LR
+  QBO[QuickBooks Online sandbox] --> ING[Ingestion runner: OAuth, pagination, retry, expected vs received]
+  STR[Stripe sandbox] --> ING
+  AD[Mock ad platform API] --> ING
+  ING -->|every page, sha256| RAW[(Raw archive)]
+  ING -->|validated only, idempotent upserts| CORE[(PostgreSQL: internal IDs + source_id_map)]
+  ING --> DS[Data status]
+  CORE --> REC[Reconciliation: L1 exact, L2 corroborated candidate, L3 typed exceptions]
+  DS --> REC
+  REC --> EV[Ground-truth evaluator]
+  REC --> WEB[Django read-only web app]
+  EV --> WEB
+  UCI[UCI Online Retail II: 1.07M real rows] --> RET[Retail quality module] --> WEB
+</pre></div>
+
+<h2>Key design decisions</h2>
+<ul>
+<li><b>Internal IDs, explicit mappings.</b> Clients and locations have internal UUIDs; <code>source_id_map</code> records which QuickBooks customer (a sub-customer per location), Stripe customer and ad-platform location each corresponds to. Records of customers outside the registry, such as a sandbox's sample data, are counted as out of scope.</li>
+<li><b>Two records of the same money.</b> A Stripe payment is the processing record, a QBO payment the accounting record. They are matched, never added. Allocations (<code>Line.LinkedTxn</code>) decide which invoice is paid.</li>
+<li><b>Matching order.</b> Level 1: the Stripe PaymentIntent id the sync writes into the QBO memo; if several QBO records cite it, the one whose amount agrees is the match. Level 2: same client, currency and amount within ±{{ tol }} days, accepted only if mutually unique and nothing contradicts it (location, invoice reference). Otherwise <code>NEEDS_REVIEW</code>.</li>
+<li><b>Time is a parameter.</b> The {{ window }}-day sync window, aging and staleness use <code>RECON_AS_OF</code> ({{ as_of }}), never the clock.</li>
+<li><b>Failures are data.</b> Failed or partial pulls are recorded, retried with bounded backoff, never loaded over validated data, and shown as NO_DATA / INCOMPLETE / STALE, never $0.</li>
+<li><b>Money is integer cents.</b> QuickBooks decimals are parsed as <code>Decimal</code> and converted in one tested function; unknown currencies are rejected.</li>
+<li><b>Independent ground truth.</b> Expected statuses come from the scenario plan, keyed by a <code>seed_key</code> carried in Stripe metadata and the QBO memo. The evaluator can fail, and tests prove it does.</li>
+<li><b>Web layer.</b> Django renders every page from <code>finrecon/dashboard_data.py</code>, the same tested query module the static report uses. No ORM, sessions or logins: the app is read-only and connects with a read-only database role.</li>
+</ul>
+
+<h2>Interview questions → where they are answered</h2>
+<div class="wrap"><table><tr><th>Question</th><th>Answer in this project</th></tr>
+<tr><td>Pull reports via API for many clients × locations</td><td>ingestion/runner.py, adapters/*, Data Quality page</td></tr>
+<tr><td>Verify completeness and accuracy</td><td>expected-vs-received, pagination, source totals, duplicates (Data Quality page)</td></tr>
+<tr><td>Relate client/location/invoice/transaction/payment IDs</td><td>db/schema.sql: source_id_map, payment_allocations</td></tr>
+<tr><td>Find transactions in one system only</td><td>recon/sql/*.sql + engine.py (Reconciliation page)</td></tr>
+<tr><td>Explain the pipeline architecture</td><td>this page</td></tr>
+<tr><td>Connect QuickBooks, Stripe and the ad platform</td><td>Billing & Payouts: spend → invoice → payment → payout</td></tr></table></div>
+
+<h2>Limitations</h2>
+<ul>
+<li>Reconciliation data is synthetic (created in real QBO and Stripe sandboxes). The billing formula, fees and the Stripe→QBO sync are simulated to create known cases. Only the retail module uses real data, and it is kept separate.</li>
+<li>Sandbox objects cannot be back-dated, so the business date is stored in Stripe metadata (<code>event_date</code>).</li>
+<li>Single currency (USD) for reconciliation; multi-currency needs an explicit FX policy first.</li>
+<li>QBO and Stripe are re-read in full each run (small volumes); the ad platform loads incrementally with a look-back.</li>
+</ul>
+{% endblock %}

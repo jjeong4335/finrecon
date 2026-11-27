@@ -8,6 +8,7 @@ From your machine, with the AWS CLI configured (`aws configure` or `aws sso logi
 ./deploy/aws/launch.sh          # creates everything and prints the URL
 ./deploy/aws/status.sh          # progress: setup log, containers, HTTPS certificate
 ./deploy/aws/teardown.sh        # removes everything it created
+./deploy/aws/update.sh          # deploy the latest main to the running instance (data kept)
 ```
 
 `launch.sh` creates, all tagged `Project=finrecon-demo`: a security group (80/443 public, 22 from your current IP
@@ -26,7 +27,7 @@ The same build commands run in CI on every push (Docker job), so the deployment 
 
 ## Manual setup
 
-One small instance running Docker Compose: PostgreSQL, the one-shot pipeline job, the Streamlit dashboard, the
+One small instance running Docker Compose: PostgreSQL, the one-shot pipeline job, the Django web app (gunicorn), the
 internal mock API and Caddy (automatic HTTPS). Only ports 80/443 are public. Nothing here creates other AWS resources.
 
 ## 1. Launch the instance

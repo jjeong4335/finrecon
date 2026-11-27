@@ -17,7 +17,7 @@ discipline on messy real-world data.
 ```bash
 git clone https://github.com/jjeong4335/finrecon && cd finrecon
 pip install -r requirements-dev.txt
-python -m finrecon.pipeline demo && streamlit run dashboard/Home.py
+python -m finrecon.pipeline demo && python manage.py runserver     # http://127.0.0.1:8000
 ```
 
 It was built to answer, with working code, six questions from a Finance Data Analyst interview:
@@ -68,11 +68,11 @@ flowchart LR
   CORE --> REC[Reconciliation<br/>L1 exact → L2 candidate → L3 typed exceptions<br/>billing · gross→net · payouts]
   DS --> REC
   REC --> EV[Ground-truth evaluator]
-  REC --> UI[Streamlit dashboard<br/>read-only DB role]
+  REC --> UI[Django web app<br/>read-only DB role]
   EV --> UI
 ```
 
-**Stack:** Python 3.12, PostgreSQL 16 (SQLite for the offline test suite), FastAPI (mock API), Streamlit, pytest,
+**Stack:** Python 3.12, PostgreSQL 16 (SQLite for the offline test suite), FastAPI (mock API), Django (read-only web app, served by gunicorn), pytest,
 Docker Compose, Caddy (automatic HTTPS), AWS EC2. No ORM: SQL is explicit and lives in `db/` and `finrecon/recon/sql/`.
 
 ## Data model
@@ -236,7 +236,7 @@ Required checks covered: idempotent re-runs · Stripe-only (pending vs missing) 
 mismatch · open AR not an exception · partial and multi-invoice allocations, no double counting · failure → NO_DATA,
 never zero · ground truth with zero misses and zero false positives · gross − fee = net and payout totals ·
 traceability to source ID, run and raw bytes (sha256) · ambiguous candidates → review · location and pagination
-coverage, 429 retried · cents ↔ decimal conversion · every dashboard page executed against a Streamlit stub ·
+coverage, 429 retried · cents ↔ decimal conversion · every web page rendered through Django's test client (all record types, filters, 404s) ·
 UCI module: classification, duplicate vs. overlap handling, cancellation tracing, control totals, idempotent reload,
 both header variants (tested on hand-written rows in the UCI layout, `tests/fixtures/uci_format/`).
 
@@ -277,7 +277,7 @@ PostgreSQL with identical resulting tables.
 |---|---|
 | Offline pipeline, reconciliation, evaluator, report | Run and tested |
 | SQL on PostgreSQL 16 | Verified by replay, and the full suite runs on PostgreSQL through psycopg in CI |
-| Streamlit pages | Executed against a recording stub; first real render happens in Docker |
+| Django web app | Every page rendered in CI through Django's test client (SQLite and PostgreSQL) and through Caddy in the Docker job |
 | Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
 | QBO / Stripe live adapters, `seed/live_seed.py` | **Run end to end against real QuickBooks Online and Stripe sandboxes:** seeded, ingested twice through the APIs, reconciled — 27 / 27 scenarios, 226 / 226 items correct |
 | UCI module on the real file | Loaded end to end on a MacBook: 1,067,371 rows in 73 s, control totals passed (results below) |
@@ -290,7 +290,7 @@ PostgreSQL with identical resulting tables.
 python -m pip install -r requirements-dev.txt
 python -m finrecon.pipeline demo        # builds data/finrecon.db (SQLite) and prints the evaluation
 python -m pytest
-streamlit run dashboard/Home.py         # http://localhost:8501
+python manage.py runserver              # http://127.0.0.1:8000
 python -m finrecon.pipeline report      # reports/snapshot.html, a static fallback
 ```
 
@@ -307,7 +307,7 @@ finrecon/              config, db (PostgreSQL/SQLite), money, ids, dashboard_dat
 mock_ad_api/           framework-free service + FastAPI app + stdlib server
 seed/                  scenario plan, offline fixture generator, live sandbox seeder + snapshot capture
 db/schema.sql          the data model (+ db/retail_staging.sql for the UCI module)
-dashboard/             Streamlit app (5 pages)
+webapp/                Django app (read-only; 6 pages + record detail), templates in webapp/templates/
 docs/                  deployment, live sandbox guide, design notes per module
 ```
 

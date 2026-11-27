@@ -1,0 +1,46 @@
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<h1>Finance Reconciliation Overview</h1>
+<div class="sub">QuickBooks Online + Stripe sandboxes + ad platform · {{ o.clients }} clients, {{ o.locations }} locations{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} records belong to customers outside the client registry (e.g. sandbox sample data) and are not reconciled{% endif %}</div>
+<div class="kpis">
+ <div class="kpi"><div class="v">{{ o.invoiced_cents|money }}</div><div class="l">Invoiced ({{ o.invoice_count }} invoices)</div></div>
+ <div class="kpi"><div class="v">{{ o.recorded_payments_cents|money }}</div><div class="l">Payments recorded in QBO</div></div>
+ <div class="kpi"><div class="v">{{ o.stripe_gross_cents|money }}</div><div class="l">Collected in Stripe (gross)</div></div>
+ <div class="kpi"><div class="v">{{ o.open_ar_cents|money }}</div><div class="l">Open AR (not an exception)</div></div>
+ <div class="kpi"><div class="v">{{ o.match_rate|pct }}</div><div class="l">Payment records reconciled</div></div>
+ <div class="kpi"><div class="v">{{ o.exceptions }}</div><div class="l">Reconciliation exceptions</div></div>
+ <div class="kpi"><div class="v">{{ o.billing_issues }}</div><div class="l">Billing exceptions</div></div>
+ <div class="kpi"><div class="v">{{ o.data_issues }}</div><div class="l">Sources not fully validated</div></div>
+</div>
+{% if ev %}<div class="badge{% if not ev_ok %} fail{% endif %}">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications match the ground truth · {{ ev.false_positive_exceptions }} false-positive exceptions · {{ ev.missed_exceptions }} missed exceptions</div>
+<div class="sub" style="margin-top:6px">Computed by the evaluator for this run, not hard-coded. Stripe and QBO amounts are compared, never added together.</div>{% endif %}
+
+<h2>Exceptions ({{ exceptions|length }})</h2>
+<div class="wrap"><table><tr><th>Status</th><th>Record</th><th>Client</th><th>Location</th><th>Source ID</th><th class="n">Amount</th><th class="n">Diff</th><th>Why</th></tr>
+{% for r in exceptions %}<tr><td><span class="pill {{ r.status|pill }}">{{ r.status }}</span></td><td class="nw">{{ r.record_type }}</td><td>{{ r.client|default:"—" }}</td><td>{{ r.location|default:"client-level" }}</td>
+<td class="nw"><a href="{% url 'record' r.record_type r.record_id %}">{{ r.source_record_id }}</a></td><td class="n">{{ r.amount_cents|money }}</td><td class="n">{% if r.diff_cents %}{{ r.diff_cents|money }}{% endif %}</td><td>{{ r.reason }}</td></tr>
+{% empty %}<tr><td colspan="8">No exceptions.</td></tr>{% endfor %}</table></div>
+
+<div class="grid2">
+<div><h2>Classifications by record type</h2>
+<div class="wrap"><table><tr><th>Status</th>{% for t in types %}<th class="n">{{ t }}</th>{% endfor %}</tr>
+{% for p in pivot %}<tr><td><span class="pill {{ p.status|pill }}">{{ p.status }}</span></td>{% for c in p.cells %}<td class="n">{{ c }}</td>{% endfor %}</tr>{% endfor %}</table></div></div>
+<div><h2>Source freshness</h2>
+<div class="wrap"><table><tr><th>Source</th><th class="n">Scopes</th><th class="n">Healthy</th><th>Last successful sync</th></tr>
+{% for f in freshness %}<tr><td>{{ f.source }}</td><td class="n">{{ f.scopes }}</td><td class="n">{{ f.healthy }}</td><td class="nw">{{ f.last_successful_sync|default:"—" }}</td></tr>{% endfor %}</table></div></div>
+</div>
+
+<h2>30-second tour</h2>
+<ol>
+<li><a href="{% url 'reconciliation' %}?exceptions=1&status=MISSING_IN_QBO">Reconciliation → MISSING_IN_QBO</a>: open the record to see the reason, the Stripe ID, the invoice it claims to pay and the raw API pages.</li>
+<li><a href="{% url 'reconciliation' %}?exceptions=1&status=NEEDS_REVIEW">NEEDS_REVIEW</a>: identical deposits, a location conflict and an invoice-reference conflict. The engine refuses to guess.</li>
+<li><a href="{% url 'data_quality' %}">Data Quality</a>: Paterson is NO_DATA (API down), never $0; Astoria is STALE.</li>
+<li><a href="{% url 'billing' %}">Billing & Payouts</a>: a fee billed twice, a month never invoiced, gross − fees = net.</li>
+<li><a href="{% url 'retail' %}">Retail</a>: 1.07M real public transactions, nothing dropped.</li>
+</ol>
+
+<details><summary>All {{ board|length }} test scenarios and their results</summary>
+<div class="wrap" style="margin-top:8px"><table><tr><th>Code</th><th>Scenario</th><th>What it tests</th><th>Interview topic</th><th class="n">Items</th><th>Result</th></tr>
+{% for b in board %}<tr><td>{{ b.scenario }}</td><td class="nw">{{ b.title }}</td><td>{{ b.description }}</td><td class="nw">{{ b.interview_question }}</td><td class="n">{{ b.correct }}/{{ b.items }}</td><td><span class="pill {% if b.passed %}ok{% else %}bad{% endif %}">{% if b.passed %}PASS{% else %}FAIL{% endif %}</span></td></tr>{% endfor %}</table></div></details>
+{% endblock %}

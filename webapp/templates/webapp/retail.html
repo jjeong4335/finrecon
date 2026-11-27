@@ -1,0 +1,49 @@
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}Retail data quality{% endblock %}
+{% block content %}
+<h1>Retail Data Quality (real public data)</h1>
+<p>A separate module that loads <b>UCI Online Retail II</b>: about 1.07 million real invoice lines from a UK online retailer (2009-12 to 2011-12, GBP). It shows how messy real data is cleaned without losing anything. This data has no Stripe or QuickBooks IDs, so it is <b>never</b> matched against the reconciliation, and Country is the customer's country, not a store location.</p>
+<p class="sub">Source: {{ citation }}</p>
+{% if not s %}
+<div class="reason">The UCI dataset has not been loaded yet. Run <code>python -m finrecon.ingestion.uci_retail all</code> (downloads about 44 MB, then loads in a few minutes). In the Docker deployment this runs automatically after start-up.</div>
+{% else %}
+<div class="kpis">
+ <div class="kpi"><div class="v">{{ s.load.rows_read|intcomma }}</div><div class="l">Rows read</div></div>
+ <div class="kpi"><div class="v">{{ s.load.rows_loaded|intcomma }}</div><div class="l">Rows kept (nothing dropped)</div></div>
+ <div class="kpi"><div class="v">{{ load_seconds|floatformat:0 }} s</div><div class="l">Load time (read {{ s.load.seconds_read_parse }}s · write {{ s.load.seconds_load }}s · validate {{ s.load.seconds_validate }}s)</div></div>
+ <div class="kpi"><div class="v">{{ s.load.rows_per_second|floatformat:0 }}</div><div class="l">Rows per second (chunk {{ s.load.chunk_size|intcomma }})</div></div>
+</div>
+<p class="sub">File {{ s.load.source_file }} · sha256 {{ s.load.source_sha256|slice:":16" }}… · load {{ s.load.load_id }} · {{ s.load.status }}</p>
+
+<h2>Control totals and checks</h2>
+<div class="wrap"><table><tr><th>Check</th><th class="n">Rows</th><th class="n">Amount</th><th class="n">Share</th><th>Result</th><th>Detail</th></tr>
+{% for c in s.checks %}<tr><td class="nw">{{ c.check_name }}</td><td class="n">{{ c.rows_affected|intcomma }}</td><td class="n">{% if c.amount_cents is not None %}{{ c.amount_cents|gbp }}{% endif %}</td><td class="n">{{ c.share|pct:2 }}</td><td><span class="pill {% if c.passed %}ok{% else %}{{ c.severity|pill }}{% endif %}">{% if c.passed %}ok{% else %}{{ c.severity }}{% endif %}</span></td><td>{{ c.detail }}</td></tr>{% endfor %}</table></div>
+<p class="sub">Repeated identical lines are flagged, not deleted, because the same item can be keyed twice on one invoice. Identical copies of an invoice in two sheets are excluded once.</p>
+
+<div class="grid2">
+<div><h2>Every line has exactly one class</h2><div class="wrap"><table><tr><th>Class</th><th class="n">Lines</th><th class="n">Amount</th></tr>
+{% for c in s.classes %}<tr><td><span class="pill {{ c.line_class|pill }}">{{ c.line_class }}</span></td><td class="n">{{ c.lines|intcomma }}</td><td class="n">{{ c.amount_cents|gbp }}</td></tr>{% endfor %}</table></div></div>
+<div><h2>Non-product stock codes</h2><div class="wrap"><table><tr><th>Code</th><th>Description</th><th class="n">Lines</th><th class="n">Amount</th></tr>
+{% for c in s.non_product_codes %}<tr><td>{{ c.stock_code }}</td><td>{{ c.description|default:"" }}</td><td class="n">{{ c.lines|intcomma }}</td><td class="n">{{ c.amount_cents|gbp }}</td></tr>{% endfor %}</table></div></div>
+</div>
+
+{% if chart %}<h2>By month: valid sales vs cancellations (GBP)</h2>
+<svg viewBox="0 0 {{ chart.w }} {{ chart.h }}" width="100%" style="background:#fff;border:1px solid #e3e7ee;border-radius:8px" role="img" aria-label="Monthly sales and cancellations">
+ <line x1="{{ chart.pad }}" y1="{{ chart.baseline }}" x2="{{ chart.w }}" y2="{{ chart.baseline }}" stroke="#c9d0db"/>
+ <text x="{{ chart.pad }}" y="18" font-size="11" fill="#5d6778">max {{ chart.top }}</text>
+ <polyline fill="none" stroke="#2b59c3" stroke-width="2" points="{{ chart.sales }}"/>
+ <polyline fill="none" stroke="#b3261e" stroke-width="2" points="{{ chart.canc }}"/>
+ {% for t in chart.ticks %}<text x="{{ t.x }}" y="{{ chart.h|add:-12 }}" font-size="10" fill="#5d6778" text-anchor="middle">{{ t.label }}</text>{% endfor %}
+</svg>
+<p class="sub"><span style="color:#2b59c3">■</span> valid sales · <span style="color:#b3261e">■</span> cancellations (absolute)</p>{% endif %}
+
+<h2>Cancellations: traced to an earlier sale?</h2>
+<p class="sub">Cancellation invoices do not reference the original sale. LINKED means the same customer bought the same item earlier in the data for at least that quantity. NO_PRIOR_SALE should be highest in the first months, when the original sale may predate the dataset.</p>
+<div class="wrap"><table><tr><th>Month</th><th class="n">LINKED</th><th class="n">NO_PRIOR_SALE</th><th class="n">MISSING_CUSTOMER</th></tr>
+{% for l in links %}<tr><td>{{ l.month }}</td><td class="n">{{ l.LINKED|intcomma }}</td><td class="n">{{ l.NO_PRIOR_SALE|intcomma }}</td><td class="n">{{ l.MISSING_CUSTOMER|intcomma }}</td></tr>{% endfor %}</table></div>
+
+<h2>Top customer countries (valid sales)</h2>
+<div class="wrap"><table><tr><th>Country</th><th class="n">Invoices</th><th class="n">Amount</th></tr>
+{% for c in s.countries %}<tr><td>{{ c.country }}</td><td class="n">{{ c.invoices|intcomma }}</td><td class="n">{{ c.amount_cents|gbp }}</td></tr>{% endfor %}</table></div>
+{% endif %}
+{% endblock %}

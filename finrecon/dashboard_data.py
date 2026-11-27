@@ -1,4 +1,4 @@
-"""Read-only queries shared by the Streamlit dashboard and the static report.
+"""Read-only queries shared by the Django web app and the static report.
 
 Everything here reads the database; nothing calls an external API. Keeping the
 queries out of the UI files means they are covered by the test suite.

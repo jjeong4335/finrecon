@@ -8,5 +8,5 @@
 		Referrer-Policy "no-referrer"
 		-Server
 	}
-	reverse_proxy dashboard:8501
+	reverse_proxy dashboard:8000
 }

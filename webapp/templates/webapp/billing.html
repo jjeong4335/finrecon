@@ -1,0 +1,22 @@
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}Billing & Payouts{% endblock %}
+{% block content %}
+<h1>Billing & Payouts</h1>
+<h2>Ad spend → invoice</h2>
+<p class="sub">Expected invoice = ad spend + management fee (with minimum) − discount + tax, per location-month. The rules are synthetic. Ad spend is never compared with cash directly.</p>
+<div class="wrap"><table><tr><th>Client</th><th class="n">Mgmt fee</th><th class="n">Minimum fee</th><th class="n">Discount</th><th class="n">Tax</th><th>Rule</th></tr>
+{% for r in rules %}<tr><td>{{ r.client }}</td><td class="n">{{ r.mgmt_fee_bps|floatformat:0 }} bps</td><td class="n">{{ r.min_fee_cents|money }}</td><td class="n">{{ r.discount_bps }} bps</td><td class="n">{{ r.tax_bps }} bps</td><td>{{ r.description }}</td></tr>{% endfor %}</table></div>
+<p class="sub" style="margin-top:14px">{% if show_all %}All {{ rows|length }} checks · <a href="{% url 'billing' %}">only checks that are not BILLING_MATCHED</a>{% else %}{{ rows|length }} checks other than BILLING_MATCHED · <a href="{% url 'billing' %}?all=1">show all</a>{% endif %}</p>
+<div class="wrap"><table><tr><th>Status</th><th>Client</th><th>Location</th><th>Period</th><th class="n">Spend</th><th class="n">Fee</th><th class="n">Expected</th><th class="n">Invoiced</th><th class="n">Diff</th><th>Data</th><th>Why</th></tr>
+{% for r in rows %}<tr><td><span class="pill {{ r.status|pill }}">{{ r.status }}</span></td><td>{{ r.client }}</td><td>{{ r.location }}</td><td class="nw">{{ r.billing_period }}</td><td class="n">{{ r.spend_cents|money }}</td><td class="n">{{ r.fee_cents|money }}</td><td class="n">{{ r.expected_cents|money }}</td><td class="n">{{ r.invoiced_cents|money }}</td><td class="n">{% if r.diff_cents %}{{ r.diff_cents|money }}{% endif %}</td><td><span class="pill {{ r.data_status|pill }}">{{ r.data_status }}</span></td><td>{{ r.reason }}</td></tr>{% endfor %}</table></div>
+
+<h2>Stripe gross → fees → net → payouts</h2>
+{% if payouts %}<div class="wrap"><table><tr><th>Payout</th><th>Arrival</th><th class="n">Gross</th><th class="n">Fees</th><th class="n">Refunds</th><th class="n">Net</th><th class="n">Payout</th><th class="n">Txns</th><th></th></tr>
+{% for p in payouts %}<tr><td class="nw">{{ p.source_payout_id }}</td><td class="nw">{{ p.arrival_date }}</td><td class="n">{{ p.gross_cents|money }}</td><td class="n">{{ p.fee_cents|money }}</td><td class="n">{{ p.refund_cents|money }}</td><td class="n">{{ p.net_cents|money }}</td><td class="n">{{ p.amount_cents|money }}</td><td class="n">{{ p.transactions }}</td><td>{% if p.simulated %}<span class="pill neu">simulated</span>{% endif %}</td></tr>{% endfor %}</table></div>
+{% else %}<p class="sub">No payouts in this data (sandbox accounts often have none yet). Gross − fee = net is still checked per transaction below.</p>{% endif %}
+
+<h2>Accounting checks</h2>
+<div class="wrap"><table><tr><th>Check</th><th class="n">Passed</th><th></th></tr>
+{% for a in accounting %}<tr><td>{{ a.check_name }}</td><td class="n">{{ a.n_passed }} / {{ a.total }}</td><td>{% if a.n_passed == a.total %}<span class="pill ok">all passed</span>{% else %}<span class="pill bad">failures</span>{% endif %}</td></tr>{% endfor %}</table></div>
+<p class="sub">gross − fee = net for every balance transaction · charge gross = PaymentIntent amount · payout = Σ net of its transactions. Journal-entry previews are on each Stripe payment's record page.</p>
+{% endblock %}

@@ -30,7 +30,7 @@ VIEW_SQL = "SELECT * FROM reconciliation_results WHERE is_exception"
 class Database:
     def __init__(self, url: str, autocommit: bool = False):
         self.url = url
-        # One connection may be shared by Streamlit sessions; serialize access.
+        # One connection may be shared by web request threads; serialize access.
         self._lock = threading.RLock()
         if url.startswith(("postgresql://", "postgres://")):
             import psycopg  # imported lazily: not needed for offline tests
@@ -42,7 +42,7 @@ class Database:
             path = url[len("sqlite:///"):]
             if path != ":memory:":
                 Path(path).parent.mkdir(parents=True, exist_ok=True)
-            # check_same_thread=False: Streamlit runs each rerun on a worker thread.
+            # check_same_thread=False: web servers may handle requests on worker threads.
             self._conn = sqlite3.connect(path, check_same_thread=False)
             self._conn.execute("PRAGMA foreign_keys = ON")
         else:

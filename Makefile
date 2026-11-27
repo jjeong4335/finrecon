@@ -9,8 +9,8 @@ test:
 	python -m pytest
 report:        ## static HTML snapshot -> reports/snapshot.html
 	python -m finrecon.pipeline report
-dashboard:
-	streamlit run dashboard/Home.py
+dashboard:      ## Django app on http://127.0.0.1:8000
+	python manage.py runserver
 up:
 	docker compose up -d --build
 down:

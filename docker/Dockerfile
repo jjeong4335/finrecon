@@ -7,5 +7,6 @@ COPY . .
 # /app/data must exist and belong to `app` so the named volume mounted there is writable.
 RUN useradd --create-home app && mkdir -p /app/data && chown -R app /app
 USER app
-EXPOSE 8501
-CMD ["streamlit", "run", "dashboard/Home.py", "--server.port=8501", "--server.address=0.0.0.0"]
+EXPOSE 8000
+# Read-only Django app; 2 workers fit a 2 GB instance alongside PostgreSQL.
+CMD ["gunicorn", "webapp.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--timeout", "60", "--access-logfile", "-"]

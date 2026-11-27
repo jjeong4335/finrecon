@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -74,13 +73,20 @@ jobs:
           docker compose run --rm pipeline | tee pipeline.log
           grep -E "([0-9]+) / \1 scenarios passed" pipeline.log
       - run: docker compose up -d --no-build dashboard caddy
-      - name: Dashboard answers through Caddy
+      - name: Django app answers through Caddy
         run: |
           for i in $(seq 1 60); do
-            if curl -sf http://localhost/_stcore/health; then echo; exit 0; fi
+            if curl -sf http://localhost/healthz; then echo; exit 0; fi
             sleep 2
           done
           exit 1
+      - name: Every page renders through Caddy
+        run: |
+          for p in / /reconciliation/ /billing/ /data-quality/ /retail/ /architecture/; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost$p"); echo "$p $code"
+            [ "$code" = "200" ] || exit 1
+          done
+          curl -s http://localhost/ | grep -E "([0-9]+) / \1 scenarios passed"
       - name: Dashboard database role is read-only
         run: |
           docker compose exec -T db psql -U dashboard_ro -d finrecon -c "SELECT COUNT(*) FROM reconciliation_results"

@@ -1,6 +1,6 @@
 # Runtime (Docker image). Offline tests need only pytest + requests.
-streamlit>=1.40,<2
-pandas>=2.2
+django>=5.1,<6
+gunicorn>=23
 psycopg[binary]>=3.2,<4
 requests>=2.32,<3
 fastapi>=0.115

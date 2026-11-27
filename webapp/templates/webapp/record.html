@@ -1,0 +1,28 @@
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}{{ r.source_record_id }}{% endblock %}
+{% block content %}
+<p class="sub"><a href="{% url 'reconciliation' %}">← Reconciliation</a></p>
+<h1>{{ r.record_type }} {{ r.source_record_id }} <span class="pill {{ r.status|pill }}">{{ r.status }}</span></h1>
+<p class="sub">{{ help }}</p>
+<div class="kpis">
+ <div class="kpi"><div class="v">{{ r.amount_cents|money }}</div><div class="l">Amount</div></div>
+ <div class="kpi"><div class="v">{{ r.counterpart_amount_cents|money }}</div><div class="l">Counterpart amount</div></div>
+ <div class="kpi"><div class="v">{% if r.diff_cents is not None %}{{ r.diff_cents|money }}{% else %}—{% endif %}</div><div class="l">Difference</div></div>
+ <div class="kpi"><div class="v">{{ r.match_method|default:"—" }}</div><div class="l">Match method</div></div>
+</div>
+<div class="reason"><b>Why:</b> {{ r.reason }}</div>
+<h2>Identifiers and provenance</h2>
+<div class="wrap"><table>{% for k, v in fields %}<tr><th style="width:260px">{{ k }}</th><td>{{ v|default:"—" }}</td></tr>{% endfor %}</table></div>
+{% if allocations %}<h2>Allocations (QBO Line.LinkedTxn)</h2>
+<div class="wrap"><table><tr>{% for k in allocations.0.keys %}<th>{{ k }}</th>{% endfor %}</tr>
+{% for a in allocations %}<tr>{% for k, v in a.items %}<td{% if k == "amount_cents" %} class="n"{% endif %}>{% if k == "amount_cents" %}{{ v|money }}{% else %}{{ v }}{% endif %}</td>{% endfor %}</tr>{% endfor %}</table></div>{% endif %}
+{% if journal %}<h2>Journal-entry preview</h2><p class="sub">Educational illustration, not accounting advice and not posted to QuickBooks.</p>
+{% for e in journal %}<h3>{{ e.title }} · {{ e.date }} · {% if e.balanced %}<span class="pill ok">balanced</span>{% else %}<span class="pill bad">NOT balanced</span>{% endif %}</h3>
+{% if e.note %}<p class="sub">{{ e.note }}</p>{% endif %}
+<div class="wrap"><table><tr><th>Account</th><th class="n">Debit</th><th class="n">Credit</th></tr>
+{% for l in e.lines %}<tr><td>{{ l.account }}</td><td class="n">{% if l.debit %}{{ l.debit|money }}{% endif %}</td><td class="n">{% if l.credit %}{{ l.credit|money }}{% endif %}</td></tr>{% endfor %}</table></div>{% endfor %}{% endif %}
+<details><summary>Raw API pages archived for this ingestion run ({{ raw_pages|length }})</summary>
+<div class="wrap" style="margin-top:8px"><table><tr><th>Request</th><th>Archive path</th><th>sha256</th><th>Fetched</th></tr>
+{% for p in raw_pages %}<tr><td class="nw">{{ p.request_key }}</td><td>{{ p.path }}</td><td><code>{{ p.sha256|slice:":16" }}…</code></td><td class="nw">{{ p.fetched_at }}</td></tr>{% endfor %}</table></div></details>
+<details><summary>Normalized source row</summary><pre>{{ source_json }}</pre></details>
+{% endblock %}

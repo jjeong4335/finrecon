@@ -36,6 +36,8 @@ def test_overview(client):
     html = get(c, "/")
     assert "Scenario validation: 27 / 27 scenarios passed" in html
     assert "Not affiliated" in html and "MISSING_IN_QBO" in html
+    guide = get(c, "/guide/")
+    assert "How to use the dashboard" in guide and "Open the dashboard" in guide and "Exception queue:" in guide
 
 
 def test_reconciliation_filters(client):

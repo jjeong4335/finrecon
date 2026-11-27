@@ -1,308 +1,66 @@
-{% load finrecon_tags %}<!doctype html>
-<html lang="en" data-type="software" data-radius="sharp" data-ground="sky" data-buttons="pill" data-motion>
-<head>
-{% with T="/static/taste" %}
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>finrecon: QuickBooks and Stripe reconciliation for multi-location clients</title>
-<meta name="description" content="A reconciliation pipeline that matches every Stripe payment to its QuickBooks record across {{ o.clients }} clients and {{ o.locations }} locations, and explains each exception.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="finrecon: QuickBooks and Stripe reconciliation for multi-location clients">
-<meta property="og:description" content="Every Stripe payment matched to its QuickBooks record, every exception explained.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#ffffff">
-<meta name="site-kind" content="software">
-<meta name="page-type" content="software">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..700&family=Funnel+Sans:wght@400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ T }}/system.css">
-<link rel="stylesheet" href="{{ T }}/ui/cards.css">
-<link rel="stylesheet" href="{{ T }}/motion/motion.css">
-<link rel="stylesheet" href="{{ T }}/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="{{ T }}/layout/layout.css">
-<link rel="stylesheet" href="{{ T }}/icons/icon.css">
-<style>
-:root {
-  --p-bg: #ffffff; --p-surface: #f4f4f4; --p-ink: #111111; --p-muted: #6b6b6b;
-  --p-accent: #1a4be0; --p-accent-ink: #ffffff; --p-action: #1a4be0; --p-action-ink: #ffffff;
-  --p-inv-bg: #111111; --p-inv-surface: #1e1e1e; --p-inv-ink: #ffffff; --p-inv-muted: #9a9a9a;
-  --p-inv-accent: #ffffff; --p-inv-accent-ink: #111111; --p-inv-action: #ffffff; --p-inv-action-ink: #111111;
-  --font-display: "Funnel Display", system-ui, sans-serif;
-  --font-text: "Funnel Sans", system-ui, sans-serif;
-  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --display-weight: 400;
-  --display-tracking: -0.03em;
-  --display-tracking-xl: -0.04em;
-  --ly-scale: 0.98;
-}
-</style>
-<link rel="stylesheet" href="{{ T }}/ui/base.css">
-<link rel="stylesheet" href="{{ T }}/ui/window/fragment.css">
-<link rel="stylesheet" href="{{ T }}/ui/doc/fragment.css">
-<link rel="stylesheet" href="{{ T }}/diagrams/diagram.css">
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="{{ T }}/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="{{ T }}/moments/moments.js">
-<link rel="modulepreload" href="{{ T }}/moments/lib.js">
-<link rel="modulepreload" href="{{ T }}/moments/letters-assemble/moment.js">
-<style>
-/* app-frame recipe (sections-library.md) */
-.app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
-.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
-.app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
-.app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
-.app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
-@media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
-@media (max-width: 1023px) {
-  .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
-  .app > .app__pane--list { max-height: 252px; }
-  .app > .app__pane--list::after { display: none; }
-  .app .ui-win__side { display: none; }
-  .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
-  .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
-}
-@media (max-width: 639px) {
-  .app.ui { grid-template-rows: minmax(0, 1fr); }
-  .app > .app__pane--list { display: none; }
-  .app > .app__pane + .app__pane { border-top: 0; }
-}
-/* inside visuals only */
-.ui-doc__text b { font-family: var(--font-mono); font-weight: 500; }
-#method .panel { --p-h: 520px; }
-@media (max-width: 639px) { #method .panel { --p-h: 340px; } }
-.hero .hero__lead, #added .mo-la__sub { color: var(--p-ink); }
-.ground-inverse p { color: var(--p-inv-ink); }
-ul.rows { padding-left: 0; margin: 0; list-style: none; }
-#health .ui-win { width: 100%; }
-</style>
-</head>
-<body>
-<!-- type: software
-     deal: hero centred, nav nav-mega, close close-word, footer footer-dark, rhythm dark-band, buttons pill, mark wordmark, grounds sky (lit ground behind the hero window)
-     palette white-link-blue (a white sheet with a biro-blue accent: the ledger and the pen a controller marks it with); type funnel; radius sharp (fintech)
-     moments: letters-assemble in #added -->
-<header class="nav">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top">finrecon</a>
-    <nav class="nav__links" aria-label="Main">
-      <div class="nav__item">
-        <a class="nav__link" href="#queue">Exceptions <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3">
-              <p class="t-label">Books first</p>
-              <a href="#queue">Missing in QBO<span>Cash received, not recorded</span></a>
-              <a href="#queue">Missing in Stripe<span>Recorded, no processor record</span></a>
-              <a href="#queue">Unrecorded refunds<span>Revenue and cash overstated</span></a>
-            </div>
-            <div class="menu-col span-3">
-              <p class="t-label">Then the rest</p>
-              <a href="#queue">Duplicates<span>Unapplied credit to clean up</span></a>
-              <a href="#queue">Amount mismatches<span>Books and processor disagree</span></a>
-              <a href="#queue">Needs review<span>A person must decide</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#method">Method</a></div>
-      <div class="nav__item"><a class="nav__link" href="#proof">Proof</a></div>
-      <div class="nav__item"><a class="nav__link" href="#health">Sources</a></div>
-          </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="#queue">Open the queue</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+{% extends "webapp/base.html" %}{% load finrecon_tags %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<h1 class="sr-only" style="position:absolute;left:-9999px">Finance Reconciliation Overview</h1>
+<div class="hint" id="hint"><span>New here? <a href="{% url 'guide' %}">See how to use it in 60 seconds</a>. {{ o.clients }} clients, {{ o.locations }} locations, QuickBooks Online and Stripe sandboxes.</span><button class="x" type="button" aria-label="Hide this tip" onclick="this.parentNode.remove();try{localStorage.setItem('fr-hint','0')}catch(e){}">×</button></div>
+<script>try{if(localStorage.getItem('fr-hint')==='0')document.getElementById('hint').remove()}catch(e){}</script>
+
+<section class="band" aria-label="Summary">
+ <div>
+  <div class="big">{{ ev.scenarios_passed }} / {{ ev.scenarios_total }} verified</div>
+  <div class="cap">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications match the ground truth · {{ ev.false_positive_exceptions }} false-positive exceptions · {{ ev.missed_exceptions }} missed exceptions</div>
+  <div class="dist" role="img" aria-label="{{ queue.incident_count }} exception incidents by priority">{% for p in by_priority %}<span style="width:{{ p.share }}%;background:{% if p.priority == 1 %}#e5484d{% elif p.priority == 2 %}#f5a524{% else %}#8b8b8b{% endif %}"></span>{% endfor %}</div>
+  <div class="legend">{% for p in by_priority %}<span><i style="background:{% if p.priority == 1 %}#e5484d{% elif p.priority == 2 %}#f5a524{% else %}#8b8b8b{% endif %}"></i>{{ p.count }} {{ p.label|lower }}</span>{% endfor %}</div>
+ </div>
+ <div>
+  <div class="money">
+   <div><div class="l">Invoiced · {{ o.invoice_count }} invoices</div><div class="v">{{ o.invoiced_cents|money }}</div></div>
+   <div><div class="l">Payments recorded in QBO</div><div class="v">{{ o.recorded_payments_cents|money }}</div></div>
+   <div><div class="l">Collected in Stripe (gross)</div><div class="v">{{ o.stripe_gross_cents|money }}</div></div>
+   <div><div class="l">Open AR (not an exception)</div><div class="v">{{ o.open_ar_cents|money }}</div></div>
   </div>
-</header>
+  <div class="rate"><div class="l" style="display:flex;justify-content:space-between;color:#b5b5b5;font-size:12px"><span>Payment records reconciled</span><span style="color:#fff">{{ o.match_rate|pct }}</span></div><div class="track"><i style="width:{% widthratio o.match_rate 1 100 %}%"></i></div>
+  <div class="cap">Stripe and QBO amounts are compared, never added together. {{ o.billing_issues }} billing exceptions · {{ o.data_issues }} sources not fully validated{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} out-of-scope records (sandbox sample data){% endif %}.</div></div>
+ </div>
+</section>
 
-<main id="top">
-  <section class="hero hero--centred" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text">
-      <div class="hero__c">
-        <a class="pill" href="#proof"><span>{{ ev.scenarios_passed }} of {{ ev.scenarios_total }} checks pass</span><span class="muted">See the proof</span></a>
-        <h1 id="hero-h">Every Stripe payment, found in the books</h1>
-        <p class="hero__lead">finrecon matches each Stripe payment to its QuickBooks record across {{ o.clients }} clients and {{ o.locations }} locations, then says in plain words why the other {{ queue.incident_count }} do not match.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#queue">Open the queue</a><a class="btn btn--secondary" href="#method">Read the method</a></div>
-      </div>
-      <div class="hero__window" role="img" aria-label="The exception queue with a missing QuickBooks payment open beside it">
-        <div class="ly-piece d-win" aria-hidden="true">
-          <div class="d-win__bar"><span class="d-win__dots"><i></i><i></i><i></i></span><span><b>Exception queue</b> · as of {{ as_of }}</span><span class="sp"></span><span>QuickBooks · Stripe</span></div>
-          <div class="d-win__body">
-            <div class="inbox">
-              <div class="q">{{ queue.incident_count }} incidents · {{ queue.record_count }} records</div>
-              {% for i in queue.incidents|slice:":3" %}<div class="t{% if forloop.first %} is-on{% endif %}"><i style="background:#f3b4ae">P{{ i.priority }}</i><b>{{ i.client|default:"Unassigned" }}</b><time>{{ i.exposure_cents|money }}</time><span>{{ i.status }} · {{ i.location|default:"client-level" }}</span></div>{% endfor %}
-            </div>
-            <div class="convo">
-              <div class="d-chat" data-ly-steps="900">
-                <div class="d-msg d-msg--me">{{ queue.incidents.0.lead.reason }}<small>{{ queue.incidents.0.lead.source_record_id|truncatechars:18 }}</small></div>
-                <div class="d-tool" data-step>Searched QBO memos for the PaymentIntent id, then same amount within 3 days</div>
-                <div class="d-msg d-msg--bot" data-step>{{ queue.incidents.0.status }}: {{ queue.incidents.0.why_it_matters }}.<small>Priority {{ queue.incidents.0.priority }} · {{ queue.incidents.0.client }}, {{ queue.incidents.0.location|default:"client-level" }}</small></div>
-                <div class="acts" data-step><span>Open record</span><span>Raw API page</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div></div>
-  </section>
+<div class="split">
+ <section class="card" aria-labelledby="q-h">
+  <div class="hd"><h2 id="q-h">Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</h2><span class="sub">Books first, then money at stake. Click a row.</span><a style="margin-left:auto;font-size:12.5px" href="{% url 'reconciliation' %}">All records →</a></div>
+  <div class="wrap" style="max-height:none"><table>
+   <thead><tr><th class="n" title="Priority: 1 = wrong in the books">P</th><th>Status</th><th>Why it matters</th><th>Client · location</th><th class="n">Exposure</th></tr></thead>
+   <tbody>{% for i in queue.incidents %}<tr class="pick{% if forloop.first %} sel{% endif %}" tabindex="0" data-i="{{ forloop.counter0 }}"><td class="n p{{ i.priority }}">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}"{% for k, v in status_help.items %}{% if k == i.status %} data-tip="{{ v }}"{% endif %}{% endfor %}>{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}<div class="sub">{{ i.location|default:"client-level" }}</div></td><td class="n">{{ i.exposure_cents|money }}</td></tr>
+   {% empty %}<tr><td colspan="5">No exceptions in this run. Every payment record is matched.</td></tr>{% endfor %}</tbody></table></div>
+ </section>
+ <aside class="card detail" aria-live="polite" aria-labelledby="d-h">
+  {% for i in queue.incidents %}<div class="bd" data-d="{{ forloop.counter0 }}"{% if not forloop.first %} hidden{% endif %}>
+   <div class="sub">Priority {{ i.priority }} · {{ i.client|default:"—" }} · {{ i.location|default:"client-level" }}</div>
+   <h2 id="d-h" style="margin:6px 0 2px">{{ i.why_it_matters }}</h2>
+   <div class="amt">{{ i.exposure_cents|money }}</div>
+   <div class="reason"><b>Why:</b> {{ i.lead.reason }}</div>
+   <dl><dt>Status</dt><dd><span class="pill {{ i.status|pill }}">{{ i.status }}</span></dd>
+   {% for m in i.records %}<dt>{{ m.record_type }}</dt><dd><a href="{% url 'record' m.record_type m.record_id %}">{{ m.source_record_id|truncatechars:26 }}</a></dd>{% endfor %}</dl>
+   <a class="btn" href="{% url 'record' i.lead.record_type i.lead.record_id %}">Open record</a>
+  </div>{% empty %}<div class="bd"><p class="sub">Select an incident to see why it was raised.</p></div>{% endfor %}
+ </aside>
+</div>
 
-  <section class="section" id="queue" aria-labelledby="queue-h">
-    <div class="wrap">
-      <div class="grid">
-        <h2 class="span-5" id="queue-h">Exception queue: {{ queue.incident_count }} incidents</h2>
-        <p class="span-6 start-7">Wrong in the books comes first, then money at stake. A Stripe record and its QuickBooks twin count as one incident. <a class="link" href="{% url 'reconciliation' %}">Filter all 151 records</a></p>
-      </div>
-      <div class="ui app fill" role="img" aria-label="The exception incidents beside the open first incident" data-ui-pause-host>
-        <div class="app__pane app__pane--list">
-          <div class="ui ui-panel ui-win" data-ui="window" data-open="Open" data-work="Reviewing" data-done="Cleared">
-            <div class="ui-win__bar">
-              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="ui-win__crumb">Reconciliation <i>/</i> <b>Exceptions</b></span>
-              <span class="ui-spacer"></span>
-              <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">Search</span><span class="ui-kbd">/</span></span>
-            </div>
-            <div class="ui-win__body">
-              <nav class="ui-win__side" aria-hidden="true">
-                <span class="ui-win__nav is-on">Open<em>{{ queue.incident_count }}</em></span>
-                <span class="ui-win__label">Clients</span>
-                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Clients<em>{{ o.clients }}</em></span>
-              </nav>
-              <div class="ui-win__main">
-                <div class="ui-win__cols" aria-hidden="true"><span>Client</span><span>Exception</span><span>Status</span><span>Exposure</span></div>
-                <ul class="ui-win__rows">
-                  {% for i in queue.incidents %}<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="{{ i.priority }}">P{{ i.priority }}</span><span class="ui-win__who">{{ i.client|default:"Unassigned" }}, {{ i.location|default:"client-level" }}</span><span class="ui-win__sub">{{ i.status }} · {{ i.why_it_matters }}</span><span class="ui-win__st{% if i.priority == 1 %} is-you{% elif i.priority == 3 %} is-done{% endif %}" data-st>P{{ i.priority }}</span><span class="ui-win__age">{{ i.exposure_cents|money }}</span></li>{% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="app__pane app__pane--open" data-ui-loop>
-          <div class="ui ui-doc" data-ui="doc">
-            <article class="ui-doc__page">
-              <div class="ui-doc__label">{{ queue.incidents.0.lead.record_type }} · {{ queue.incidents.0.client }} · {{ queue.incidents.0.location|default:"client-level" }}</div>
-              <div class="ui-doc__title">{{ queue.incidents.0.why_it_matters }}</div>
-              <div class="ui-doc__text"><mark class="ui-doc__mark is-on">{{ queue.incidents.0.lead.reason }}</mark></div>
-              {% for m in queue.incidents.0.records %}<div class="ui-doc__text">{{ m.record_type }} <b>{{ m.source_record_id }}</b></div>{% endfor %}
-              <div class="ui-doc__text">Every API page behind this record is archived with its sha256, so the finding can be traced to the response the source sent.</div>
-            </article>
-            <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
-              <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>Priority {{ queue.incidents.0.priority }}</span></div>
-              <div class="ui-doc__msg" data-doc-msg>{{ queue.incidents.0.status }}, exposure {{ queue.incidents.0.exposure_cents|money }}</div>
-              <div class="ui-doc__where" data-doc-where>Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="grid2" style="margin-top:16px">
+ <section class="card"><div class="hd"><h2>Source status</h2><a style="margin-left:auto;font-size:12.5px" href="{% url 'data_quality' %}">Data quality →</a></div>
+  <div class="wrap" style="max-height:340px"><table><thead><tr><th>Source</th><th>Scope</th><th>Status</th><th>Last successful sync</th></tr></thead><tbody>
+  {% for d in data_status %}<tr><td>{{ d.source }}</td><td class="nw">{{ d.scope }}</td><td><span class="pill {{ d.status|pill }}">{{ d.status }}</span></td><td class="nw">{{ d.last_successful_sync|default:"—" }}</td></tr>{% endfor %}</tbody></table></div></section>
+ <section class="card"><div class="hd"><h2>Classifications by record type</h2></div>
+  <div class="wrap" style="max-height:340px"><table><thead><tr><th>Status</th>{% for t in types %}<th class="n">{{ t }}</th>{% endfor %}</tr></thead><tbody>
+  {% for p in pivot %}<tr><td><span class="pill {{ p.status|pill }}">{{ p.status }}</span></td>{% for c in p.cells %}<td class="n">{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div></section>
+</div>
 
-  <section class="section" id="method" aria-labelledby="method-h">
-    <div class="wrap">
-      <div class="grid">
-        <div class="span-5 stack-4">
-          <h2 id="method-h">How the matching works</h2>
-          <p>A Stripe payment is the processing record and a QuickBooks payment the accounting record. finrecon pairs them in three steps and stops when a step would have to guess.</p>
-          <ul class="rows">
-            <li><span><b class="rows__name">1. Exact reference.</b> The PaymentIntent id the sync writes into the QBO memo.</span></li>
-            <li><span><b class="rows__name">2. One corroborated candidate.</b> Same client, currency and amount within 3 days, with nothing that contradicts it.</span></li>
-            <li><span><b class="rows__name">3. A typed exception.</b> Missing, duplicate, mismatched, or a case for a person.</span></li>
-          </ul>
-        </div>
-        <div class="span-6 start-7">
-          <div class="panel"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "sync", "alt": "QuickBooks Online and Stripe compared record by record: invoices, payments and refunds.", "left": {"label": "QuickBooks", "icon": "quickbooks", "meta": "books", "rows": [{"label": "Invoices", "meta": "55"}, {"label": "Payments", "meta": "47"}, {"label": "Refunds", "meta": "1"}]}, "link": {"label": "Matched", "icon": "ui:refresh-cw"}, "right": {"label": "Stripe", "icon": "stripe", "meta": "processor", "rows": [{"label": "Payments", "meta": "46"}, {"label": "Refunds", "meta": "2"}, {"label": "Clients", "meta": "3"}]}}</script></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section ground-inverse" id="proof" aria-labelledby="proof-h">
-    <div class="wrap">
-      <div class="grid">
-        <div class="span-5 stack-4">
-          <h2 id="proof-h">{{ ev.scenarios_passed }} of {{ ev.scenarios_total }} scenarios pass</h2>
-          <p>Each case was created in a real QuickBooks and Stripe sandbox with a known answer. An evaluator checks every classification against that answer on every run.</p>
-          <p>Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed. {{ ev.correct }} of {{ ev.items }} classifications match, with {{ ev.false_positive_exceptions }} false exceptions and {{ ev.missed_exceptions }} missed ones.</p>
-        </div>
-        <div class="span-6 start-7">
-          <div class="panel" style="--p-h: 520px"><div class="ui ui-panel ui-checks at-rise fit" data-ui="checklist" style="--fit-max: 420px">
-            <div class="ui-checks__head"><div class="ui-title">Ground truth, {{ run.run_id }}</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>{{ ev.scenarios_passed }} of {{ ev.scenarios_total }}</div></div>
-            <div class="ui-checks__bar"><i data-checks-bar style="--k:1"></i></div>
-            <ul class="ui-checks__list">
-              {% for b in board %}{% if b.scenario in "S05 S08 S11 S17 D02" %}<li class="ui-check{% if b.passed %} is-done{% endif %}"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">{{ b.scenario }} {{ b.title }}, {{ b.correct }} of {{ b.items }}</span></li>{% endif %}{% endfor %}
-            </ul>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" data-moment="letters-assemble" id="added" aria-labelledby="added-h">
-    <div class="wrap">
-      <h2 class="mo-la__type" id="added-h">Totals compared, never added</h2>
-      <p class="mo-la__sub">Stripe says {{ o.stripe_gross_cents|money }} was collected and QuickBooks says {{ o.recorded_payments_cents|money }} was recorded against {{ o.invoiced_cents|money }} invoiced. finrecon compares the two totals and never adds them.</p>
-    </div>
-  </section>
-
-  <section class="section" id="health" aria-labelledby="health-h">
-    <div class="wrap">
-      <div class="grid">
-        <div class="span-5 stack-4">
-          <h2 id="health-h">A failed source pull is never $0</h2>
-          <p>Every source and location gets a status. Zero means the source answered zero; a pull that failed or came back short is shown as missing data and never replaces the last good one.</p>
-        </div>
-        <div class="span-6 start-7">
-          <div class="panel" style="--p-h: 520px"><div class="ui ui-panel ui-win" data-ui="window" data-open="Validated" data-work="Pulling" data-done="Loaded">
-            <div class="ui-win__bar"><span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ui-win__crumb">Sources <i>/</i> <b>Status</b></span><span class="ui-spacer"></span></div>
-            <div class="ui-win__body"><div class="ui-win__main">
-              <div class="ui-win__cols" aria-hidden="true"><span>Source</span><span>Scope</span><span>Status</span></div>
-              <ul class="ui-win__rows">
-                {% for d in data_status %}<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %}1{% else %}3{% endif %}">{{ d.source|slice:":2"|upper }}</span><span class="ui-win__who">{{ d.source }}</span><span class="ui-win__sub">{{ d.scope }}</span><span class="ui-win__st{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %} is-done{% else %} is-you{% endif %}" data-st>{{ d.status }}</span></li>{% endfor %}
-              </ul>
-            </div></div>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--word">
-      <div class="section-head--split">
-        <div><h2 id="close-h">Start with the nine exceptions</h2><p class="t-lead">Three of them change the books today.</p></div>
-        <a class="btn btn--primary" href="#queue">Open the queue<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      </div>
-      <p class="close__word" aria-hidden="true">finrecon</p>
-    </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top">finrecon</a>
-          <p class="footer__lede">{{ disclaimer }}</p>
-        </div>
-        <div class="span-2 footer__col"><h3>Books</h3><ul><li><a href="{% url 'reconciliation' %}">Reconciliation</a></li><li><a href="{% url 'billing' %}">Billing and payouts</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Data</h3><ul><li><a href="{% url 'data_quality' %}">Data quality</a></li><li><a href="{% url 'retail' %}">Retail, real data</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Method</h3><ul><li><a href="{% url 'architecture' %}">Architecture</a></li><li><a href="#method">Matching</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Proof</h3><ul><li><a href="#proof">Scenarios</a></li><li><a href="#health">Sources</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 finrecon &nbsp; <a href="{{ github_url }}">Code on GitHub</a> &nbsp; As of {{ as_of }} · {{ data_source }}</span>
-        <div class="socials"></div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script type="module" src="{{ T }}/system.js"></script>
-<script type="module" src="{{ T }}/motion/motion.js"></script>
-<script type="module" src="{{ T }}/layout/layout.js"></script>
-<script type="module" src="{{ T }}/diagrams/mount.js"></script>
-</body>
-{% endwith %}</html>
+<details style="margin-top:16px"><summary>All {{ board|length }} test scenarios and their results</summary>
+<div class="wrap" style="margin-top:8px"><table><tr><th>Code</th><th>Scenario</th><th>What it tests</th><th>Interview topic</th><th class="n">Items</th><th>Result</th></tr>
+{% for b in board %}<tr><td>{{ b.scenario }}</td><td class="nw">{{ b.title }}</td><td>{{ b.description }}</td><td class="nw">{{ b.interview_question }}</td><td class="n">{{ b.correct }}/{{ b.items }}</td><td><span class="pill {% if b.passed %}ok{% else %}bad{% endif %}">{% if b.passed %}PASS{% else %}FAIL{% endif %}</span></td></tr>{% endfor %}</table></div></details>
+{% endblock %}
+{% block scripts %}<script>
+(()=>{const rows=[...document.querySelectorAll('tr.pick')],det=[...document.querySelectorAll('[data-d]')];
+const pick=r=>{rows.forEach(x=>x.classList.toggle('sel',x===r));det.forEach(d=>d.hidden=d.dataset.d!==r.dataset.i)};
+rows.forEach(r=>{r.addEventListener('click',()=>pick(r));r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r)}})});
+document.addEventListener('keydown',e=>{if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();location.href='{% url "reconciliation" %}'}});})();
+</script>{% endblock %}

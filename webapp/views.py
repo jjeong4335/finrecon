@@ -85,10 +85,7 @@ def _needs_run(request, template: str):
 
 
 # ---------------------------------------------------------------------------- pages
-def overview(request):
-    run = _q(dd.latest_run)
-    if not run:
-        return _needs_run(request, "overview")
+def _overview_context(run) -> dict:
     run_id = run["run_id"]
     o = _q(dd.overview, run_id)
     counts = _q(dd.status_counts, run_id)
@@ -97,14 +94,34 @@ def overview(request):
     cell = {(c["status"], c["record_type"]): c["n"] for c in counts}
     pivot = [{"status": s, "cells": [cell.get((s, t), 0) for t in types]} for s in statuses]
     ev = o["evaluation"] or {}
-    return render(request, "webapp/overview.html", {
+    queue = _q(dd.exception_queue, run_id)
+    n = max(queue["incident_count"], 1)
+    by_priority = [{"priority": p, "label": label, "count": c, "share": round(100 * c / n, 1)}
+                   for p, label in ((1, "Wrong in the books"), (2, "Needs a correction"), (3, "Needs a person"))
+                   for c in [sum(1 for i in queue["incidents"] if i["priority"] == p)]]
+    return {
         "o": o, "ev": ev,
         "ev_ok": bool(ev) and ev["scenarios_passed"] == ev["scenarios_total"] and not ev["false_positive_exceptions"],
         "types": types, "pivot": pivot, "freshness": _q(dd.source_freshness),
-        "queue": _q(dd.exception_queue, run_id),
+        "queue": queue, "by_priority": by_priority, "status_help": dd.STATUS_HELP,
         "board": _q(dd.scenario_scoreboard, run_id, _catalog()),
         "data_status": sorted(_q(dd.data_status), key=lambda d: d["status"] in ("VALIDATED", "ZERO_TRANSACTIONS")),
-    })
+    }
+
+
+def overview(request):
+    run = _q(dd.latest_run)
+    if not run:
+        return _needs_run(request, "overview")
+    return render(request, "webapp/overview.html", _overview_context(run))
+
+
+def guide(request):
+    """One-page guide: what the tool does, how to use it, how it was verified."""
+    run = _q(dd.latest_run)
+    if not run:
+        return _needs_run(request, "guide")
+    return render(request, "webapp/guide.html", _overview_context(run))
 
 
 def reconciliation(request):

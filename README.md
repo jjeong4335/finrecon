@@ -255,6 +255,9 @@ surfaced three integration issues that offline tests could not: Stripe no longer
 on PaymentIntents (now `automatic_payment_methods`), Stripe remembers an idempotency key even for a rejected request
 (keys now include a hash of the parameters), and token-refresh errors now report Intuit's own reason. The sandbox
 had no payouts yet, so payout checks ran only offline.
+On 27 Nov 2026 `finrecon.verify_live` re-captured both sandboxes: no drift from the deployed snapshot, all 151
+results identical, and a new Stripe charge with no QBO payment was flagged `PENDING_SYNC`, then `MISSING_IN_QBO` after
+the sync window ([details](docs/LIVE_SANDBOX.md#4-re-verifying-the-deployed-site-against-the-live-apis)).
 
 **Public demo data.** `fixtures/live_snapshot/` holds the real API responses captured from that sandbox run
 (`python -m seed.live_seed capture`, with Stripe `client_secret` and receipt URLs removed). The deployed dashboard

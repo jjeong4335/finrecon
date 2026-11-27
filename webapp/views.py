@@ -56,6 +56,17 @@ def _catalog() -> dict:
     return json.loads((ROOT / "tests" / "fixtures" / "expected_reconciliation.json").read_text())["scenarios"]
 
 
+def _data_source(run) -> str:
+    """Human label for where the data came from ('offline' alone reads as fake data)."""
+    settings = get_settings()
+    if run and run.get("mode") == "live":
+        return "live QBO + Stripe sandbox APIs"
+    stamp = settings.fixture_dir / "CAPTURED_AT.txt"
+    if stamp.exists():
+        return f"QBO + Stripe sandbox API snapshot, captured {stamp.read_text().strip()[:10]}"
+    return "synthetic offline fixtures"
+
+
 def site_context(request) -> dict:
     """Available in every template."""
     settings = get_settings()
@@ -63,7 +74,7 @@ def site_context(request) -> dict:
         run = _q(dd.latest_run)
     except Exception:
         run = None
-    return {"disclaimer": DISCLAIMER, "run": run, "as_of": settings.recon_as_of, "github_url": settings.github_url,
+    return {"disclaimer": DISCLAIMER, "run": run, "data_source": _data_source(run), "as_of": settings.recon_as_of, "github_url": settings.github_url,
             "nav": [("overview", "Overview"), ("reconciliation", "Reconciliation"), ("billing", "Billing & Payouts"),
                     ("data_quality", "Data Quality"), ("retail", "Retail (real data)"),
                     ("architecture", "Architecture")]}
@@ -202,11 +213,23 @@ def _retail_load_id(db) -> str | None:
 
 
 def retail(request):
+    return render(request, "webapp/retail.html", retail_context())
+
+
+def warm_retail_cache() -> None:
+    """Called once per worker at startup so the first visitor does not wait for the aggregation."""
+    try:
+        retail_context()
+    except Exception:
+        pass
+
+
+def retail_context() -> dict:
     # Aggregating ~1M rows takes seconds; the data only changes when a new load
     # finishes, so the summary is cached per load_id.
     load_id = _q(_retail_load_id)
     if load_id and load_id in _retail_cache:
-        return render(request, "webapp/retail.html", _retail_cache[load_id])
+        return _retail_cache[load_id]
     s = _q(dd.retail_summary)
     chart = None
     if s and s["monthly"]:
@@ -224,7 +247,7 @@ def retail(request):
     if load_id and s and s["load"]["load_id"] == load_id:
         _retail_cache.clear()
         _retail_cache[load_id] = ctx
-    return render(request, "webapp/retail.html", ctx)
+    return ctx
 
 
 def _monthly_chart(monthly: list[dict], width: int = 900, height: int = 220, pad: int = 36) -> dict:

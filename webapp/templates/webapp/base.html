@@ -38,7 +38,7 @@ pre{background:#0f1520;color:#d7e0ee;padding:12px;border-radius:6px;overflow:aut
 footer{color:var(--muted);font-size:12px;margin-top:40px}
 </style>{% block head %}{% endblock %}</head>
 <body><header><div class="top"><a class="brand" href="{% url 'overview' %}">Multi-Location Finance Reconciliation</a>
-<span class="sub">{% if run %}run <b>{{ run.run_id }}</b> · mode {{ run.mode }} · {% endif %}reconciliation as of <b>{{ as_of }}</b></span></div>
+<span class="sub">{% if run %}run <b>{{ run.run_id }}</b> · data: {{ data_source }} · {% endif %}reconciliation as of <b>{{ as_of }}</b></span></div>
 <nav>{% for name, label in nav %}<a href="{% url name %}" class="{% if request.resolver_match.url_name == name %}on{% endif %}">{{ label }}</a>{% endfor %}</nav></header>
 <main><div class="banner">{{ disclaimer }}</div>
 {% block content %}{% endblock %}

@@ -89,7 +89,7 @@ def overview(request):
         "o": o, "ev": ev,
         "ev_ok": bool(ev) and ev["scenarios_passed"] == ev["scenarios_total"] and not ev["false_positive_exceptions"],
         "types": types, "pivot": pivot, "freshness": _q(dd.source_freshness),
-        "exceptions": _q(dd.results, run_id, exceptions_only=True),
+        "queue": _q(dd.exception_queue, run_id),
         "board": _q(dd.scenario_scoreboard, run_id, _catalog()),
     })
 
@@ -230,7 +230,21 @@ def architecture(request):
     })
 
 
+def readyz(request):
+    """Ready = a completed pipeline run with a ground-truth evaluation exists (not just a live DB)."""
+    try:
+        run = _q(dd.latest_run)
+        ev = _q(dd.overview, run["run_id"])["evaluation"] if run else None
+    except Exception as exc:
+        return JsonResponse({"ready": False, "reason": type(exc).__name__}, status=503)
+    if not run or not ev:
+        return JsonResponse({"ready": False, "reason": "no completed run with an evaluation"}, status=503)
+    return JsonResponse({"ready": True, "run_id": run["run_id"], "as_of": run["as_of"],
+                         "scenarios_passed": ev["scenarios_passed"], "scenarios_total": ev["scenarios_total"]})
+
+
 def healthz(request):
+    """Liveness: the process answers and the database is reachable."""
     try:
         _q(lambda db: db.scalar("SELECT 1"))
     except Exception as exc:

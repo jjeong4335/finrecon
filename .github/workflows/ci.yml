@@ -87,6 +87,7 @@ jobs:
             [ "$code" = "200" ] || exit 1
           done
           curl -s http://localhost/ | grep -E "([0-9]+) / \1 scenarios passed"
+          curl -sf http://localhost/readyz | tee /dev/stderr | grep -q '"ready": true'
       - name: Dashboard database role is read-only
         run: |
           docker compose exec -T db psql -U dashboard_ro -d finrecon -c "SELECT COUNT(*) FROM reconciliation_results"

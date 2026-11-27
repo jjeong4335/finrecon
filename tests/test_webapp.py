@@ -105,3 +105,25 @@ def test_retail_page_after_load(tmp_path, monkeypatch):
 def test_healthz(client):
     c, _, _ = client
     assert get(c, "/healthz") == "ok"
+
+
+def test_overview_shows_prioritized_queue(client):
+    c, _, _ = client
+    html = get(c, "/")
+    assert "Exception queue:" in html and "incidents" in html and "Cash received but not recorded" in html
+
+
+def test_readyz(client, tmp_path, monkeypatch):
+    c, _, _ = client
+    import json as _json
+
+    body = _json.loads(get(c, "/readyz"))
+    assert body["ready"] is True and body["scenarios_passed"] == body["scenarios_total"] == 27
+    from finrecon.db import Database
+
+    empty = f"sqlite:///{tmp_path / 'empty.db'}"
+    Database(empty).init_schema()
+    monkeypatch.setenv("DATABASE_URL", empty)
+    views.reset_db()
+    get(Client(), "/readyz", status=503)
+    get(Client(), "/healthz")                                       # alive, just not ready

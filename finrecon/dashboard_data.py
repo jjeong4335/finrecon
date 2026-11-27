@@ -240,3 +240,56 @@ def retail_summary(db: Database) -> dict | None:
             f"FROM retail_lines WHERE line_class IN ('INVALID', 'STOCK_ADJUSTMENT', 'ADJUSTMENT') OR overlap_conflict "
             f"OR possible_duplicate ORDER BY line_class, source_row_id LIMIT 200"),
     }
+
+
+# ----------------------------------------------------------------------- controller queue
+# Priority: what is wrong in the books first, then money at stake.
+PRIORITY = {
+    "MISSING_IN_QBO": (1, "Cash received but not recorded: AR overstated"),
+    "UNRECORDED_REFUND": (1, "Refund not in the books: revenue and cash overstated"),
+    "MISSING_IN_STRIPE": (1, "Recorded as received, no processor record: cash may not exist"),
+    "AMOUNT_MISMATCH": (2, "Books and processor disagree on the amount"),
+    "DUPLICATE": (2, "Extra record of one payment: unapplied credit to clean up"),
+    "NEEDS_REVIEW": (3, "Ambiguous or contradictory: a person must decide"),
+}
+
+
+def exception_queue(db: Database, run_id: str) -> dict:
+    """Exceptions ordered for a controller, grouped into incidents.
+
+    Counts in the rest of the app are per record. One incident often has two
+    records (e.g. an amount mismatch is flagged on the Stripe and the QBO side),
+    so records that reference each other are grouped here.
+    """
+    rows = results(db, run_id, exceptions_only=True)
+    parent: dict[str, str] = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    ids = {r["source_record_id"] for r in rows}
+    for r in rows:
+        find(r["source_record_id"])
+        for c in (r["counterpart_source_ids"] or "").split(","):
+            if c and c in ids:
+                parent[find(c)] = find(r["source_record_id"])
+    incidents: dict[str, list[dict]] = {}
+    for r in rows:
+        incidents.setdefault(find(r["source_record_id"]), []).append(r)
+    queue = []
+    for members in incidents.values():
+        prio = min(PRIORITY.get(m["status"], (9, ""))[0] for m in members)
+        lead = min(members, key=lambda m: (PRIORITY.get(m["status"], (9, ""))[0], m["record_type"]))
+        # A duplicate's whole amount sits unapplied; elsewhere the difference is what is at stake.
+        exposure = max(abs(m["amount_cents"] or 0) if m["status"] == "DUPLICATE" or not m["diff_cents"]
+                       else abs(m["diff_cents"]) for m in members)
+        queue.append({"priority": prio, "why_it_matters": PRIORITY.get(lead["status"], (9, ""))[1],
+                      "status": lead["status"], "client": lead["client"], "location": lead["location"],
+                      "exposure_cents": exposure, "records": members, "lead": lead})
+    queue.sort(key=lambda i: (i["priority"], -i["exposure_cents"], i["lead"]["source_record_id"]))
+    return {"incidents": queue, "record_count": len(rows), "incident_count": len(queue),
+            "exposure_cents": sum(i["exposure_cents"] for i in queue)}

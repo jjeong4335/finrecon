@@ -12,7 +12,7 @@ read -r INSTANCE IP STATE < <(aws --region "$REGION" --output text ec2 describe-
 DOMAIN="$(echo "$IP" | tr . -).sslip.io"
 echo "Instance $INSTANCE ($STATE), IP $IP"
 echo "Default URL: https://$DOMAIN"
-printf "HTTPS health: "; curl -s -m 10 -o /dev/null -w "%{http_code}\n" "https://$DOMAIN/healthz" || echo "not reachable yet"
+printf "HTTPS readiness: "; curl -s -m 10 -o /dev/null -w "%{http_code}\n" "https://$DOMAIN/readyz" || echo "not reachable yet"
 if [ -f "$KEY_FILE" ]; then
   ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10 -i "$KEY_FILE" "ec2-user@$IP" \
     'echo "--- setup log (last 15 lines)"; sudo tail -n 15 /var/log/cloud-init-output.log;

@@ -46,3 +46,16 @@ def test_static_report_renders(demo, tmp_path):
     out = write_report(db, settings, str(tmp_path / "snap.html"))
     html = open(out).read()
     assert "Not affiliated" in html and "MISSING_IN_QBO" in html and "<table" in html
+
+
+def test_exception_queue_groups_records_into_incidents(demo):
+    db, _, run_id = demo
+    q = dd.exception_queue(db, run_id)
+    assert q["record_count"] == db.scalar("SELECT COUNT(*) FROM reconciliation_exceptions WHERE run_id = ?", (run_id,))
+    assert q["incident_count"] < q["record_count"]                  # mismatches have one record per side
+    prios = [i["priority"] for i in q["incidents"]]
+    assert prios == sorted(prios) and prios[0] == 1
+    s04 = [i for i in q["incidents"] if any((m["scenario_id"] or "").startswith("S04") for m in i["records"])]
+    assert len(s04) == 1 and len(s04[0]["records"]) == 2 and s04[0]["exposure_cents"] == 4500
+    s11 = [i for i in q["incidents"] if any((m["scenario_id"] or "").startswith("S11") for m in i["records"])]
+    assert len(s11) == 1 and len(s11[0]["records"]) == 3                  # one QBO entry, two candidate deposits

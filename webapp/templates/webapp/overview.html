@@ -9,17 +9,18 @@
  <div class="kpi"><div class="v">{{ o.stripe_gross_cents|money }}</div><div class="l">Collected in Stripe (gross)</div></div>
  <div class="kpi"><div class="v">{{ o.open_ar_cents|money }}</div><div class="l">Open AR (not an exception)</div></div>
  <div class="kpi"><div class="v">{{ o.match_rate|pct }}</div><div class="l">Payment records reconciled</div></div>
- <div class="kpi"><div class="v">{{ o.exceptions }}</div><div class="l">Reconciliation exceptions</div></div>
+ <div class="kpi"><div class="v">{{ queue.incident_count }}</div><div class="l">Exception incidents ({{ o.exceptions }} records)</div></div>
  <div class="kpi"><div class="v">{{ o.billing_issues }}</div><div class="l">Billing exceptions</div></div>
  <div class="kpi"><div class="v">{{ o.data_issues }}</div><div class="l">Sources not fully validated</div></div>
 </div>
 {% if ev %}<div class="badge{% if not ev_ok %} fail{% endif %}">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications match the ground truth · {{ ev.false_positive_exceptions }} false-positive exceptions · {{ ev.missed_exceptions }} missed exceptions</div>
 <div class="sub" style="margin-top:6px">Computed by the evaluator for this run, not hard-coded. Stripe and QBO amounts are compared, never added together.</div>{% endif %}
 
-<h2>Exceptions ({{ exceptions|length }})</h2>
-<div class="wrap"><table><tr><th>Status</th><th>Record</th><th>Client</th><th>Location</th><th>Source ID</th><th class="n">Amount</th><th class="n">Diff</th><th>Why</th></tr>
-{% for r in exceptions %}<tr><td><span class="pill {{ r.status|pill }}">{{ r.status }}</span></td><td class="nw">{{ r.record_type }}</td><td>{{ r.client|default:"—" }}</td><td>{{ r.location|default:"client-level" }}</td>
-<td class="nw"><a href="{% url 'record' r.record_type r.record_id %}">{{ r.source_record_id }}</a></td><td class="n">{{ r.amount_cents|money }}</td><td class="n">{% if r.diff_cents %}{{ r.diff_cents|money }}{% endif %}</td><td>{{ r.reason }}</td></tr>
+<h2>Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</h2>
+<p class="sub">Ordered for a controller: what is wrong in the books first (priority 1), then money at stake. Counts elsewhere are per record; an incident often has two records, one on each side (Stripe and QBO), so they are grouped here. Exposure is the largest difference or amount in the incident, not a total of both sides.</p>
+<div class="wrap"><table><tr><th class="n">P</th><th>Status</th><th>Why it matters</th><th>Client</th><th>Location</th><th class="n">Exposure</th><th>Records</th><th>Reason</th></tr>
+{% for i in queue.incidents %}<tr><td class="n">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}">{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}</td><td>{{ i.location|default:"client-level" }}</td><td class="n">{{ i.exposure_cents|money }}</td>
+<td class="nw">{% for m in i.records %}<a href="{% url 'record' m.record_type m.record_id %}">{{ m.record_type }} {{ m.source_record_id|truncatechars:18 }}</a>{% if not forloop.last %}<br>{% endif %}{% endfor %}</td><td>{{ i.lead.reason }}</td></tr>
 {% empty %}<tr><td colspan="8">No exceptions.</td></tr>{% endfor %}</table></div>
 
 <div class="grid2">

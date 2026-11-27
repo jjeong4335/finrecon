@@ -20,9 +20,9 @@ ssh -o StrictHostKeyChecking=accept-new -i "$KEY_FILE" "ec2-user@$IP" 'set -e
 URL="https://$(echo "$IP" | tr . -).sslip.io"
 # Check from here over HTTPS (plain HTTP on the server answers 308 -> https by design).
 for i in $(seq 1 20); do
-  code=$(curl -s -o /dev/null -w "%{http_code}" "$URL/healthz" || true)
+  code=$(curl -s -o /dev/null -w "%{http_code}" "$URL/readyz" || true)
   [ "$code" = "200" ] && break
   sleep 3
 done
-echo "HTTPS health: $code"
+echo "HTTPS readiness (/readyz): $code"
 echo "Done: $URL"

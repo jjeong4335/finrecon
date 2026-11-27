@@ -104,6 +104,14 @@ def reconcile(db: Database, settings: Settings, run_id: str) -> dict[str, int]:
     primary = {m["stripe_payment_id"]: m["qbo_source_id"] for m in level1 if m["rn"] == 1}
     for m in level1:
         s, q = stripe[m["stripe_payment_id"]], qbo[m["qbo_payment_id"]]
+        foreign = m["qbo_client_id"] != m["stripe_client_id"] or m["qbo_currency"] != m["stripe_currency"]
+        if foreign and m["rn"] > 1:
+            # A reference under another client/currency is a data problem, not a duplicate import.
+            put(qres(q, "NEEDS_REVIEW",
+                     f"Memo names Stripe payment {s['source_payment_id']}, which belongs to a different client or "
+                     f"currency; that payment is matched to QBO payment {primary[s['payment_id']]}.",
+                     match_method="exact_id", counterpart_source_ids=[s["source_payment_id"]]))
+            continue
         if m["rn"] > 1:
             wrong = (f" Its amount ({fmt(q['total_cents'])}) also differs from Stripe "
                      f"({fmt(s['amount_received_cents'])})." if q["total_cents"] != s["amount_received_cents"] else "")

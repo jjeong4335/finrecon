@@ -184,3 +184,17 @@ def test_records_of_unregistered_customers_are_out_of_scope(fresh_demo):
                      "('9001', '9002')", (run_id,)) == 0
     assert out["evaluation"]["unexpected"] == 0 and out["evaluation"]["scenarios_passed"] == 27
     assert overview(db, run_id)["out_of_scope_records"] == 2
+
+
+def test_reference_under_wrong_client_cannot_steal_the_match(fresh_demo):
+    """An earlier, same-amount QBO record citing the Stripe id under another client must not win."""
+    db, settings, _ = fresh_demo
+    dup = db.query("SELECT payment_id FROM qbo_payments WHERE scenario_id LIKE 'S07:qp-dup%'")[0]["payment_id"]
+    other = db.scalar("SELECT client_id FROM clients WHERE client_key = 'sunbeam'")
+    db.execute("UPDATE qbo_payments SET client_id = ?, location_id = NULL, txn_date = '2026-10-01' "
+               "WHERE payment_id = ?", (other, dup))
+    db.commit()
+    engine.reconcile(db, settings, "foreign-ref")
+    assert status_of(db, "foreign-ref", "qbo_payment", "S07:qp:") == ["MATCHED"]
+    assert status_of(db, "foreign-ref", "qbo_payment", "S07:qp-dup") == ["NEEDS_REVIEW"]
+    assert status_of(db, "foreign-ref", "stripe_payment", "S07") == ["MATCHED"]

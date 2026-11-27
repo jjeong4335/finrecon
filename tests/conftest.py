@@ -59,6 +59,7 @@ def fresh_demo(tmp_path):
 
 
 def status_of(db: Database, run_id: str, record_type: str, scenario_prefix: str) -> list[str]:
-    rows = db.query("SELECT status FROM reconciliation_results WHERE run_id = ? AND record_type = ? "
-                    "AND scenario_id LIKE ? ORDER BY scenario_id", (run_id, record_type, scenario_prefix + "%"))
-    return [r["status"] for r in rows]
+    rows = db.query("SELECT scenario_id, status FROM reconciliation_results WHERE run_id = ? AND record_type = ? "
+                    "AND scenario_id LIKE ?", (run_id, record_type, scenario_prefix + "%"))
+    # Sort in Python: PostgreSQL's locale collation ignores punctuation, SQLite's does not.
+    return [r["status"] for r in sorted(rows, key=lambda r: r["scenario_id"])]

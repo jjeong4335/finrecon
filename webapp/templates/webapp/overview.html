@@ -8,12 +8,13 @@
 <section class="band" aria-label="Summary">
  <div class="row1">
   <div>
+   <div class="cap" style="margin:0 0 6px">Test scenarios with a known answer</div>
    <div class="big"><em>{{ ev.scenarios_passed }} / {{ ev.scenarios_total }}</em> verified</div>
    <div class="cap">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications · {{ ev.false_positive_exceptions }} false positives · {{ ev.missed_exceptions }} missed</div>
   </div>
   <div class="pri">
    <div class="dist" role="img" aria-label="{{ queue.incident_count }} exception incidents by priority">{% for p in by_priority %}<span style="width:{{ p.share }}%;background:{% if p.priority == 1 %}#d93636{% elif p.priority == 2 %}#e0901a{% else %}#9aa1ab{% endif %}"></span>{% endfor %}</div>
-   <div class="legend"><b style="font-weight:600;color:var(--ink)">{{ queue.incident_count }} exceptions</b>{% for p in by_priority %}<span><i style="background:{% if p.priority == 1 %}#d93636{% elif p.priority == 2 %}#e0901a{% else %}#9aa1ab{% endif %}"></i>{{ p.count }} {{ p.label|lower }}</span>{% endfor %}</div>
+   <div class="legend"><b style="font-weight:600;color:var(--ink)">{{ queue.incident_count }} exceptions found in the books</b>{% for p in by_priority %}<span><i style="background:{% if p.priority == 1 %}#d93636{% elif p.priority == 2 %}#e0901a{% else %}#9aa1ab{% endif %}"></i>{{ p.count }} {{ p.label|lower }}</span>{% endfor %}</div>
   </div>
  </div>
  <div class="money">
@@ -23,7 +24,7 @@
   <div><div class="l" title="Open AR is not an exception">Open AR</div><div class="v">{{ o.open_ar_cents|money }}</div></div>
   <div><div class="l">Payment records reconciled</div><div class="v">{{ o.match_rate|pct }}</div><div class="track"><i style="width:{% widthratio o.match_rate 1 100 %}%"></i></div></div>
  </div>
- <div class="foot">Stripe and QBO amounts are compared, never added together · {{ o.billing_issues }} billing exceptions · {{ o.data_issues }} sources not fully validated{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} out-of-scope records (sandbox sample data){% endif %}</div>
+ <div class="foot">Stripe and QBO amounts are compared, never added together · {{ o.billing_issues }} billing exceptions · {{ o.data_issues }} sources not fully validated (pull status) · row-level data checks are on <a href="{% url 'data_quality' %}">Data quality</a>{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} out-of-scope records (sandbox sample data){% endif %}</div>
 </section>
 
 <div class="split">
@@ -50,7 +51,7 @@
 
 <div class="grid2" style="margin-top:16px">
  <section class="card"><div class="hd"><h2>Source status</h2><a style="margin-left:auto;font-size:12.5px" href="{% url 'data_quality' %}">Data quality →</a></div>
-  <div class="wrap" style="max-height:340px"><table><thead><tr><th>Source</th><th>Scope</th><th>Status</th><th>Last successful sync</th></tr></thead><tbody>
+  <div class="wrap" style="max-height:340px"><table><thead><tr><th>Source</th><th>Scope</th><th>Status</th><th title="In the demo, syncs are replayed from the captured snapshot on the reconciliation timeline">Last sync (replayed)</th></tr></thead><tbody>
   {% for d in data_status %}<tr><td>{{ d.source }}</td><td class="nw">{{ d.scope }}</td><td><span class="pill {{ d.status|pill }}">{{ d.status }}</span></td><td class="nw">{{ d.last_successful_sync|default:"—" }}</td></tr>{% endfor %}</tbody></table></div></section>
  <section class="card"><div class="hd"><h2>Classifications by record type</h2></div>
   <div class="wrap" style="max-height:340px"><table><thead><tr><th>Status</th>{% for t in types %}<th class="n">{{ t }}</th>{% endfor %}</tr></thead><tbody>

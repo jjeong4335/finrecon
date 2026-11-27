@@ -127,7 +127,7 @@ tr.sel td{background:var(--acc-bg)!important}tr.pick{cursor:pointer}
 <div class="app-main">
 <div class="topbar"><button class="menu-btn" type="button" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
 <span class="title">{% block heading %}{% for name, label in nav %}{% if request.resolver_match.url_name == name %}{{ label }}{% endif %}{% endfor %}{% endblock %}</span>
-<span class="chip">As of <b>{{ as_of }}</b></span>{% if run %}<span class="chip">Data <b>{{ data_source }}</b></span><span class="chip">Run <b>{{ run.run_id }}</b></span>{% endif %}</div>
+<span class="chip">Reconciled as of <b>{{ as_of }}</b></span>{% if run %}<span class="chip">Data <b>{{ data_source }}</b></span><span class="chip">Run <b>{{ run.run_id }}</b></span>{% endif %}</div>
 <main id="content">
 {% block content %}{% endblock %}
 <footer>Read-only view of the reconciliation database · <a href="{{ github_url }}">{{ github_url }}</a></footer>

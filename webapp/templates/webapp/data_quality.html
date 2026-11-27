@@ -4,7 +4,7 @@
 <h1>Data Quality & Pipeline Health</h1>
 <h2>Data status per source and location</h2>
 <p class="sub">ZERO_TRANSACTIONS is a complete answer of zero. NO_DATA, INCOMPLETE and STALE are never shown as $0, and a failed or partial pull never overwrites the last validated data.</p>
-<div class="wrap"><table><tr><th>Source</th><th>Scope</th><th>Status</th><th>Validated through</th><th>Last successful sync</th><th>Detail</th></tr>
+<div class="wrap"><table><tr><th>Source</th><th>Scope</th><th>Status</th><th>Validated through</th><th title="In the demo, syncs are replayed from the captured snapshot on the reconciliation timeline">Last sync (replayed)</th><th>Detail</th></tr>
 {% for d in status %}<tr><td>{{ d.source }}</td><td class="nw">{{ d.scope }}</td><td><span class="pill {{ d.status|pill }}">{{ d.status }}</span></td><td class="nw">{{ d.validated_through|default:"—" }}</td><td class="nw">{{ d.last_successful_sync|default:"—" }}</td><td>{{ d.detail }}</td></tr>{% endfor %}</table></div>
 
 <h2>Ingestion runs</h2>
@@ -14,6 +14,7 @@
 <p class="sub">records_expected comes from the source's own totals; it must equal records_received for a pull to load.</p>
 
 <h2>Failed validation checks ({{ failed|length }} of {{ findings|length }})</h2>
+<p class="sub">These are row-level checks inside the data that was loaded, separate from the pull status above: a source can be VALIDATED (every page arrived and totals agree) and still contain a record that fails a check, such as a payment whose allocations do not add up. The reconciliation then shows that record as an exception.</p>
 <div class="wrap"><table><tr><th>Source</th><th>Scope</th><th>Check</th><th>Severity</th><th>Detail</th></tr>
 {% for x in failed %}<tr><td>{{ x.source }}</td><td class="nw">{{ x.scope }}</td><td class="nw">{{ x.check_name }}</td><td><span class="pill {{ x.severity|pill }}">{{ x.severity }}</span></td><td>{{ x.detail }}</td></tr>{% empty %}<tr><td colspan="5">None.</td></tr>{% endfor %}</table></div>
 

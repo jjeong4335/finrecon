@@ -247,6 +247,15 @@ both header variants (tested on hand-written rows in the UCI layout, `tests/fixt
 driver; and the Docker stack end to end: images build, the pipeline job runs on PostgreSQL in Docker, the dashboard
 answers through Caddy, and the dashboard's database role is verified to be read-only.
 
+**Live sandbox run.** The same scenarios were created in a QuickBooks Online sandbox company and a Stripe
+sandbox through their APIs (OAuth 2.0 with rotating refresh tokens on the QBO side), ingested twice and reconciled:
+**27 / 27 scenarios, 226 / 226 items correct**. 151 QBO records came back, 48 of them Intuit's sample company data;
+those map to no registered client and are counted as out of scope rather than reconciled. The first live run
+surfaced three integration issues that offline tests could not: Stripe no longer accepts `payment_method_types`
+on PaymentIntents (now `automatic_payment_methods`), Stripe remembers an idempotency key even for a rejected request
+(keys now include a hash of the parameters), and token-refresh errors now report Intuit's own reason. The sandbox
+had no payouts yet, so payout checks ran only offline.
+
 **Matching edge cases.** S17–S19 were added after a code review asked how the engine handles a wrong first
 record and coincidental same-amount candidates. Run against the new ground truth, the previous engine failed all
 three (it matched the wrong record and auto-matched contradicting candidates); the engine was then fixed. A
@@ -265,7 +274,7 @@ PostgreSQL with identical resulting tables.
 | SQL on PostgreSQL 16 | Verified by replay, and the full suite runs on PostgreSQL through psycopg in CI |
 | Streamlit pages | Executed against a recording stub; first real render happens in Docker |
 | Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
-| QBO / Stripe live adapters, `seed/live_seed.py` | Written from the public API docs, **not yet run against the sandboxes** |
+| QBO / Stripe live adapters, `seed/live_seed.py` | **Run end to end against real QuickBooks Online and Stripe sandboxes:** seeded, ingested twice through the APIs, reconciled — 27 / 27 scenarios, 226 / 226 items correct |
 | UCI module on the real file | Loaded end to end on a MacBook: 1,067,371 rows in 73 s, control totals passed (results below) |
 | Docker Compose stack | Built and exercised end to end in CI (pipeline, dashboard via Caddy, read-only role) |
 | EC2 / HTTPS deployment | Configuration and guide provided, not yet deployed |

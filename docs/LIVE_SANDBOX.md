@@ -36,6 +36,10 @@ Then deploy the snapshot so the public demo shows real sandbox data without live
   ground-truth item depends on fee amounts.
 - **Payouts** may not occur in a sandbox; offline payouts are simulated and labelled as such.
 - **QBO memo length.** `PaymentRefNum` is short, so the Stripe id is written to `PrivateNote`.
-- **Status.** The live adapters and `seed/live_seed.py` were written from the public API documentation and have not yet
-  been run against the sandboxes. Expect to adjust field details on the first run, and check the official docs for any
-  field you change.
+- **Status.** Run end to end against a QBO sandbox company and a Stripe sandbox: 27 / 27 scenarios, 226 / 226 items
+  correct. QBO sandboxes ship with sample company data; those records map to no registered client and are counted
+  as out of scope.
+- **Lessons from the first live run.** Stripe rejects `payment_method_types` on PaymentIntents (use
+  `automatic_payment_methods` with `allow_redirects=never`); Stripe keeps an idempotency key even when the request
+  was rejected, so keys include a hash of the parameters; an HTTP 401 on token refresh means the client ID/secret
+  is wrong (400 `invalid_grant` means the refresh token is).

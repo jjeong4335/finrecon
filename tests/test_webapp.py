@@ -127,3 +127,34 @@ def test_readyz(client, tmp_path, monkeypatch):
     views.reset_db()
     get(Client(), "/readyz", status=503)
     get(Client(), "/healthz")                                       # alive, just not ready
+
+
+def test_readyz_fails_when_evaluation_has_a_wrong_item(fresh_demo, monkeypatch):
+    db, settings, run_id = fresh_demo
+    monkeypatch.setenv("DATABASE_URL", settings.database_url)
+    views.reset_db()
+    get(Client(), "/readyz")
+    db.execute("UPDATE evaluation_results SET outcome = 'wrong', actual = 'MATCHED' WHERE run_id = ? AND item_key = "
+               "(SELECT MIN(item_key) FROM evaluation_results WHERE run_id = ?)", (run_id, run_id))
+    db.commit()
+    import json as _json
+
+    body = _json.loads(get(Client(), "/readyz", status=503))
+    assert body["ready"] is False and any("wrong" in r for r in body["reasons"])
+    views.reset_db()
+
+
+def test_readyz_fails_when_a_scenario_is_missing(fresh_demo, monkeypatch):
+    db, settings, run_id = fresh_demo
+    monkeypatch.setenv("DATABASE_URL", settings.database_url)
+    views.reset_db()
+    db.execute("DELETE FROM evaluation_results WHERE run_id = ? AND scenario = 'S19'", (run_id,))
+    db.commit()
+    assert "26 of 27 scenarios" in get(Client(), "/readyz", status=503)
+    views.reset_db()
+
+
+def test_readyz_fails_when_run_date_differs_from_recon_as_of(client, monkeypatch):
+    c, _, _ = client
+    monkeypatch.setenv("RECON_AS_OF", "2026-12-15")
+    assert "expected RECON_AS_OF 2026-12-15" in get(c, "/readyz", status=503)

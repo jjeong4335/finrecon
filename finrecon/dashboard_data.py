@@ -90,7 +90,7 @@ def results(db: Database, run_id: str, exceptions_only: bool = False) -> list[di
         "SELECT r.record_type, r.status, r.is_exception, c.name AS client, l.name AS location, r.source, "
         "r.source_record_id, r.match_method, r.counterpart_source_ids, r.amount_cents, "
         "r.counterpart_amount_cents, r.diff_cents, r.currency, r.record_date, r.reason, r.scenario_id, "
-        "r.record_id " f"FROM reconciliation_results r {NAMES} WHERE r.run_id = ?{where} "
+        "r.record_id, r.client_id " f"FROM reconciliation_results r {NAMES} WHERE r.run_id = ?{where} "
         "ORDER BY r.is_exception DESC, r.status, COALESCE(c.name, ''), COALESCE(l.name, ''), r.record_date, "
         "r.record_type, r.source_record_id", (run_id,))
 
@@ -254,6 +254,49 @@ PRIORITY = {
 }
 
 
+# Which record type a counterpart ID can refer to. Counterpart IDs are external
+# IDs, and QBO numbers each entity type separately (payment 145 and refund 145
+# can both exist), so a link is only made to the right type on the right side.
+COUNTERPART_TYPE = {"stripe_payment": "qbo_payment", "qbo_payment": "stripe_payment",
+                    "stripe_refund": "qbo_refund", "qbo_refund": "stripe_refund", "invoice": "qbo_payment"}
+
+
+def group_incidents(rows: list[dict]) -> list[list[dict]]:
+    """Group exception records that refer to each other into incidents.
+
+    Nodes are internal record IDs. A counterpart link is made only when the
+    external ID resolves to exactly one exception record of the expected type,
+    with the same client and currency. Anything uncertain stays separate: a
+    wrong merge would hide an exception.
+    """
+    key = lambda r: (r["record_type"], r["record_id"])  # noqa: E731
+    by_external: dict[tuple[str, str], list[dict]] = {}
+    for r in rows:
+        by_external.setdefault((r["record_type"], r["source_record_id"]), []).append(r)
+    parent = {key(r): key(r) for r in rows}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for r in rows:
+        target_type = COUNTERPART_TYPE.get(r["record_type"])
+        for ext in (r["counterpart_source_ids"] or "").split(","):
+            hits = by_external.get((target_type, ext.strip()), []) if target_type and ext.strip() else []
+            if len(hits) != 1:
+                continue                      # not an exception, or ambiguous: do not merge
+            other = hits[0]
+            if not r["client_id"] or r["client_id"] != other["client_id"] or r["currency"] != other["currency"]:
+                continue
+            parent[find(key(other))] = find(key(r))
+    groups: dict[tuple, list[dict]] = {}
+    for r in rows:
+        groups.setdefault(find(key(r)), []).append(r)
+    return list(groups.values())
+
+
 def exception_queue(db: Database, run_id: str) -> dict:
     """Exceptions ordered for a controller, grouped into incidents.
 
@@ -262,26 +305,8 @@ def exception_queue(db: Database, run_id: str) -> dict:
     so records that reference each other are grouped here.
     """
     rows = results(db, run_id, exceptions_only=True)
-    parent: dict[str, str] = {}
-
-    def find(x):
-        parent.setdefault(x, x)
-        while parent[x] != x:
-            parent[x] = parent[parent[x]]
-            x = parent[x]
-        return x
-
-    ids = {r["source_record_id"] for r in rows}
-    for r in rows:
-        find(r["source_record_id"])
-        for c in (r["counterpart_source_ids"] or "").split(","):
-            if c and c in ids:
-                parent[find(c)] = find(r["source_record_id"])
-    incidents: dict[str, list[dict]] = {}
-    for r in rows:
-        incidents.setdefault(find(r["source_record_id"]), []).append(r)
     queue = []
-    for members in incidents.values():
+    for members in group_incidents(rows):
         prio = min(PRIORITY.get(m["status"], (9, ""))[0] for m in members)
         lead = min(members, key=lambda m: (PRIORITY.get(m["status"], (9, ""))[0], m["record_type"]))
         # A duplicate's whole amount sits unapplied; elsewhere the difference is what is at stake.

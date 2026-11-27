@@ -59,3 +59,34 @@ def test_exception_queue_groups_records_into_incidents(demo):
     assert len(s04) == 1 and len(s04[0]["records"]) == 2 and s04[0]["exposure_cents"] == 4500
     s11 = [i for i in q["incidents"] if any((m["scenario_id"] or "").startswith("S11") for m in i["records"])]
     assert len(s11) == 1 and len(s11[0]["records"]) == 3                  # one QBO entry, two candidate deposits
+
+
+def _row(record_type, rid, sid, counterparts="", client="c1", currency="USD", status="NEEDS_REVIEW"):
+    return {"record_type": record_type, "record_id": rid, "source_record_id": sid, "counterpart_source_ids": counterparts,
+            "client_id": client, "currency": currency, "status": status}
+
+
+def _groups(rows):
+    return sorted(sorted(r["record_id"] for r in g) for g in dd.group_incidents(rows))
+
+
+def test_incidents_link_a_normal_pair():
+    rows = [_row("stripe_payment", "a", "pi_1", "145"), _row("qbo_payment", "b", "145", "pi_1")]
+    assert _groups(rows) == [["a", "b"]]
+
+
+def test_incidents_same_external_id_in_other_entity_type_is_not_merged():
+    # QBO numbers payments and refunds separately: payment 145 and refund 145 are unrelated.
+    rows = [_row("qbo_payment", "p", "145"), _row("qbo_refund", "r", "145"), _row("stripe_payment", "s", "pi_1", "145")]
+    assert _groups(rows) == [["p", "s"], ["r"]]
+
+
+def test_incidents_different_client_or_currency_stay_separate():
+    assert _groups([_row("stripe_payment", "a", "pi_1", "145"), _row("qbo_payment", "b", "145", client="c2")]) == [["a"], ["b"]]
+    assert _groups([_row("stripe_payment", "a", "pi_1", "145"), _row("qbo_payment", "b", "145", currency="GBP")]) == [["a"], ["b"]]
+    assert _groups([_row("stripe_payment", "a", "pi_1", "145", client=None), _row("qbo_payment", "b", "145", client=None)]) == [["a"], ["b"]]
+
+
+def test_incidents_ambiguous_external_id_is_not_merged():
+    rows = [_row("stripe_payment", "a", "pi_1", "145"), _row("qbo_payment", "b1", "145"), _row("qbo_payment", "b2", "145")]
+    assert _groups(rows) == [["a"], ["b1"], ["b2"]]

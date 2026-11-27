@@ -231,16 +231,37 @@ def architecture(request):
 
 
 def readyz(request):
-    """Ready = a completed pipeline run with a ground-truth evaluation exists (not just a live DB)."""
+    """Ready = the data being served is the intended run and it fully matches the ground truth.
+
+    Intentional demo states (NO_DATA, STALE, ...) are not failures; what is
+    checked is that every scenario, including those, was classified correctly.
+    """
     try:
         run = _q(dd.latest_run)
         ev = _q(dd.overview, run["run_id"])["evaluation"] if run else None
+        expected_scenarios = len(_catalog())
     except Exception as exc:
-        return JsonResponse({"ready": False, "reason": type(exc).__name__}, status=503)
-    if not run or not ev:
-        return JsonResponse({"ready": False, "reason": "no completed run with an evaluation"}, status=503)
-    return JsonResponse({"ready": True, "run_id": run["run_id"], "as_of": run["as_of"],
-                         "scenarios_passed": ev["scenarios_passed"], "scenarios_total": ev["scenarios_total"]})
+        return JsonResponse({"ready": False, "reasons": [f"database: {type(exc).__name__}"]}, status=503)
+    reasons = []
+    as_of = get_settings().recon_as_of.isoformat()
+    if not run:
+        reasons.append("no completed pipeline run")
+    elif run["as_of"] != as_of:
+        reasons.append(f"latest run is as of {run['as_of']}, expected RECON_AS_OF {as_of}")
+    if run and not ev:
+        reasons.append("no ground-truth evaluation for the latest run")
+    if ev:
+        if ev["scenarios_total"] != expected_scenarios:
+            reasons.append(f"evaluation covers {ev['scenarios_total']} of {expected_scenarios} scenarios")
+        if ev["scenarios_passed"] != ev["scenarios_total"]:
+            reasons.append(f"failed scenarios: {', '.join(ev['failed_scenarios'])}")
+        for k in ("wrong", "missed", "unexpected"):
+            if ev[k]:
+                reasons.append(f"{ev[k]} {k} item(s)")
+    body = {"ready": not reasons, "reasons": reasons, "run_id": run["run_id"] if run else None,
+            "as_of": run["as_of"] if run else None,
+            "scenarios_passed": ev["scenarios_passed"] if ev else 0, "scenarios_total": expected_scenarios}
+    return JsonResponse(body, status=200 if not reasons else 503)
 
 
 def healthz(request):

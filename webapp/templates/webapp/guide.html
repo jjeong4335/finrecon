@@ -39,7 +39,6 @@
 </style>
 <link rel="stylesheet" href="{{ T }}/ui/base.css">
 <link rel="stylesheet" href="{{ T }}/ui/window/fragment.css">
-<link rel="stylesheet" href="{{ T }}/ui/doc/fragment.css">
 <link rel="stylesheet" href="{{ T }}/diagrams/diagram.css">
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 <script src="{{ T }}/backgrounds/backgrounds.js"></script>
@@ -68,8 +67,13 @@
   .app > .app__pane + .app__pane { border-top: 0; }
 }
 /* inside visuals only */
-.ui-doc__text b { font-family: var(--font-mono); font-weight: 500; }
 #method .panel { --p-h: 520px; }
+.incident { padding: 28px 32px; font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+.incident p { margin: 0 0 12px; }
+.incident__meta { color: var(--p-muted); font-size: 13px; }
+.incident__title { font-family: var(--font-display); font-size: 22px; line-height: 1.25; letter-spacing: -.02em; }
+.incident__amt { font-family: var(--font-display); font-size: 32px; letter-spacing: -.03em; color: var(--p-accent); font-variant-numeric: tabular-nums; }
+#health .panel { overflow: hidden; }
 @media (max-width: 639px) { #method .panel { --p-h: 340px; } }
 .hero .hero__lead, #added .mo-la__sub { color: var(--p-ink); }
 .ground-inverse p { color: var(--p-inv-ink); }
@@ -138,11 +142,11 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
               {% for i in queue.incidents|slice:":3" %}<div class="t{% if forloop.first %} is-on{% endif %}"><i style="background:#f3b4ae">P{{ i.priority }}</i><b>{{ i.client|default:"Unassigned" }}</b><time>{{ i.exposure_cents|money }}</time><span>{{ i.status }} · {{ i.location|default:"client-level" }}</span></div>{% endfor %}
             </div>
             <div class="convo">
-              <div class="d-chat" data-ly-steps="900">
+              <div class="d-chat">
                 <div class="d-msg d-msg--me">{{ queue.incidents.0.lead.reason }}<small>{{ queue.incidents.0.lead.source_record_id|truncatechars:18 }}</small></div>
-                <div class="d-tool" data-step>Searched QBO memos for the PaymentIntent id, then same amount within 3 days</div>
-                <div class="d-msg d-msg--bot" data-step>{{ queue.incidents.0.status }}: {{ queue.incidents.0.why_it_matters }}.<small>Priority {{ queue.incidents.0.priority }} · {{ queue.incidents.0.client }}, {{ queue.incidents.0.location|default:"client-level" }}</small></div>
-                <div class="acts" data-step><span>Open record</span><span>Raw API page</span></div>
+                <div class="d-tool">Searched QBO memos for the PaymentIntent id, then same amount within 3 days</div>
+                <div class="d-msg d-msg--bot">{{ queue.incidents.0.status }}: {{ queue.incidents.0.why_it_matters }}.<small>Priority {{ queue.incidents.0.priority }} · {{ queue.incidents.0.client }}, {{ queue.incidents.0.location|default:"client-level" }}</small></div>
+                <div class="acts"><span>Open record</span><span>Raw API page</span></div>
               </div>
             </div>
           </div>
@@ -157,7 +161,7 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
         <h2 class="span-5" id="queue-h">Exception queue: {{ queue.incident_count }} incidents</h2>
         <p class="span-6 start-7">Wrong in the books comes first, then money at stake. A Stripe record and its QuickBooks twin count as one incident. <a class="link" href="{% url 'reconciliation' %}">Filter all 151 records</a></p>
       </div>
-      <div class="ui app fill" role="img" aria-label="The exception incidents beside the open first incident" data-ui-pause-host>
+      <div class="ui app fill" role="img" aria-label="The exception incidents beside the open first incident">
         <div class="app__pane app__pane--list">
           <div class="ui ui-panel ui-win" data-ui="window" data-open="Open" data-work="Reviewing" data-done="Cleared">
             <div class="ui-win__bar">
@@ -181,20 +185,13 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
             </div>
           </div>
         </div>
-        <div class="app__pane app__pane--open" data-ui-loop>
-          <div class="ui ui-doc" data-ui="doc">
-            <article class="ui-doc__page">
-              <div class="ui-doc__label">{{ queue.incidents.0.lead.record_type }} · {{ queue.incidents.0.client }} · {{ queue.incidents.0.location|default:"client-level" }}</div>
-              <div class="ui-doc__title">{{ queue.incidents.0.why_it_matters }}</div>
-              <div class="ui-doc__text"><mark class="ui-doc__mark is-on">{{ queue.incidents.0.lead.reason }}</mark></div>
-              {% for m in queue.incidents.0.records %}<div class="ui-doc__text">{{ m.record_type }} <b>{{ m.source_record_id }}</b></div>{% endfor %}
-              <div class="ui-doc__text">Every API page behind this record is archived with its sha256, so the finding can be traced to the response the source sent.</div>
-            </article>
-            <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
-              <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>Priority {{ queue.incidents.0.priority }}</span></div>
-              <div class="ui-doc__msg" data-doc-msg>{{ queue.incidents.0.status }}, exposure {{ queue.incidents.0.exposure_cents|money }}</div>
-              <div class="ui-doc__where" data-doc-where>Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</div>
-            </aside>
+        <div class="app__pane app__pane--open">
+          <div class="incident">
+            <p class="incident__meta">Priority {{ queue.incidents.0.priority }} · {{ queue.incidents.0.client }} · {{ queue.incidents.0.location|default:"client-level" }}</p>
+            <p class="incident__title">{{ queue.incidents.0.why_it_matters }}</p>
+            <p class="incident__amt">{{ queue.incidents.0.exposure_cents|money }}</p>
+            <p>{{ queue.incidents.0.lead.reason }}</p>
+            <p class="incident__meta">{% for m in queue.incidents.0.records %}{{ m.record_type }} {{ m.source_record_id }}{% if not forloop.last %} · {% endif %}{% endfor %}</p>
           </div>
         </div>
       </div>
@@ -272,7 +269,7 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
             <div class="ui-win__body"><div class="ui-win__main">
               <div class="ui-win__cols" aria-hidden="true"><span>Source</span><span>Scope</span><span>Status</span></div>
               <ul class="ui-win__rows">
-                {% for d in data_status %}<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %}1{% else %}3{% endif %}">{{ d.source|slice:":2"|upper }}</span><span class="ui-win__who">{{ d.source }}</span><span class="ui-win__sub">{{ d.scope }}</span><span class="ui-win__st{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %} is-done{% else %} is-you{% endif %}" data-st>{{ d.status }}</span></li>{% endfor %}
+                {% for d in data_status|slice:":6" %}<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %}1{% else %}3{% endif %}">{{ d.source|slice:":2"|upper }}</span><span class="ui-win__who">{{ d.source }}</span><span class="ui-win__sub">{{ d.scope }}</span><span class="ui-win__st{% if d.status == 'VALIDATED' or d.status == 'ZERO_TRANSACTIONS' %} is-done{% else %} is-you{% endif %}" data-st>{{ d.status }}</span></li>{% endfor %}
               </ul>
             </div></div>
           </div></div>
@@ -290,13 +287,12 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
         <div><h2 id="close-h">Start with the nine exceptions</h2><p class="t-lead">Three of them change the books today.</p></div>
         <a class="btn btn--primary" href="{% url 'overview' %}">Open the dashboard<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
       </div>
-      <p class="close__word" aria-hidden="true">finrecon</p>
-    </div>
+          </div>
     <div class="closing__links">
       <div class="grid">
         <div class="span-4 stack-4">
           <a class="nav__logo" href="#top">finrecon</a>
-          <p class="footer__lede">{{ disclaimer }}</p>
+          <p class="footer__lede">Multi-location reconciliation for QuickBooks Online and Stripe.</p>
         </div>
         <div class="span-2 footer__col"><h3>Books</h3><ul><li><a href="{% url 'reconciliation' %}">Reconciliation</a></li><li><a href="{% url 'billing' %}">Billing and payouts</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Data</h3><ul><li><a href="{% url 'data_quality' %}">Data quality</a></li><li><a href="{% url 'retail' %}">Retail, real data</a></li></ul></div>
@@ -304,7 +300,7 @@ ul.rows { padding-left: 0; margin: 0; list-style: none; }
         <div class="span-2 footer__col"><h3>Proof</h3><ul><li><a href="#proof">Scenarios</a></li><li><a href="#health">Sources</a></li></ul></div>
       </div>
       <div class="footer__legal">
-        <span>&copy; 2026 finrecon &nbsp; <a href="{{ github_url }}">Code on GitHub</a> &nbsp; As of {{ as_of }} · {{ data_source }}</span>
+        <span>{{ disclaimer }}<br>&copy; 2026 finrecon &nbsp; <a href="{{ github_url }}">Code on GitHub</a> &nbsp; As of {{ as_of }} · {{ data_source }}</span>
         <div class="socials"></div>
       </div>
     </div>

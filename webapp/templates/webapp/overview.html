@@ -28,22 +28,23 @@
 
 <div class="split">
  <section class="card" aria-labelledby="q-h">
-  <div class="hd"><h2 id="q-h">Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</h2><span class="sub">Books first, then money at stake. Click a row.</span><a style="margin-left:auto;font-size:12.5px" href="{% url 'reconciliation' %}">All records →</a></div>
+  <div class="hd"><h2 id="q-h">Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</h2><span class="sub">Books first, then money at stake. Click a row for details.</span><a style="margin-left:auto;font-size:12.5px" href="{% url 'reconciliation' %}">All records →</a></div>
   <div class="wrap" style="max-height:none"><table>
    <thead><tr><th class="n" title="Priority: 1 = wrong in the books">P</th><th>Status</th><th>Why it matters</th><th>Client · location</th><th class="n">Exposure</th></tr></thead>
-   <tbody>{% for i in queue.incidents %}<tr class="pick{% if forloop.first %} sel{% endif %}" tabindex="0" data-i="{{ forloop.counter0 }}"><td class="n p{{ i.priority }}">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}"{% for k, v in status_help.items %}{% if k == i.status %} data-tip="{{ v }}"{% endif %}{% endfor %}>{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}<div class="sub">{{ i.location|default:"client-level" }}</div></td><td class="n">{{ i.exposure_cents|money }}</td></tr>
+   <tbody>{% for i in queue.incidents %}<tr class="pick" tabindex="0" role="button" aria-haspopup="dialog" data-i="{{ forloop.counter0 }}"><td class="n p{{ i.priority }}">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}"{% for k, v in status_help.items %}{% if k == i.status %} data-tip="{{ v }}"{% endif %}{% endfor %}>{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}<div class="sub">{{ i.location|default:"client-level" }}</div></td><td class="n">{{ i.exposure_cents|money }}</td></tr>
    {% empty %}<tr><td colspan="5">No exceptions in this run. Every payment record is matched.</td></tr>{% endfor %}</tbody></table></div>
  </section>
- <aside class="card detail" aria-live="polite" aria-labelledby="d-h">
-  {% for i in queue.incidents %}<div class="bd" data-d="{{ forloop.counter0 }}"{% if not forloop.first %} hidden{% endif %}>
+ <div class="drawer-bg" hidden data-close></div>
+ <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="d-h" hidden><button class="close" type="button" aria-label="Close details" data-close>×</button>
+  {% for i in queue.incidents %}<div class="bd" data-d="{{ forloop.counter0 }}" hidden>
    <div class="sub">Priority {{ i.priority }} · {{ i.client|default:"—" }} · {{ i.location|default:"client-level" }}</div>
-   <h2 id="d-h" style="margin:6px 0 2px">{{ i.why_it_matters }}</h2>
+   <h2 {% if forloop.first %}id="d-h" {% endif %}style="margin:6px 0 2px">{{ i.why_it_matters }}</h2>
    <div class="amt">{{ i.exposure_cents|money }}</div>
    <div class="reason"><b>Why:</b> {{ i.lead.reason }}</div>
    <dl><dt>Status</dt><dd><span class="pill {{ i.status|pill }}">{{ i.status }}</span></dd>
    {% for m in i.records %}<dt>{{ m.record_type }}</dt><dd><a href="{% url 'record' m.record_type m.record_id %}">{{ m.source_record_id|truncatechars:26 }}</a></dd>{% endfor %}</dl>
    <a class="btn" href="{% url 'record' i.lead.record_type i.lead.record_id %}">Open record</a>
-  </div>{% empty %}<div class="bd"><p class="sub">Select an incident to see why it was raised.</p></div>{% endfor %}
+  </div>{% endfor %}
  </aside>
 </div>
 
@@ -61,8 +62,11 @@
 {% for b in board %}<tr><td>{{ b.scenario }}</td><td class="nw">{{ b.title }}</td><td>{{ b.description }}</td><td class="nw">{{ b.interview_question }}</td><td class="n">{{ b.correct }}/{{ b.items }}</td><td><span class="pill {% if b.passed %}ok{% else %}bad{% endif %}">{% if b.passed %}PASS{% else %}FAIL{% endif %}</span></td></tr>{% endfor %}</table></div></details>
 {% endblock %}
 {% block scripts %}<script>
-(()=>{const rows=[...document.querySelectorAll('tr.pick')],det=[...document.querySelectorAll('[data-d]')];
-const pick=r=>{rows.forEach(x=>x.classList.toggle('sel',x===r));det.forEach(d=>d.hidden=d.dataset.d!==r.dataset.i)};
-rows.forEach(r=>{r.addEventListener('click',()=>pick(r));r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r)}})});
-document.addEventListener('keydown',e=>{if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();location.href='{% url "reconciliation" %}'}});})();
+(()=>{const rows=[...document.querySelectorAll('tr.pick')],det=[...document.querySelectorAll('[data-d]')],
+dr=document.querySelector('.drawer'),bg=document.querySelector('.drawer-bg');if(!dr)return;let last=null;
+const open=r=>{last=r;rows.forEach(x=>x.classList.toggle('sel',x===r));det.forEach(d=>d.hidden=d.dataset.d!==r.dataset.i);dr.hidden=bg.hidden=false;dr.querySelector('.close').focus()};
+const close=()=>{dr.hidden=bg.hidden=true;rows.forEach(x=>x.classList.remove('sel'));if(last)last.focus()};
+rows.forEach(r=>{r.addEventListener('click',()=>open(r));r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(r)}})});
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',close));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!dr.hidden)close();else if(e.key==='/'&&!/input|select|textarea/i.test(document.activeElement.tagName)){e.preventDefault();location.href='{% url "reconciliation" %}'}});})();
 </script>{% endblock %}

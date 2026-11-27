@@ -98,14 +98,18 @@ main{max-width:1320px;width:100%;margin:0;padding:22px 28px 48px}
 .band .foot{color:var(--muted);font-size:12px;margin-top:14px}
 .hint{display:flex;align-items:center;gap:12px;background:var(--acc-bg);border:1px solid #d3ddfb;border-radius:var(--r);padding:9px 14px;margin:0 0 16px;font-size:13px;color:var(--ink2)}
 .hint a{font-weight:600}.hint .x{margin-left:auto;background:none;border:0;color:var(--muted);min-height:0;padding:0 4px;font-size:16px}
-.split{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,1fr);gap:16px;margin-top:18px;align-items:start}
+.split{margin-top:18px}
 @media(max-width:1100px){.split{grid-template-columns:1fr}}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
 .card>.hd{display:flex;align-items:baseline;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
 .card>.hd h2{margin:0;font-size:15px}.card>.hd .sub{margin:0}.card>.bd{padding:14px}
 .card .wrap{border:0;border-radius:0}
 tr.sel td{background:var(--acc-bg)!important}tr.pick{cursor:pointer}
-.detail{position:sticky;top:64px}.detail .amt{font-family:"Funnel Display",system-ui,sans-serif;font-size:28px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.drawer-bg{position:fixed;inset:0;background:rgba(17,17,17,.18);z-index:40}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);z-index:41;background:var(--panel);border-left:1px solid var(--line2);overflow-y:auto;box-shadow:-8px 0 24px rgba(17,17,17,.08)}
+.drawer .close{position:absolute;top:12px;right:12px;background:none;border:0;color:var(--muted);font-size:20px;min-height:0;padding:4px 8px}
+.drawer .close:hover{background:var(--head);color:var(--ink)}
+.drawer .bd{padding:24px}.detail .amt{font-family:"Funnel Display",system-ui,sans-serif;font-size:28px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .detail dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:12px 0;font-size:12.5px}.detail dt{color:var(--muted)}.detail dd{margin:0}
 [data-tip]{position:relative;cursor:help}
 [data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% + 6px);z-index:5;width:260px;white-space:normal;background:#111;color:#fff;font-weight:400;font-size:12px;line-height:1.45;padding:8px 10px;border-radius:var(--r)}

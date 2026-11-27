@@ -28,14 +28,14 @@
 </div>
 
 {% if chart %}<h2>By month: valid sales vs cancellations (GBP)</h2>
-<svg viewBox="0 0 {{ chart.w }} {{ chart.h }}" width="100%" style="background:#fff;border:1px solid #e3e7ee;border-radius:8px" role="img" aria-label="Monthly sales and cancellations">
- <line x1="{{ chart.pad }}" y1="{{ chart.baseline }}" x2="{{ chart.w }}" y2="{{ chart.baseline }}" stroke="#c9d0db"/>
- <text x="{{ chart.pad }}" y="18" font-size="11" fill="#5d6778">max {{ chart.top }}</text>
- <polyline fill="none" stroke="#2b59c3" stroke-width="2" points="{{ chart.sales }}"/>
- <polyline fill="none" stroke="#b3261e" stroke-width="2" points="{{ chart.canc }}"/>
- {% for t in chart.ticks %}<text x="{{ t.x }}" y="{{ chart.h|add:-12 }}" font-size="10" fill="#5d6778" text-anchor="middle">{{ t.label }}</text>{% endfor %}
+<svg viewBox="0 0 {{ chart.w }} {{ chart.h }}" width="100%" style="background:#fff;border:1px solid var(--line);border-radius:var(--r)" role="img" aria-label="Monthly sales and cancellations">
+ <line x1="{{ chart.pad }}" y1="{{ chart.baseline }}" x2="{{ chart.w }}" y2="{{ chart.baseline }}" stroke="#d0d5dd"/>
+ <text x="{{ chart.pad }}" y="18" font-size="11" fill="#667085">max {{ chart.top }}</text>
+ <polyline fill="none" stroke="#1f3a8a" stroke-width="2" points="{{ chart.sales }}"/>
+ <polyline fill="none" stroke="#a4251c" stroke-width="2" points="{{ chart.canc }}"/>
+ {% for t in chart.ticks %}<text x="{{ t.x }}" y="{{ chart.h|add:-12 }}" font-size="10" fill="#667085" text-anchor="middle">{{ t.label }}</text>{% endfor %}
 </svg>
-<p class="sub"><span style="color:#2b59c3">■</span> valid sales · <span style="color:#b3261e">■</span> cancellations (absolute)</p>{% endif %}
+<p class="sub"><span style="color:#1f3a8a">■</span> valid sales · <span style="color:#a4251c">■</span> cancellations (absolute)</p>{% endif %}
 
 <h2>Cancellations: traced to an earlier sale?</h2>
 <p class="sub">Cancellation invoices do not reference the original sale. LINKED means the same customer bought the same item earlier in the data for at least that quantity. NO_PRIOR_SALE should be highest in the first months, when the original sale may predate the dataset.</p>

@@ -10,7 +10,7 @@
  <label>Record type<select name="record_type"><option value="">All</option>{% for c in record_types %}<option{% if f.record_type == c %} selected{% endif %}>{{ c }}</option>{% endfor %}</select></label>
  <label>From<input type="date" name="date_from" value="{{ f.date_from }}"></label>
  <label>To<input type="date" name="date_to" value="{{ f.date_to }}"></label>
- <button type="submit">Apply</button> <a href="{% url 'reconciliation' %}">Reset</a>
+ <button type="submit">Apply filters</button> <a class="btn ghost" href="{% url 'reconciliation' %}">Reset filters</a>
 </form>
 {% if f.status %}<p class="sub">{{ f.status }}: {% for k, v in status_help.items %}{% if k == f.status %}{{ v }}{% endif %}{% endfor %}</p>{% endif %}
 <p class="sub">{{ rows|length }} of {{ total }} records. Open a source ID to see why it was classified that way.</p>

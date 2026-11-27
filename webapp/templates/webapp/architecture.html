@@ -3,7 +3,7 @@
 {% block head %}<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"; mermaid.initialize({startOnLoad: true, theme: "neutral"});</script>{% endblock %}
 {% block content %}
 <h1>Architecture & Methodology</h1>
-<div style="background:#fff;border:1px solid #e3e7ee;border-radius:8px;padding:12px"><pre class="mermaid" style="background:#fff;color:#1d2430">
+<div style="background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px"><pre class="mermaid" style="background:#fff;color:#14181f">
 flowchart LR
   QBO[QuickBooks Online sandbox] --> ING[Ingestion runner: OAuth, pagination, retry, expected vs received]
   STR[Stripe sandbox] --> ING

@@ -3,23 +3,27 @@
 {% block content %}
 <h1>Finance Reconciliation Overview</h1>
 <div class="sub">QuickBooks Online + Stripe sandboxes + ad platform · {{ o.clients }} clients, {{ o.locations }} locations{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} records belong to customers outside the client registry (e.g. sandbox sample data) and are not reconciled{% endif %}</div>
+{% if ev %}<div class="verdict{% if not ev_ok %} fail{% endif %}"><b>Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed</b><span>{{ ev.correct }} / {{ ev.items }} classifications match the ground truth</span><span>{{ ev.false_positive_exceptions }} false-positive exceptions</span><span>{{ ev.missed_exceptions }} missed exceptions</span></div>
+<p class="sub">Computed by the evaluator for this run, not hard-coded. Stripe and QBO amounts are compared, never added together.</p>{% endif %}
+<div class="group">Money</div>
 <div class="kpis">
  <div class="kpi"><div class="v">{{ o.invoiced_cents|money }}</div><div class="l">Invoiced ({{ o.invoice_count }} invoices)</div></div>
  <div class="kpi"><div class="v">{{ o.recorded_payments_cents|money }}</div><div class="l">Payments recorded in QBO</div></div>
  <div class="kpi"><div class="v">{{ o.stripe_gross_cents|money }}</div><div class="l">Collected in Stripe (gross)</div></div>
  <div class="kpi"><div class="v">{{ o.open_ar_cents|money }}</div><div class="l">Open AR (not an exception)</div></div>
+ </div>
+<div class="group">Health</div>
+<div class="kpis">
  <div class="kpi"><div class="v">{{ o.match_rate|pct }}</div><div class="l">Payment records reconciled</div></div>
- <div class="kpi"><div class="v">{{ queue.incident_count }}</div><div class="l">Exception incidents ({{ o.exceptions }} records)</div></div>
- <div class="kpi"><div class="v">{{ o.billing_issues }}</div><div class="l">Billing exceptions</div></div>
- <div class="kpi"><div class="v">{{ o.data_issues }}</div><div class="l">Sources not fully validated</div></div>
+ <div class="kpi{% if queue.incident_count %} alert{% endif %}"><div class="v">{{ queue.incident_count }}</div><div class="l">Exception incidents ({{ o.exceptions }} records)</div></div>
+ <div class="kpi{% if o.billing_issues %} alert{% endif %}"><div class="v">{{ o.billing_issues }}</div><div class="l">Billing exceptions</div></div>
+ <div class="kpi{% if o.data_issues %} caution{% endif %}"><div class="v">{{ o.data_issues }}</div><div class="l">Sources not fully validated</div></div>
 </div>
-{% if ev %}<div class="badge{% if not ev_ok %} fail{% endif %}">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications match the ground truth · {{ ev.false_positive_exceptions }} false-positive exceptions · {{ ev.missed_exceptions }} missed exceptions</div>
-<div class="sub" style="margin-top:6px">Computed by the evaluator for this run, not hard-coded. Stripe and QBO amounts are compared, never added together.</div>{% endif %}
 
 <h2>Exception queue: {{ queue.incident_count }} incidents ({{ queue.record_count }} records)</h2>
-<p class="sub">Ordered for a controller: what is wrong in the books first (priority 1), then money at stake. Counts elsewhere are per record; an incident often has two records, one on each side (Stripe and QBO), so they are grouped here. Exposure is the largest difference or amount in the incident, not a total of both sides.</p>
-<div class="wrap"><table><tr><th class="n">P</th><th>Status</th><th>Why it matters</th><th>Client</th><th>Location</th><th class="n">Exposure</th><th>Records</th><th>Reason</th></tr>
-{% for i in queue.incidents %}<tr><td class="n">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}">{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}</td><td>{{ i.location|default:"client-level" }}</td><td class="n">{{ i.exposure_cents|money }}</td>
+<p class="sub">Ordered for a controller: what is wrong in the books first (priority 1), then money at stake. <details style="display:inline;margin:0"><summary style="display:inline;font-weight:500;color:var(--acc)">How incidents are counted</summary> Counts elsewhere are per record; an incident often has two records, one on each side (Stripe and QBO), so they are grouped here. Exposure is the largest difference or amount in the incident, not a total of both sides.</details></p>
+<div class="wrap"><table><tr><th class="n" title="Priority: 1 = wrong in the books">P</th><th>Status</th><th>Why it matters</th><th>Client</th><th>Location</th><th class="n">Exposure</th><th>Records</th><th>Reason</th></tr>
+{% for i in queue.incidents %}<tr><td class="n p{{ i.priority }}">{{ i.priority }}</td><td><span class="pill {{ i.status|pill }}">{{ i.status }}</span></td><td>{{ i.why_it_matters }}</td><td>{{ i.client|default:"—" }}</td><td>{{ i.location|default:"client-level" }}</td><td class="n">{{ i.exposure_cents|money }}</td>
 <td class="nw">{% for m in i.records %}<a href="{% url 'record' m.record_type m.record_id %}">{{ m.record_type }} {{ m.source_record_id|truncatechars:18 }}</a>{% if not forloop.last %}<br>{% endif %}{% endfor %}</td><td>{{ i.lead.reason }}</td></tr>
 {% empty %}<tr><td colspan="8">No exceptions.</td></tr>{% endfor %}</table></div>
 
@@ -33,7 +37,7 @@
 </div>
 
 <h2>30-second tour</h2>
-<ol>
+<ol class="tour">
 <li><a href="{% url 'reconciliation' %}?exceptions=1&status=MISSING_IN_QBO">Reconciliation → MISSING_IN_QBO</a>: open the record to see the reason, the Stripe ID, the invoice it claims to pay and the raw API pages.</li>
 <li><a href="{% url 'reconciliation' %}?exceptions=1&status=NEEDS_REVIEW">NEEDS_REVIEW</a>: identical deposits, a location conflict and an invoice-reference conflict. The engine refuses to guess.</li>
 <li><a href="{% url 'data_quality' %}">Data Quality</a>: Paterson is NO_DATA (API down), never $0; Astoria is STALE.</li>

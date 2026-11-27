@@ -133,7 +133,10 @@ def seed() -> None:
                 md["qbo_invoice_no"] = ",".join(docs[k] for k in p.invoice_keys)
             existing_pi[p.seed_key] = stripe.create("payment_intents", {
                 "amount": p.amount_cents, "currency": "usd", "customer": scus[p.client_key],
-                "payment_method": "pm_card_visa", "payment_method_types": ["card"], "confirm": True,
+                "payment_method": "pm_card_visa", "confirm": True,
+                # Current Stripe API: payment methods come from Dashboard settings;
+                # allow_redirects=never keeps this a plain card confirmation.
+                "automatic_payment_methods": {"enabled": True, "allow_redirects": "never"},
                 "description": p.description, "metadata": md}, idempotency_key=f"finrecon-pi-{p.seed_key}")
         pi_id[p.seed_key] = existing_pi[p.seed_key]["id"]
     existing_re = {(r.get("metadata") or {}).get("seed_key"): r for r in stripe.list_all("refunds")[0]}

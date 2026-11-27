@@ -20,6 +20,7 @@ JOIN stripe_payments s
  AND s.currency = q.currency
  AND s.amount_received_cents = q.total_cents
 WHERE q.referenced_stripe_id IS NULL
+  AND q.client_id IS NOT NULL
   AND q.payment_method_type = 'CREDIT_CARD'
   AND s.status = 'succeeded'
   AND NOT EXISTS (SELECT 1 FROM payment_matches m

@@ -38,6 +38,11 @@ from seed.scenarios import build_plan
 REGISTRY = ROOT / "data" / "registry.json"
 
 
+def _num(value) -> float:
+    """QBO request bodies take JSON numbers. Amounts have at most 2 decimals, so float is exact enough here."""
+    return float(value)
+
+
 def _q(qbo, statement: str) -> list[dict]:
     """One-page QBO query with a WHERE clause (used for small lookups)."""
     from finrecon.http import request_with_retry
@@ -101,10 +106,10 @@ def seed() -> None:
                 "CustomerRef": {"value": sub_id[(i.client_key, i.location_key)]}, "DocNumber": i.doc_number,
                 "TxnDate": i.txn_date.isoformat(), "DueDate": i.due_date.isoformat(),
                 "PrivateNote": f"period={i.period}; seed_key={i.seed_key}",
-                "Line": [{"Amount": str(to_qbo(i.amount_cents)), "DetailType": "SalesItemLineDetail",
+                "Line": [{"Amount": _num(to_qbo(i.amount_cents)), "DetailType": "SalesItemLineDetail",
                           "Description": f"Advertising services {i.period} (ad spend + management fee)",
                           "SalesItemLineDetail": {"ItemRef": {"value": item["Id"]}, "Qty": 1,
-                                                  "UnitPrice": str(to_qbo(i.amount_cents))}}]})
+                                                  "UnitPrice": _num(to_qbo(i.amount_cents))}}]})
         inv_id[i.seed_key] = existing_inv[i.seed_key]["Id"]
 
     # ---------------------------------------------------------------- Stripe
@@ -157,9 +162,9 @@ def seed() -> None:
         method = methods["Check" if qp.method == "check" else "Credit Card (Stripe)"]
         body = {"CustomerRef": {"value": sub_id[(qp.client_key, qp.location_key)] if qp.location_key
                                 else parent_id[qp.client_key]},
-                "TotalAmt": str(to_qbo(qp.amount_cents)), "TxnDate": qp.txn_date.isoformat(),
+                "TotalAmt": _num(to_qbo(qp.amount_cents)), "TxnDate": qp.txn_date.isoformat(),
                 "PaymentMethodRef": {"value": method["Id"]}, "PrivateNote": note,
-                "Line": [{"Amount": str(to_qbo(a)), "LinkedTxn": [{"TxnId": inv_id[k], "TxnType": "Invoice"}]}
+                "Line": [{"Amount": _num(to_qbo(a)), "LinkedTxn": [{"TxnId": inv_id[k], "TxnType": "Invoice"}]}
                          for k, a in qp.allocations]}
         if qp.method == "check":
             body["PaymentRefNum"] = "10482"
@@ -173,7 +178,7 @@ def seed() -> None:
             "DepositToAccountRef": {"value": bank["Id"]},
             "PaymentMethodRef": {"value": methods["Credit Card (Stripe)"]["Id"]},
             "PrivateNote": f"Synced from Stripe. stripe_refund={re_id[r.stripe_refund_key]}; seed_key={r.seed_key}",
-            "Line": [{"Amount": str(to_qbo(r.amount_cents)), "DetailType": "SalesItemLineDetail",
+            "Line": [{"Amount": _num(to_qbo(r.amount_cents)), "DetailType": "SalesItemLineDetail",
                       "SalesItemLineDetail": {"ItemRef": {"value": item["Id"]}}}]})
 
     # ---------------------------------------------------------------- registry

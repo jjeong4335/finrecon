@@ -22,4 +22,5 @@ FROM stripe_payments s
 FULL OUTER JOIN qbo_payments q
   ON q.referenced_stripe_id = s.source_payment_id
  AND q.client_id = s.client_id
+WHERE COALESCE(s.client_id, q.client_id) IS NOT NULL
 ORDER BY client_id, COALESCE(s.effective_date, q.txn_date), COALESCE(s.source_payment_id, ''), COALESCE(q.source_payment_id, '')

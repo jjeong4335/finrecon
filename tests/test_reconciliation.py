@@ -158,3 +158,29 @@ def test_unique_candidate_with_conflicting_invoice_is_not_matched(demo):
     assert status_of(db, run_id, "stripe_payment", "S19") == ["NEEDS_REVIEW"]
     assert db.scalar("SELECT COUNT(*) FROM payment_matches m JOIN qbo_payments q ON q.payment_id = m.qbo_payment_id "
                      "WHERE m.run_id = ? AND q.scenario_id LIKE 'S19%'", (run_id,)) == 0
+
+
+def test_records_of_unregistered_customers_are_out_of_scope(fresh_demo):
+    """A QBO sandbox ships with sample customers; they must not pollute reconciliation."""
+    db, settings, run_id = fresh_demo
+    now = "2026-11-30T06:00:00+00:00"
+    db.execute("INSERT INTO invoices (invoice_id, source, source_invoice_id, doc_number, client_id, location_id, "
+               "qbo_customer_id, billing_period, txn_date, due_date, total_cents, balance_cents, currency, private_note, "
+               "scenario_id, run_id, ingested_at) VALUES (?, 'qbo', '9001', '1037', NULL, NULL, '58', NULL, "
+               "'2026-10-01', '2026-10-31', 36207, 36207, 'USD', NULL, NULL, ?, ?)",
+               ("00000000-0000-0000-0000-00000000a001", run_id, now))
+    db.execute("INSERT INTO qbo_payments (payment_id, source_payment_id, client_id, location_id, qbo_customer_id, "
+               "txn_date, total_cents, unapplied_cents, currency, payment_method_id, payment_method_name, "
+               "payment_method_type, payment_ref_num, private_note, referenced_stripe_id, scenario_id, run_id, "
+               "ingested_at) VALUES (?, '9002', NULL, NULL, '58', '2026-10-05', 5000, 5000, 'USD', '1', "
+               "'Credit Card (Stripe)', 'CREDIT_CARD', NULL, NULL, NULL, NULL, ?, ?)",
+               ("00000000-0000-0000-0000-00000000a002", run_id, now))
+    db.commit()
+    from finrecon import pipeline
+    from finrecon.dashboard_data import overview
+
+    out = pipeline.reconcile_all(db, settings, run_id)
+    assert db.scalar("SELECT COUNT(*) FROM reconciliation_results WHERE run_id = ? AND source_record_id IN "
+                     "('9001', '9002')", (run_id,)) == 0
+    assert out["evaluation"]["unexpected"] == 0 and out["evaluation"]["scenarios_passed"] == 27
+    assert overview(db, run_id)["out_of_scope_records"] == 2

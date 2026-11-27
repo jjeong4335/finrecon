@@ -16,6 +16,9 @@ Semantic rules
     MISSING_IN_QBO after it.
   * A QBO payment by check/ACH is NON_STRIPE_PAYMENT: no Stripe record expected.
   * Time rules use RECON_AS_OF, never the wall clock.
+  * Scope: only records that map to a registered client are reconciled. Records
+    for unknown customers (e.g. the sample company data every QBO sandbox ships
+    with) are reported by ingestion as unmapped and counted as out of scope.
 """
 from __future__ import annotations
 
@@ -77,8 +80,9 @@ def reconcile(db: Database, settings: Settings, run_id: str) -> dict[str, int]:
     db.execute("DELETE FROM payment_matches WHERE run_id = ?", (run_id,))
     db.execute("DELETE FROM reconciliation_results WHERE run_id = ?", (run_id,))
 
-    stripe = {r["payment_id"]: r for r in db.query("SELECT * FROM stripe_payments WHERE status = 'succeeded'")}
-    qbo = {r["payment_id"]: r for r in db.query("SELECT * FROM qbo_payments")}
+    stripe = {r["payment_id"]: r for r in db.query("SELECT * FROM stripe_payments WHERE status = 'succeeded' "
+                                                     "AND client_id IS NOT NULL")}
+    qbo = {r["payment_id"]: r for r in db.query("SELECT * FROM qbo_payments WHERE client_id IS NOT NULL")}
     results: dict[tuple[str, str], Result] = {}
     matches: list[dict] = []
 
@@ -285,10 +289,10 @@ def _invoices(db: Database, settings: Settings, put) -> None:
 def _refunds(db: Database, settings: Settings, put) -> None:
     as_of = settings.recon_as_of
     qbo_by_ref = {}
-    for r in db.query("SELECT * FROM qbo_refunds"):
+    for r in db.query("SELECT * FROM qbo_refunds WHERE client_id IS NOT NULL"):
         qbo_by_ref.setdefault(r["referenced_stripe_id"], []).append(r)
     seen_qbo: set[str] = set()
-    for r in db.query("SELECT * FROM stripe_refunds WHERE status = 'succeeded'"):
+    for r in db.query("SELECT * FROM stripe_refunds WHERE status = 'succeeded' AND client_id IS NOT NULL"):
         hits = qbo_by_ref.get(r["source_refund_id"], [])
         base = dict(record_type="stripe_refund", record_id=r["refund_id"], source="stripe",
                     source_record_id=r["source_refund_id"], amount_cents=r["amount_cents"], currency=r["currency"],
@@ -316,7 +320,7 @@ def _refunds(db: Database, settings: Settings, put) -> None:
                        reason=f"Stripe refunded {fmt(r['amount_cents'])} on {r['effective_date']} (payment "
                               f"{r['source_payment_id']}), but QBO has no refund receipt. Revenue and cash are "
                               f"overstated in the books.", **base))
-    for q in db.query("SELECT * FROM qbo_refunds"):
+    for q in db.query("SELECT * FROM qbo_refunds WHERE client_id IS NOT NULL"):
         if q["refund_id"] in seen_qbo:
             continue
         status = "MISSING_IN_STRIPE" if q["referenced_stripe_id"] else "NON_STRIPE_PAYMENT"

@@ -218,12 +218,19 @@ def stripe_refund(obj: dict, payments_by_pi: dict[str, dict], run_id: str, now: 
     amount, cur = money.from_stripe(obj["amount"], obj["currency"])
     pay = payments_by_pi.get(obj.get("payment_intent") or "", {})
     issues = [] if pay else [Issue("referential_integrity", f"Stripe refund {obj['id']}: payment not found")]
+    effective = _date_from_unix(obj["created"])
+    ed = (obj.get("metadata") or {}).get("event_date")
+    if ed:   # same rule as payments: sandbox objects cannot be back-dated
+        try:
+            effective = date.fromisoformat(ed).isoformat()
+        except ValueError:
+            issues.append(Issue("invalid_value", f"Stripe refund {obj['id']}: bad metadata.event_date", "warning"))
     return {
         "refund_id": record_id("stripe", "refund", obj["id"]), "source_refund_id": obj["id"],
         "source_payment_id": obj.get("payment_intent"), "charge_id": obj.get("charge"),
         "client_id": pay.get("client_id"), "location_id": pay.get("location_id"), "amount_cents": amount,
         "currency": cur, "status": obj.get("status", "succeeded"), "created_at": _iso_from_unix(obj["created"]),
-        "effective_date": _date_from_unix(obj["created"]), "balance_transaction_id": obj.get("balance_transaction"),
+        "effective_date": effective, "balance_transaction_id": obj.get("balance_transaction"),
         "scenario_id": (obj.get("metadata") or {}).get("seed_key"), "run_id": run_id, "ingested_at": now,
     }, issues
 

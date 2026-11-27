@@ -21,7 +21,9 @@ c = st.columns(4)
 c[0].metric("Reconciliation exceptions", o["exceptions"], help=f"Exposure {fmt(o['exception_cents'])}")
 c[1].metric("Billing exceptions", o["billing_issues"], help="Ad spend → invoice mismatches and missing invoices")
 c[2].metric("Sources not fully validated", o["data_issues"], help="NO_DATA, INCOMPLETE or STALE scopes")
-c[3].metric("Clients / locations", f"{o['clients']} / {o['locations']}")
+c[3].metric("Clients / locations", f"{o['clients']} / {o['locations']}",
+            help=f"{o['out_of_scope_records']} records belong to customers not in the client registry "
+                 "(e.g. a sandbox's sample data) and are not reconciled")
 
 if ev:
     ok = ev["scenarios_passed"] == ev["scenarios_total"] and ev["false_positive_exceptions"] == 0

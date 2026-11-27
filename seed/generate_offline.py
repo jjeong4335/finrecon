@@ -171,7 +171,8 @@ def render(plan: Plan) -> dict[str, object]:
         refunds.append({"id": re_id[r.seed_key], "object": "refund", "amount": r.amount_cents,
                         "charge": ch["id"], "payment_intent": ch["payment_intent"], "currency": "usd",
                         "created": created, "status": "succeeded", "balance_transaction": txn,
-                        "metadata": {"seed_key": r.seed_key, "scenario_id": r.seed_key.split(":")[0]}})
+                        "metadata": {"seed_key": r.seed_key, "scenario_id": r.seed_key.split(":")[0],
+                                     "event_date": r.refunded_on.isoformat()}})
         bts.append({"id": txn, "object": "balance_transaction", "type": "refund", "source": re_id[r.seed_key],
                     "amount": -r.amount_cents, "fee": 0, "net": -r.amount_cents, "currency": "usd",
                     "created": created, "available_on": created, "status": "available", "fee_details": []})

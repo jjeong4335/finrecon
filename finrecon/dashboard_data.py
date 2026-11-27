@@ -62,6 +62,10 @@ def overview(db: Database, run_id: str) -> dict:
                              "FROM reconciliation_results WHERE run_id = ? AND is_exception", (run_id,)),
         "billing_issues": q("SELECT COUNT(*) FROM billing_checks WHERE run_id = ? AND status IN "
                             "('BILLING_MISMATCH', 'NOT_INVOICED', 'INVOICE_WITHOUT_SPEND')", (run_id,)),
+        "out_of_scope_records": q(
+            "SELECT (SELECT COUNT(*) FROM invoices WHERE client_id IS NULL) + "
+            "(SELECT COUNT(*) FROM qbo_payments WHERE client_id IS NULL) + "
+            "(SELECT COUNT(*) FROM stripe_payments WHERE client_id IS NULL)"),
         "data_issues": q("SELECT COUNT(*) FROM data_status WHERE status NOT IN ('VALIDATED', 'ZERO_TRANSACTIONS')"),
         "evaluation": latest_summary(db, run_id),
     }

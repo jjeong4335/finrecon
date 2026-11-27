@@ -11,7 +11,8 @@
   "balance_transaction": "txn_a44709c06879941b14176df0",
   "metadata": {
    "seed_key": "S08:re:maple:newrochelle",
-   "scenario_id": "S08"
+   "scenario_id": "S08",
+   "event_date": "2026-10-25"
   }
  },
  {
@@ -26,7 +27,8 @@
   "balance_transaction": "txn_632490a673c44a90d12a7b1e",
   "metadata": {
    "seed_key": "S09:re:sunbeam:newark",
-   "scenario_id": "S09"
+   "scenario_id": "S09",
+   "event_date": "2026-10-22"
   }
  }
 ]

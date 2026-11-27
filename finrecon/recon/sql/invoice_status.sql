@@ -26,3 +26,4 @@ LEFT JOIN (
     JOIN qbo_payments q ON q.payment_id = pa.qbo_payment_id
     GROUP BY pa.invoice_id
 ) a ON a.invoice_id = i.invoice_id
+WHERE i.client_id IS NOT NULL          -- in scope: mapped to a registered client

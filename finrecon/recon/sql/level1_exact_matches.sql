@@ -25,3 +25,5 @@ FROM qbo_payments q
 JOIN stripe_payments s
   ON s.source_payment_id = q.referenced_stripe_id
 WHERE s.status = 'succeeded'
+  AND q.client_id IS NOT NULL          -- in scope: mapped to a registered client
+  AND s.client_id IS NOT NULL

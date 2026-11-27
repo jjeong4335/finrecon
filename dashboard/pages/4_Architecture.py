@@ -62,7 +62,9 @@ st.table({
 
 st.subheader("Limitations")
 st.markdown("""
-- All data is synthetic. The billing formula, fees and the Stripe→QBO sync are simulated to create known cases.
+- Reconciliation data is synthetic. The billing formula, fees and the Stripe→QBO sync are simulated to create
+  known cases. The separate retail module (page 5) uses real public data from UCI Online Retail II, which is never
+  matched against QuickBooks or Stripe.
 - Sandbox objects cannot be back-dated, so live seeding stores the business date in Stripe metadata (`event_date`).
 - Single currency (USD). Multi-currency would need an explicit FX policy before any comparison.
 - QBO and Stripe are fully re-read each run (small volumes); the ad platform loads incrementally with a look-back.

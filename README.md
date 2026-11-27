@@ -1,11 +1,14 @@
 # Multi-Location Finance Reconciliation Pipeline
 
-> **Independent portfolio demonstration.** All financial data is synthetic, generated with sandbox APIs or simulated
-> systems. Not affiliated with any company named in this project, Intuit, or Stripe.
+> **Independent portfolio demonstration.** This demonstration uses synthetic sandbox financial records and historical
+> public retail transaction data from UCI. No real QuickBooks or Stripe customer transactions are included. Not
+> affiliated with any company named in this project, Intuit, or Stripe.
 
 A small, correct data system that pulls accounting records (QuickBooks Online), payment-processing records (Stripe)
 and advertising spend (a mock ad platform) for **3 clients × 15 locations**, maps every external ID to stable internal
 IDs, validates completeness, reconciles the systems against each other, and explains every exception in a dashboard.
+A separate module loads **1.07 million real public retail transactions** (UCI Online Retail II) to show the same
+discipline on messy real-world data.
 
 **Live demo:** _coming soon_ · **Static snapshot:** run `python -m finrecon.pipeline report`
 
@@ -35,6 +38,8 @@ It was built to answer, with working code, six questions from a Finance Data Ana
    last validated data kept.
 4. **Billing & Payouts**: one invoice charged the fee twice; one month of spend was never invoiced; every payout =
    gross − fees − refunds.
+5. **Retail Data Quality**: 1.07M real rows, nothing dropped; cancellations, bad-debt adjustments, missing customer
+   IDs, repeated lines and sheet overlap, each counted and explained.
 
 ## Why reconciliation matters
 
@@ -156,11 +161,44 @@ The evaluator writes correct / wrong / missed / unexpected per item; tests prove
 The offline demo runs ingestion twice (as of Nov 25 and Nov 30) to show incremental loads, a failure that leaves
 stale data, and partial extracts that are rejected.
 
+## Real public data: UCI Online Retail II
+
+| Source | Role | Real or synthetic |
+|---|---|---|
+| QuickBooks Online sandbox | Invoices, recorded payments, allocations | synthetic |
+| Stripe sandbox | Payment processing, refunds, fees | synthetic |
+| Mock ad API | Spend per client and location, ingestion failures | synthetic |
+| **UCI Online Retail II** | Cleaning and validating real transaction data at scale | **real public data** |
+
+Chen, D. (2012). *Online Retail II* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5CG6D
+(CC BY 4.0). About 1.07M invoice lines from a UK online retailer, 2009-12 to 2011-12, in GBP. The file is downloaded
+at run time, not stored in this repository.
+
+```bash
+python -m finrecon.ingestion.uci_retail all      # download (~44 MB) and load; a few minutes
+```
+
+| Real-data problem | How it is handled |
+|---|---|
+| Missing customer ID | Kept in revenue, excluded from customer-level analysis, counted |
+| Cancellation invoices (`C…`) | Separate class; each traced to an earlier sale of the same item to the same customer where possible |
+| Bad-debt adjustments (`A…`) | Separate class, never mixed with sales |
+| Postage, fees, manual lines | NON_PRODUCT class by stock-code pattern |
+| Negative quantity on a sale | STOCK_ADJUSTMENT (write-offs, damages) |
+| Repeated identical lines | Flagged, **not deleted**: the same item can legitimately be keyed twice |
+| Invoice repeated across sheets | Identical copy excluded once; differing copies kept and flagged |
+| Zero prices, sub-penny amounts, missing descriptions | Flagged and counted |
+| 1M+ rows | Chunked loads (50k rows per transaction) with timings per stage |
+
+Control checks prove nothing is lost: raw rows = parsed rows, and line totals = sum of classes = invoice totals.
+The retail data has no Stripe or QuickBooks IDs, so it is never matched against the reconciliation, and `Country`
+is the customer's country, not a store location.
+
 ## Test results
 
 ```
 $ python -m pytest
-69 tests: 68 passed, 1 skipped (FastAPI route test; runs where FastAPI is installed, e.g. the Docker image)
+85 tests: 84 passed, 1 skipped (FastAPI route test; runs where FastAPI is installed, e.g. the Docker image)
 
 $ python -m finrecon.pipeline demo
 Scenario validation: 24 / 24 scenarios passed, 221 / 221 items correct,
@@ -171,11 +209,17 @@ Required checks covered: idempotent re-runs · Stripe-only (pending vs missing) 
 mismatch · open AR not an exception · partial and multi-invoice allocations, no double counting · failure → NO_DATA,
 never zero · ground truth with zero misses and zero false positives · gross − fee = net and payout totals ·
 traceability to source ID, run and raw bytes (sha256) · ambiguous candidates → review · location and pagination
-coverage, 429 retried · cents ↔ decimal conversion · every dashboard page executed against a Streamlit stub.
+coverage, 429 retried · cents ↔ decimal conversion · every dashboard page executed against a Streamlit stub ·
+UCI module: classification, duplicate vs. overlap handling, cancellation tracing, control totals, idempotent reload,
+both header variants (tested on hand-written rows in the UCI layout, `tests/fixtures/uci_format/`).
+
+**Scale:** a 1.07M-row load test in the UCI layout ran in about 57 s on SQLite (25 s parse, 29 s write, 2 s
+validation). Reading the real `.xlsx` adds about 1.5 minutes.
 
 **PostgreSQL compatibility:** the schema loads on PostgreSQL 16; all 124 application SELECTs were replayed on
 PostgreSQL with 66 final-state queries compared value by value against SQLite (identical), and all 85 write
-statements (DDL, `ON CONFLICT` upserts, deletes) executed successfully.
+statements (DDL, `ON CONFLICT` upserts, deletes) executed successfully. The UCI load sequence was replayed on
+PostgreSQL with identical resulting tables.
 
 ## What is verified and what is not
 
@@ -186,6 +230,7 @@ statements (DDL, `ON CONFLICT` upserts, deletes) executed successfully.
 | Streamlit pages | Executed against a recording stub; first real render happens in Docker |
 | Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
 | QBO / Stripe live adapters, `seed/live_seed.py` | Written from the public API docs, **not yet run against the sandboxes** |
+| UCI module on the real file | Loader tested on UCI-format rows and at 1.07M-row scale; **the real file has not been loaded yet** (this build environment had no internet). Run it where internet is available. |
 | Docker Compose / EC2 / HTTPS | Configuration provided, not yet deployed |
 
 ## Local setup
@@ -205,19 +250,20 @@ AWS deployment: [docs/DEPLOY_AWS.md](docs/DEPLOY_AWS.md). Live sandboxes: [docs/
 
 ```
 finrecon/adapters/     QBO (OAuth2, STARTPOSITION paging), Stripe (cursor paging), mock ad API, offline transports
-finrecon/ingestion/    runner (retry, checkpoints, data status), normalize, raw archive
+finrecon/ingestion/    runner (retry, checkpoints, data status), normalize, raw archive, uci_retail (real public data)
 finrecon/recon/        engine.py, sql/*.sql, billing.py, accounting.py, evaluator.py
 finrecon/              config, db (PostgreSQL/SQLite), money, ids, dashboard_data, report, pipeline CLI
 mock_ad_api/           framework-free service + FastAPI app + stdlib server
 seed/                  scenario plan, offline fixture generator, live sandbox seeder + snapshot capture
-db/schema.sql          the data model
-dashboard/             Streamlit app (4 pages)
+db/schema.sql          the data model (+ db/retail_staging.sql for the UCI module)
+dashboard/             Streamlit app (5 pages)
 docs/                  deployment, live sandbox guide, design notes per module
 ```
 
 ## Limitations and next steps
 
-- Synthetic data: the billing formula, card fees and the Stripe→QBO sync are simulated to create known cases.
+- Reconciliation data is synthetic: the billing formula, card fees and the Stripe→QBO sync are simulated to create
+  known cases. Only the UCI retail module uses real data, and it is kept separate.
 - Sandbox objects cannot be back-dated; live seeding stores the business date in `metadata.event_date`.
 - USD only; multi-currency needs an explicit FX policy first.
 - QBO and Stripe are re-read in full each run (small volumes). Next: change-data-capture (QBO CDC, Stripe events).

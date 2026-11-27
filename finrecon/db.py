@@ -19,7 +19,10 @@ from typing import Any, Iterable, Iterator, Sequence
 from .config import ROOT
 
 SCHEMA_PATH = ROOT / "db" / "schema.sql"
-_BOOL_COLUMNS = {"passed", "is_exception", "simulated"}
+# Optional modules with their own tables; created by init_schema, untouched by drop_all.
+EXTRA_SCHEMAS = [ROOT / "db" / "retail_staging.sql"]
+_BOOL_COLUMNS = {"passed", "is_exception", "simulated", "is_product", "missing_customer", "missing_description",
+                 "zero_price", "sub_penny", "possible_duplicate", "overlap_excluded", "overlap_conflict"}
 
 VIEW_SQL = "SELECT * FROM reconciliation_results WHERE is_exception"
 
@@ -102,9 +105,9 @@ class Database:
 
     # ------------------------------------------------------------------ DDL
     def init_schema(self) -> None:
-        ddl = SCHEMA_PATH.read_text()
-        for statement in _split_sql(ddl):
-            self.execute(statement)
+        for path in [SCHEMA_PATH, *EXTRA_SCHEMAS]:
+            for statement in _split_sql(path.read_text()):
+                self.execute(statement)
         if self.dialect == "postgresql":
             self.execute(f"CREATE OR REPLACE VIEW reconciliation_exceptions AS {VIEW_SQL}")
         else:
@@ -143,6 +146,8 @@ def _norm(col: str, value: Any) -> Any:
         # PostgreSQL returns NUMERIC for SUM(bigint); all money here is integer cents.
         return int(value) if value == value.to_integral_value() else float(value)
     if isinstance(value, dt.datetime):
+        if value.tzinfo is None:          # TIMESTAMP without time zone: keep as recorded
+            return value.isoformat(sep=" ")
         return value.astimezone(dt.timezone.utc).isoformat()
     if isinstance(value, dt.date):
         return value.isoformat()

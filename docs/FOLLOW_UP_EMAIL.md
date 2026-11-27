@@ -17,7 +17,9 @@ Failed or partial API pulls are flagged as missing data rather than shown as zer
 - Code and write-up: [GitHub link]
 
 The quickest thing to look at is the Reconciliation page: filter by "MISSING_IN_QBO" and select the row to see why
-it was flagged. All data is synthetic.
+it was flagged. The financial records are synthetic sandbox data. A separate page loads about
+1.07 million real public retail transactions (UCI Online Retail II) to show how the same checks handle messy
+real-world data.
 
 I'd be glad to walk through any part of it, or to hear how your team approaches this today.
 

@@ -191,3 +191,48 @@ def cross_system(db: Database) -> list[dict]:
     from .recon.engine import sql
 
     return db.query(sql("cross_system_view"))
+
+
+# ----------------------------------------------------------------------- UCI retail module
+def retail_summary(db: Database) -> dict | None:
+    """Everything the Retail Data Quality page shows; None if nothing is loaded."""
+    try:
+        runs = db.query("SELECT * FROM retail_load_runs WHERE status <> 'running' ORDER BY started_at DESC LIMIT 1")
+    except Exception:
+        return None
+    if not runs:
+        return None
+    canon = "NOT overlap_excluded"
+    return {
+        "load": runs[0],
+        "classes": db.query(f"SELECT line_class, COUNT(*) AS lines, COALESCE(SUM(line_amount_cents), 0) AS amount_cents "
+                            f"FROM retail_lines WHERE {canon} GROUP BY line_class ORDER BY lines DESC"),
+        "checks": db.query("SELECT check_name, rows_affected, amount_cents, share, passed, severity, detail "
+                           "FROM retail_quality_results WHERE load_id = ? "
+                           "ORDER BY CASE WHEN check_name LIKE 'control%' THEN 0 WHEN passed THEN 2 ELSE 1 END, "
+                           "check_name", (runs[0]["load_id"],)),
+        "monthly": db.query(
+            f"SELECT SUBSTR(CAST(invoice_ts AS TEXT), 1, 7) AS month, "
+            f"SUM(CASE WHEN line_class = 'VALID_SALE' THEN line_amount_cents ELSE 0 END) AS sales_cents, "
+            f"SUM(CASE WHEN line_class = 'CANCELLATION' THEN line_amount_cents ELSE 0 END) AS cancellations_cents, "
+            f"COUNT(*) AS lines, SUM(CASE WHEN missing_customer THEN 1 ELSE 0 END) AS missing_customer_lines "
+            f"FROM retail_lines WHERE {canon} AND invoice_ts IS NOT NULL "
+            f"GROUP BY SUBSTR(CAST(invoice_ts AS TEXT), 1, 7) ORDER BY month"),
+        "cancellation_links": db.query(
+            "SELECT SUBSTR(CAST(l.invoice_ts AS TEXT), 1, 7) AS month, c.status, COUNT(*) AS lines "
+            "FROM retail_cancellation_links c JOIN retail_lines l ON l.source_row_id = c.source_row_id "
+            "GROUP BY SUBSTR(CAST(l.invoice_ts AS TEXT), 1, 7), c.status ORDER BY month, c.status"),
+        "countries": db.query(f"SELECT country, COUNT(DISTINCT invoice) AS invoices, "
+                              f"COALESCE(SUM(line_amount_cents), 0) AS amount_cents FROM retail_lines "
+                              f"WHERE {canon} AND line_class = 'VALID_SALE' GROUP BY country "
+                              f"ORDER BY amount_cents DESC, country LIMIT 10"),
+        "non_product_codes": db.query(f"SELECT stock_code, MIN(description) AS description, COUNT(*) AS lines, "
+                                      f"COALESCE(SUM(line_amount_cents), 0) AS amount_cents FROM retail_lines "
+                                      f"WHERE {canon} AND line_class = 'NON_PRODUCT' GROUP BY stock_code "
+                                      f"ORDER BY lines DESC, stock_code LIMIT 15"),
+        "examples": db.query(
+            f"SELECT source_row_id, invoice, stock_code, description, quantity, unit_price, customer_id, line_class, "
+            f"invalid_reason, missing_customer, zero_price, possible_duplicate, overlap_excluded, overlap_conflict "
+            f"FROM retail_lines WHERE line_class IN ('INVALID', 'STOCK_ADJUSTMENT', 'ADJUSTMENT') OR overlap_conflict "
+            f"OR possible_duplicate ORDER BY line_class, source_row_id LIMIT 200"),
+    }

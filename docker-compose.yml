@@ -31,6 +31,21 @@ services:
       db: { condition: service_healthy }
     restart: "no"
 
+  # Optional real-data module: downloads UCI Online Retail II (about 44 MB, CC BY 4.0)
+  # and loads ~1.07M rows. Does not block the dashboard. Re-run:
+  #   docker compose run --rm retail
+  retail:
+    build: { context: ., dockerfile: docker/Dockerfile }
+    command: ["python", "-m", "finrecon.ingestion.uci_retail", "all", "--file", "/app/data/external/online_retail_II.zip"]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://finrecon_owner:${POSTGRES_PASSWORD}@db:5432/finrecon
+    volumes:
+      - rawdata:/app/data
+    depends_on:
+      pipeline: { condition: service_completed_successfully }
+    restart: "no"
+
   dashboard:
     build: { context: ., dockerfile: docker/Dockerfile }
     env_file: .env

@@ -15,8 +15,8 @@ from .config import ROOT, Settings
 from .db import Database
 from .money import fmt
 
-DISCLAIMER = ("Independent portfolio demonstration. All financial data is synthetic, generated with sandbox APIs "
-              "or simulated systems. Not affiliated with any company named in this project, Intuit, or Stripe.")
+DISCLAIMER = ("This demonstration uses synthetic sandbox financial records and historical public retail transaction data from"
+              " UCI. No real QuickBooks or Stripe customer transactions are included. Not affiliated with any company named in this project, Intuit, or Stripe.")
 
 CSS = """
 :root{--ink:#1d2430;--muted:#5d6778;--line:#e3e7ee;--bg:#f7f8fa;--ok:#1f7a4d;--warn:#a86400;--bad:#b3261e;--acc:#2b59c3}

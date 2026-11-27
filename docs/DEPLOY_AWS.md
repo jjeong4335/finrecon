@@ -29,6 +29,7 @@ git clone https://github.com/jjeong4335/finrecon && cd finrecon
 cp .env.example .env && nano .env      # POSTGRES_PASSWORD, DASHBOARD_DB_PASSWORD, DOMAIN, GITHUB_URL
 docker compose up -d --build
 docker compose logs pipeline            # should end with the scenario-validation line
+docker compose logs -f retail           # downloads UCI Online Retail II and loads ~1.07M rows (a few minutes)
 ```
 
 Open `https://<your-domain>`.
@@ -45,6 +46,7 @@ Stripe test key in AWS Systems Manager Parameter Store (SecureString) and load t
 |---|---|
 | Status / logs | `docker compose ps` · `make logs` |
 | Rebuild demo data | `make rebuild-data` |
+| Reload the UCI retail data | `make rebuild-retail` |
 | Serve a captured sandbox snapshot | set `FIXTURE_DIR=fixtures/live_snapshot` in `.env`, then `make rebuild-data` |
 | Backup | `make backup` (gzip `pg_dump` in the current folder) |
 | Stop (keeps data) | `docker compose stop` |

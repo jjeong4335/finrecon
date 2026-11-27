@@ -5,3 +5,4 @@ psycopg[binary]>=3.2,<4
 requests>=2.32,<3
 fastapi>=0.115
 uvicorn>=0.30
+openpyxl>=3.1      # UCI Online Retail II (.xlsx)

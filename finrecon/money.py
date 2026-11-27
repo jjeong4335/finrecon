@@ -13,9 +13,10 @@ from __future__ import annotations
 
 from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 
-# Currencies with no minor unit would need a different exponent. The demo is
-# USD-only, and anything else is rejected rather than guessed.
-_EXPONENT = {"USD": 2}
+# Currencies with no minor unit would need a different exponent. Reconciliation
+# is USD-only; GBP exists for the UCI retail module, which is never compared
+# with USD amounts. Anything else is rejected rather than guessed.
+_EXPONENT = {"USD": 2, "GBP": 2}
 
 
 class MoneyError(ValueError):
@@ -69,5 +70,5 @@ def fmt(cents: int | None, currency: str = "USD") -> str:
         return "—"
     sign = "-" if cents < 0 else ""
     cents = abs(int(cents))
-    symbol = "$" if currency == "USD" else f"{currency} "
+    symbol = {"USD": "$", "GBP": "£"}.get(currency, f"{currency} ")
     return f"{sign}{symbol}{cents // 100:,}.{cents % 100:02d}"

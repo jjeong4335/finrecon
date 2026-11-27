@@ -16,7 +16,7 @@ import pytest
 
 DASH = Path(__file__).resolve().parent.parent / "dashboard"
 PAGES = ["Home.py", "pages/1_Reconciliation.py", "pages/2_Billing_and_Payouts.py", "pages/3_Data_Quality.py",
-         "pages/4_Architecture.py"]
+         "pages/4_Architecture.py", "pages/5_Retail_Data_Quality.py"]
 
 
 class _Stop(Exception):
@@ -72,6 +72,8 @@ def make_stub(select_row: int | None, toggles: bool | None):
     st.selectbox = record("selectbox", lambda label, options, **k: list(options)[0])
     st.toggle = record("toggle", lambda label, value=False, **k: value if toggles is None else toggles)
     st.date_input = record("date_input", lambda label, value=None, **k: value)
+    st.warning = record("warning")
+    st.line_chart = record("line_chart")
     st.column_config = types.SimpleNamespace(NumberColumn=lambda *a, **k: None)
     for name in ("set_page_config", "title", "caption", "info", "error", "success", "metric", "subheader",
                  "markdown", "write", "divider", "table", "json", "graphviz_chart"):
@@ -96,7 +98,11 @@ def streamlit_stub(monkeypatch, db_url: str, select_row=None, toggles=None):
 def test_page_runs(page, demo, monkeypatch):
     db, settings, _ = demo
     with streamlit_stub(monkeypatch, settings.database_url) as st:
-        runpy.run_path(str(DASH / page), run_name="__main__")
+        try:
+            runpy.run_path(str(DASH / page), run_name="__main__")
+        except _Stop:          # st.stop() ends a script normally in Streamlit
+            assert page.endswith("5_Retail_Data_Quality.py")
+            assert any(c[0] == "warning" and "not been loaded" in c[1][0] for c in st.calls)
     assert any(c[0] == "title" for c in st.calls)
     assert any(c[0] == "info" and "Not affiliated" in c[1][0] for c in st.calls)
 
@@ -116,3 +122,22 @@ def test_reconciliation_drill_down_for_every_record_type(demo, monkeypatch):
         assert any(rows[idx]["source_record_id"] in s for s in subheaders), record_type
         if record_type == "stripe_payment":
             assert any(c[0] == "markdown" and "balanced" in c[1][0] for c in st.calls)
+
+
+def test_retail_page_with_data_loaded(tmp_path, monkeypatch):
+    """Page 5 with the UCI module loaded (hand-written UCI-format rows)."""
+    from finrecon import pipeline
+    from finrecon.config import get_settings
+    from finrecon.db import Database
+    from finrecon.ingestion import uci_retail
+    from tests.test_uci_retail import make_zip
+
+    url = f"sqlite:///{tmp_path / 'p5.db'}"
+    settings = get_settings(raw_dir=tmp_path / "raw", database_url=url)
+    db = Database(url)
+    pipeline.demo(settings, db, sleep=lambda s: None)
+    uci_retail.load(db, make_zip(tmp_path), log=lambda *a: None)
+    with streamlit_stub(monkeypatch, url) as st:
+        runpy.run_path(str(DASH / "pages/5_Retail_Data_Quality.py"), run_name="__main__")
+    assert any(c[0] == "metric" and c[1][0] == "Rows read" for c in st.calls)
+    assert any(c[0] == "line_chart" for c in st.calls)

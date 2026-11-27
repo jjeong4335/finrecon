@@ -21,7 +21,9 @@ APP=/opt/finrecon
 [ -d "$APP/.git" ] || git clone --depth 1 "__REPO__" "$APP"
 cd "$APP"
 
-# Secrets are generated on the server and never leave it.
+# Secrets are generated on the server and never leave it. Tracing (set -x) is
+# switched off here so the generated values never reach cloud-init-output.log.
+set +x
 if [ ! -f .env ]; then
   cp .env.example .env
   sed -i "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$(openssl rand -hex 16)/" .env
@@ -29,6 +31,7 @@ if [ ! -f .env ]; then
   sed -i "s/^DOMAIN=.*/DOMAIN=__DOMAIN__/" .env
   chmod 600 .env
 fi
+set -x
 
 # Build the app image once with the classic builder (no buildx plugin needed),
 # then start everything. restart: unless-stopped brings it back after reboots.

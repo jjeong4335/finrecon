@@ -32,6 +32,7 @@ def get_db() -> Database:
 def reset_db() -> None:
     """Drop the cached connection (tests, or after a lost connection)."""
     global _db
+    _retail_cache.clear()
     if _db is not None:
         try:
             _db.close()
@@ -189,7 +190,23 @@ def data_quality(request):
     })
 
 
+_retail_cache: dict[str, tuple] = {}
+
+
+def _retail_load_id(db) -> str | None:
+    try:
+        return db.scalar("SELECT load_id FROM retail_load_runs WHERE status <> 'running' "
+                         "ORDER BY started_at DESC LIMIT 1")
+    except Exception:
+        return None
+
+
 def retail(request):
+    # Aggregating ~1M rows takes seconds; the data only changes when a new load
+    # finishes, so the summary is cached per load_id.
+    load_id = _q(_retail_load_id)
+    if load_id and load_id in _retail_cache:
+        return render(request, "webapp/retail.html", _retail_cache[load_id])
     s = _q(dd.retail_summary)
     chart = None
     if s and s["monthly"]:
@@ -198,12 +215,16 @@ def retail(request):
     if s:
         for r in s["cancellation_links"]:
             links.setdefault(r["month"], {"LINKED": 0, "NO_PRIOR_SALE": 0, "MISSING_CUSTOMER": 0})[r["status"]] = r["lines"]
-    return render(request, "webapp/retail.html", {
+    ctx = {
         "s": s, "citation": CITATION, "chart": chart,
         "links": [{"month": m, **v} for m, v in sorted(links.items())],
         "load_seconds": sum((s["load"].get(k) or 0) for k in ("seconds_read_parse", "seconds_load", "seconds_validate"))
         if s else None,
-    })
+    }
+    if load_id and s and s["load"]["load_id"] == load_id:
+        _retail_cache.clear()
+        _retail_cache[load_id] = ctx
+    return render(request, "webapp/retail.html", ctx)
 
 
 def _monthly_chart(monthly: list[dict], width: int = 900, height: int = 220, pad: int = 36) -> dict:

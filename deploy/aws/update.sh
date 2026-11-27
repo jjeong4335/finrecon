@@ -25,4 +25,8 @@ for i in $(seq 1 20); do
   sleep 3
 done
 echo "HTTPS readiness (/readyz): $code"
+if [ "$code" != "200" ]; then
+  echo "NOT READY. Reasons:"; curl -s "$URL/readyz" || true; echo
+  exit 1
+fi
 echo "Done: $URL"

@@ -158,3 +158,26 @@ def test_readyz_fails_when_run_date_differs_from_recon_as_of(client, monkeypatch
     c, _, _ = client
     monkeypatch.setenv("RECON_AS_OF", "2026-12-15")
     assert "expected RECON_AS_OF 2026-12-15" in get(c, "/readyz", status=503)
+
+
+def test_retail_summary_is_cached_per_load(tmp_path, monkeypatch):
+    from finrecon import dashboard_data, pipeline
+    from finrecon.config import get_settings
+    from finrecon.db import Database
+    from finrecon.ingestion import uci_retail
+    from tests.test_uci_retail import make_zip
+
+    url = f"sqlite:///{tmp_path / 'cache.db'}"
+    db = Database(url)
+    pipeline.demo(get_settings(raw_dir=tmp_path / "raw", database_url=url), db, sleep=lambda s: None)
+    uci_retail.load(db, make_zip(tmp_path), log=lambda *a: None)
+    monkeypatch.setenv("DATABASE_URL", url)
+    views.reset_db()
+    calls = []
+    real = dashboard_data.retail_summary
+    monkeypatch.setattr(views.dd, "retail_summary", lambda d: calls.append(1) or real(d))
+    try:
+        first, second = get(Client(), "/retail/"), get(Client(), "/retail/")
+    finally:
+        views.reset_db()
+    assert len(calls) == 1 and first == second and "Rows read" in first

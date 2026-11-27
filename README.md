@@ -287,6 +287,7 @@ PostgreSQL with identical resulting tables.
 ## Local setup
 
 ```bash
+# Python 3.10+ (CI uses 3.12)
 python -m pip install -r requirements-dev.txt
 python -m finrecon.pipeline demo        # builds data/finrecon.db (SQLite) and prints the evaluation
 python -m pytest

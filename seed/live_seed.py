@@ -26,6 +26,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+from pathlib import Path
 from datetime import date, datetime, timezone
 
 from finrecon.adapters import qbo as qbo_mod
@@ -210,7 +211,7 @@ def _sanitize(obj):
     return obj
 
 
-def capture(out_dir: str = "fixtures/live_snapshot") -> None:
+def capture(out_dir: str = "fixtures/live_snapshot"):
     """Record live sandbox objects in the offline fixture layout.
 
     Afterwards: MODE=offline FIXTURE_DIR=fixtures/live_snapshot python -m finrecon.pipeline demo
@@ -219,7 +220,7 @@ def capture(out_dir: str = "fixtures/live_snapshot") -> None:
     settings = get_settings()
     qbo = qbo_mod.live_client(settings)
     stripe = stripe_api.live_client(settings)
-    out = ROOT / out_dir
+    out = Path(out_dir) if Path(out_dir).is_absolute() else ROOT / out_dir
 
     def dump(rel, data):
         p = out / rel
@@ -263,7 +264,38 @@ def capture(out_dir: str = "fixtures/live_snapshot") -> None:
     shutil.copy(REGISTRY, out / "registry.json")
     (out / "CAPTURED_AT.txt").write_text(datetime.now(timezone.utc).isoformat() + "\n")
     print(f"Snapshot written to {out}")
+    return out
+
+
+def payouts(n: int = 3, amount_cents: int = 50000) -> None:
+    """Put funds in the *available* balance so Stripe's automatic payout has something to pay out.
+
+    Uses the test PaymentMethod for card 4000 0000 0000 0077, which skips the
+    pending balance. The charges belong to a separate 'payout float' customer
+    that is not in the client registry, so reconciliation treats them as out of
+    scope and the ground truth (27/27) is unaffected. Each run adds new charges.
+    """
+    settings = get_settings()
+    if settings.mode != "live":
+        sys.exit("Set MODE=live")
+    stripe = stripe_api.live_client(settings)
+    cus = next((c for c in stripe.list_all("customers")[0] if (c.get("metadata") or {}).get("purpose") == "payout_float"),
+               None) or stripe.create("customers", {"name": "Payout test float (not a client)",
+                                                    "metadata": {"purpose": "payout_float"}},
+                                      idempotency_key="finrecon-cus-payout-float")
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+    for i in range(n):
+        pi = stripe.create("payment_intents", {
+            "amount": amount_cents, "currency": "usd", "customer": cus["id"], "confirm": True,
+            "payment_method": "pm_card_bypassPending",
+            "automatic_payment_methods": {"enabled": True, "allow_redirects": "never"},
+            "description": "Payout test float", "metadata": {"purpose": "payout_float"}},
+            idempotency_key=f"finrecon-float-{stamp}-{i}")
+        print(f"  {pi['id']} {pi['status']}")
+    print(f"Added {n} x ${amount_cents / 100:,.2f} to the available balance. With automatic payouts on "
+          "(Dashboard > Settings > Payouts), Stripe pays this out on its schedule; then run "
+          "`python -m finrecon.verify_live`.")
 
 
 if __name__ == "__main__":
-    {"seed": seed, "capture": capture}[sys.argv[1] if len(sys.argv) > 1 else "seed"]()
+    {"seed": seed, "capture": capture, "payouts": payouts}[sys.argv[1] if len(sys.argv) > 1 else "seed"]()

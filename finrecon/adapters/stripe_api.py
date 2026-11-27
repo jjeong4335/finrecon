@@ -63,8 +63,17 @@ class StripeClient:
             cursor = data[-1]["id"]
 
     def create(self, resource: str, data: dict, idempotency_key: str) -> dict:
-        resp = request_with_retry(self.transport, "POST", f"/v1/{resource}", data=form_encode(data),
-                                  headers={"Idempotency-Key": idempotency_key,
+        import hashlib
+
+        encoded = form_encode(data)
+        # Stripe remembers a key even when the request failed, and rejects the same
+        # key with different parameters. Suffixing a hash of the parameters keeps
+        # retries of the same request idempotent while letting a corrected request
+        # through. Duplicates are still prevented: callers look up existing objects
+        # by seed_key before creating.
+        digest = hashlib.sha256("&".join(f"{k}={v}" for k, v in sorted(encoded.items())).encode()).hexdigest()[:12]
+        resp = request_with_retry(self.transport, "POST", f"/v1/{resource}", data=encoded,
+                                  headers={"Idempotency-Key": f"{idempotency_key}-{digest}",
                                            "Content-Type": "application/x-www-form-urlencoded"},
                                   policy=self.policy, stats=self.stats)
         return resp.body

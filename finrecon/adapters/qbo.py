@@ -48,7 +48,16 @@ class QboTokenManager:
             "Content-Type": "application/x-www-form-urlencoded"},
             data={"grant_type": "refresh_token", "refresh_token": self._tokens["refresh_token"]})
         if r.status_code != 200:
-            raise ApiError(r.status_code, "token refresh failed (refresh token expired or revoked?)", 1)
+            # Intuit's error body names the cause (no secrets in it):
+            #   401 invalid_client -> QBO_CLIENT_ID / QBO_CLIENT_SECRET wrong, or from a different app
+            #   400 invalid_grant  -> refresh token wrong, expired, already rotated, or issued to another app
+            try:
+                detail = r.json()
+            except ValueError:
+                detail = r.text[:300]
+            hint = {401: "check QBO_CLIENT_ID / QBO_CLIENT_SECRET (Development keys of the same app)",
+                    400: "get a new refresh token from the OAuth Playground for this app"}.get(r.status_code, "")
+            raise ApiError(r.status_code, f"token refresh failed: {detail} -> {hint}", 1)
         body = r.json()
         self._tokens = {"access_token": body["access_token"], "refresh_token": body["refresh_token"],
                         "expires_at": time.time() + int(body.get("expires_in", 3600))}

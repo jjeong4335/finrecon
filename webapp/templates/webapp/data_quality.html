@@ -8,17 +8,18 @@
 {% for d in status %}<tr><td>{{ d.source }}</td><td class="nw">{{ d.scope }}</td><td><span class="pill {{ d.status|pill }}">{{ d.status }}</span></td><td class="nw">{{ d.validated_through|default:"—" }}</td><td class="nw">{{ d.last_successful_sync|default:"—" }}</td><td>{{ d.detail }}</td></tr>{% endfor %}</table></div>
 
 <h2>Ingestion runs</h2>
-<form class="filters" method="get"><label>Run<select name="run" onchange="this.form.submit()">{% for r in runs %}<option{% if r == picked %} selected{% endif %}>{{ r }}</option>{% endfor %}</select></label><noscript><button>Show</button></noscript></form>
+<p class="sub">The run picker changes this table only. The checks and the evaluation below always describe the latest run.</p>
+<form class="filters" method="get"><label>Ingestion run<select name="run" onchange="this.form.submit()">{% for r in runs %}<option{% if r == picked %} selected{% endif %}>{{ r }}</option>{% endfor %}</select></label><noscript><button>Show</button></noscript></form>
 <div class="wrap" style="margin-top:10px"><table><tr><th>Source</th><th>Scope</th><th>Status</th><th>Window</th><th class="n">Expected</th><th class="n">Received</th><th class="n">Retries</th><th>Error</th></tr>
 {% for h in history %}<tr><td>{{ h.source }}</td><td class="nw">{{ h.scope }}</td><td><span class="pill {{ h.status|pill }}">{{ h.status }}</span></td><td class="nw">{{ h.window_start|default:"" }} → {{ h.window_end|default:"" }}</td><td class="n">{{ h.records_expected|default:"—" }}</td><td class="n">{{ h.records_received|default:"—" }}</td><td class="n">{{ h.retry_count }}</td><td>{{ h.error_details|default:"" }}</td></tr>{% endfor %}</table></div>
 <p class="sub">records_expected comes from the source's own totals; it must equal records_received for a pull to load.</p>
 
-<h2>Failed validation checks ({{ failed|length }} of {{ findings|length }})</h2>
-<p class="sub">These are row-level checks inside the data that was loaded, separate from the pull status above: a source can be VALIDATED (every page arrived and totals agree) and still contain a record that fails a check, such as a payment whose allocations do not add up. The reconciliation then shows that record as an exception.</p>
+<h2>Failed validation checks ({{ failed|length }} of {{ findings|length }}) · latest run <span class="chip">{{ run.run_id }}</span></h2>
+<p class="sub">These are row-level checks inside the data that was loaded, separate from the pull status above: a source can be VALIDATED (every page arrived and totals agree) and still contain a record that fails a check, such as a payment whose allocations do not add up. Checks run on every loaded record, including records of customers outside the client registry (sandbox sample data), which are not reconciled; so a failed check does not always have a matching reconciliation exception.</p>
 <div class="wrap"><table><tr><th>Source</th><th>Scope</th><th>Check</th><th>Severity</th><th>Detail</th></tr>
 {% for x in failed %}<tr><td>{{ x.source }}</td><td class="nw">{{ x.scope }}</td><td class="nw">{{ x.check_name }}</td><td><span class="pill {{ x.severity|pill }}">{{ x.severity }}</span></td><td>{{ x.detail }}</td></tr>{% empty %}<tr><td colspan="5">None.</td></tr>{% endfor %}</table></div>
 
-<h2>Ground-truth evaluation</h2>
+<h2>Ground-truth evaluation · latest run <span class="chip">{{ run.run_id }}</span></h2>
 <p class="sub">{{ evals_total }} items evaluated · {{ evals_bad|length }} not correct</p>
 <div class="wrap"><table><tr><th>Code</th><th>Scenario</th><th>Interview topic</th><th class="n">Items</th><th>Result</th></tr>
 {% for b in board %}<tr><td>{{ b.scenario }}</td><td>{{ b.title }}</td><td>{{ b.interview_question }}</td><td class="n">{{ b.correct }}/{{ b.items }}</td><td><span class="pill {% if b.passed %}ok{% else %}bad{% endif %}">{% if b.passed %}PASS{% else %}FAIL{% endif %}</span></td></tr>{% endfor %}</table></div>

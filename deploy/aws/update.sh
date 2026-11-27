@@ -16,6 +16,13 @@ ssh -o StrictHostKeyChecking=accept-new -i "$KEY_FILE" "ec2-user@$IP" 'set -e
   sudo git pull --ff-only
   sudo DOCKER_BUILDKIT=0 docker build -q -t finrecon-app:latest -f docker/Dockerfile .
   sudo docker compose up -d --no-build --remove-orphans dashboard caddy
-  sudo docker compose restart caddy
-  sleep 5; curl -s -o /dev/null -w "local health: %{http_code}\n" http://localhost/healthz || true'
-echo "Done: https://$(echo "$IP" | tr . -).sslip.io"
+  sudo docker compose restart caddy'
+URL="https://$(echo "$IP" | tr . -).sslip.io"
+# Check from here over HTTPS (plain HTTP on the server answers 308 -> https by design).
+for i in $(seq 1 20); do
+  code=$(curl -s -o /dev/null -w "%{http_code}" "$URL/healthz" || true)
+  [ "$code" = "200" ] && break
+  sleep 3
+done
+echo "HTTPS health: $code"
+echo "Done: $URL"

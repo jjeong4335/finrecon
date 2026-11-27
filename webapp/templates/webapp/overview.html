@@ -7,10 +7,10 @@
 
 <section class="band" aria-label="Summary">
  <div>
-  <div class="big">{{ ev.scenarios_passed }} / {{ ev.scenarios_total }} verified</div>
+  <div class="big"><em>{{ ev.scenarios_passed }} / {{ ev.scenarios_total }}</em> verified</div>
   <div class="cap">Scenario validation: {{ ev.scenarios_passed }} / {{ ev.scenarios_total }} scenarios passed · {{ ev.correct }} / {{ ev.items }} classifications match the ground truth · {{ ev.false_positive_exceptions }} false-positive exceptions · {{ ev.missed_exceptions }} missed exceptions</div>
-  <div class="dist" role="img" aria-label="{{ queue.incident_count }} exception incidents by priority">{% for p in by_priority %}<span style="width:{{ p.share }}%;background:{% if p.priority == 1 %}#e5484d{% elif p.priority == 2 %}#f5a524{% else %}#8b8b8b{% endif %}"></span>{% endfor %}</div>
-  <div class="legend">{% for p in by_priority %}<span><i style="background:{% if p.priority == 1 %}#e5484d{% elif p.priority == 2 %}#f5a524{% else %}#8b8b8b{% endif %}"></i>{{ p.count }} {{ p.label|lower }}</span>{% endfor %}</div>
+  <div class="dist" role="img" aria-label="{{ queue.incident_count }} exception incidents by priority">{% for p in by_priority %}<span style="width:{{ p.share }}%;background:{% if p.priority == 1 %}#d93636{% elif p.priority == 2 %}#e0901a{% else %}#9aa1ab{% endif %}"></span>{% endfor %}</div>
+  <div class="legend">{% for p in by_priority %}<span><i style="background:{% if p.priority == 1 %}#d93636{% elif p.priority == 2 %}#e0901a{% else %}#9aa1ab{% endif %}"></i>{{ p.count }} {{ p.label|lower }}</span>{% endfor %}</div>
  </div>
  <div>
   <div class="money">
@@ -19,7 +19,7 @@
    <div><div class="l">Collected in Stripe (gross)</div><div class="v">{{ o.stripe_gross_cents|money }}</div></div>
    <div><div class="l">Open AR (not an exception)</div><div class="v">{{ o.open_ar_cents|money }}</div></div>
   </div>
-  <div class="rate"><div class="l" style="display:flex;justify-content:space-between;color:#b5b5b5;font-size:12px"><span>Payment records reconciled</span><span style="color:#fff">{{ o.match_rate|pct }}</span></div><div class="track"><i style="width:{% widthratio o.match_rate 1 100 %}%"></i></div>
+  <div class="rate"><div class="l" style="display:flex;justify-content:space-between;color:var(--muted);font-size:12px"><span>Payment records reconciled</span><span style="color:var(--ink);font-weight:600">{{ o.match_rate|pct }}</span></div><div class="track"><i style="width:{% widthratio o.match_rate 1 100 %}%"></i></div>
   <div class="cap">Stripe and QBO amounts are compared, never added together. {{ o.billing_issues }} billing exceptions · {{ o.data_issues }} sources not fully validated{% if o.out_of_scope_records %} · {{ o.out_of_scope_records }} out-of-scope records (sandbox sample data){% endif %}.</div></div>
  </div>
 </section>

@@ -37,6 +37,10 @@ def test_overview(client):
     assert "Scenario validation: 27 / 27 scenarios passed" in html
     assert "Not affiliated" in html and "MISSING_IN_QBO" in html
     guide = get(c, "/guide/")
+    for asset in ("/static/taste/system.css", "/static/taste/system.js", "/static/taste/layout/layout.css"):
+        assert asset in guide
+        r = c.get(asset)
+        assert r.status_code == 200 and b"".join(r.streaming_content), asset
     assert "How to use the dashboard" in guide and "Open the dashboard" in guide and "Exception queue:" in guide
 
 

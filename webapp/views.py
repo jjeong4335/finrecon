@@ -103,6 +103,7 @@ def overview(request):
         "types": types, "pivot": pivot, "freshness": _q(dd.source_freshness),
         "queue": _q(dd.exception_queue, run_id),
         "board": _q(dd.scenario_scoreboard, run_id, _catalog()),
+        "data_status": sorted(_q(dd.data_status), key=lambda d: d["status"] in ("VALIDATED", "ZERO_TRANSACTIONS")),
     })
 
 

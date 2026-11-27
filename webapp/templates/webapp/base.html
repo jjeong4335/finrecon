@@ -1,13 +1,15 @@
 {% load finrecon_tags %}<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{% block title %}Finance Reconciliation{% endblock %} · finrecon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..700&family=Funnel+Sans:wght@400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* One system: ledger tone, hairline rules, sharp corners, one accent (navy). No motion beyond colour on hover. */
-:root{--ink:#14181f;--ink2:#3a4350;--muted:#667085;--line:#e4e7ec;--line2:#d0d5dd;--bg:#f6f7f9;--panel:#fff;--head:#f9fafb;
---acc:#1f3a8a;--acc-bg:#eef2fb;--ok:#1d6b45;--ok-bg:#e8f3ed;--warn:#8a5300;--warn-bg:#fdf3e1;--bad:#a4251c;--bad-bg:#fcebea;--neu:#3a4350;--neu-bg:#eef0f3;
---r:3px;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+:root{--ink:#111111;--ink2:#333333;--muted:#5f5f5f;--line:#e4e7ec;--line2:#d0d5dd;--bg:#f6f7f9;--panel:#fff;--head:#f9fafb;
+--acc:#1a4be0;--acc-bg:#eef2fd;--ok:#1d6b45;--ok-bg:#e8f3ed;--warn:#8a5300;--warn-bg:#fdf3e1;--bad:#a4251c;--bad-bg:#fcebea;--neu:#3a4350;--neu-bg:#eef0f3;
+--r:4px;--mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 *{box-sizing:border-box}html{scroll-padding-top:96px}
-body{margin:0;font:13.5px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+body{margin:0;font:14px/1.5 "Funnel Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .skip{position:absolute;left:12px;top:-40px;background:var(--acc);color:#fff;padding:6px 10px;z-index:20}.skip:focus{top:8px}
@@ -23,7 +25,7 @@ nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 nav a{padding:8px 10px 9px;color:var(--muted);border-bottom:2px solid transparent;font-weight:500;white-space:nowrap}
 nav a.on{color:var(--ink);border-color:var(--acc)}nav a:hover{text-decoration:none;color:var(--ink)}
 main{padding-top:20px;padding-bottom:48px}
-h1{font-size:19px;letter-spacing:-.01em;margin:0 0 4px}h2{font-size:14.5px;margin:28px 0 8px}h3{font-size:13.5px;margin:16px 0 6px}
+h1,h2,.brand{font-family:"Funnel Display",system-ui,sans-serif;font-weight:400}h1{font-size:26px;letter-spacing:-.03em;letter-spacing:-.01em;margin:0 0 4px}h2{font-size:18px;letter-spacing:-.02em;margin:28px 0 8px}h3{font-size:13.5px;margin:16px 0 6px}
 p{margin:6px 0}.sub{color:var(--muted);font-size:12.5px;max-width:110ch}
 .banner{color:var(--muted);font-size:11.5px;border-top:1px solid var(--line);padding-top:10px;margin-top:36px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;margin:14px 0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
@@ -53,7 +55,7 @@ form.filters{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:end;background
 form.filters label{display:flex;flex-direction:column;font-size:11.5px;color:var(--muted);gap:3px}
 select,input{font:inherit;font-size:12.5px;padding:5px 7px;border:1px solid var(--line2);border-radius:var(--r);background:#fff;color:var(--ink);min-height:30px}
 button,.btn{font:inherit;font-size:12.5px;font-weight:600;padding:6px 14px;border:1px solid var(--acc);border-radius:var(--r);background:var(--acc);color:#fff;cursor:pointer;min-height:30px}
-.btn.ghost{background:#fff;color:var(--acc)}.btn:hover{text-decoration:none}button:hover{background:#18307a}
+.btn.ghost{background:#fff;color:var(--acc)}.btn:hover{text-decoration:none}button:hover{background:#143cb5}
 details{margin-top:14px}summary{cursor:pointer;font-weight:600;padding:4px 0}
 pre{background:#0f141c;color:#d7e0ee;padding:12px;border-radius:var(--r);overflow:auto;font-size:12px}
 .reason{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:var(--r);padding:9px 14px;margin:12px 0}

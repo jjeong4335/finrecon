@@ -47,6 +47,12 @@ SCENARIOS: dict[str, tuple[str, str, str]] = {
     "S14": ("Pending sync", "Paid in Stripe yesterday; still inside the 2-day sync window.", "Q2 accuracy"),
     "S15": ("Not invoiced", "Ad spend ran in October but no invoice was issued.", "Q5 ad platform -> billing"),
     "S16": ("Open AR", "October invoices not yet due. Normal, not an exception.", "Q3 data model"),
+    "S17": ("Wrong first record", "Sync first imported the payment with a wrong amount, then imported it correctly. "
+            "The correct record must be the match; the wrong one is the duplicate.", "Q4 matching"),
+    "S18": ("Same amount, other location", "Identical amounts within the date window, but Stripe says Williamsburg "
+            "and QBO says Jersey City Heights. Not auto-matched.", "Q4 matching"),
+    "S19": ("Invoice reference conflict", "Stripe metadata names one invoice; QBO applied the same-amount payment "
+            "to another. Not auto-matched.", "Q4 matching"),
     "D01": ("Genuine zero", "New location, not live yet: zero spend is a real, complete answer.", "Q2 completeness"),
     "D02": ("No data", "Ad API returns 503 for this location every time.", "Q2 completeness"),
     "D03": ("Stale data", "Latest pull failed; last validated data is kept and flagged stale.", "Q2 completeness"),
@@ -324,7 +330,8 @@ def build_plan() -> Plan:
         ("maple", "stamford", "2026-09"), ("maple", "whiteplains", "2026-09"),
         ("maple", "yonkers", "2026-09"), ("maple", "newrochelle", "2026-09"),
         ("sunbeam", "newark", "2026-09"), ("sunbeam", "paterson", "2026-09"),
-        ("sunbeam", "montclair", "2026-09"),
+        ("sunbeam", "montclair", "2026-09"), ("sunbeam", "edison", "2026-09"),
+        ("sunbeam", "newark", "2026-10"),
     }
 
     # ------------------------------------------------------------ baseline (S00)
@@ -426,6 +433,30 @@ def build_plan() -> Plan:
     i = inv("sunbeam", "montclair", "2026-09")
     retag(i, "S14", "OPEN_AR")
     stripe("S14", "sunbeam", "montclair", i.amount_cents, date(2026, 11, 29), [i], "PENDING_SYNC")
+
+    # S17 the sync imported a wrong amount first, then the correct one. Only the
+    # correct one is applied to the invoice; the wrong one sits unapplied.
+    i = inv("sunbeam", "edison", "2026-09")
+    retag(i, "S17", "MATCHED")
+    sp = stripe("S17", "sunbeam", "edison", i.amount_cents, date(2026, 10, 13), [i], "MATCHED")
+    sync("S17", sp, "sunbeam", "edison", i.amount_cents - 10000, date(2026, 10, 14), [], "DUPLICATE",
+         suffix="qp-wrong")
+    sync("S17", sp, "sunbeam", "edison", i.amount_cents, date(2026, 10, 15), [(i, i.amount_cents)], "MATCHED")
+
+    # S18 a unique same-amount candidate, but the two systems disagree on the location
+    stripe("S18", "harbor", "williamsburg", 75000, date(2026, 11, 3), [], "NEEDS_REVIEW",
+           desc="Event sponsorship deposit")
+    sync("S18", None, "harbor", "jcheights", 75000, date(2026, 11, 4), [], "NEEDS_REVIEW")
+
+    # S19 a unique same-amount candidate, but Stripe names a different invoice than
+    # the one QBO applied the payment to
+    i_oct = inv("sunbeam", "newark", "2026-10")
+    i_sep = inv("sunbeam", "newark", "2026-09")
+    retag(i_oct, "S19", "MATCHED")
+    stripe("S19", "sunbeam", "newark", i_oct.amount_cents, date(2026, 11, 20), [i_sep], "NEEDS_REVIEW",
+           desc=f"Invoice payment {i_sep.doc_number} (stale checkout link)")
+    sync("S19", None, "sunbeam", "newark", i_oct.amount_cents, date(2026, 11, 21), [(i_oct, i_oct.amount_cents)],
+         "NEEDS_REVIEW")
 
     # ------------------------------------------------------------ ad API failures
     failures = {

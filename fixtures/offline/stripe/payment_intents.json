@@ -500,62 +500,42 @@
   }
  },
  {
-  "id": "pi_8d0cf88447da201a59358e5f",
-  "object": "payment_intent",
-  "amount": 234025,
-  "amount_received": 234025,
-  "currency": "usd",
-  "customer": "cus_81199a5bd8b553",
-  "status": "succeeded",
-  "created": 1793113200,
-  "description": "Invoice payment SP-EDIS-2609",
-  "latest_charge": "ch_39f4f3bd67c774a9471d971f",
-  "livemode": false,
-  "metadata": {
-   "seed_key": "S00:sp:sunbeam:edison:2026-10-27",
-   "scenario_id": "S00",
-   "location_key": "sunbeam/edison",
-   "event_date": "2026-10-27",
-   "qbo_invoice_no": "SP-EDIS-2609"
-  }
- },
- {
-  "id": "pi_e8e5f18b7d348d4f950e21e0",
+  "id": "pi_c52ee68ae94d4e9e3f368dce",
   "object": "payment_intent",
   "amount": 263341,
   "amount_received": 263341,
   "currency": "usd",
   "customer": "cus_81199a5bd8b553",
   "status": "succeeded",
-  "created": 1786114800,
+  "created": 1787842800,
   "description": "Invoice payment SP-HACK-2607",
-  "latest_charge": "ch_31bc46058e4b8bf679368b66",
+  "latest_charge": "ch_888e9f59da8aa7522a0a8511",
   "livemode": false,
   "metadata": {
-   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-07",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-27",
    "scenario_id": "S00",
    "location_key": "sunbeam/hackensack",
-   "event_date": "2026-08-07",
+   "event_date": "2026-08-27",
    "qbo_invoice_no": "SP-HACK-2607"
   }
  },
  {
-  "id": "pi_0600f87ef4113cb33fd0e066",
+  "id": "pi_9ca59cb7ceb7cc507a590134",
   "object": "payment_intent",
   "amount": 276605,
   "amount_received": 276605,
   "currency": "usd",
   "customer": "cus_81199a5bd8b553",
   "status": "succeeded",
-  "created": 1789484400,
+  "created": 1788793200,
   "description": "Invoice payment SP-HACK-2608",
-  "latest_charge": "ch_6e2c9affb77bcd743698eaf3",
+  "latest_charge": "ch_76f25eaa80f87f456c0a7d5a",
   "livemode": false,
   "metadata": {
-   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-15",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-07",
    "scenario_id": "S00",
    "location_key": "sunbeam/hackensack",
-   "event_date": "2026-09-15",
+   "event_date": "2026-09-07",
    "qbo_invoice_no": "SP-HACK-2608"
   }
  },
@@ -580,42 +560,42 @@
   }
  },
  {
-  "id": "pi_515520366245054bed40b410",
+  "id": "pi_e7cba7560088444fc3159fec",
   "object": "payment_intent",
   "amount": 281841,
   "amount_received": 281841,
   "currency": "usd",
   "customer": "cus_81199a5bd8b553",
   "status": "succeeded",
-  "created": 1786892400,
+  "created": 1786806000,
   "description": "Invoice payment SP-MONT-2607",
-  "latest_charge": "ch_e3b0e9918a8bbc9a8d6eabb3",
+  "latest_charge": "ch_c8d8f43dd2d0da59378e8231",
   "livemode": false,
   "metadata": {
-   "seed_key": "S00:sp:sunbeam:montclair:2026-08-16",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-08-15",
    "scenario_id": "S00",
    "location_key": "sunbeam/montclair",
-   "event_date": "2026-08-16",
+   "event_date": "2026-08-15",
    "qbo_invoice_no": "SP-MONT-2607"
   }
  },
  {
-  "id": "pi_e75c6c05f53d288f19850f5a",
+  "id": "pi_8570b40da504fa7a20771dcc",
   "object": "payment_intent",
   "amount": 265679,
   "amount_received": 265679,
   "currency": "usd",
   "customer": "cus_81199a5bd8b553",
   "status": "succeeded",
-  "created": 1790434800,
+  "created": 1789570800,
   "description": "Invoice payment SP-MONT-2608",
-  "latest_charge": "ch_ff48745b72502bd04a2f1425",
+  "latest_charge": "ch_dc2830040cb59512a27258f5",
   "livemode": false,
   "metadata": {
-   "seed_key": "S00:sp:sunbeam:montclair:2026-09-26",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-09-16",
    "scenario_id": "S00",
    "location_key": "sunbeam/montclair",
-   "event_date": "2026-09-26",
+   "event_date": "2026-09-16",
    "qbo_invoice_no": "SP-MONT-2608"
   }
  },
@@ -875,6 +855,65 @@
    "location_key": "sunbeam/montclair",
    "event_date": "2026-11-29",
    "qbo_invoice_no": "SP-MONT-2609"
+  }
+ },
+ {
+  "id": "pi_4cac24dee882dc254ccd09c5",
+  "object": "payment_intent",
+  "amount": 234025,
+  "amount_received": 234025,
+  "currency": "usd",
+  "customer": "cus_81199a5bd8b553",
+  "status": "succeeded",
+  "created": 1791903600,
+  "description": "Invoice payment SP-EDIS-2609",
+  "latest_charge": "ch_fe15e723d0d78cb6cc1f35f6",
+  "livemode": false,
+  "metadata": {
+   "seed_key": "S17:sp:sunbeam:edison:2026-10-13",
+   "scenario_id": "S17",
+   "location_key": "sunbeam/edison",
+   "event_date": "2026-10-13",
+   "qbo_invoice_no": "SP-EDIS-2609"
+  }
+ },
+ {
+  "id": "pi_07d227e81097e0c3ba6f6f9a",
+  "object": "payment_intent",
+  "amount": 75000,
+  "amount_received": 75000,
+  "currency": "usd",
+  "customer": "cus_2c213a5ad3abd8",
+  "status": "succeeded",
+  "created": 1793718000,
+  "description": "Event sponsorship deposit",
+  "latest_charge": "ch_d290d9827afffe2cff446887",
+  "livemode": false,
+  "metadata": {
+   "seed_key": "S18:sp:harbor:williamsburg:2026-11-03",
+   "scenario_id": "S18",
+   "location_key": "harbor/williamsburg",
+   "event_date": "2026-11-03"
+  }
+ },
+ {
+  "id": "pi_d0bc41bec7de27e616f4d0d9",
+  "object": "payment_intent",
+  "amount": 265743,
+  "amount_received": 265743,
+  "currency": "usd",
+  "customer": "cus_81199a5bd8b553",
+  "status": "succeeded",
+  "created": 1795186800,
+  "description": "Invoice payment SP-NEWA-2609 (stale checkout link)",
+  "latest_charge": "ch_21c01f7c4a31fac60785feb6",
+  "livemode": false,
+  "metadata": {
+   "seed_key": "S19:sp:sunbeam:newark:2026-11-20",
+   "scenario_id": "S19",
+   "location_key": "sunbeam/newark",
+   "event_date": "2026-11-20",
+   "qbo_invoice_no": "SP-NEWA-2609"
   }
  }
 ]

@@ -36,8 +36,10 @@ st.markdown("""
 - **Two records of the same money.** A Stripe payment is the processing record; a QBO payment is the accounting
   record. They are matched, never added together. Allocations (`Line.LinkedTxn`) decide which invoice is paid, so
   a payment covering two invoices is counted once per invoice at its allocated amount.
-- **Matching order.** Level 1: the Stripe PaymentIntent id the sync writes into the QBO memo. Level 2: same client,
-  currency and amount within ±{tol} days, accepted only if the pair is mutually unique. Otherwise `NEEDS_REVIEW`.
+- **Matching order.** Level 1: the Stripe PaymentIntent id the sync writes into the QBO memo; if several QBO records
+  cite it, the one whose amount agrees is the match. Level 2: same client, currency and amount within ±{tol} days,
+  accepted only if the pair is mutually unique and nothing contradicts it (location, invoice reference).
+  Otherwise `NEEDS_REVIEW`.
 - **Time is a parameter.** Sync windows ({window} days), aging and staleness use `RECON_AS_OF`
   ({as_of}), not the clock, so a deployed demo never changes its answers.
 - **Failures are data.** A failed or partial pull is recorded, retried with bounded backoff, never loaded over the

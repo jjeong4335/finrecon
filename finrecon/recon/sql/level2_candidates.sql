@@ -1,7 +1,8 @@
 -- Level 2: candidate pairs for card payments recorded in QBO without a Stripe id.
 -- Same internal client, same currency, same amount, neither side already
--- matched at Level 1. The date tolerance and the uniqueness rule are applied in
--- Python (recon/engine.py) so ambiguity is decided explicitly, never silently.
+-- matched at Level 1. The date tolerance, the uniqueness rule and the
+-- corroboration checks (location, invoice reference) are applied in Python
+-- (recon/engine.py) so ambiguity is decided explicitly, never silently.
 SELECT
     q.payment_id             AS qbo_payment_id,
     q.source_payment_id      AS qbo_source_id,
@@ -9,7 +10,10 @@ SELECT
     s.payment_id             AS stripe_payment_id,
     s.source_payment_id      AS stripe_source_id,
     s.effective_date         AS stripe_date,
-    q.total_cents            AS amount_cents
+    q.total_cents            AS amount_cents,
+    q.location_id            AS qbo_location_id,
+    s.location_id            AS stripe_location_id,
+    s.qbo_invoice_ref        AS stripe_invoice_ref
 FROM qbo_payments q
 JOIN stripe_payments s
   ON s.client_id = q.client_id

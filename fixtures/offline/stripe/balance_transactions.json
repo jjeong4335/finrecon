@@ -550,38 +550,16 @@
   "_fixture_payout": "po_37c1af9cb7dfd73a85f596b9"
  },
  {
-  "id": "txn_ed3c19a989f3beb63c0a1c9c",
+  "id": "txn_bf760c9196958191ab7148ea",
   "object": "balance_transaction",
   "type": "charge",
-  "source": "ch_39f4f3bd67c774a9471d971f",
-  "amount": 234025,
-  "fee": 6817,
-  "net": 227208,
-  "currency": "usd",
-  "created": 1793113200,
-  "available_on": 1793232000,
-  "status": "available",
-  "fee_details": [
-   {
-    "amount": 6817,
-    "currency": "usd",
-    "type": "stripe_fee",
-    "description": "Stripe processing fees"
-   }
-  ],
-  "_fixture_payout": "po_eea7c5d90f05ccbabe63760c"
- },
- {
-  "id": "txn_835d39235f3e2b98e5a7a133",
-  "object": "balance_transaction",
-  "type": "charge",
-  "source": "ch_31bc46058e4b8bf679368b66",
+  "source": "ch_888e9f59da8aa7522a0a8511",
   "amount": 263341,
   "fee": 7667,
   "net": 255674,
   "currency": "usd",
-  "created": 1786114800,
-  "available_on": 1786233600,
+  "created": 1787842800,
+  "available_on": 1787961600,
   "status": "available",
   "fee_details": [
    {
@@ -591,19 +569,19 @@
     "description": "Stripe processing fees"
    }
   ],
-  "_fixture_payout": "po_b99dc8ab85ff28eda076f7d4"
+  "_fixture_payout": "po_b12832842eaaf40efae4fbfd"
  },
  {
-  "id": "txn_a8101020b749101a9fae1eed",
+  "id": "txn_7bd72dcb5ac5ce39ccef4b46",
   "object": "balance_transaction",
   "type": "charge",
-  "source": "ch_6e2c9affb77bcd743698eaf3",
+  "source": "ch_76f25eaa80f87f456c0a7d5a",
   "amount": 276605,
   "fee": 8052,
   "net": 268553,
   "currency": "usd",
-  "created": 1789484400,
-  "available_on": 1789603200,
+  "created": 1788793200,
+  "available_on": 1788912000,
   "status": "available",
   "fee_details": [
    {
@@ -613,7 +591,7 @@
     "description": "Stripe processing fees"
    }
   ],
-  "_fixture_payout": "po_5b14ac626c3d791d8daa425c"
+  "_fixture_payout": "po_37c1af9cb7dfd73a85f596b9"
  },
  {
   "id": "txn_eaf76ebf5d5eb40bf275411b",
@@ -638,16 +616,16 @@
   "_fixture_payout": "po_74d30781c9b7ceadc721eec3"
  },
  {
-  "id": "txn_afcdefcbe92fe1c336c65c07",
+  "id": "txn_e1828e2db45cafde94746884",
   "object": "balance_transaction",
   "type": "charge",
-  "source": "ch_e3b0e9918a8bbc9a8d6eabb3",
+  "source": "ch_c8d8f43dd2d0da59378e8231",
   "amount": 281841,
   "fee": 8203,
   "net": 273638,
   "currency": "usd",
-  "created": 1786892400,
-  "available_on": 1787011200,
+  "created": 1786806000,
+  "available_on": 1786924800,
   "status": "available",
   "fee_details": [
    {
@@ -660,16 +638,16 @@
   "_fixture_payout": "po_5ad9a2cb6554abb3150c90c7"
  },
  {
-  "id": "txn_3a60a92487864fd2805a5011",
+  "id": "txn_d0c72b78faac370f44b5d589",
   "object": "balance_transaction",
   "type": "charge",
-  "source": "ch_ff48745b72502bd04a2f1425",
+  "source": "ch_dc2830040cb59512a27258f5",
   "amount": 265679,
   "fee": 7735,
   "net": 257944,
   "currency": "usd",
-  "created": 1790434800,
-  "available_on": 1790553600,
+  "created": 1789570800,
+  "available_on": 1789689600,
   "status": "available",
   "fee_details": [
    {
@@ -679,7 +657,7 @@
     "description": "Stripe processing fees"
    }
   ],
-  "_fixture_payout": "po_352103889e3715af86332e3a"
+  "_fixture_payout": "po_5b14ac626c3d791d8daa425c"
  },
  {
   "id": "txn_0c99c68a357ba4e6744b2a68",
@@ -967,6 +945,72 @@
   ]
  },
  {
+  "id": "txn_5524bcafd138f013dca66b69",
+  "object": "balance_transaction",
+  "type": "charge",
+  "source": "ch_fe15e723d0d78cb6cc1f35f6",
+  "amount": 234025,
+  "fee": 6817,
+  "net": 227208,
+  "currency": "usd",
+  "created": 1791903600,
+  "available_on": 1792022400,
+  "status": "available",
+  "fee_details": [
+   {
+    "amount": 6817,
+    "currency": "usd",
+    "type": "stripe_fee",
+    "description": "Stripe processing fees"
+   }
+  ],
+  "_fixture_payout": "po_55216ae07667cb7e9eba7af6"
+ },
+ {
+  "id": "txn_bf3b01716333ca3fbeb75bd3",
+  "object": "balance_transaction",
+  "type": "charge",
+  "source": "ch_d290d9827afffe2cff446887",
+  "amount": 75000,
+  "fee": 2205,
+  "net": 72795,
+  "currency": "usd",
+  "created": 1793718000,
+  "available_on": 1793836800,
+  "status": "available",
+  "fee_details": [
+   {
+    "amount": 2205,
+    "currency": "usd",
+    "type": "stripe_fee",
+    "description": "Stripe processing fees"
+   }
+  ],
+  "_fixture_payout": "po_ac1e6f29cf50f21148dea722"
+ },
+ {
+  "id": "txn_c31f9ec98bc89a54d3523851",
+  "object": "balance_transaction",
+  "type": "charge",
+  "source": "ch_21c01f7c4a31fac60785feb6",
+  "amount": 265743,
+  "fee": 7737,
+  "net": 258006,
+  "currency": "usd",
+  "created": 1795186800,
+  "available_on": 1795305600,
+  "status": "available",
+  "fee_details": [
+   {
+    "amount": 7737,
+    "currency": "usd",
+    "type": "stripe_fee",
+    "description": "Stripe processing fees"
+   }
+  ],
+  "_fixture_payout": "po_23eb69e6fb16188fa8eb12e9"
+ },
+ {
   "id": "txn_a44709c06879941b14176df0",
   "object": "balance_transaction",
   "type": "refund",
@@ -1001,9 +1045,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_b99dc8ab85ff28eda076f7d4",
-  "amount": -1249129,
+  "amount": -993455,
   "fee": 0,
-  "net": -1249129,
+  "net": -993455,
   "currency": "usd",
   "created": 1786708800,
   "available_on": 1786708800,
@@ -1046,9 +1090,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_b12832842eaaf40efae4fbfd",
-  "amount": -507907,
+  "amount": -763581,
   "fee": 0,
-  "net": -507907,
+  "net": -763581,
   "currency": "usd",
   "created": 1788523200,
   "available_on": 1788523200,
@@ -1061,9 +1105,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_37c1af9cb7dfd73a85f596b9",
-  "amount": -279276,
+  "amount": -547829,
   "fee": 0,
-  "net": -279276,
+  "net": -547829,
   "currency": "usd",
   "created": 1789128000,
   "available_on": 1789128000,
@@ -1076,9 +1120,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_5b14ac626c3d791d8daa425c",
-  "amount": -1275269,
+  "amount": -1264660,
   "fee": 0,
-  "net": -1275269,
+  "net": -1264660,
   "currency": "usd",
   "created": 1789732800,
   "available_on": 1789732800,
@@ -1106,9 +1150,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_352103889e3715af86332e3a",
-  "amount": -761706,
+  "amount": -503762,
   "fee": 0,
-  "net": -761706,
+  "net": -503762,
   "currency": "usd",
   "created": 1790942400,
   "available_on": 1790942400,
@@ -1121,9 +1165,9 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_55216ae07667cb7e9eba7af6",
-  "amount": -1089583,
+  "amount": -1316791,
   "fee": 0,
-  "net": -1089583,
+  "net": -1316791,
   "currency": "usd",
   "created": 1792152000,
   "available_on": 1792152000,
@@ -1151,15 +1195,30 @@
   "object": "balance_transaction",
   "type": "payout",
   "source": "po_eea7c5d90f05ccbabe63760c",
-  "amount": -372856,
+  "amount": -145648,
   "fee": 0,
-  "net": -372856,
+  "net": -145648,
   "currency": "usd",
   "created": 1793361600,
   "available_on": 1793361600,
   "status": "available",
   "fee_details": [],
   "_fixture_payout": "po_eea7c5d90f05ccbabe63760c"
+ },
+ {
+  "id": "txn_a18c4f0c4790a6b6c610520b",
+  "object": "balance_transaction",
+  "type": "payout",
+  "source": "po_ac1e6f29cf50f21148dea722",
+  "amount": -72795,
+  "fee": 0,
+  "net": -72795,
+  "currency": "usd",
+  "created": 1793966400,
+  "available_on": 1793966400,
+  "status": "available",
+  "fee_details": [],
+  "_fixture_payout": "po_ac1e6f29cf50f21148dea722"
  },
  {
   "id": "txn_3a2dd4f268f393fdbba0312c",
@@ -1175,5 +1234,20 @@
   "status": "available",
   "fee_details": [],
   "_fixture_payout": "po_ead16322b489900cf32a2371"
+ },
+ {
+  "id": "txn_23360268696182e2d5a8de2b",
+  "object": "balance_transaction",
+  "type": "payout",
+  "source": "po_23eb69e6fb16188fa8eb12e9",
+  "amount": -258006,
+  "fee": 0,
+  "net": -258006,
+  "currency": "usd",
+  "created": 1795780800,
+  "available_on": 1795780800,
+  "status": "available",
+  "fee_details": [],
+  "_fixture_payout": "po_23eb69e6fb16188fa8eb12e9"
  }
 ]

@@ -55,7 +55,7 @@ def test_unpaid_invoices_are_open_ar_not_exceptions(demo):
     db, _, run_id = demo
     open_ar = db.query("SELECT is_exception FROM reconciliation_results WHERE run_id = ? AND status = 'OPEN_AR'",
                        (run_id,))
-    assert len(open_ar) == 13
+    assert len(open_ar) == 12
     assert not any(r["is_exception"] for r in open_ar)
     assert db.scalar("SELECT COUNT(*) FROM reconciliation_exceptions WHERE run_id = ? AND status = 'OPEN_AR'",
                      (run_id,)) == 0
@@ -129,3 +129,32 @@ def test_every_record_gets_exactly_one_result(demo):
         got = db.scalar("SELECT COUNT(*) FROM reconciliation_results WHERE run_id = ? AND record_type = ?",
                         (run_id, record_type))
         assert got == n, record_type
+
+
+def test_wrong_first_record_does_not_become_the_match(demo):
+    """S17: the record whose amount agrees with Stripe is the match, even if it came second."""
+    db, _, run_id = demo
+    assert status_of(db, run_id, "qbo_payment", "S17") == ["DUPLICATE", "MATCHED"]   # sorted: qp-wrong, qp
+    assert status_of(db, run_id, "stripe_payment", "S17") == ["MATCHED"]
+    dup = db.query("SELECT reason FROM reconciliation_results WHERE run_id = ? AND scenario_id LIKE 'S17:qp-wrong%'",
+                   (run_id,))[0]["reason"]
+    assert "also differs from Stripe" in dup
+
+
+def test_unique_candidate_with_conflicting_location_is_not_matched(demo):
+    """S18: one candidate, same amount, but the systems disagree on the location."""
+    db, _, run_id = demo
+    assert status_of(db, run_id, "qbo_payment", "S18") == ["NEEDS_REVIEW"]
+    assert status_of(db, run_id, "stripe_payment", "S18") == ["NEEDS_REVIEW"]
+    reason = db.scalar("SELECT reason FROM reconciliation_results WHERE run_id = ? AND scenario_id LIKE 'S18:qp%'",
+                       (run_id,))
+    assert "Williamsburg" in reason and "Jersey City Heights" in reason
+
+
+def test_unique_candidate_with_conflicting_invoice_is_not_matched(demo):
+    """S19: one candidate, same amount, but Stripe names a different invoice than QBO applied it to."""
+    db, _, run_id = demo
+    assert status_of(db, run_id, "qbo_payment", "S19") == ["NEEDS_REVIEW"]
+    assert status_of(db, run_id, "stripe_payment", "S19") == ["NEEDS_REVIEW"]
+    assert db.scalar("SELECT COUNT(*) FROM payment_matches m JOIN qbo_payments q ON q.payment_id = m.qbo_payment_id "
+                     "WHERE m.run_id = ? AND q.scenario_id LIKE 'S19%'", (run_id,)) == 0

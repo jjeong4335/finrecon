@@ -53,7 +53,9 @@ def demo(settings=None, db: Database | None = None, sleep=None) -> dict:
 def main(argv=None) -> None:
     p = argparse.ArgumentParser(prog="finrecon")
     sub = p.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("demo")
+    d = sub.add_parser("demo")
+    d.add_argument("--strict", action="store_true",
+                   help="exit with status 1 unless every scenario matches the ground truth")
     sub.add_parser("init-db")
     i = sub.add_parser("ingest")
     i.add_argument("--run-no", type=int, required=True)
@@ -71,6 +73,9 @@ def main(argv=None) -> None:
         print(f"\nScenario validation: {ev['scenarios_passed']} / {ev['scenarios_total']} scenarios passed, "
               f"{ev['correct']} / {ev['items']} items correct, {ev['false_positive_exceptions']} false-positive "
               f"exceptions, {ev['missed_exceptions']} missed exceptions")
+        perfect = (ev["scenarios_passed"] == ev["scenarios_total"] and ev["wrong"] == ev["missed"] == ev["unexpected"] == 0)
+        if args.strict and not perfect:
+            raise SystemExit(f"ground-truth evaluation failed: {ev['failed_scenarios']}")
         return
     db = Database(settings.database_url)
     if args.cmd == "init-db":

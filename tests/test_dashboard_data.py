@@ -38,7 +38,7 @@ def test_other_views(demo):
     catalog = json.loads((settings.fixture_dir.parent.parent / "tests" / "fixtures" /
                           "expected_reconciliation.json").read_text())["scenarios"]
     board = dd.scenario_scoreboard(db, run_id, catalog)
-    assert len(board) == 24 and all(b["passed"] for b in board)
+    assert len(board) == 27 and all(b["passed"] for b in board)
 
 
 def test_static_report_renders(demo, tmp_path):

@@ -1,8 +1,10 @@
 -- Level 1: exact matches on a verified cross-system identifier.
 -- The payment sync writes the Stripe PaymentIntent id into the QBO payment memo;
 -- ingestion parses it into qbo_payments.referenced_stripe_id.
--- When several QBO payments reference the same Stripe payment, the earliest is
--- the match (rn = 1) and the rest are duplicate imports (rn > 1).
+-- When several QBO payments reference the same Stripe payment, one is the match
+-- (rn = 1) and the rest are duplicate imports (rn > 1). The match is the record
+-- whose amount agrees with Stripe; only if none agrees is it the earliest. So a
+-- wrong first import followed by a correct one marks the wrong one as duplicate.
 SELECT
     q.payment_id                AS qbo_payment_id,
     q.source_payment_id         AS qbo_source_id,
@@ -16,7 +18,8 @@ SELECT
     s.currency                  AS stripe_currency,
     ROW_NUMBER() OVER (
         PARTITION BY s.payment_id
-        ORDER BY q.txn_date, CAST(q.source_payment_id AS BIGINT)
+        ORDER BY CASE WHEN q.total_cents = s.amount_received_cents THEN 0 ELSE 1 END,
+                 q.txn_date, CAST(q.source_payment_id AS BIGINT)
     )                           AS rn
 FROM qbo_payments q
 JOIN stripe_payments s

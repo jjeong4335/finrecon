@@ -3,7 +3,9 @@
 Matching order
   Level 1  exact: Stripe PaymentIntent id recorded in the QBO payment memo
   Level 2  candidate: same client, currency, amount, dates within tolerance;
-           accepted only when the pair is mutually unique, otherwise NEEDS_REVIEW
+           accepted only when the pair is mutually unique AND nothing contradicts
+           it (both sides name a location and they differ, or Stripe names an
+           invoice QBO did not apply the payment to). Otherwise NEEDS_REVIEW
   Level 3  everything left is classified with a typed status and a reason
 
 Semantic rules
@@ -94,12 +96,16 @@ def reconcile(db: Database, settings: Settings, run_id: str) -> dict[str, int]:
                       record_date=q["txn_date"], **kw)
 
     # ---------------------------------------------------------------- Level 1
-    for m in db.query(sql("level1_exact_matches")):
+    level1 = db.query(sql("level1_exact_matches"))
+    primary = {m["stripe_payment_id"]: m["qbo_source_id"] for m in level1 if m["rn"] == 1}
+    for m in level1:
         s, q = stripe[m["stripe_payment_id"]], qbo[m["qbo_payment_id"]]
         if m["rn"] > 1:
+            wrong = (f" Its amount ({fmt(q['total_cents'])}) also differs from Stripe "
+                     f"({fmt(s['amount_received_cents'])})." if q["total_cents"] != s["amount_received_cents"] else "")
             put(qres(q, "DUPLICATE",
-                     f"Second QBO record of Stripe payment {s['source_payment_id']}; the first is QBO payment "
-                     f"{_first_qbo(db, s['source_payment_id'])}. {fmt(q['unapplied_cents'])} sits unapplied.",
+                     f"Extra QBO record of Stripe payment {s['source_payment_id']}; the matching record is QBO "
+                     f"payment {primary[s['payment_id']]}.{wrong} {fmt(q['unapplied_cents'])} sits unapplied.",
                      match_method="exact_id", counterpart_source_ids=[s["source_payment_id"]],
                      counterpart_amount_cents=s["amount_received_cents"]))
             continue
@@ -142,10 +148,36 @@ def reconcile(db: Database, settings: Settings, run_id: str) -> dict[str, int]:
     for p in pairs:
         by_q.setdefault(p["qbo_payment_id"], []).append(p)
         by_s.setdefault(p["stripe_payment_id"], []).append(p)
+    docs_of: dict[str, set[str]] = {}
+    for a in db.query("SELECT pa.qbo_payment_id, i.doc_number FROM payment_allocations pa "
+                      "JOIN invoices i ON i.invoice_id = pa.invoice_id"):
+        docs_of.setdefault(a["qbo_payment_id"], set()).add(a["doc_number"])
+    loc_name = {r["location_id"]: r["name"] for r in db.query("SELECT location_id, name FROM locations")}
+
+    def contradiction(p: dict) -> str | None:
+        if p["qbo_location_id"] and p["stripe_location_id"] and p["qbo_location_id"] != p["stripe_location_id"]:
+            return (f"Stripe records location {loc_name.get(p['stripe_location_id'], '?')} but QBO records "
+                    f"{loc_name.get(p['qbo_location_id'], '?')}")
+        stripe_docs = {d.strip() for d in (p["stripe_invoice_ref"] or "").split(",") if d.strip()}
+        qbo_docs = docs_of.get(p["qbo_payment_id"], set())
+        if stripe_docs and qbo_docs and not stripe_docs & qbo_docs:
+            return (f"Stripe says it paid {', '.join(sorted(stripe_docs))} but QBO applied it to "
+                    f"{', '.join(sorted(qbo_docs))}")
+        return None
+
     for qid, cands in by_q.items():
         q = qbo[qid]
         unique = len(cands) == 1 and len(by_s[cands[0]["stripe_payment_id"]]) == 1
-        if unique:
+        conflict = contradiction(cands[0]) if unique else None
+        if unique and conflict:
+            s = stripe[cands[0]["stripe_payment_id"]]
+            why = (f"Only one candidate (same client and amount within {settings.candidate_date_tolerance_days} "
+                   f"days), but the records contradict each other: {conflict}. Not auto-matched.")
+            put(sres(s, "NEEDS_REVIEW", why, match_method="candidate", counterpart_source_ids=[q["source_payment_id"]],
+                     counterpart_amount_cents=q["total_cents"]))
+            put(qres(q, "NEEDS_REVIEW", why, match_method="candidate", counterpart_source_ids=[s["source_payment_id"]],
+                     counterpart_amount_cents=s["amount_received_cents"]))
+        elif unique:
             s = stripe[cands[0]["stripe_payment_id"]]
             matches.append({"run_id": run_id, "stripe_payment_id": s["payment_id"], "qbo_payment_id": qid,
                             "method": "candidate", "amount_diff_cents": 0})
@@ -209,12 +241,6 @@ def reconcile(db: Database, settings: Settings, run_id: str) -> dict[str, int]:
     for r in rows:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
     return counts
-
-
-def _first_qbo(db: Database, stripe_id: str) -> str:
-    rows = db.query("SELECT source_payment_id FROM qbo_payments WHERE referenced_stripe_id = ? "
-                    "ORDER BY txn_date, CAST(source_payment_id AS BIGINT)", (stripe_id,))
-    return rows[0]["source_payment_id"] if rows else "?"
 
 
 def _invoices(db: Database, settings: Settings, put) -> None:

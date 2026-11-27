@@ -64,6 +64,6 @@ st.markdown(
     "5. **Architecture** → how the pieces fit and why.\n"
     "6. **Retail Data Quality** → 1.07M real public retail rows (UCI): nothing dropped, every problem counted.")
 board = pd.DataFrame(dd.scenario_scoreboard(db, run["run_id"], scenario_catalog()))
-with st.expander("All 24 test scenarios and their results"):
+with st.expander(f"All {len(board)} test scenarios and their results"):
     st.dataframe(board[["scenario", "title", "description", "interview_question", "correct", "items", "passed"]],
                  hide_index=True, use_container_width=True)

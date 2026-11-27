@@ -87,6 +87,21 @@
    "description": "October invoices not yet due. Normal, not an exception.",
    "interview_question": "Q3 data model"
   },
+  "S17": {
+   "title": "Wrong first record",
+   "description": "Sync first imported the payment with a wrong amount, then imported it correctly. The correct record must be the match; the wrong one is the duplicate.",
+   "interview_question": "Q4 matching"
+  },
+  "S18": {
+   "title": "Same amount, other location",
+   "description": "Identical amounts within the date window, but Stripe says Williamsburg and QBO says Jersey City Heights. Not auto-matched.",
+   "interview_question": "Q4 matching"
+  },
+  "S19": {
+   "title": "Invoice reference conflict",
+   "description": "Stripe metadata names one invoice; QBO applied the same-amount payment to another. Not auto-matched.",
+   "interview_question": "Q4 matching"
+  },
   "D01": {
    "title": "Genuine zero",
    "description": "New location, not live yet: zero spend is a real, complete answer.",
@@ -247,12 +262,6 @@
   {
    "record_type": "invoice",
    "seed_key": "S00:inv:sunbeam:edison:2026-08",
-   "expected": "MATCHED",
-   "scenario": "S00"
-  },
-  {
-   "record_type": "invoice",
-   "seed_key": "S00:inv:sunbeam:edison:2026-09",
    "expected": "MATCHED",
    "scenario": "S00"
   },
@@ -444,15 +453,21 @@
   },
   {
    "record_type": "invoice",
-   "seed_key": "S16:inv:sunbeam:newark:2026-10",
+   "seed_key": "S16:inv:sunbeam:paterson:2026-10",
    "expected": "OPEN_AR",
    "scenario": "S16"
   },
   {
    "record_type": "invoice",
-   "seed_key": "S16:inv:sunbeam:paterson:2026-10",
-   "expected": "OPEN_AR",
-   "scenario": "S16"
+   "seed_key": "S17:inv:sunbeam:edison:2026-09",
+   "expected": "MATCHED",
+   "scenario": "S17"
+  },
+  {
+   "record_type": "invoice",
+   "seed_key": "S19:inv:sunbeam:newark:2026-10",
+   "expected": "MATCHED",
+   "scenario": "S19"
   },
   {
    "record_type": "qbo_payment",
@@ -582,19 +597,13 @@
   },
   {
    "record_type": "qbo_payment",
-   "seed_key": "S00:qp:sunbeam:edison:2026-10-28",
+   "seed_key": "S00:qp:sunbeam:hackensack:2026-08-28",
    "expected": "MATCHED",
    "scenario": "S00"
   },
   {
    "record_type": "qbo_payment",
-   "seed_key": "S00:qp:sunbeam:hackensack:2026-08-08",
-   "expected": "MATCHED",
-   "scenario": "S00"
-  },
-  {
-   "record_type": "qbo_payment",
-   "seed_key": "S00:qp:sunbeam:hackensack:2026-09-16",
+   "seed_key": "S00:qp:sunbeam:hackensack:2026-09-08",
    "expected": "MATCHED",
    "scenario": "S00"
   },
@@ -606,13 +615,13 @@
   },
   {
    "record_type": "qbo_payment",
-   "seed_key": "S00:qp:sunbeam:montclair:2026-08-17",
+   "seed_key": "S00:qp:sunbeam:montclair:2026-08-16",
    "expected": "MATCHED",
    "scenario": "S00"
   },
   {
    "record_type": "qbo_payment",
-   "seed_key": "S00:qp:sunbeam:montclair:2026-09-27",
+   "seed_key": "S00:qp:sunbeam:montclair:2026-09-17",
    "expected": "MATCHED",
    "scenario": "S00"
   },
@@ -717,6 +726,30 @@
    "seed_key": "S12:qp:harbor:parkslope:2026-11-10",
    "expected": "MISSING_IN_STRIPE",
    "scenario": "S12"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S17:qp-wrong:sunbeam:edison:2026-10-14",
+   "expected": "DUPLICATE",
+   "scenario": "S17"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S17:qp:sunbeam:edison:2026-10-15",
+   "expected": "MATCHED",
+   "scenario": "S17"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S18:qp:harbor:jcheights:2026-11-04",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S18"
+  },
+  {
+   "record_type": "qbo_payment",
+   "seed_key": "S19:qp:sunbeam:newark:2026-11-21",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S19"
   },
   {
    "record_type": "qbo_refund",
@@ -852,19 +885,13 @@
   },
   {
    "record_type": "stripe_payment",
-   "seed_key": "S00:sp:sunbeam:edison:2026-10-27",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-27",
    "expected": "MATCHED",
    "scenario": "S00"
   },
   {
    "record_type": "stripe_payment",
-   "seed_key": "S00:sp:sunbeam:hackensack:2026-08-07",
-   "expected": "MATCHED",
-   "scenario": "S00"
-  },
-  {
-   "record_type": "stripe_payment",
-   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-15",
+   "seed_key": "S00:sp:sunbeam:hackensack:2026-09-07",
    "expected": "MATCHED",
    "scenario": "S00"
   },
@@ -876,13 +903,13 @@
   },
   {
    "record_type": "stripe_payment",
-   "seed_key": "S00:sp:sunbeam:montclair:2026-08-16",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-08-15",
    "expected": "MATCHED",
    "scenario": "S00"
   },
   {
    "record_type": "stripe_payment",
-   "seed_key": "S00:sp:sunbeam:montclair:2026-09-26",
+   "seed_key": "S00:sp:sunbeam:montclair:2026-09-16",
    "expected": "MATCHED",
    "scenario": "S00"
   },
@@ -987,6 +1014,24 @@
    "seed_key": "S14:sp:sunbeam:montclair:2026-11-29",
    "expected": "PENDING_SYNC",
    "scenario": "S14"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S17:sp:sunbeam:edison:2026-10-13",
+   "expected": "MATCHED",
+   "scenario": "S17"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S18:sp:harbor:williamsburg:2026-11-03",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S18"
+  },
+  {
+   "record_type": "stripe_payment",
+   "seed_key": "S19:sp:sunbeam:newark:2026-11-20",
+   "expected": "NEEDS_REVIEW",
+   "scenario": "S19"
   },
   {
    "record_type": "stripe_refund",

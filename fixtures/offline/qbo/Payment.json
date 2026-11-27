@@ -827,40 +827,7 @@
  {
   "Id": "5026",
   "SyncToken": "0",
-  "TxnDate": "2026-10-28",
-  "CustomerRef": {
-   "value": "22"
-  },
-  "CurrencyRef": {
-   "value": "USD"
-  },
-  "TotalAmt": 2340.25,
-  "UnappliedAmt": 0.0,
-  "PaymentMethodRef": {
-   "value": "1"
-  },
-  "PaymentRefNum": "",
-  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_8d0cf88447da201a59358e5f; seed_key=S00:qp:sunbeam:edison:2026-10-28",
-  "Line": [
-   {
-    "Amount": 2340.25,
-    "LinkedTxn": [
-     {
-      "TxnId": "1046",
-      "TxnType": "Invoice"
-     }
-    ]
-   }
-  ],
-  "MetaData": {
-   "CreateTime": "2026-10-28T09:00:00-08:00",
-   "LastUpdatedTime": "2026-10-28T09:00:00-08:00"
-  }
- },
- {
-  "Id": "5027",
-  "SyncToken": "0",
-  "TxnDate": "2026-08-08",
+  "TxnDate": "2026-08-28",
   "CustomerRef": {
    "value": "23"
   },
@@ -873,7 +840,7 @@
    "value": "1"
   },
   "PaymentRefNum": "",
-  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_e8e5f18b7d348d4f950e21e0; seed_key=S00:qp:sunbeam:hackensack:2026-08-08",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_c52ee68ae94d4e9e3f368dce; seed_key=S00:qp:sunbeam:hackensack:2026-08-28",
   "Line": [
    {
     "Amount": 2633.41,
@@ -886,14 +853,14 @@
    }
   ],
   "MetaData": {
-   "CreateTime": "2026-08-08T09:00:00-08:00",
-   "LastUpdatedTime": "2026-08-08T09:00:00-08:00"
+   "CreateTime": "2026-08-28T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-28T09:00:00-08:00"
   }
  },
  {
-  "Id": "5028",
+  "Id": "5027",
   "SyncToken": "0",
-  "TxnDate": "2026-09-16",
+  "TxnDate": "2026-09-08",
   "CustomerRef": {
    "value": "23"
   },
@@ -906,7 +873,7 @@
    "value": "1"
   },
   "PaymentRefNum": "",
-  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_0600f87ef4113cb33fd0e066; seed_key=S00:qp:sunbeam:hackensack:2026-09-16",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_9ca59cb7ceb7cc507a590134; seed_key=S00:qp:sunbeam:hackensack:2026-09-08",
   "Line": [
    {
     "Amount": 2766.05,
@@ -919,12 +886,12 @@
    }
   ],
   "MetaData": {
-   "CreateTime": "2026-09-16T09:00:00-08:00",
-   "LastUpdatedTime": "2026-09-16T09:00:00-08:00"
+   "CreateTime": "2026-09-08T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-08T09:00:00-08:00"
   }
  },
  {
-  "Id": "5029",
+  "Id": "5028",
   "SyncToken": "0",
   "TxnDate": "2026-10-16",
   "CustomerRef": {
@@ -957,9 +924,9 @@
   }
  },
  {
-  "Id": "5030",
+  "Id": "5029",
   "SyncToken": "0",
-  "TxnDate": "2026-08-17",
+  "TxnDate": "2026-08-16",
   "CustomerRef": {
    "value": "24"
   },
@@ -972,7 +939,7 @@
    "value": "1"
   },
   "PaymentRefNum": "",
-  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_515520366245054bed40b410; seed_key=S00:qp:sunbeam:montclair:2026-08-17",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_e7cba7560088444fc3159fec; seed_key=S00:qp:sunbeam:montclair:2026-08-16",
   "Line": [
    {
     "Amount": 2818.41,
@@ -985,14 +952,14 @@
    }
   ],
   "MetaData": {
-   "CreateTime": "2026-08-17T09:00:00-08:00",
-   "LastUpdatedTime": "2026-08-17T09:00:00-08:00"
+   "CreateTime": "2026-08-16T09:00:00-08:00",
+   "LastUpdatedTime": "2026-08-16T09:00:00-08:00"
   }
  },
  {
-  "Id": "5031",
+  "Id": "5030",
   "SyncToken": "0",
-  "TxnDate": "2026-09-27",
+  "TxnDate": "2026-09-17",
   "CustomerRef": {
    "value": "24"
   },
@@ -1005,7 +972,7 @@
    "value": "1"
   },
   "PaymentRefNum": "",
-  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_e75c6c05f53d288f19850f5a; seed_key=S00:qp:sunbeam:montclair:2026-09-27",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_8570b40da504fa7a20771dcc; seed_key=S00:qp:sunbeam:montclair:2026-09-17",
   "Line": [
    {
     "Amount": 2656.79,
@@ -1018,12 +985,12 @@
    }
   ],
   "MetaData": {
-   "CreateTime": "2026-09-27T09:00:00-08:00",
-   "LastUpdatedTime": "2026-09-27T09:00:00-08:00"
+   "CreateTime": "2026-09-17T09:00:00-08:00",
+   "LastUpdatedTime": "2026-09-17T09:00:00-08:00"
   }
  },
  {
-  "Id": "5032",
+  "Id": "5031",
   "SyncToken": "0",
   "TxnDate": "2026-10-16",
   "CustomerRef": {
@@ -1056,7 +1023,7 @@
   }
  },
  {
-  "Id": "5033",
+  "Id": "5032",
   "SyncToken": "0",
   "TxnDate": "2026-10-13",
   "CustomerRef": {
@@ -1089,7 +1056,7 @@
   }
  },
  {
-  "Id": "5034",
+  "Id": "5033",
   "SyncToken": "0",
   "TxnDate": "2026-10-27",
   "CustomerRef": {
@@ -1122,7 +1089,7 @@
   }
  },
  {
-  "Id": "5035",
+  "Id": "5034",
   "SyncToken": "0",
   "TxnDate": "2026-11-13",
   "CustomerRef": {
@@ -1164,7 +1131,7 @@
   }
  },
  {
-  "Id": "5036",
+  "Id": "5035",
   "SyncToken": "0",
   "TxnDate": "2026-10-19",
   "CustomerRef": {
@@ -1197,7 +1164,7 @@
   }
  },
  {
-  "Id": "5037",
+  "Id": "5036",
   "SyncToken": "0",
   "TxnDate": "2026-10-18",
   "CustomerRef": {
@@ -1230,7 +1197,7 @@
   }
  },
  {
-  "Id": "5038",
+  "Id": "5037",
   "SyncToken": "0",
   "TxnDate": "2026-10-15",
   "CustomerRef": {
@@ -1263,7 +1230,7 @@
   }
  },
  {
-  "Id": "5039",
+  "Id": "5038",
   "SyncToken": "0",
   "TxnDate": "2026-10-15",
   "CustomerRef": {
@@ -1286,7 +1253,7 @@
   }
  },
  {
-  "Id": "5040",
+  "Id": "5039",
   "SyncToken": "0",
   "TxnDate": "2026-10-11",
   "CustomerRef": {
@@ -1319,7 +1286,7 @@
   }
  },
  {
-  "Id": "5041",
+  "Id": "5040",
   "SyncToken": "0",
   "TxnDate": "2026-10-10",
   "CustomerRef": {
@@ -1352,7 +1319,7 @@
   }
  },
  {
-  "Id": "5042",
+  "Id": "5041",
   "SyncToken": "0",
   "TxnDate": "2026-10-17",
   "CustomerRef": {
@@ -1385,7 +1352,7 @@
   }
  },
  {
-  "Id": "5043",
+  "Id": "5042",
   "SyncToken": "0",
   "TxnDate": "2026-10-22",
   "CustomerRef": {
@@ -1408,7 +1375,7 @@
   }
  },
  {
-  "Id": "5044",
+  "Id": "5043",
   "SyncToken": "0",
   "TxnDate": "2026-11-10",
   "CustomerRef": {
@@ -1438,6 +1405,118 @@
   "MetaData": {
    "CreateTime": "2026-11-10T09:00:00-08:00",
    "LastUpdatedTime": "2026-11-10T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5044",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-14",
+  "CustomerRef": {
+   "value": "22"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2240.25,
+  "UnappliedAmt": 2240.25,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_4cac24dee882dc254ccd09c5; seed_key=S17:qp-wrong:sunbeam:edison:2026-10-14",
+  "Line": [],
+  "MetaData": {
+   "CreateTime": "2026-10-14T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-14T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5045",
+  "SyncToken": "0",
+  "TxnDate": "2026-10-15",
+  "CustomerRef": {
+   "value": "22"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2340.25,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Synced from Stripe. stripe_payment_intent=pi_4cac24dee882dc254ccd09c5; seed_key=S17:qp:sunbeam:edison:2026-10-15",
+  "Line": [
+   {
+    "Amount": 2340.25,
+    "LinkedTxn": [
+     {
+      "TxnId": "1046",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-10-15T09:00:00-08:00",
+   "LastUpdatedTime": "2026-10-15T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5046",
+  "SyncToken": "0",
+  "TxnDate": "2026-11-04",
+  "CustomerRef": {
+   "value": "12"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 750.0,
+  "UnappliedAmt": 750.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Card payment entered manually. seed_key=S18:qp:harbor:jcheights:2026-11-04",
+  "Line": [],
+  "MetaData": {
+   "CreateTime": "2026-11-04T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-04T09:00:00-08:00"
+  }
+ },
+ {
+  "Id": "5047",
+  "SyncToken": "0",
+  "TxnDate": "2026-11-21",
+  "CustomerRef": {
+   "value": "20"
+  },
+  "CurrencyRef": {
+   "value": "USD"
+  },
+  "TotalAmt": 2657.43,
+  "UnappliedAmt": 0.0,
+  "PaymentMethodRef": {
+   "value": "1"
+  },
+  "PaymentRefNum": "",
+  "PrivateNote": "Card payment entered manually. seed_key=S19:qp:sunbeam:newark:2026-11-21",
+  "Line": [
+   {
+    "Amount": 2657.43,
+    "LinkedTxn": [
+     {
+      "TxnId": "1039",
+      "TxnType": "Invoice"
+     }
+    ]
+   }
+  ],
+  "MetaData": {
+   "CreateTime": "2026-11-21T09:00:00-08:00",
+   "LastUpdatedTime": "2026-11-21T09:00:00-08:00"
   }
  }
 ]

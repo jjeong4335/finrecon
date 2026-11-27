@@ -1,5 +1,7 @@
 # Multi-Location Finance Reconciliation Pipeline
 
+[![CI](https://github.com/jjeong4335/finrecon/actions/workflows/ci.yml/badge.svg)](https://github.com/jjeong4335/finrecon/actions/workflows/ci.yml)
+
 > **Independent portfolio demonstration.** This demonstration uses synthetic sandbox financial records and historical
 > public retail transaction data from UCI. No real QuickBooks or Stripe customer transactions are included. Not
 > affiliated with any company named in this project, Intuit, or Stripe.
@@ -104,7 +106,7 @@ the same money: they are matched, never added together.
 
 | Level | Rule |
 |---|---|
-| 1 · exact | The payment sync writes the Stripe PaymentIntent id into the QBO payment memo. Earliest QBO record = match; later ones = `DUPLICATE`. |
+| 1 · exact | The payment sync writes the Stripe PaymentIntent id into the QBO payment memo. If several QBO records cite the same id, the one whose amount agrees with Stripe is the match (else the earliest); the rest are `DUPLICATE`. |
 | 2 · candidate | No id in the memo, card method: same client, currency, amount, dates within ±3 days. Accepted only if the pair is **mutually unique**, else `NEEDS_REVIEW`. |
 | 3 · typed exceptions | Everything left gets a status and a plain-English reason. |
 
@@ -135,7 +137,7 @@ All time rules use `RECON_AS_OF` (2026-11-30), never the clock, so the deployed 
 ## Synthetic data and ground truth
 
 `seed/scenarios.py` is one deterministic plan (fixed random seed) describing 4 months of activity: 4,284 ad-spend rows,
-55 invoices, 44 Stripe payments, 44 QBO payments, refunds and payouts, plus **24 named scenarios**:
+55 invoices, 46 Stripe payments, 47 QBO payments, refunds and payouts, plus **27 named scenarios**:
 
 | Code | Scenario | Code | Scenario |
 |---|---|---|---|
@@ -151,7 +153,9 @@ All time rules use `RECON_AS_OF` (2026-11-30), never the clock, so the deployed 
 | S09 | Refund recorded | D06 | HTTP 429, retried |
 | S10 | Hand-entered, unique candidate | D07 | Duplicate rows across pages |
 | S11 | Two identical deposits → review | | |
-| S12 | QBO cites a Stripe ID that does not exist | | |
+| S12 | QBO cites a Stripe ID that does not exist | S17 | Wrong amount imported first, correct one second |
+| | | S18 | Unique same-amount candidate, conflicting location |
+| | | S19 | Unique same-amount candidate, conflicting invoice reference |
 
 The plan renders three ways: API-shaped offline fixtures, real sandbox objects (`seed/live_seed.py`), and
 `tests/fixtures/expected_reconciliation.json`. Expected statuses come from **scenario intent**, not from running the
@@ -220,10 +224,11 @@ is the customer's country, not a store location.
 
 ```
 $ python -m pytest
-85 tests: 84 passed, 1 skipped (FastAPI route test; runs where FastAPI is installed, e.g. the Docker image)
+88 tests. All run in CI on SQLite and again on PostgreSQL 16 (one FastAPI route test is skipped where FastAPI is
+not installed)
 
 $ python -m finrecon.pipeline demo
-Scenario validation: 24 / 24 scenarios passed, 221 / 221 items correct,
+Scenario validation: 27 / 27 scenarios passed, 226 / 226 items correct,
 0 false-positive exceptions, 0 missed exceptions
 ```
 
@@ -237,6 +242,16 @@ both header variants (tested on hand-written rows in the UCI layout, `tests/fixt
 
 **Scale:** the real 1,067,371-row file loads in 73 s on a MacBook (SQLite).
 
+**Continuous integration** (`.github/workflows/ci.yml`, on every push): the full suite and a strict demo run
+(fails unless every scenario matches the ground truth) on SQLite and on a PostgreSQL 16 service through the psycopg
+driver; and the Docker stack end to end: images build, the pipeline job runs on PostgreSQL in Docker, the dashboard
+answers through Caddy, and the dashboard's database role is verified to be read-only.
+
+**Matching edge cases.** S17–S19 were added after a code review asked how the engine handles a wrong first
+record and coincidental same-amount candidates. Run against the new ground truth, the previous engine failed all
+three (it matched the wrong record and auto-matched contradicting candidates); the engine was then fixed. A
+candidate is now accepted only if it is mutually unique *and* nothing contradicts it.
+
 **PostgreSQL compatibility:** the schema loads on PostgreSQL 16; all 124 application SELECTs were replayed on
 PostgreSQL with 66 final-state queries compared value by value against SQLite (identical), and all 85 write
 statements (DDL, `ON CONFLICT` upserts, deletes) executed successfully. The UCI load sequence was replayed on
@@ -247,12 +262,13 @@ PostgreSQL with identical resulting tables.
 | Component | Status |
 |---|---|
 | Offline pipeline, reconciliation, evaluator, report | Run and tested |
-| SQL on PostgreSQL 16 | Verified by replay (see above); the psycopg driver path itself runs in Docker |
+| SQL on PostgreSQL 16 | Verified by replay, and the full suite runs on PostgreSQL through psycopg in CI |
 | Streamlit pages | Executed against a recording stub; first real render happens in Docker |
 | Mock API over real HTTP | Tested with a stdlib server; FastAPI wrapper tested where FastAPI is installed |
 | QBO / Stripe live adapters, `seed/live_seed.py` | Written from the public API docs, **not yet run against the sandboxes** |
 | UCI module on the real file | Loaded end to end on a MacBook: 1,067,371 rows in 73 s, control totals passed (results below) |
-| Docker Compose / EC2 / HTTPS | Configuration provided, not yet deployed |
+| Docker Compose stack | Built and exercised end to end in CI (pipeline, dashboard via Caddy, read-only role) |
+| EC2 / HTTPS deployment | Configuration and guide provided, not yet deployed |
 
 ## Local setup
 

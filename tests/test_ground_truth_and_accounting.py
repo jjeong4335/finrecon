@@ -16,7 +16,7 @@ def test_engine_output_matches_ground_truth(demo):
     assert s["items"] > 200
     assert s["wrong"] == s["missed"] == s["unexpected"] == 0
     assert s["false_positive_exceptions"] == 0 and s["missed_exceptions"] == 0
-    assert s["scenarios_passed"] == s["scenarios_total"] == 24
+    assert s["scenarios_passed"] == s["scenarios_total"] == 27
 
 
 def test_evaluator_detects_a_wrong_classification(fresh_demo):

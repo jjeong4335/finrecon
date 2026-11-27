@@ -20,6 +20,7 @@ services:
   # captured sandbox snapshot. Re-run with: docker compose run --rm pipeline
   pipeline:
     build: { context: ., dockerfile: docker/Dockerfile }
+    image: finrecon-app:latest
     command: ["python", "-m", "finrecon.pipeline", "demo"]
     env_file: .env
     environment:
@@ -36,6 +37,7 @@ services:
   #   docker compose run --rm retail
   retail:
     build: { context: ., dockerfile: docker/Dockerfile }
+    image: finrecon-app:latest
     command: ["python", "-m", "finrecon.ingestion.uci_retail", "all", "--file", "/app/data/external/online_retail_II.zip"]
     env_file: .env
     environment:
@@ -48,6 +50,7 @@ services:
 
   dashboard:
     build: { context: ., dockerfile: docker/Dockerfile }
+    image: finrecon-app:latest
     env_file: .env
     environment:
       DATABASE_URL: postgresql://dashboard_ro:${DASHBOARD_DB_PASSWORD}@db:5432/finrecon
@@ -60,6 +63,7 @@ services:
   # docker compose exec dashboard python -c "import requests;print(requests.get('http://mock-api:8001/clients').json())"
   mock-api:
     build: { context: ., dockerfile: docker/Dockerfile }
+    image: finrecon-app:latest
     command: ["uvicorn", "mock_ad_api.app:app", "--host", "0.0.0.0", "--port", "8001"]
     restart: unless-stopped
 

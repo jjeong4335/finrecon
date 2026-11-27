@@ -66,13 +66,14 @@ jobs:
           sed -i 's/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=ci-owner-pw/' .env
           sed -i 's/^DASHBOARD_DB_PASSWORD=.*/DASHBOARD_DB_PASSWORD=ci-readonly-pw/' .env
           sed -i 's/^DOMAIN=.*/DOMAIN=:80/' .env
-      - run: docker compose build pipeline dashboard
+      - name: Build the image exactly as deploy/aws/user_data.sh does (classic builder)
+        run: DOCKER_BUILDKIT=0 docker build -t finrecon-app:latest -f docker/Dockerfile .
       - run: docker compose up -d db
       - name: Pipeline job on PostgreSQL in Docker
         run: |
           docker compose run --rm pipeline | tee pipeline.log
           grep -E "([0-9]+) / \1 scenarios passed" pipeline.log
-      - run: docker compose up -d dashboard caddy
+      - run: docker compose up -d --no-build dashboard caddy
       - name: Dashboard answers through Caddy
         run: |
           for i in $(seq 1 60); do

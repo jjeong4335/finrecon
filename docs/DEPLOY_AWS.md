@@ -1,5 +1,31 @@
 # Deploying to AWS EC2
 
+## One command (recommended)
+
+From your machine, with the AWS CLI configured (`aws configure` or `aws sso login`):
+
+```bash
+./deploy/aws/launch.sh          # creates everything and prints the URL
+./deploy/aws/status.sh          # progress: setup log, containers, HTTPS certificate
+./deploy/aws/teardown.sh        # removes everything it created
+```
+
+`launch.sh` creates, all tagged `Project=finrecon-demo`: a security group (80/443 public, 22 from your current IP
+only), an SSH key pair saved to `~/.ssh/finrecon-demo.pem`, an Elastic IP, and one Amazon Linux 2023 arm64
+instance (`t4g.small`, 20 GB encrypted gp3, IMDSv2). The instance's first-boot script (`deploy/aws/user_data.sh`)
+adds swap, installs Docker, clones this repository, generates database passwords **on the server**, builds the
+image and starts the stack. Setup takes about 10-15 minutes; the UCI retail load then continues in the background.
+
+**Address and HTTPS.** By default the site is `https://<elastic-ip-with-dashes>.sslip.io`, a free wildcard DNS name
+that resolves to the IP, so Caddy can obtain a Let's Encrypt certificate without a domain purchase. Shared names like
+this can occasionally hit certificate rate limits; `status.sh` shows whether the certificate was obtained. For your
+own domain: `DOMAIN=recon.example.com ./deploy/aws/launch.sh`, then create an `A` record for the printed IP.
+
+Options: `AWS_REGION=...` (default: your CLI's region, else us-east-1), `INSTANCE_TYPE=...`.
+The same build commands run in CI on every push (Docker job), so the deployment path is tested before you use it.
+
+## Manual setup
+
 One small instance running Docker Compose: PostgreSQL, the one-shot pipeline job, the Streamlit dashboard, the
 internal mock API and Caddy (automatic HTTPS). Only ports 80/443 are public. Nothing here creates other AWS resources.
 

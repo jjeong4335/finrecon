@@ -12,7 +12,7 @@ IDs, validates completeness, reconciles the systems against each other, and expl
 A separate module loads **1.07 million real public retail transactions** (UCI Online Retail II) to show the same
 discipline on messy real-world data.
 
-**Live demo:** _coming soon_ · **Static snapshot:** run `python -m finrecon.pipeline report`
+**Live demo:** [3-229-13-33.sslip.io](https://3-229-13-33.sslip.io) (AWS EC2, served from the QuickBooks + Stripe sandbox snapshot) · **Start here:** [exceptions](https://3-229-13-33.sslip.io/reconciliation/) · **Static snapshot:** `python -m finrecon.pipeline report`
 
 ```bash
 git clone https://github.com/jjeong4335/finrecon && cd finrecon

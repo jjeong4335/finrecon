@@ -13,8 +13,8 @@ client and location IDs, and reconciles the systems: exact matches on the Stripe
 and typed exceptions such as missing syncs, duplicate imports, unrecorded refunds and invoices billed incorrectly.
 Failed or partial API pulls are flagged as missing data rather than shown as zero.
 
-- Live demo: [https://your-domain]
-- Code and write-up: [GitHub link]
+- Live demo: https://3-229-13-33.sslip.io
+- Code and write-up: https://github.com/jjeong4335/finrecon
 
 The quickest thing to look at is the Reconciliation page: filter by "MISSING_IN_QBO" and select the row to see why
 it was flagged. The financial records are synthetic sandbox data. A separate page loads about

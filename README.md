@@ -6,6 +6,16 @@
 > public retail transaction data from UCI. No real QuickBooks or Stripe customer transactions are included. Not
 > affiliated with any company named in this project, Intuit, or Stripe.
 
+**At a glance**
+
+| | |
+|---|---|
+| **What** | Pulls QuickBooks, Stripe and ad-platform data for 3 clients × 15 locations, maps external IDs to internal ones, validates completeness and reconciles the systems, with every exception explained |
+| **Stack** | Python 3.12, PostgreSQL 16, explicit SQL (no ORM), Django, FastAPI (mock API), Docker Compose, AWS EC2 + Caddy, GitHub Actions |
+| **Results** | 27 / 27 scenarios and 226 / 226 items match the ground truth with 0 false positives and 0 missed exceptions · 1,067,371 real retail rows loaded in 73 s with nothing dropped · 88 tests on SQLite and PostgreSQL in CI |
+| **Live demo** | [3-229-13-33.sslip.io](https://3-229-13-33.sslip.io) |
+
+
 A small, correct data system that pulls accounting records (QuickBooks Online), payment-processing records (Stripe)
 and advertising spend (a mock ad platform) for **3 clients × 15 locations**, maps every external ID to stable internal
 IDs, validates completeness, reconciles the systems against each other, and explains every exception in a dashboard.
